@@ -1,31 +1,31 @@
 //
-//  UIButton+CIBaseMethods.m
+//  UIButton+CIBasicMethods.m
 //  CIComponentKit
 //
 //  Created by NEWWORLD on 2017/9/10.
 //  Copyright © 2017年 CodeInventor. All rights reserved.
 //
 
-#import "UIButton+CIBaseMethods.h"
+#import "UIButton+CIBasicMethods.h"
 
-@implementation UIButton (CIBaseMethods)
+@implementation UIButton (CIBasicMethods)
 
 /// 纯图片button实例(点击事件:UIControlEventTouchUpInside)
-+ (instancetype)ci_buttonWithFrame:(CGRect)frame
++ (UIButton *)ci_buttonWithFrame:(CGRect)frame
                          imageName:(NSString *)imageName
                             target:(id)target
                             action:(SEL)action {
-
+    
     return [UIButton ci_buttonWithFrame:frame imageName:imageName target:target action:action forControlEvents:UIControlEventTouchUpInside];
 }
 
 /// 纯图片button实例
-+ (instancetype)ci_buttonWithFrame:(CGRect)frame
++ (UIButton *)ci_buttonWithFrame:(CGRect)frame
                          imageName:(NSString *)imageName
                             target:(id)target
                             action:(SEL)action
                   forControlEvents:(UIControlEvents)controlEvents {
-
+    
     UIButton *button = [[UIButton alloc] initWithFrame:frame];
     [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:controlEvents];
@@ -33,18 +33,18 @@
 }
 
 /// 纯文字button实例(不设置背景色、圆角、边框、点击事件:UIControlEventTouchUpInside)
-+ (instancetype)ci_buttonWithFrame:(CGRect)frame
++ (UIButton *)ci_buttonWithFrame:(CGRect)frame
                              title:(NSString *)title
                         titleColor:(UIColor *)titleColor
                               font:(UIFont *)font
                             target:(id)target
                             action:(SEL)action {
-
+    
     return [UIButton ci_buttonWithFrame:frame title:title titleColor:titleColor font:font backgroundColor:nil target:target action:action forControlEvents:UIControlEventTouchUpInside];
 }
 
 /// 纯文字button实例(不设置圆角、边框)
-+ (instancetype)ci_buttonWithFrame:(CGRect)frame
++ (UIButton *)ci_buttonWithFrame:(CGRect)frame
                              title:(NSString *)title
                         titleColor:(UIColor *)titleColor
                               font:(UIFont *)font
@@ -52,12 +52,12 @@
                             target:(id)target
                             action:(SEL)action
                   forControlEvents:(UIControlEvents)controlEvents {
-
+    
     return [UIButton ci_buttonWithFrame:frame title:title titleColor:titleColor font:font backgroundColor:backgroundColor borderWidth:NAN borderColor:nil cornerRadius:NAN target:target action:action forControlEvents:controlEvents];
 }
 
 /// 纯文字button实例
-+ (instancetype)ci_buttonWithFrame:(CGRect)frame
++ (UIButton *)ci_buttonWithFrame:(CGRect)frame
                              title:(NSString *)title
                         titleColor:(UIColor *)titleColor
                               font:(UIFont *)font
@@ -68,7 +68,7 @@
                             target:(id)target
                             action:(SEL)action
                   forControlEvents:(UIControlEvents)controlEvents {
-
+    
     UIButton *button = [[UIButton alloc] initWithFrame:frame];
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:titleColor forState:UIControlStateNormal];

@@ -9,7 +9,11 @@
 #import "CIRootViewController.h"
 #import "CIComponentKit.h"
 
+#define STATUSBAR_HEIGHT            20
+
 @interface CIRootViewController ()
+
+
 
 @end
 
@@ -27,6 +31,9 @@
     [self.view addSubview:button];
     
     [button ci_adjustViewFrameWithOriginY:0];
+    
+    CICustomImageTitleButton *testButton = [CICustomImageTitleButton ci_customButtonWithButtonType:CICustomButtonTypeTopImageBottomTitle frame:CGRectMake(40, 200, 300, 100) title:@"测试内容" titleColor:[UIColor purpleColor] font:CI_FONT_14 imageName:@"test.jpg" backgroundColor:[UIColor whiteColor] target:self action:@selector(handleTapAction) margin:20];
+    [self.view addSubview:testButton];
 }
 
 - (void)handleTapAction {

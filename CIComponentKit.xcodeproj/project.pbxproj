@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6D3FE5C1F650F740011230B /* CICustomImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3FE5B1F650F740011230B /* CICustomImageTitleButton.m */; };
+		C6D3FE631F651A430011230B /* UIButton+CIBasicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3FE621F651A430011230B /* UIButton+CIBasicMethods.m */; };
+		C6D3FE661F651A7A0011230B /* UIImageView+CIBasicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3FE651F651A7A0011230B /* UIImageView+CIBasicMethods.m */; };
+		C6D3FE691F65800C0011230B /* UILabel+CIText.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3FE681F65800C0011230B /* UILabel+CIText.m */; };
+		C6D3FE711F6584650011230B /* UIColor+CIBasicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3FE701F6584650011230B /* UIColor+CIBasicMethods.m */; };
 		C6F590091F6421B6007B1899 /* CIComponentKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F590081F6421B6007B1899 /* CIComponentKitTests.m */; };
 		C6F590141F6421B6007B1899 /* CIComponentKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F590131F6421B6007B1899 /* CIComponentKitUITests.m */; };
 		C6F5903A1F642924007B1899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F590371F642924007B1899 /* Assets.xcassets */; };
@@ -17,7 +22,6 @@
 		C6F590471F642B1E007B1899 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6F590461F642B1E007B1899 /* Default-568h@2x.png */; };
 		C6F590511F643901007B1899 /* UILabel+CIBasicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F590501F643901007B1899 /* UILabel+CIBasicMethods.m */; };
 		C6F590551F64392D007B1899 /* UIView+CIAdjustFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F590541F64392D007B1899 /* UIView+CIAdjustFrame.m */; };
-		C6F5905A1F644B0B007B1899 /* UIButton+CIBaseMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F590591F644B0B007B1899 /* UIButton+CIBaseMethods.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C6D3FE5A1F650F740011230B /* CICustomImageTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICustomImageTitleButton.h; sourceTree = "<group>"; };
+		C6D3FE5B1F650F740011230B /* CICustomImageTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICustomImageTitleButton.m; sourceTree = "<group>"; };
+		C6D3FE611F651A430011230B /* UIButton+CIBasicMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CIBasicMethods.h"; sourceTree = "<group>"; };
+		C6D3FE621F651A430011230B /* UIButton+CIBasicMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CIBasicMethods.m"; sourceTree = "<group>"; };
+		C6D3FE641F651A7A0011230B /* UIImageView+CIBasicMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CIBasicMethods.h"; sourceTree = "<group>"; };
+		C6D3FE651F651A7A0011230B /* UIImageView+CIBasicMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CIBasicMethods.m"; sourceTree = "<group>"; };
+		C6D3FE671F65800C0011230B /* UILabel+CIText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CIText.h"; sourceTree = "<group>"; };
+		C6D3FE681F65800C0011230B /* UILabel+CIText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CIText.m"; sourceTree = "<group>"; };
+		C6D3FE6C1F6583460011230B /* CIBasicConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIBasicConstants.h; sourceTree = "<group>"; };
+		C6D3FE6D1F6583500011230B /* CIFontConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIFontConstants.h; sourceTree = "<group>"; };
+		C6D3FE6F1F6584650011230B /* UIColor+CIBasicMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CIBasicMethods.h"; sourceTree = "<group>"; };
+		C6D3FE701F6584650011230B /* UIColor+CIBasicMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CIBasicMethods.m"; sourceTree = "<group>"; };
+		C6D3FE731F6587150011230B /* CIComponentKit_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIComponentKit_Prefix.pch; sourceTree = "<group>"; };
 		C6F58FEB1F6421B6007B1899 /* CIComponentKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F590041F6421B6007B1899 /* CIComponentKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CIComponentKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F590081F6421B6007B1899 /* CIComponentKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIComponentKitTests.m; sourceTree = "<group>"; };
@@ -58,8 +75,6 @@
 		C6F590531F64392D007B1899 /* UIView+CIAdjustFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CIAdjustFrame.h"; sourceTree = "<group>"; };
 		C6F590541F64392D007B1899 /* UIView+CIAdjustFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CIAdjustFrame.m"; sourceTree = "<group>"; };
 		C6F590561F644145007B1899 /* CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIComponentKit.h; sourceTree = "<group>"; };
-		C6F590581F644B0B007B1899 /* UIButton+CIBaseMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CIBaseMethods.h"; sourceTree = "<group>"; };
-		C6F590591F644B0B007B1899 /* UIButton+CIBaseMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CIBaseMethods.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +102,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6D3FE581F64D69E0011230B /* CICustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				C6D3FE591F64D69E0011230B /* UIButton */,
+			);
+			path = CICustomViews;
+			sourceTree = "<group>";
+		};
+		C6D3FE591F64D69E0011230B /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				C6D3FE5A1F650F740011230B /* CICustomImageTitleButton.h */,
+				C6D3FE5B1F650F740011230B /* CICustomImageTitleButton.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		C6D3FE5D1F651A180011230B /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C6D3FE641F651A7A0011230B /* UIImageView+CIBasicMethods.h */,
+				C6D3FE651F651A7A0011230B /* UIImageView+CIBasicMethods.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		C6D3FE6E1F65844C0011230B /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				C6D3FE6F1F6584650011230B /* UIColor+CIBasicMethods.h */,
+				C6D3FE701F6584650011230B /* UIColor+CIBasicMethods.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		C6F58FE21F6421B6007B1899 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				C6F590561F644145007B1899 /* CIComponentKit.h */,
+				C6D3FE731F6587150011230B /* CIComponentKit_Prefix.pch */,
+				C6D3FE581F64D69E0011230B /* CICustomViews */,
 				C6F5904A1F642C0C007B1899 /* CICategories */,
 				C6F590481F642BC0007B1899 /* CIConstants */,
 			);
@@ -162,6 +214,8 @@
 		C6F590481F642BC0007B1899 /* CIConstants */ = {
 			isa = PBXGroup;
 			children = (
+				C6D3FE6C1F6583460011230B /* CIBasicConstants.h */,
+				C6D3FE6D1F6583500011230B /* CIFontConstants.h */,
 			);
 			path = CIConstants;
 			sourceTree = "<group>";
@@ -169,6 +223,8 @@
 		C6F5904A1F642C0C007B1899 /* CICategories */ = {
 			isa = PBXGroup;
 			children = (
+				C6D3FE6E1F65844C0011230B /* UIColor */,
+				C6D3FE5D1F651A180011230B /* UIImageView */,
 				C6F590571F644AFA007B1899 /* UIButton */,
 				C6F590521F64391D007B1899 /* UIView */,
 				C6F5904E1F643901007B1899 /* UILabel */,
@@ -181,6 +237,8 @@
 			children = (
 				C6F5904F1F643901007B1899 /* UILabel+CIBasicMethods.h */,
 				C6F590501F643901007B1899 /* UILabel+CIBasicMethods.m */,
+				C6D3FE671F65800C0011230B /* UILabel+CIText.h */,
+				C6D3FE681F65800C0011230B /* UILabel+CIText.m */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -197,8 +255,8 @@
 		C6F590571F644AFA007B1899 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				C6F590581F644B0B007B1899 /* UIButton+CIBaseMethods.h */,
-				C6F590591F644B0B007B1899 /* UIButton+CIBaseMethods.m */,
+				C6D3FE611F651A430011230B /* UIButton+CIBasicMethods.h */,
+				C6D3FE621F651A430011230B /* UIButton+CIBasicMethods.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -337,12 +395,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D3FE661F651A7A0011230B /* UIImageView+CIBasicMethods.m in Sources */,
+				C6D3FE631F651A430011230B /* UIButton+CIBasicMethods.m in Sources */,
 				C6F590551F64392D007B1899 /* UIView+CIAdjustFrame.m in Sources */,
 				C6F590451F642A77007B1899 /* CIRootViewController.m in Sources */,
 				C6F5903C1F642924007B1899 /* main.m in Sources */,
+				C6D3FE5C1F650F740011230B /* CICustomImageTitleButton.m in Sources */,
+				C6D3FE691F65800C0011230B /* UILabel+CIText.m in Sources */,
 				C6F590511F643901007B1899 /* UILabel+CIBasicMethods.m in Sources */,
 				C6F5903F1F642A08007B1899 /* CIAppDelegate.m in Sources */,
-				C6F5905A1F644B0B007B1899 /* UIButton+CIBaseMethods.m in Sources */,
+				C6D3FE711F6584650011230B /* UIColor+CIBasicMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,11 +536,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CIComponentKit/CIComponentKit_Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				INFOPLIST_FILE = "$(SRCROOT)/CIComponentKitDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodeInventor.League.CIComponentKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -486,11 +551,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CIComponentKit/CIComponentKit_Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				INFOPLIST_FILE = "$(SRCROOT)/CIComponentKitDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CodeInventor.League.CIComponentKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
