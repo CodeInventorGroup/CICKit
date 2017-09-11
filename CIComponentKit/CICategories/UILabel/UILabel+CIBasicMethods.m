@@ -8,7 +8,65 @@
 
 #import "UILabel+CIBasicMethods.h"
 
+@implementation CIComponKitUILabelExtension
+
+- (instancetype)initWithComponent:(UILabel *)label
+{
+    self = [super init];
+    if (self) {
+        self.component = label;
+        [self buildExtensions];
+    }
+    return self;
+}
+
+- (void)buildExtensions {
+    __weak typeof(self) weakSelf = self;
+    
+    _frame = ^CIComponKitUILabelExtension *(CGRect frame) {
+        weakSelf.component.frame = frame;
+        return weakSelf;
+    };
+    
+    _font = ^CIComponKitUILabelExtension *(UIFont *font){
+        weakSelf.component.font = font;
+        return weakSelf;
+    };
+    
+    _text = ^CIComponKitUILabelExtension *(NSString *string) {
+        weakSelf.component.text = string;
+        return weakSelf;
+    };
+    
+    _line = ^CIComponKitUILabelExtension *(NSInteger num) {
+        weakSelf.component.numberOfLines = num;
+        return weakSelf;
+    };
+    
+    _textColor = ^CIComponKitUILabelExtension *(UIColor *color) {
+        weakSelf.component.textColor = color;
+        return weakSelf;
+    };
+    
+    _textAlignment = ^CIComponKitUILabelExtension *(NSTextAlignment alignment) {
+        weakSelf.component.textAlignment = alignment;
+        return weakSelf;
+    };
+}
+
+@end
+
+
+
+/**
+ UILabel (CIBasicMethods)
+ */
 @implementation UILabel (CIBasicMethods)
+
+/// CIComponKitUILabelExtension UILabel的便捷链式语法
+- (CIComponKitUILabelExtension *)ci {
+    return [[CIComponKitUILabelExtension alloc] initWithComponent: self];
+}
 
 /// 默认左对齐、文本为空Label实例
 + (instancetype)ci_labelWithFrame:(CGRect)frame
