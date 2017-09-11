@@ -34,4 +34,17 @@ typedef NS_ENUM(NSUInteger, CICustomButtonType) {
                                                      action:(SEL)action
                                                      margin:(CGFloat)margin;
 
+/// 自定义button实例(设置imageView的size大小，不根据image的大小适配)
++ (CICustomImageTitleButton *)ci_customButtonWithButtonType:(CICustomButtonType)buttonType
+                                                      frame:(CGRect)frame
+                                                      title:(NSString *)title
+                                                 titleColor:(UIColor *)titleColor
+                                                       font:(UIFont *)font
+                                                  imageName:(NSString *)imageName
+                                              imageViewSize:(CGSize)imageViewSize
+                                            backgroundColor:(UIColor *)backgroundColor
+                                                     target:(id)target
+                                                     action:(SEL)action
+                                                     margin:(CGFloat)margin;
+
 @end
