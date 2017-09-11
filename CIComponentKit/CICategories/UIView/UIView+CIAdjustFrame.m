@@ -8,7 +8,78 @@
 
 #import "UIView+CIAdjustFrame.h"
 
+@implementation CIComponentKitUIViewExtension
+
+- (instancetype)initWithComponent:(UIView *)component {
+
+    if (self = [super init]) {
+        self.component = component;
+        [self buildView];
+    }
+    return self;
+}
+
+- (void)buildView {
+
+    __weak typeof(&*self) weakSelf = self;
+    self.x = ^CIComponentKitUIViewExtension *(CGFloat originX) {
+        CGRect frame = weakSelf.component.frame;
+        frame.origin.x = originX;
+        weakSelf.component.frame = frame;
+        return weakSelf;
+    };
+    
+    self.y = ^CIComponentKitUIViewExtension *(CGFloat originY) {
+        CGRect frame = weakSelf.component.frame;
+        frame.origin.y = originY;
+        weakSelf.component.frame = frame;
+        return weakSelf;
+    };
+    
+    self.width = ^CIComponentKitUIViewExtension *(CGFloat width) {
+        CGRect frame = weakSelf.component.frame;
+        frame.size.width = width;
+        weakSelf.component.frame = frame;
+        return weakSelf;
+    };
+    
+    self.height = ^CIComponentKitUIViewExtension *(CGFloat height) {
+        CGRect frame = weakSelf.component.frame;
+        frame.size.height = height;
+        weakSelf.component.frame = frame;
+        return weakSelf;
+    };
+    
+    self.centerX = ^CIComponentKitUIViewExtension *(CGFloat centerX) {
+        CGRect frame = weakSelf.component.frame;
+        frame.origin.x = centerX - CGRectGetWidth(frame)/2.0;
+        weakSelf.component.frame = frame;
+        return weakSelf;
+    };
+    
+    self.centerY = ^CIComponentKitUIViewExtension *(CGFloat centerY) {
+        CGRect frame = weakSelf.component.frame;
+        frame.origin.y = centerY - CGRectGetHeight(frame)/2.0;
+        weakSelf.component.frame = frame;
+        return weakSelf;
+    };
+    
+    self.center = ^CIComponentKitUIViewExtension *(CGFloat centerX, CGFloat centerY) {
+        CGRect frame = weakSelf.component.frame;
+        frame.origin.x = centerX - CGRectGetWidth(frame)/2.0;
+        frame.origin.y = centerY - CGRectGetHeight(frame)/2.0;
+        weakSelf.component.frame = frame;
+        return weakSelf;
+    };
+}
+@end
+
 @implementation UIView (CIAdjustFrame)
+
+- (CIComponentKitUIViewExtension *)ci {
+    
+    return [[CIComponentKitUIViewExtension alloc] initWithComponent:self];
+}
 
 #pragma mark - Adjust Single Position
 /// 修改view的原点x

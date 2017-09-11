@@ -37,7 +37,7 @@
 
 @interface UILabel (CIBasicMethods)
 
-- (CIComponKitUILabelExtension *)ci;
++ (CIComponKitUILabelExtension *)ci;
 
 /// 默认左对齐、文本为空Label实例
 + (instancetype)ci_labelWithFrame:(CGRect)frame

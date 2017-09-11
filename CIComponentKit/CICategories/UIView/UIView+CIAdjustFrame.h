@@ -8,7 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+@interface CIComponentKitUIViewLayout : NSObject
+
+@property (nonatomic, weak) UIView *component;
+
+@property (nonatomic, copy) CIComponentKitUIViewLayout *(^x)(CGFloat originX);
+@property (nonatomic, copy) CIComponentKitUIViewLayout *(^y)(CGFloat originY);
+@property (nonatomic, copy) CIComponentKitUIViewLayout *(^width)(CGFloat width);
+@property (nonatomic, copy) CIComponentKitUIViewLayout *(^height)(CGFloat height);
+@property (nonatomic, copy) CIComponentKitUIViewLayout *(^centerX)(CGFloat centerX);
+@property (nonatomic, copy) CIComponentKitUIViewLayout *(^centerY)(CGFloat centerY);
+@property (nonatomic, copy) CIComponentKitUIViewLayout *(^center)(CGFloat centerX, CGFloat centerY);
+
+@end
+
 @interface UIView (CIAdjustFrame)
+
+- (CIComponentKitUIViewExtension *)ci;
 
 #pragma mark - Adjust Single Position
 /// 修改view的原点x

@@ -64,7 +64,7 @@
 @implementation UILabel (CIBasicMethods)
 
 /// CIComponKitUILabelExtension UILabel的便捷链式语法
-- (CIComponKitUILabelExtension *)ci {
++ (CIComponKitUILabelExtension *)ci {
     return [[CIComponKitUILabelExtension alloc] initWithComponent: self];
 }
 
