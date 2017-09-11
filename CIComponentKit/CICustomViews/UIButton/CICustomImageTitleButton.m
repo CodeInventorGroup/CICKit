@@ -22,6 +22,22 @@
                                                      action:(SEL)action
                                                      margin:(CGFloat)margin {
     
+    return [CICustomImageTitleButton ci_customButtonWithButtonType:buttonType frame:frame title:title titleColor:titleColor font:font imageName:imageName imageViewSize:CGSizeZero backgroundColor:backgroundColor target:target action:action margin:margin];
+}
+
+/// 自定义button实例(设置imageView的size大小，不根据image的大小适配)
++ (CICustomImageTitleButton *)ci_customButtonWithButtonType:(CICustomButtonType)buttonType
+                                                      frame:(CGRect)frame
+                                                      title:(NSString *)title
+                                                 titleColor:(UIColor *)titleColor
+                                                       font:(UIFont *)font
+                                                  imageName:(NSString *)imageName
+                                              imageViewSize:(CGSize)imageViewSize
+                                            backgroundColor:(UIColor *)backgroundColor
+                                                     target:(id)target
+                                                     action:(SEL)action
+                                                     margin:(CGFloat)margin {
+    
     CICustomImageTitleButton *customButton = [[CICustomImageTitleButton alloc] initWithFrame:frame];
     if (backgroundColor) {
         customButton.backgroundColor = backgroundColor;
@@ -34,8 +50,9 @@
     [customButton addSubview:titleLabel];
     
     UIImageView *imageView = [UIImageView ci_imageViewWithFrame:CGRectZero imageName:imageName];
-    CGSize imageSize = [UIImage imageNamed:imageName].size;
+    CGSize imageSize = CGSizeEqualToSize(imageViewSize, CGSizeZero) ? [UIImage imageNamed:imageName].size : imageViewSize;
     [imageView ci_adjustViewFrameWithWidth:imageSize.width height:imageSize.height];
+    imageView.contentMode = CGSizeEqualToSize(imageViewSize, CGSizeZero) ? UIViewContentModeCenter : UIViewContentModeScaleAspectFill;
     [customButton addSubview:imageView];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
