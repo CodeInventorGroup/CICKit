@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C64C85981F68300A00F9ED60 /* CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85961F68300A00F9ED60 /* CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
 		C64C85C01F68321F00F9ED60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64C85BD1F68321F00F9ED60 /* Assets.xcassets */; };
@@ -31,6 +32,29 @@
 		C64C86091F68412700F9ED60 /* UILabel+CIText.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C86051F68412700F9ED60 /* UILabel+CIText.h */; };
 		C64C860A1F68412700F9ED60 /* UILabel+CIText.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C86061F68412700F9ED60 /* UILabel+CIText.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B06474651F6843530009A826 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C64C858A1F68300A00F9ED60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C64C85921F68300A00F9ED60;
+			remoteInfo = CIComponentKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B06474671F68435F0009A826 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,10 +300,12 @@
 				C64C859E1F68303B00F9ED60 /* Sources */,
 				C64C859F1F68303B00F9ED60 /* Frameworks */,
 				C64C85A01F68303B00F9ED60 /* Resources */,
+				B06474671F68435F0009A826 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B06474661F6843530009A826 /* PBXTargetDependency */,
 			);
 			name = CIComponentKitDemo;
 			productName = CIComponentKitDemo;
@@ -370,6 +396,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B06474661F6843530009A826 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C64C85921F68300A00F9ED60 /* CIComponentKit */;
+			targetProxy = B06474651F6843530009A826 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C64C85991F68300A00F9ED60 /* Debug */ = {
