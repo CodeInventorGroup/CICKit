@@ -8,6 +8,8 @@
 
 #import "CICRootViewController.h"
 
+#import "CIComponentKit.h"
+
 @interface CICRootViewController ()
 
 @end
@@ -17,6 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UILabel *label = [UILabel new];
+    label.ci
+        .text(@"welcome to cicomponent😄")
+        .textColor([UIColor blackColor])
+        .frame(CGRectMake(0, 64, self.view.bounds.size.width, 44))
+        .textAlignment(NSTextAlignmentCenter)
+        .backgroundColor([UIColor greenColor]);
+    [self.view addSubview:label];
 }
 
 - (void)didReceiveMemoryWarning {

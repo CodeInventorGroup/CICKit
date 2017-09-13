@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; };
+		B047697F1F6937E00095BB6C /* CIComponentKitMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = B047697A1F6937E00095BB6C /* CIComponentKitMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04769801F6937E00095BB6C /* CICUILabelConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = B047697B1F6937E00095BB6C /* CICUILabelConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04769811F6937E00095BB6C /* CICUILabelConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B047697C1F6937E00095BB6C /* CICUILabelConstructor.m */; };
+		B04769821F6937E00095BB6C /* CICUIViewConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = B047697D1F6937E00095BB6C /* CICUIViewConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B04769831F6937E00095BB6C /* CICUIViewConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B047697E1F6937E00095BB6C /* CICUIViewConstructor.m */; };
 		B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C64C85981F68300A00F9ED60 /* CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85961F68300A00F9ED60 /* CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
@@ -29,7 +35,7 @@
 		C64C86021F68411100F9ED60 /* UIImageView+CIBasicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C86001F68411100F9ED60 /* UIImageView+CIBasicMethods.m */; };
 		C64C86071F68412700F9ED60 /* UILabel+CIBasicMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C86031F68412700F9ED60 /* UILabel+CIBasicMethods.h */; };
 		C64C86081F68412700F9ED60 /* UILabel+CIBasicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C86041F68412700F9ED60 /* UILabel+CIBasicMethods.m */; };
-		C64C86091F68412700F9ED60 /* UILabel+CIText.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C86051F68412700F9ED60 /* UILabel+CIText.h */; };
+		C64C86091F68412700F9ED60 /* UILabel+CIText.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C86051F68412700F9ED60 /* UILabel+CIText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C64C860A1F68412700F9ED60 /* UILabel+CIText.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C86061F68412700F9ED60 /* UILabel+CIText.m */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +63,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B047697A1F6937E00095BB6C /* CIComponentKitMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIComponentKitMacros.h; sourceTree = "<group>"; };
+		B047697B1F6937E00095BB6C /* CICUILabelConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICUILabelConstructor.h; sourceTree = "<group>"; };
+		B047697C1F6937E00095BB6C /* CICUILabelConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICUILabelConstructor.m; sourceTree = "<group>"; };
+		B047697D1F6937E00095BB6C /* CICUIViewConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICUIViewConstructor.h; sourceTree = "<group>"; };
+		B047697E1F6937E00095BB6C /* CICUIViewConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICUIViewConstructor.m; sourceTree = "<group>"; };
 		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85961F68300A00F9ED60 /* CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIComponentKit.h; sourceTree = "<group>"; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,12 +110,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B04769791F6937970095BB6C /* CICConstructor */ = {
+			isa = PBXGroup;
+			children = (
+				B047697A1F6937E00095BB6C /* CIComponentKitMacros.h */,
+				B047697B1F6937E00095BB6C /* CICUILabelConstructor.h */,
+				B047697C1F6937E00095BB6C /* CICUILabelConstructor.m */,
+				B047697D1F6937E00095BB6C /* CICUIViewConstructor.h */,
+				B047697E1F6937E00095BB6C /* CICUIViewConstructor.m */,
+			);
+			path = CICConstructor;
+			sourceTree = "<group>";
+		};
 		C64C85891F68300A00F9ED60 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +152,7 @@
 		C64C85951F68300A00F9ED60 /* CIComponentKit */ = {
 			isa = PBXGroup;
 			children = (
+				B04769791F6937970095BB6C /* CICConstructor */,
 				C64C85D01F68386800F9ED60 /* CICCategories */,
 				C64C85D61F68386800F9ED60 /* CICConstants */,
 				C64C85DD1F68386800F9ED60 /* CICCustomViews */,
@@ -260,15 +285,18 @@
 			files = (
 				C64C86091F68412700F9ED60 /* UILabel+CIText.h in Headers */,
 				C64C85F41F683FDF00F9ED60 /* UIView+CICConstructor.h in Headers */,
+				B04769821F6937E00095BB6C /* CICUIViewConstructor.h in Headers */,
 				C64C85E21F6838D800F9ED60 /* CICFontConstants.h in Headers */,
 				C64C85EE1F68396C00F9ED60 /* CICSizeConstants.h in Headers */,
 				C64C85981F68300A00F9ED60 /* CIComponentKit.h in Headers */,
 				C64C85EC1F68394000F9ED60 /* CICColorConstants.h in Headers */,
 				C64C86011F68411100F9ED60 /* UIImageView+CIBasicMethods.h in Headers */,
 				C64C85E01F6838C800F9ED60 /* CICConstructorConstants.h in Headers */,
+				B047697F1F6937E00095BB6C /* CIComponentKitMacros.h in Headers */,
 				C64C85FD1F6840F500F9ED60 /* UIButton+CIBasicMethods.h in Headers */,
 				C64C85F91F68404900F9ED60 /* CICustomImageTitleButton.h in Headers */,
 				C64C86071F68412700F9ED60 /* UILabel+CIBasicMethods.h in Headers */,
+				B04769801F6937E00095BB6C /* CICUILabelConstructor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +410,8 @@
 				C64C860A1F68412700F9ED60 /* UILabel+CIText.m in Sources */,
 				C64C85FA1F68404900F9ED60 /* CICustomImageTitleButton.m in Sources */,
 				C64C86081F68412700F9ED60 /* UILabel+CIBasicMethods.m in Sources */,
+				B04769811F6937E00095BB6C /* CICUILabelConstructor.m in Sources */,
+				B04769831F6937E00095BB6C /* CICUIViewConstructor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

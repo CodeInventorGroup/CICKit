@@ -7,6 +7,7 @@
 //
 
 #import "UILabel+CIText.h"
+#import "CICSizeConstants.h"
 
 @implementation UILabel (CIText)
 
@@ -14,8 +15,13 @@
 - (void)ci_labelSingleLineWithText:(NSString *)text {
 
     self.text = text;
-    CGSize size = CI_BOUNDINGSIZE_TEXT(CGSizeMake(CI_SCREEN_WIDTH, FLT_MAX), text, self.font);
-    [self ci_adjustViewFrameWithWidth:size.width];
+    CGSize size = CIC_BOUNDINGSIZE_TEXT(CGSizeMake(CIC_SCREEN_WIDTH, FLT_MAX), text, self.font);
+    [self cic_adjustViewFrameWithWidth:size.width];
+}
+
+//TODO: ....
+- (void)cic_adjustViewFrameWithWidth:(CGFloat)width {
+
 }
 
 @end

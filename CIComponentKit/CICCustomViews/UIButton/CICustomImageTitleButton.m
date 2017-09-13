@@ -7,6 +7,9 @@
 //
 
 #import "CICustomImageTitleButton.h"
+#import "UILabel+CIText.h"
+#import "UILabel+CIBasicMethods.h"
+#import "UIImageView+CIBasicMethods.h"
 
 @implementation CICustomImageTitleButton
 
@@ -51,7 +54,7 @@
     
     UIImageView *imageView = [UIImageView ci_imageViewWithFrame:CGRectZero imageName:imageName];
     CGSize imageSize = CGSizeEqualToSize(imageViewSize, CGSizeZero) ? [UIImage imageNamed:imageName].size : imageViewSize;
-    [imageView ci_adjustViewFrameWithWidth:imageSize.width height:imageSize.height];
+    [imageView cic_adjustViewFrameWithWidth:imageSize.width height:imageSize.height];
     imageView.contentMode = CGSizeEqualToSize(imageViewSize, CGSizeZero) ? UIViewContentModeCenter : UIViewContentModeScaleAspectFill;
     [customButton addSubview:imageView];
     
@@ -67,8 +70,8 @@
             
             CGFloat originX = (width - imageSize.width - margin)/2.0;
             CGFloat maxOriginX = originX + (buttonType == CICustomButtonTypeLeftImageRightTitle ? imageSize.width : CGRectGetWidth(titleLabel.frame)) + margin;
-            [imageView ci_adjustViewFrameWithOriginX:buttonType == CICustomButtonTypeLeftImageRightTitle ? originX : maxOriginX originY:(height - imageSize.height)/2.0];
-            [titleLabel ci_adjustViewFrameWithOriginX:buttonType == CICustomButtonTypeLeftTitleRIghtImage ? originX : maxOriginX originY:(height - titleLabelHeight)/2.0];
+            [imageView cic_adjustViewFrameWithOriginX:buttonType == CICustomButtonTypeLeftImageRightTitle ? originX : maxOriginX originY:(height - imageSize.height)/2.0];
+            [titleLabel cic_adjustViewFrameWithOriginX:buttonType == CICustomButtonTypeLeftTitleRIghtImage ? originX : maxOriginX originY:(height - titleLabelHeight)/2.0];
             break;
         }
         case CICustomButtonTypeTopImageBottomTitle:
@@ -76,8 +79,8 @@
             
             CGFloat originY = (height - imageSize.height - margin - titleLabelHeight)/2.0;
             CGFloat maxOriginY = originY + (buttonType == CICustomButtonTypeTopImageBottomTitle ? imageSize.height : titleLabelHeight) + margin;
-            [imageView ci_adjustViewFrameWithOriginX:(width - imageSize.width)/2.0 originY:buttonType == CICustomButtonTypeTopImageBottomTitle ? originY : maxOriginY];
-            [titleLabel ci_adjustViewFrameWithOriginX:(width - CGRectGetWidth(titleLabel.frame))/2.0 originY:buttonType == CICustomButtonTypeTopTitleBottomImage ? originY : maxOriginY];
+            [imageView cic_adjustViewFrameWithOriginX:(width - imageSize.width)/2.0 originY:buttonType == CICustomButtonTypeTopImageBottomTitle ? originY : maxOriginY];
+            [titleLabel cic_adjustViewFrameWithOriginX:(width - CGRectGetWidth(titleLabel.frame))/2.0 originY:buttonType == CICustomButtonTypeTopTitleBottomImage ? originY : maxOriginY];
             break;
         }
     }

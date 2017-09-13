@@ -18,4 +18,19 @@
     return imageView;
 }
 
+//TODO: ...
+- (void)cic_adjustViewFrameWithWidth:(CGFloat)width {
+
+}
+
+//TODO: ...
+- (void)cic_adjustViewFrameWithWidth:(CGFloat)width height:(CGFloat)height {
+
+}
+
+//TODO: ...
+- (void)cic_adjustViewFrameWithOriginX:(CGFloat)originX originY:(CGFloat)originY {
+
+}
+
 @end
