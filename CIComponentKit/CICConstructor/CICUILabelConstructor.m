@@ -54,6 +54,9 @@
     };
 }
 
+- (void)dealloc {
+    NSLog(@"CICUILabelConstructor dealloc");
+}
 
 @end
 

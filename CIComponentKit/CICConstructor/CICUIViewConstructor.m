@@ -81,6 +81,10 @@
     };
 }
 
+- (void)dealloc {
+    NSLog(@"CICUIViewConstructor dealloc");
+}
+
 @end
 
 CIUIImplementation(UIView, CICUIViewConstructor)
