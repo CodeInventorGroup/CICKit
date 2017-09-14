@@ -1,9 +1,9 @@
 //
-//  CICustomImageTitleButton.h
+//  CICImageTitleButton.h
 //  CIComponentKit
 //
-//  Created by NEWWORLD on 2017/9/10.
-//  Copyright © 2017年 CodeInventor. All rights reserved.
+//  Created by NEWWORLD on 2017/9/14.
+//  Copyright © 2017年 codeinventor. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -20,10 +20,10 @@ typedef NS_ENUM(NSUInteger, CICustomButtonType) {
     CICustomButtonTypeTopTitleBottomImage,
 };
 
-@interface CICustomImageTitleButton : UIView
-
-/// 自定义button实例(任意buttonType的titleLabel、imageView均居中展示)(点击事件为TapGestue)
-+ (CICustomImageTitleButton *)ci_customButtonWithButtonType:(CICustomButtonType)buttonType
+@interface CICImageTitleButton : UIView
+    
+    /// 自定义button实例(任意buttonType的titleLabel、imageView均居中展示)(点击事件为TapGestue)
++ (CICImageTitleButton *)cic_customButtonWithButtonType:(CICustomButtonType)buttonType
                                                       frame:(CGRect)frame
                                                       title:(NSString *)title
                                                  titleColor:(UIColor *)titleColor
@@ -33,9 +33,9 @@ typedef NS_ENUM(NSUInteger, CICustomButtonType) {
                                                      target:(id)target
                                                      action:(SEL)action
                                                      margin:(CGFloat)margin;
-
-/// 自定义button实例(设置imageView的size大小，不根据image的大小适配)
-+ (CICustomImageTitleButton *)ci_customButtonWithButtonType:(CICustomButtonType)buttonType
+    
+    /// 自定义button实例(设置imageView的size大小，不根据image的大小适配)
++ (CICImageTitleButton *)cic_customButtonWithButtonType:(CICustomButtonType)buttonType
                                                       frame:(CGRect)frame
                                                       title:(NSString *)title
                                                  titleColor:(UIColor *)titleColor

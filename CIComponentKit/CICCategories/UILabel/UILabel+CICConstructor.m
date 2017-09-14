@@ -1,13 +1,12 @@
 //
-//  UILabel+Extension.m
-//  Demo
+//  UILabel+CICConstructor.m
+//  CIComponentKit
 //
-//  Created by ManoBoo on 11/09/2017.
-//  Copyright © 2017 ManoBoo. All rights reserved.
+//  Created by NEWWORLD on 2017/9/14.
+//  Copyright © 2017年 codeinventor. All rights reserved.
 //
 
-#import "CICUILabelConstructor.h"
-
+#import "UILabel+CICConstructor.h"
 
 @interface CICUILabelConstructor ()
 
@@ -31,8 +30,8 @@
 
 - (void)buildConstructor {
     [super buildConstructor];
-    __weak typeof(self) weakSelf = self;
     
+    __weak typeof(&*self) weakSelf = self;
     _text = ^CICUILabelConstructor *(NSString *string) {
         weakSelf.component.text = string;
         return weakSelf;
@@ -60,6 +59,11 @@
 
 @end
 
+@implementation UILabel (CICConstructor)
 
-CIUIImplementation(UILabel, CICUILabelConstructor)
+- (CICUILabelConstructor *)cic {
 
+    return [[CICUILabelConstructor alloc] initWithComponent:self];
+}
+
+@end

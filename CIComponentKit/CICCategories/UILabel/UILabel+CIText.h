@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UILabel+CICConstructor.h"
 
 @interface UILabel (CIText)
 
 /// 单行label设置text,修改frame宽度
-- (void)ci_labelSingleLineWithText:(NSString *)text;
+- (void)cic_labelSingleLineWithText:(NSString *)text;
 
 @end

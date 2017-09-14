@@ -7,7 +7,6 @@
 //
 
 #import "CICRootViewController.h"
-
 #import "CIComponentKit.h"
 
 @interface CICRootViewController ()
@@ -21,7 +20,7 @@
     // Do any additional setup after loading the view.
     
     UILabel *label = [UILabel new];
-    label.ci
+    label.cic
         .text(@"welcome to cicomponent😄")
         .textColor([UIColor blackColor])
         .frame(CGRectMake(0, 64, self.view.bounds.size.width, 44))

@@ -1,13 +1,13 @@
 //
-//  CICSizeConstants.h
+//  CICSizeMacros.h
 //  CIComponentKit
 //
-//  Created by NEWWORLD on 2017/9/12.
+//  Created by NEWWORLD on 2017/9/14.
 //  Copyright © 2017年 codeinventor. All rights reserved.
 //
 
-#ifndef CICSizeConstants_h
-#define CICSizeConstants_h
+#ifndef CICSizeMacros_h
+#define CICSizeMacros_h
 
 #define CIC_SCREEN_WIDTH                 [UIScreen mainScreen].bounds.size.width
 #define CIC_SCREEN_HEIGHT                [UIScreen mainScreen].bounds.size.height
@@ -20,4 +20,4 @@
 // 计算text的size大小
 #define CIC_BOUNDINGSIZE_TEXT(maxSize, text, font) [text length] > 0 ? [text boundingRectWithSize:maxSize options:(NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero
 
-#endif /* CICSizeConstants_h */
+#endif /* CICSizeMacros_h */

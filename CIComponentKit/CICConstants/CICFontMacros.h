@@ -1,13 +1,13 @@
 //
-//  CICFontConstants.h
+//  CICFontMacros.h
 //  CIComponentKit
 //
-//  Created by NEWWORLD on 2017/9/12.
+//  Created by NEWWORLD on 2017/9/14.
 //  Copyright © 2017年 codeinventor. All rights reserved.
 //
 
-#ifndef CICFontConstants_h
-#define CICFontConstants_h
+#ifndef CICFontMacros_h
+#define CICFontMacros_h
 
 #define CIC_FONT_9               [UIFont systemFontOfSize:9]
 #define CIC_FONT_10              [UIFont systemFontOfSize:10]
@@ -27,4 +27,4 @@
 #define CIC_BOLD_FONT_15         [UIFont boldSystemFontOfSize:15]
 #define CIC_BOLD_FONT_16         [UIFont boldSystemFontOfSize:16]
 
-#endif /* CICFontConstants_h */
+#endif /* CICFontMacros_h */

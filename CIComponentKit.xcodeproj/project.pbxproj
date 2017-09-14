@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; };
-		B047697F1F6937E00095BB6C /* CIComponentKitMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = B047697A1F6937E00095BB6C /* CIComponentKitMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B04769801F6937E00095BB6C /* CICUILabelConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = B047697B1F6937E00095BB6C /* CICUILabelConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B04769811F6937E00095BB6C /* CICUILabelConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B047697C1F6937E00095BB6C /* CICUILabelConstructor.m */; };
-		B04769821F6937E00095BB6C /* CICUIViewConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = B047697D1F6937E00095BB6C /* CICUIViewConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B04769831F6937E00095BB6C /* CICUIViewConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B047697E1F6937E00095BB6C /* CICUIViewConstructor.m */; };
 		B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C64C85981F68300A00F9ED60 /* CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85961F68300A00F9ED60 /* CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
@@ -21,22 +16,22 @@
 		C64C85C51F6832A300F9ED60 /* CICRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85C41F6832A300F9ED60 /* CICRootViewController.m */; };
 		C64C85C71F6832E700F9ED60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */; };
 		C64C85CA1F6834BE00F9ED60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C64C85C91F6834BE00F9ED60 /* Info.plist */; };
-		C64C85E01F6838C800F9ED60 /* CICConstructorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85DF1F6838C800F9ED60 /* CICConstructorConstants.h */; };
-		C64C85E21F6838D800F9ED60 /* CICFontConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85E11F6838D800F9ED60 /* CICFontConstants.h */; };
-		C64C85EC1F68394000F9ED60 /* CICColorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85EB1F68394000F9ED60 /* CICColorConstants.h */; };
-		C64C85EE1F68396C00F9ED60 /* CICSizeConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85ED1F68396C00F9ED60 /* CICSizeConstants.h */; };
-		C64C85F41F683FDF00F9ED60 /* UIView+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85F21F683FDF00F9ED60 /* UIView+CICConstructor.h */; };
-		C64C85F51F683FDF00F9ED60 /* UIView+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85F31F683FDF00F9ED60 /* UIView+CICConstructor.m */; };
-		C64C85F91F68404900F9ED60 /* CICustomImageTitleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85F71F68404900F9ED60 /* CICustomImageTitleButton.h */; };
-		C64C85FA1F68404900F9ED60 /* CICustomImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85F81F68404900F9ED60 /* CICustomImageTitleButton.m */; };
-		C64C85FD1F6840F500F9ED60 /* UIButton+CIBasicMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85FB1F6840F500F9ED60 /* UIButton+CIBasicMethods.h */; };
-		C64C85FE1F6840F500F9ED60 /* UIButton+CIBasicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85FC1F6840F500F9ED60 /* UIButton+CIBasicMethods.m */; };
-		C64C86011F68411100F9ED60 /* UIImageView+CIBasicMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85FF1F68411100F9ED60 /* UIImageView+CIBasicMethods.h */; };
-		C64C86021F68411100F9ED60 /* UIImageView+CIBasicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C86001F68411100F9ED60 /* UIImageView+CIBasicMethods.m */; };
-		C64C86071F68412700F9ED60 /* UILabel+CIBasicMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C86031F68412700F9ED60 /* UILabel+CIBasicMethods.h */; };
-		C64C86081F68412700F9ED60 /* UILabel+CIBasicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C86041F68412700F9ED60 /* UILabel+CIBasicMethods.m */; };
 		C64C86091F68412700F9ED60 /* UILabel+CIText.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C86051F68412700F9ED60 /* UILabel+CIText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C64C860A1F68412700F9ED60 /* UILabel+CIText.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C86061F68412700F9ED60 /* UILabel+CIText.m */; };
+		C6A7C4B11F6844D800B2B0A3 /* UIView+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6A7C4AF1F6844D800B2B0A3 /* UIView+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6A7C4B21F6844D800B2B0A3 /* UIView+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A7C4B01F6844D800B2B0A3 /* UIView+CICConstructor.m */; };
+		C6AC8F4E1F6AC2C500389170 /* CICConstructorMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = C6AC8F4D1F6AC2C500389170 /* CICConstructorMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6AC8F501F6AC2DD00389170 /* CICFontMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = C6AC8F4F1F6AC2DD00389170 /* CICFontMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6AC8F521F6AC32500389170 /* CICSizeMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = C6AC8F511F6AC30F00389170 /* CICSizeMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6AC8F541F6AC34C00389170 /* CICColorMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = C6AC8F531F6AC34900389170 /* CICColorMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6AC8F571F6AC3C500389170 /* CICImageTitleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C6AC8F551F6AC3C500389170 /* CICImageTitleButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6AC8F581F6AC3C500389170 /* CICImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC8F561F6AC3C500389170 /* CICImageTitleButton.m */; };
+		C6AC8F5B1F6AC44A00389170 /* UILabel+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6AC8F591F6AC44A00389170 /* UILabel+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6AC8F5C1F6AC44A00389170 /* UILabel+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AC8F5A1F6AC44A00389170 /* UILabel+CICConstructor.m */; };
+		C6DEFBB51F6AC747003A6F6D /* UIImageView+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6DEFBB31F6AC747003A6F6D /* UIImageView+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6DEFBB61F6AC747003A6F6D /* UIImageView+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DEFBB41F6AC747003A6F6D /* UIImageView+CICConstructor.m */; };
+		C6DEFBB91F6ACB35003A6F6D /* UIButton+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6DEFBB71F6ACB35003A6F6D /* UIButton+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6DEFBBA1F6ACB35003A6F6D /* UIButton+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DEFBB81F6ACB35003A6F6D /* UIButton+CICConstructor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,11 +58,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B047697A1F6937E00095BB6C /* CIComponentKitMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIComponentKitMacros.h; sourceTree = "<group>"; };
-		B047697B1F6937E00095BB6C /* CICUILabelConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICUILabelConstructor.h; sourceTree = "<group>"; };
-		B047697C1F6937E00095BB6C /* CICUILabelConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICUILabelConstructor.m; sourceTree = "<group>"; };
-		B047697D1F6937E00095BB6C /* CICUIViewConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICUIViewConstructor.h; sourceTree = "<group>"; };
-		B047697E1F6937E00095BB6C /* CICUIViewConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICUIViewConstructor.m; sourceTree = "<group>"; };
 		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85961F68300A00F9ED60 /* CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIComponentKit.h; sourceTree = "<group>"; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,22 +70,22 @@
 		C64C85C41F6832A300F9ED60 /* CICRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICRootViewController.m; sourceTree = "<group>"; };
 		C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C64C85C91F6834BE00F9ED60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C64C85DF1F6838C800F9ED60 /* CICConstructorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICConstructorConstants.h; sourceTree = "<group>"; };
-		C64C85E11F6838D800F9ED60 /* CICFontConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICFontConstants.h; sourceTree = "<group>"; };
-		C64C85EB1F68394000F9ED60 /* CICColorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICColorConstants.h; sourceTree = "<group>"; };
-		C64C85ED1F68396C00F9ED60 /* CICSizeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICSizeConstants.h; sourceTree = "<group>"; };
-		C64C85F21F683FDF00F9ED60 /* UIView+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CICConstructor.h"; sourceTree = "<group>"; };
-		C64C85F31F683FDF00F9ED60 /* UIView+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CICConstructor.m"; sourceTree = "<group>"; };
-		C64C85F71F68404900F9ED60 /* CICustomImageTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICustomImageTitleButton.h; sourceTree = "<group>"; };
-		C64C85F81F68404900F9ED60 /* CICustomImageTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICustomImageTitleButton.m; sourceTree = "<group>"; };
-		C64C85FB1F6840F500F9ED60 /* UIButton+CIBasicMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CIBasicMethods.h"; sourceTree = "<group>"; };
-		C64C85FC1F6840F500F9ED60 /* UIButton+CIBasicMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CIBasicMethods.m"; sourceTree = "<group>"; };
-		C64C85FF1F68411100F9ED60 /* UIImageView+CIBasicMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CIBasicMethods.h"; sourceTree = "<group>"; };
-		C64C86001F68411100F9ED60 /* UIImageView+CIBasicMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CIBasicMethods.m"; sourceTree = "<group>"; };
-		C64C86031F68412700F9ED60 /* UILabel+CIBasicMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CIBasicMethods.h"; sourceTree = "<group>"; };
-		C64C86041F68412700F9ED60 /* UILabel+CIBasicMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CIBasicMethods.m"; sourceTree = "<group>"; };
 		C64C86051F68412700F9ED60 /* UILabel+CIText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CIText.h"; sourceTree = "<group>"; };
 		C64C86061F68412700F9ED60 /* UILabel+CIText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CIText.m"; sourceTree = "<group>"; };
+		C6A7C4AF1F6844D800B2B0A3 /* UIView+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CICConstructor.h"; sourceTree = "<group>"; };
+		C6A7C4B01F6844D800B2B0A3 /* UIView+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CICConstructor.m"; sourceTree = "<group>"; };
+		C6AC8F4D1F6AC2C500389170 /* CICConstructorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICConstructorMacros.h; sourceTree = "<group>"; };
+		C6AC8F4F1F6AC2DD00389170 /* CICFontMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICFontMacros.h; sourceTree = "<group>"; };
+		C6AC8F511F6AC30F00389170 /* CICSizeMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICSizeMacros.h; sourceTree = "<group>"; };
+		C6AC8F531F6AC34900389170 /* CICColorMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICColorMacros.h; sourceTree = "<group>"; };
+		C6AC8F551F6AC3C500389170 /* CICImageTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICImageTitleButton.h; sourceTree = "<group>"; };
+		C6AC8F561F6AC3C500389170 /* CICImageTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICImageTitleButton.m; sourceTree = "<group>"; };
+		C6AC8F591F6AC44A00389170 /* UILabel+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CICConstructor.h"; sourceTree = "<group>"; };
+		C6AC8F5A1F6AC44A00389170 /* UILabel+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CICConstructor.m"; sourceTree = "<group>"; };
+		C6DEFBB31F6AC747003A6F6D /* UIImageView+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CICConstructor.h"; sourceTree = "<group>"; };
+		C6DEFBB41F6AC747003A6F6D /* UIImageView+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CICConstructor.m"; sourceTree = "<group>"; };
+		C6DEFBB71F6ACB35003A6F6D /* UIButton+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CICConstructor.h"; sourceTree = "<group>"; };
+		C6DEFBB81F6ACB35003A6F6D /* UIButton+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CICConstructor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,18 +107,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B04769791F6937970095BB6C /* CICConstructor */ = {
-			isa = PBXGroup;
-			children = (
-				B047697A1F6937E00095BB6C /* CIComponentKitMacros.h */,
-				B047697B1F6937E00095BB6C /* CICUILabelConstructor.h */,
-				B047697C1F6937E00095BB6C /* CICUILabelConstructor.m */,
-				B047697D1F6937E00095BB6C /* CICUIViewConstructor.h */,
-				B047697E1F6937E00095BB6C /* CICUIViewConstructor.m */,
-			);
-			path = CICConstructor;
-			sourceTree = "<group>";
-		};
 		C64C85891F68300A00F9ED60 = {
 			isa = PBXGroup;
 			children = (
@@ -152,11 +130,10 @@
 		C64C85951F68300A00F9ED60 /* CIComponentKit */ = {
 			isa = PBXGroup;
 			children = (
-				B04769791F6937970095BB6C /* CICConstructor */,
+				C64C85961F68300A00F9ED60 /* CIComponentKit.h */,
 				C64C85D01F68386800F9ED60 /* CICCategories */,
 				C64C85D61F68386800F9ED60 /* CICConstants */,
 				C64C85DD1F68386800F9ED60 /* CICCustomViews */,
-				C64C85961F68300A00F9ED60 /* CIComponentKit.h */,
 			);
 			path = CIComponentKit;
 			sourceTree = "<group>";
@@ -206,8 +183,8 @@
 		C64C85D11F68386800F9ED60 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				C64C85FB1F6840F500F9ED60 /* UIButton+CIBasicMethods.h */,
-				C64C85FC1F6840F500F9ED60 /* UIButton+CIBasicMethods.m */,
+				C6DEFBB71F6ACB35003A6F6D /* UIButton+CICConstructor.h */,
+				C6DEFBB81F6ACB35003A6F6D /* UIButton+CICConstructor.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -222,8 +199,8 @@
 		C64C85D31F68386800F9ED60 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
-				C64C85FF1F68411100F9ED60 /* UIImageView+CIBasicMethods.h */,
-				C64C86001F68411100F9ED60 /* UIImageView+CIBasicMethods.m */,
+				C6DEFBB31F6AC747003A6F6D /* UIImageView+CICConstructor.h */,
+				C6DEFBB41F6AC747003A6F6D /* UIImageView+CICConstructor.m */,
 			);
 			path = UIImageView;
 			sourceTree = "<group>";
@@ -231,10 +208,10 @@
 		C64C85D41F68386800F9ED60 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
-				C64C86031F68412700F9ED60 /* UILabel+CIBasicMethods.h */,
-				C64C86041F68412700F9ED60 /* UILabel+CIBasicMethods.m */,
 				C64C86051F68412700F9ED60 /* UILabel+CIText.h */,
 				C64C86061F68412700F9ED60 /* UILabel+CIText.m */,
+				C6AC8F591F6AC44A00389170 /* UILabel+CICConstructor.h */,
+				C6AC8F5A1F6AC44A00389170 /* UILabel+CICConstructor.m */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -242,8 +219,8 @@
 		C64C85D51F68386800F9ED60 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				C64C85F21F683FDF00F9ED60 /* UIView+CICConstructor.h */,
-				C64C85F31F683FDF00F9ED60 /* UIView+CICConstructor.m */,
+				C6A7C4AF1F6844D800B2B0A3 /* UIView+CICConstructor.h */,
+				C6A7C4B01F6844D800B2B0A3 /* UIView+CICConstructor.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -251,10 +228,10 @@
 		C64C85D61F68386800F9ED60 /* CICConstants */ = {
 			isa = PBXGroup;
 			children = (
-				C64C85DF1F6838C800F9ED60 /* CICConstructorConstants.h */,
-				C64C85E11F6838D800F9ED60 /* CICFontConstants.h */,
-				C64C85EB1F68394000F9ED60 /* CICColorConstants.h */,
-				C64C85ED1F68396C00F9ED60 /* CICSizeConstants.h */,
+				C6AC8F4D1F6AC2C500389170 /* CICConstructorMacros.h */,
+				C6AC8F4F1F6AC2DD00389170 /* CICFontMacros.h */,
+				C6AC8F511F6AC30F00389170 /* CICSizeMacros.h */,
+				C6AC8F531F6AC34900389170 /* CICColorMacros.h */,
 			);
 			path = CICConstants;
 			sourceTree = "<group>";
@@ -270,8 +247,8 @@
 		C64C85F61F68404900F9ED60 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				C64C85F71F68404900F9ED60 /* CICustomImageTitleButton.h */,
-				C64C85F81F68404900F9ED60 /* CICustomImageTitleButton.m */,
+				C6AC8F551F6AC3C500389170 /* CICImageTitleButton.h */,
+				C6AC8F561F6AC3C500389170 /* CICImageTitleButton.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -284,19 +261,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64C86091F68412700F9ED60 /* UILabel+CIText.h in Headers */,
-				C64C85F41F683FDF00F9ED60 /* UIView+CICConstructor.h in Headers */,
-				B04769821F6937E00095BB6C /* CICUIViewConstructor.h in Headers */,
-				C64C85E21F6838D800F9ED60 /* CICFontConstants.h in Headers */,
-				C64C85EE1F68396C00F9ED60 /* CICSizeConstants.h in Headers */,
+				C6AC8F4E1F6AC2C500389170 /* CICConstructorMacros.h in Headers */,
+				C6A7C4B11F6844D800B2B0A3 /* UIView+CICConstructor.h in Headers */,
 				C64C85981F68300A00F9ED60 /* CIComponentKit.h in Headers */,
-				C64C85EC1F68394000F9ED60 /* CICColorConstants.h in Headers */,
-				C64C86011F68411100F9ED60 /* UIImageView+CIBasicMethods.h in Headers */,
-				C64C85E01F6838C800F9ED60 /* CICConstructorConstants.h in Headers */,
-				B047697F1F6937E00095BB6C /* CIComponentKitMacros.h in Headers */,
-				C64C85FD1F6840F500F9ED60 /* UIButton+CIBasicMethods.h in Headers */,
-				C64C85F91F68404900F9ED60 /* CICustomImageTitleButton.h in Headers */,
-				C64C86071F68412700F9ED60 /* UILabel+CIBasicMethods.h in Headers */,
-				B04769801F6937E00095BB6C /* CICUILabelConstructor.h in Headers */,
+				C6AC8F521F6AC32500389170 /* CICSizeMacros.h in Headers */,
+				C6AC8F571F6AC3C500389170 /* CICImageTitleButton.h in Headers */,
+				C6AC8F5B1F6AC44A00389170 /* UILabel+CICConstructor.h in Headers */,
+				C6DEFBB91F6ACB35003A6F6D /* UIButton+CICConstructor.h in Headers */,
+				C6DEFBB51F6AC747003A6F6D /* UIImageView+CICConstructor.h in Headers */,
+				C6AC8F541F6AC34C00389170 /* CICColorMacros.h in Headers */,
+				C6AC8F501F6AC2DD00389170 /* CICFontMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,14 +378,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C64C86021F68411100F9ED60 /* UIImageView+CIBasicMethods.m in Sources */,
-				C64C85FE1F6840F500F9ED60 /* UIButton+CIBasicMethods.m in Sources */,
-				C64C85F51F683FDF00F9ED60 /* UIView+CICConstructor.m in Sources */,
+				C6AC8F581F6AC3C500389170 /* CICImageTitleButton.m in Sources */,
+				C6AC8F5C1F6AC44A00389170 /* UILabel+CICConstructor.m in Sources */,
+				C6DEFBBA1F6ACB35003A6F6D /* UIButton+CICConstructor.m in Sources */,
+				C6DEFBB61F6AC747003A6F6D /* UIImageView+CICConstructor.m in Sources */,
 				C64C860A1F68412700F9ED60 /* UILabel+CIText.m in Sources */,
-				C64C85FA1F68404900F9ED60 /* CICustomImageTitleButton.m in Sources */,
-				C64C86081F68412700F9ED60 /* UILabel+CIBasicMethods.m in Sources */,
-				B04769811F6937E00095BB6C /* CICUILabelConstructor.m in Sources */,
-				B04769831F6937E00095BB6C /* CICUIViewConstructor.m in Sources */,
+				C6A7C4B21F6844D800B2B0A3 /* UIView+CICConstructor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

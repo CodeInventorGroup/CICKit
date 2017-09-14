@@ -7,21 +7,15 @@
 //
 
 #import "UILabel+CIText.h"
-#import "CICSizeConstants.h"
 
 @implementation UILabel (CIText)
 
 /// 单行label设置text,修改frame宽度
-- (void)ci_labelSingleLineWithText:(NSString *)text {
+- (void)cic_labelSingleLineWithText:(NSString *)text {
 
     self.text = text;
     CGSize size = CIC_BOUNDINGSIZE_TEXT(CGSizeMake(CIC_SCREEN_WIDTH, FLT_MAX), text, self.font);
-    [self cic_adjustViewFrameWithWidth:size.width];
-}
-
-//TODO: ....
-- (void)cic_adjustViewFrameWithWidth:(CGFloat)width {
-
+    self.cic.width(size.width);
 }
 
 @end
