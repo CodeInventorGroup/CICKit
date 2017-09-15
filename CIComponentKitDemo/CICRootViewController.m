@@ -24,11 +24,12 @@
     label.cic
         .text(@"welcome to cicomponent😄")
         .textColor([UIColor blackColor])
-        .frame(CGRectMake(0, 64, self.view.bounds.size.width, 44))
+        .frame(CGRectMake(0, 164, self.view.bounds.size.width, 44))
         .textAlignment(NSTextAlignmentCenter)
         .backgroundColor([UIColor greenColor])
         .contentEdgeInset(UIEdgeInsetsMake(0, 10, 0, -10))
-        .copyRange(NSMakeRange(0, 10));
+        .copyRange(NSMakeRange(0, 10))
+        .longPress(CICLabelLongPressCopy);
     [self.view addSubview:label];
 }
 

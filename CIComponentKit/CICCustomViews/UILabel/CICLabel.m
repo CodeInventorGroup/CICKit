@@ -31,6 +31,10 @@
     return self;
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (CICLabelConstructor *)cic {
     return [[CICLabelConstructor alloc] initWithComponent:self];
 }
@@ -71,9 +75,15 @@
     }
 }
 
+- (void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    self.backgroundColor = highlighted ? _highlightedBackgroundColor : _tempBackgroundColor;
+}
+
 - (UILongPressGestureRecognizer *)longGesture {
     if (!_longGesture) {
         _longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressEvent:)];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleMenuHideEvent:) name:UIMenuControllerWillHideMenuNotification object:nil];
         [self addGestureRecognizer:_longGesture];
     }
     return _longGesture;
@@ -83,6 +93,7 @@
     _longPress = longPress;
     
     self.userInteractionEnabled = (_longPress == CICLabelLongPressCopy);
+    self.longGesture.enabled = (_longPress == CICLabelLongPressCopy);
 }
 
 //MARK: - Event
@@ -100,10 +111,26 @@
 }
 
 - (void)handleLongPressEvent: (UILongPressGestureRecognizer *)gesture {
-    if (gesture.state == UIGestureRecognizerStateBegan) {
-        
+    if (_longPress != CICLabelLongPressCopy) {
+        return;
     }
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        [self becomeFirstResponder];
+        UIMenuController *menuController = [UIMenuController sharedMenuController];
+        menuController.menuItems = @[[[UIMenuItem alloc] initWithTitle:@"复制" action:@selector(copyEvent)]];
+        [menuController setTargetRect:self.frame inView:self.superview];
+        [menuController setMenuVisible:YES animated:YES];
+        
+        _tempBackgroundColor = self.backgroundColor;
+        self.highlighted = YES;
+    }
+}
 
+- (void)handleMenuHideEvent:(NSNotification *)notification {
+    if (_longPress == CICLabelLongPressCopy || self.isHighlighted == NO) {
+        return;
+    }
+    self.highlighted = NO;
 }
 
 @end
