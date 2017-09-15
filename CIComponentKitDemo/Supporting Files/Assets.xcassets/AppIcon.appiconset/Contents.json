@@ -51,13 +51,13 @@
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "Icon-Small-40.png",
+      "filename" : "Icon-Notification.png",
       "scale" : "1x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "Icon-Small-40@2x-1.png",
+      "filename" : "Icon-Notification@2x-1.png",
       "scale" : "2x"
     },
     {
@@ -81,7 +81,7 @@
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Icon-Small-40@2x-2.png",
+      "filename" : "Icon-Small-40@2x-1.png",
       "scale" : "2x"
     },
     {
