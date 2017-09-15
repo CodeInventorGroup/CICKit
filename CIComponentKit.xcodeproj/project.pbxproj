@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01FEDD41F6B6FED005CF333 /* CICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B01FEDD21F6B6FED005CF333 /* CICLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B01FEDD51F6B6FED005CF333 /* CICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B01FEDD31F6B6FED005CF333 /* CICLabel.m */; };
 		B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; };
 		B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C64C85981F68300A00F9ED60 /* CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85961F68300A00F9ED60 /* CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -58,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B01FEDD21F6B6FED005CF333 /* CICLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICLabel.h; sourceTree = "<group>"; };
+		B01FEDD31F6B6FED005CF333 /* CICLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICLabel.m; sourceTree = "<group>"; };
 		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85961F68300A00F9ED60 /* CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIComponentKit.h; sourceTree = "<group>"; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B01FEDCD1F6B6F53005CF333 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				B01FEDD21F6B6FED005CF333 /* CICLabel.h */,
+				B01FEDD31F6B6FED005CF333 /* CICLabel.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		C64C85891F68300A00F9ED60 = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +252,7 @@
 		C64C85DD1F68386800F9ED60 /* CICCustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B01FEDCD1F6B6F53005CF333 /* UILabel */,
 				C64C85F61F68404900F9ED60 /* UIButton */,
 			);
 			path = CICCustomViews;
@@ -263,6 +277,7 @@
 				C64C86091F68412700F9ED60 /* UILabel+CIText.h in Headers */,
 				C6AC8F4E1F6AC2C500389170 /* CICConstructorMacros.h in Headers */,
 				C6A7C4B11F6844D800B2B0A3 /* UIView+CICConstructor.h in Headers */,
+				B01FEDD41F6B6FED005CF333 /* CICLabel.h in Headers */,
 				C64C85981F68300A00F9ED60 /* CIComponentKit.h in Headers */,
 				C6AC8F521F6AC32500389170 /* CICSizeMacros.h in Headers */,
 				C6AC8F571F6AC3C500389170 /* CICImageTitleButton.h in Headers */,
@@ -379,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6AC8F581F6AC3C500389170 /* CICImageTitleButton.m in Sources */,
+				B01FEDD51F6B6FED005CF333 /* CICLabel.m in Sources */,
 				C6AC8F5C1F6AC44A00389170 /* UILabel+CICConstructor.m in Sources */,
 				C6DEFBBA1F6ACB35003A6F6D /* UIButton+CICConstructor.m in Sources */,
 				C6DEFBB61F6AC747003A6F6D /* UIImageView+CICConstructor.m in Sources */,
@@ -516,6 +532,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.codeinventor.CIComponentKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -533,6 +550,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.codeinventor.CIComponentKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

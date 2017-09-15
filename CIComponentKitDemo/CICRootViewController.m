@@ -9,6 +9,7 @@
 #import "CICRootViewController.h"
 #import "CIComponentKit.h"
 
+
 @interface CICRootViewController ()
 
 @end
@@ -19,13 +20,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UILabel *label = [UILabel new];
+    CICLabel *label = [CICLabel new];
     label.cic
         .text(@"welcome to cicomponent😄")
         .textColor([UIColor blackColor])
         .frame(CGRectMake(0, 64, self.view.bounds.size.width, 44))
         .textAlignment(NSTextAlignmentCenter)
-        .backgroundColor([UIColor greenColor]);
+        .backgroundColor([UIColor greenColor])
+        .contentEdgeInset(UIEdgeInsetsMake(0, 10, 0, -10))
+        .copyRange(NSMakeRange(0, 10));
     [self.view addSubview:label];
 }
 

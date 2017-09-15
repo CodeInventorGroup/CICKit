@@ -20,6 +20,8 @@
  */
 #define CICConstructorProperty(class, name, parameters...)  @property(nonatomic, copy) class *(^name)(parameters);
 
+
+/// UIView基础扩展
 #define CICConstructorBasicProperties(class)                                \
 CICConstructorProperty(class, x, CGFloat x)                  \
 CICConstructorProperty(class, y, CGFloat y)                  \
@@ -31,6 +33,15 @@ CICConstructorProperty(class, centerY, CGFloat centerY)      \
 CICConstructorProperty(class, center, CGPoint center)        \
 CICConstructorProperty(class, frame, CGRect frame)           \
 CICConstructorProperty(class, backgroundColor, UIColor *color)\
+
+
+/// UILabel基础扩展
+#define CICConstructorUILabelBasicProperties(class)                                     \
+CICConstructorBasicProperties(class)                                                    \
+CICConstructorProperty(class, line, NSInteger num)                                      \
+CICConstructorProperty(class, textColor, UIColor *color)                                \
+CICConstructorProperty(class, text, NSString *string)                                   \
+CICConstructorProperty(class, textAlignment, NSTextAlignment alignment)                 \
 
 
 /// 例子: UILabel(Constructor) 实现ci属性扩展
