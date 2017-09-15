@@ -29,7 +29,8 @@
         .backgroundColor([UIColor greenColor])
         .contentEdgeInset(UIEdgeInsetsMake(0, 10, 0, -10))
         .copyRange(NSMakeRange(0, 10))
-        .longPress(CICLabelLongPressCopy);
+        .longPress(CICLabelLongPressCopy)
+        .highlightedBackgroundColor([UIColor lightGrayColor]);
     [self.view addSubview:label];
 }
 

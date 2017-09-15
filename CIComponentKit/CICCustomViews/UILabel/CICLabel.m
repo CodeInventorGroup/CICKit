@@ -127,7 +127,7 @@
 }
 
 - (void)handleMenuHideEvent:(NSNotification *)notification {
-    if (_longPress == CICLabelLongPressCopy || self.isHighlighted == NO) {
+    if (_longPress != CICLabelLongPressCopy || self.isHighlighted == NO) {
         return;
     }
     self.highlighted = NO;
