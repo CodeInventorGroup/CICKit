@@ -29,11 +29,7 @@
     __weak typeof(&*self) weakSelf = self;
     
     NSLog(@"CICUIViewConstructor %@", [self description]);
-    //MARK: - Layout
-//    _x = ^id(CGFloat x) {
-//        weakSelf.component.frame = CGRectSetX(weakSelf.component.frame, x);
-//        return weakSelf;
-//    };
+
     self.x = ^CICUIViewConstructor *(CGFloat x) {
         weakSelf.component.frame = CGRectSetX(weakSelf.component.frame, x);
         return weakSelf;

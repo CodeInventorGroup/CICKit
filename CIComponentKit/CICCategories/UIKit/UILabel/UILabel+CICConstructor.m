@@ -16,7 +16,6 @@
 
 @implementation CICUILabelConstructor
 
-@dynamic component;
 @dynamic x;
 @dynamic y;
 @dynamic width;
@@ -32,8 +31,8 @@
     [super buildConstructor];
     
     __weak typeof(&*self) weakSelf = self;
-    _text = ^CICUILabelConstructor *(NSString *string) {
-        weakSelf.component.text = string;
+    _text = ^CICUILabelConstructor *(NSString *text) {
+        weakSelf.component.text = text;
         return weakSelf;
     };
     

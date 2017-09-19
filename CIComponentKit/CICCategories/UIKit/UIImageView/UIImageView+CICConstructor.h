@@ -15,6 +15,8 @@ CICConstructorBasicProperties(CICUIImageViewConstructor)
 
 CICConstructorProperty(CICUIImageViewConstructor, imageName, NSString *imageName)
 
+CICConstructorProperty(CICUIImageViewConstructor, contentMode, UIViewContentMode contentMode)
+
 @end
 
 @interface UIImageView (CICConstructor)

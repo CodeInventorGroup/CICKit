@@ -17,6 +17,8 @@ CICConstructorBasicProperties(CICUILabelConstructor)
 
 CICConstructorProperty(CICUILabelConstructor, line, NSInteger num)
 
+CICConstructorProperty(CICUILabelConstructor, font, UIFont *font)
+
 CICConstructorProperty(CICUILabelConstructor, textColor, UIColor *color)
 
 CICConstructorProperty(CICUILabelConstructor, text, NSString *string)

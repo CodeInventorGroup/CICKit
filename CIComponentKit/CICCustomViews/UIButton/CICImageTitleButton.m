@@ -41,24 +41,28 @@
                                                      action:(SEL)action
                                                      margin:(CGFloat)margin {
     
-    CICImageTitleButton *customButton = [[CICImageTitleButton alloc] initWithFrame:frame];
+    CICImageTitleButton *customButton = [[CICImageTitleButton alloc] init];
+    customButton.cic.frame(frame);
     if (backgroundColor) {
-        customButton.backgroundColor = backgroundColor;
+        customButton.cic.backgroundColor(backgroundColor);
     }
     
     //  初始化titleLabel、imageView
     CGFloat titleLabelHeight = font.pointSize;
-//    UILabel *titleLabel = [UILabel ci_labelWithFrame:CGRectMake(0, 0, 0, titleLabelHeight) textColor:titleColor font:font text:title];
     UILabel *titleLabel = [[UILabel alloc] init];
-//    titleLabel.cic.frame(CGRectMake(0, 0, 0, titleLabelHeight))
+    
+    titleLabel.cic.frame(CGRectMake(0, 0, 0, titleLabelHeight))
+                  .textColor(titleColor)
+                  .font(font);
     [titleLabel cic_labelSingleLineWithText:title];
     [customButton addSubview:titleLabel];
     
-    UIImageView *imageView = nil;
-//    UIImageView *imageView = [UIImageView ci_imageViewWithFrame:CGRectZero imageName:imageName];    
     CGSize imageSize = CGSizeEqualToSize(imageViewSize, CGSizeZero) ? [UIImage imageNamed:imageName].size : imageViewSize;
-//    [imageView cic_adjustViewFrameWithWidth:imageSize.width height:imageSize.height];
-    imageView.contentMode = CGSizeEqualToSize(imageViewSize, CGSizeZero) ? UIViewContentModeCenter : UIViewContentModeScaleAspectFill;
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.cic.frame(CGRectZero)
+                 .imageName(imageName)
+                 .size(imageSize)
+                 .contentMode(CGSizeEqualToSize(imageViewSize, CGSizeZero) ? UIViewContentModeCenter : UIViewContentModeScaleAspectFill);
     [customButton addSubview:imageView];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
@@ -73,8 +77,11 @@
             
             CGFloat originX = (width - imageSize.width - margin)/2.0;
             CGFloat maxOriginX = originX + (buttonType == CICustomButtonTypeLeftImageRightTitle ? imageSize.width : CGRectGetWidth(titleLabel.frame)) + margin;
-//            [imageView cic_adjustViewFrameWithOriginX:buttonType == CICustomButtonTypeLeftImageRightTitle ? originX : maxOriginX originY:(height - imageSize.height)/2.0];
-//            [titleLabel cic_adjustViewFrameWithOriginX:buttonType == CICustomButtonTypeLeftTitleRIghtImage ? originX : maxOriginX originY:(height - titleLabelHeight)/2.0];
+            
+            imageView.cic.x(buttonType == CICustomButtonTypeLeftImageRightTitle ? originX : maxOriginX)
+                         .y((height - imageSize.height)/2.0);
+            titleLabel.cic.x(buttonType == CICustomButtonTypeLeftTitleRIghtImage ? originX : maxOriginX)
+                          .y((height - titleLabelHeight)/2.0);
             break;
         }
         case CICustomButtonTypeTopImageBottomTitle:
@@ -82,8 +89,11 @@
             
             CGFloat originY = (height - imageSize.height - margin - titleLabelHeight)/2.0;
             CGFloat maxOriginY = originY + (buttonType == CICustomButtonTypeTopImageBottomTitle ? imageSize.height : titleLabelHeight) + margin;
-//            [imageView cic_adjustViewFrameWithOriginX:(width - imageSize.width)/2.0 originY:buttonType == CICustomButtonTypeTopImageBottomTitle ? originY : maxOriginY];
-//            [titleLabel cic_adjustViewFrameWithOriginX:(width - CGRectGetWidth(titleLabel.frame))/2.0 originY:buttonType == CICustomButtonTypeTopTitleBottomImage ? originY : maxOriginY];
+            
+            imageView.cic.x((width - imageSize.width)/2.0)
+                         .y(buttonType == CICustomButtonTypeTopImageBottomTitle ? originY : maxOriginY);
+            titleLabel.cic.x((width - CGRectGetWidth(titleLabel.frame))/2.0)
+                         .y(buttonType == CICustomButtonTypeTopTitleBottomImage ? originY : maxOriginY);
             break;
         }
     }

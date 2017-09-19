@@ -16,7 +16,6 @@
 
 @implementation CICUIImageViewConstructor
 
-@dynamic component;
 @dynamic x;
 @dynamic y;
 @dynamic width;
@@ -35,6 +34,11 @@
     __weak typeof(&*self) weakSelf = self;
     self.imageName = ^CICUIImageViewConstructor *(NSString *imageName) {
         weakSelf.component.image = [UIImage imageNamed:imageName];
+        return weakSelf;
+    };
+    
+    self.contentMode = ^CICUIImageViewConstructor *(UIViewContentMode contentMode) {
+        weakSelf.component.contentMode = contentMode;
         return weakSelf;
     };
 }
