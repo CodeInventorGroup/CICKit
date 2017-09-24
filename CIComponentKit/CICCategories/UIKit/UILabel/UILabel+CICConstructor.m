@@ -16,16 +16,7 @@
 
 @implementation CICUILabelConstructor
 
-@dynamic x;
-@dynamic y;
-@dynamic width;
-@dynamic height;
-@dynamic centerX;
-@dynamic centerY;
-@dynamic center;
-@dynamic size;
-@dynamic frame;
-@dynamic backgroundColor;
+CICConstructorBasicDynamics()
 
 - (void)buildConstructor {
     [super buildConstructor];
@@ -38,6 +29,11 @@
     
     _line = ^CICUILabelConstructor *(NSInteger num) {
         weakSelf.component.numberOfLines = num;
+        return weakSelf;
+    };
+    
+    self.font = ^CICUILabelConstructor *(UIFont *font) {
+        weakSelf.component.font = font;
         return weakSelf;
     };
     

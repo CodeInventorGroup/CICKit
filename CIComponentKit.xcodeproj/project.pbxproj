@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C3F18031F70F5FE00355627 /* UIButton+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F21F70F5FE00355627 /* UIButton+CICConstructor.h */; };
+		1C3F18031F70F5FE00355627 /* UIButton+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F21F70F5FE00355627 /* UIButton+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3F18041F70F5FE00355627 /* UIButton+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17F31F70F5FE00355627 /* UIButton+CICConstructor.m */; };
-		1C3F18051F70F5FE00355627 /* UIDatePicker+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F51F70F5FE00355627 /* UIDatePicker+CICConstructor.h */; };
+		1C3F18051F70F5FE00355627 /* UIDatePicker+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F51F70F5FE00355627 /* UIDatePicker+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3F18061F70F5FE00355627 /* UIDatePicker+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17F61F70F5FE00355627 /* UIDatePicker+CICConstructor.m */; };
-		1C3F18071F70F5FE00355627 /* UIImageView+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F81F70F5FE00355627 /* UIImageView+CICConstructor.h */; };
+		1C3F18071F70F5FE00355627 /* UIImageView+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F81F70F5FE00355627 /* UIImageView+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3F18081F70F5FE00355627 /* UIImageView+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17F91F70F5FE00355627 /* UIImageView+CICConstructor.m */; };
-		1C3F18091F70F5FE00355627 /* UILabel+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17FB1F70F5FE00355627 /* UILabel+CICConstructor.h */; };
+		1C3F18091F70F5FE00355627 /* UILabel+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17FB1F70F5FE00355627 /* UILabel+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3F180A1F70F5FE00355627 /* UILabel+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17FC1F70F5FE00355627 /* UILabel+CICConstructor.m */; };
-		1C3F180B1F70F5FE00355627 /* UILabel+CIText.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17FD1F70F5FE00355627 /* UILabel+CIText.h */; };
+		1C3F180B1F70F5FE00355627 /* UILabel+CIText.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17FD1F70F5FE00355627 /* UILabel+CIText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3F180C1F70F5FE00355627 /* UILabel+CIText.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17FE1F70F5FE00355627 /* UILabel+CIText.m */; };
-		1C3F180D1F70F5FE00355627 /* UIView+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F18001F70F5FE00355627 /* UIView+CICConstructor.h */; };
+		1C3F180D1F70F5FE00355627 /* UIView+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F18001F70F5FE00355627 /* UIView+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3F180E1F70F5FE00355627 /* UIView+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F18011F70F5FE00355627 /* UIView+CICConstructor.m */; };
-		1C3F18121F70F73600355627 /* NSString+CICDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F18101F70F73600355627 /* NSString+CICDate.h */; };
+		1C3F18121F70F73600355627 /* NSString+CICDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F18101F70F73600355627 /* NSString+CICDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3F18131F70F73600355627 /* NSString+CICDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F18111F70F73600355627 /* NSString+CICDate.m */; };
-		1C3F18171F70FD5C00355627 /* NSDate+CICString.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F18151F70FD5C00355627 /* NSDate+CICString.h */; };
+		1C3F18171F70FD5C00355627 /* NSDate+CICString.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F18151F70FD5C00355627 /* NSDate+CICString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3F18181F70FD5C00355627 /* NSDate+CICString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F18161F70FD5C00355627 /* NSDate+CICString.m */; };
 		1C42264E1F70BC6600EAF1A1 /* CICImageTitleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C4226331F70BC6600EAF1A1 /* CICImageTitleButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C42264F1F70BC6600EAF1A1 /* CICImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4226341F70BC6600EAF1A1 /* CICImageTitleButton.m */; };
@@ -40,6 +40,12 @@
 		C64C85C51F6832A300F9ED60 /* CICRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85C41F6832A300F9ED60 /* CICRootViewController.m */; };
 		C64C85C71F6832E700F9ED60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */; };
 		C64C85CA1F6834BE00F9ED60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C64C85C91F6834BE00F9ED60 /* Info.plist */; };
+		C6F69C711F763EDE0014ABD0 /* UISearchBar+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C6F1F763EDE0014ABD0 /* UISearchBar+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6F69C721F763EDE0014ABD0 /* UISearchBar+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C701F763EDE0014ABD0 /* UISearchBar+CICConstructor.m */; };
+		C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C861F76569F0014ABD0 /* CICSegmentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6F69C891F76569F0014ABD0 /* CICSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C871F76569F0014ABD0 /* CICSegmentView.m */; };
+		C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C951F765D170014ABD0 /* UIImage+CICColor.h */; };
+		C6F69C981F765D170014ABD0 /* UIImage+CICColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C961F765D170014ABD0 /* UIImage+CICColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +108,12 @@
 		C64C85C41F6832A300F9ED60 /* CICRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICRootViewController.m; sourceTree = "<group>"; };
 		C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C64C85C91F6834BE00F9ED60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6F69C6F1F763EDE0014ABD0 /* UISearchBar+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+CICConstructor.h"; sourceTree = "<group>"; };
+		C6F69C701F763EDE0014ABD0 /* UISearchBar+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+CICConstructor.m"; sourceTree = "<group>"; };
+		C6F69C861F76569F0014ABD0 /* CICSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICSegmentView.h; sourceTree = "<group>"; };
+		C6F69C871F76569F0014ABD0 /* CICSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICSegmentView.m; sourceTree = "<group>"; };
+		C6F69C951F765D170014ABD0 /* UIImage+CICColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CICColor.h"; sourceTree = "<group>"; };
+		C6F69C961F765D170014ABD0 /* UIImage+CICColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CICColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +138,8 @@
 		1C3F17F01F70F5FE00355627 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C6F69C941F765CEB0014ABD0 /* UIImage */,
+				C6F69C6E1F763EDE0014ABD0 /* UISearchBar */,
 				1C3F17F11F70F5FE00355627 /* UIButton */,
 				1C3F17F41F70F5FE00355627 /* UIDatePicker */,
 				1C3F17F71F70F5FE00355627 /* UIImageView */,
@@ -212,6 +226,7 @@
 		1C4226311F70BC6600EAF1A1 /* CICCustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				C6F69C851F7656820014ABD0 /* UISegmentedControl */,
 				1C4226321F70BC6600EAF1A1 /* UIButton */,
 				1C4226351F70BC6600EAF1A1 /* UILabel */,
 			);
@@ -317,6 +332,33 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C6F69C6E1F763EDE0014ABD0 /* UISearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				C6F69C6F1F763EDE0014ABD0 /* UISearchBar+CICConstructor.h */,
+				C6F69C701F763EDE0014ABD0 /* UISearchBar+CICConstructor.m */,
+			);
+			path = UISearchBar;
+			sourceTree = "<group>";
+		};
+		C6F69C851F7656820014ABD0 /* UISegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				C6F69C861F76569F0014ABD0 /* CICSegmentView.h */,
+				C6F69C871F76569F0014ABD0 /* CICSegmentView.m */,
+			);
+			path = UISegmentedControl;
+			sourceTree = "<group>";
+		};
+		C6F69C941F765CEB0014ABD0 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				C6F69C951F765D170014ABD0 /* UIImage+CICColor.h */,
+				C6F69C961F765D170014ABD0 /* UIImage+CICColor.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -324,20 +366,23 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C4226521F70BC6600EAF1A1 /* CICColorMacros.h in Headers */,
 				1C3F18031F70F5FE00355627 /* UIButton+CICConstructor.h in Headers */,
 				1C3F18091F70F5FE00355627 /* UILabel+CICConstructor.h in Headers */,
+				C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */,
 				1C3F18071F70F5FE00355627 /* UIImageView+CICConstructor.h in Headers */,
 				1C3F18121F70F73600355627 /* NSString+CICDate.h in Headers */,
 				1C3F18051F70F5FE00355627 /* UIDatePicker+CICConstructor.h in Headers */,
+				1C3F18171F70FD5C00355627 /* NSDate+CICString.h in Headers */,
+				1C3F180D1F70F5FE00355627 /* UIView+CICConstructor.h in Headers */,
+				C6F69C711F763EDE0014ABD0 /* UISearchBar+CICConstructor.h in Headers */,
+				1C3F180B1F70F5FE00355627 /* UILabel+CIText.h in Headers */,
+				1C4226521F70BC6600EAF1A1 /* CICColorMacros.h in Headers */,
 				1C4226561F70BC6600EAF1A1 /* CIComponentKit.h in Headers */,
 				1C42264E1F70BC6600EAF1A1 /* CICImageTitleButton.h in Headers */,
-				1C3F18171F70FD5C00355627 /* NSDate+CICString.h in Headers */,
 				1C4226531F70BC6600EAF1A1 /* CICConstructorMacros.h in Headers */,
-				1C3F180D1F70F5FE00355627 /* UIView+CICConstructor.h in Headers */,
-				1C3F180B1F70F5FE00355627 /* UILabel+CIText.h in Headers */,
 				1C4226501F70BC6600EAF1A1 /* CICLabel.h in Headers */,
 				1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */,
+				C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */,
 				1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,11 +492,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C4226511F70BC6600EAF1A1 /* CICLabel.m in Sources */,
+				C6F69C981F765D170014ABD0 /* UIImage+CICColor.m in Sources */,
 				1C3F180A1F70F5FE00355627 /* UILabel+CICConstructor.m in Sources */,
 				1C3F18041F70F5FE00355627 /* UIButton+CICConstructor.m in Sources */,
 				1C3F18181F70FD5C00355627 /* NSDate+CICString.m in Sources */,
+				C6F69C891F76569F0014ABD0 /* CICSegmentView.m in Sources */,
 				1C3F180E1F70F5FE00355627 /* UIView+CICConstructor.m in Sources */,
 				1C3F18081F70F5FE00355627 /* UIImageView+CICConstructor.m in Sources */,
+				C6F69C721F763EDE0014ABD0 /* UISearchBar+CICConstructor.m in Sources */,
 				1C3F18131F70F73600355627 /* NSString+CICDate.m in Sources */,
 				1C3F180C1F70F5FE00355627 /* UILabel+CIText.m in Sources */,
 				1C3F18061F70F5FE00355627 /* UIDatePicker+CICConstructor.m in Sources */,

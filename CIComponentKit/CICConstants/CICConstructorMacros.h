@@ -9,6 +9,8 @@
 #ifndef CICConstructorMacros_h
 #define CICConstructorMacros_h
 
+#import <UIKit/UIkit.h>
+
 /**
  宏定义尚声明一个属性,比如
  CICUIConstructor(CICUIViewConstructor, backgroundColor, UIColor *color)
@@ -33,6 +35,20 @@ CICConstructorProperty(class, centerY, CGFloat centerY)      \
 CICConstructorProperty(class, center, CGPoint center)        \
 CICConstructorProperty(class, frame, CGRect frame)           \
 CICConstructorProperty(class, backgroundColor, UIColor *color)\
+
+#define CICConstructorBasicDynamics()                            \
+@dynamic x;                                                     \
+@dynamic y;                                                     \
+@dynamic width;                                                 \
+@dynamic height;                                                \
+@dynamic centerX;                                               \
+@dynamic centerY;                                               \
+@dynamic center;                                                \
+@dynamic size;                                                  \
+@dynamic frame;                                                 \
+@dynamic backgroundColor;                                       \
+@dynamic hidden;                                                \
+@dynamic tag;                                                   \
 
 
 /// UILabel基础扩展

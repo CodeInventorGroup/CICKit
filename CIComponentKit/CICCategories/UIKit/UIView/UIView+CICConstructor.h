@@ -45,6 +45,9 @@ CICConstructorProperty(CICUIViewConstructor, frame, CGRect frame)
 
 CICConstructorProperty(CICUIViewConstructor, backgroundColor, UIColor *color)
 
+CICConstructorProperty(CICUIViewConstructor, hidden, BOOL hidden)
+
+CICConstructorProperty(CICUIViewConstructor, tag, NSInteger tag)
 
 - (instancetype)initWithComponent:(T)component;
 

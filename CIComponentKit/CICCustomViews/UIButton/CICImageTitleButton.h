@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 
 /// 图片、文字排列位置类型
 typedef NS_ENUM(NSUInteger, CICustomButtonType) {
@@ -25,27 +24,27 @@ typedef NS_ENUM(NSUInteger, CICustomButtonType) {
 
     /// 自定义button实例(任意buttonType的titleLabel、imageView均居中展示)(点击事件为TapGestue)
 + (CICImageTitleButton *)cic_customButtonWithButtonType:(CICustomButtonType)buttonType
-                                                  frame:(CGRect)frame
-                                                  title:(NSString *)title
-                                             titleColor:(UIColor *)titleColor
-                                                   font:(UIFont *)font
-                                              imageName:(NSString *)imageName
-                                        backgroundColor:(UIColor *)backgroundColor
-                                                 target:(id)target
-                                                 action:(SEL)action
-                                                 margin:(CGFloat)margin;
+                                                      frame:(CGRect)frame
+                                                      title:(NSString *)title
+                                                 titleColor:(UIColor *)titleColor
+                                                       font:(UIFont *)font
+                                                  imageName:(NSString *)imageName
+                                            backgroundColor:(UIColor *)backgroundColor
+                                                     target:(id)target
+                                                     action:(SEL)action
+                                                     margin:(CGFloat)margin;
     
     /// 自定义button实例(设置imageView的size大小，不根据image的大小适配)
 + (CICImageTitleButton *)cic_customButtonWithButtonType:(CICustomButtonType)buttonType
-                                                  frame:(CGRect)frame
-                                                  title:(NSString *)title
-                                             titleColor:(UIColor *)titleColor
-                                                   font:(UIFont *)font
-                                              imageName:(NSString *)imageName
-                                          imageViewSize:(CGSize)imageViewSize
-                                        backgroundColor:(UIColor *)backgroundColor
-                                                 target:(id)target
-                                                 action:(SEL)action
-                                                 margin:(CGFloat)margin;
+                                                      frame:(CGRect)frame
+                                                      title:(NSString *)title
+                                                 titleColor:(UIColor *)titleColor
+                                                       font:(UIFont *)font
+                                                  imageName:(NSString *)imageName
+                                              imageViewSize:(CGSize)imageViewSize
+                                            backgroundColor:(UIColor *)backgroundColor
+                                                     target:(id)target
+                                                     action:(SEL)action
+                                                     margin:(CGFloat)margin;
 
 @end

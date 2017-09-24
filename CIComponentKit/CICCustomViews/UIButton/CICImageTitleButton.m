@@ -15,31 +15,31 @@
 
     /// 自定义button实例(任意buttonType的titleLabel、imageView均居中展示)(点击事件为TapGestue)
 + (CICImageTitleButton *)cic_customButtonWithButtonType:(CICustomButtonType)buttonType
-                                                      frame:(CGRect)frame
-                                                      title:(NSString *)title
-                                                 titleColor:(UIColor *)titleColor
-                                                       font:(UIFont *)font
-                                                  imageName:(NSString *)imageName
-                                            backgroundColor:(UIColor *)backgroundColor
-                                                     target:(id)target
-                                                     action:(SEL)action
-                                                     margin:(CGFloat)margin {
+                                                  frame:(CGRect)frame
+                                                  title:(NSString *)title
+                                             titleColor:(UIColor *)titleColor
+                                                   font:(UIFont *)font
+                                              imageName:(NSString *)imageName
+                                        backgroundColor:(UIColor *)backgroundColor
+                                                 target:(id)target
+                                                 action:(SEL)action
+                                                 margin:(CGFloat)margin {
     
     return [CICImageTitleButton cic_customButtonWithButtonType:buttonType frame:frame title:title titleColor:titleColor font:font imageName:imageName imageViewSize:CGSizeZero backgroundColor:backgroundColor target:target action:action margin:margin];
 }
     
     /// 自定义button实例(设置imageView的size大小，不根据image的大小适配)
 + (CICImageTitleButton *)cic_customButtonWithButtonType:(CICustomButtonType)buttonType
-                                                      frame:(CGRect)frame
-                                                      title:(NSString *)title
-                                                 titleColor:(UIColor *)titleColor
-                                                       font:(UIFont *)font
-                                                  imageName:(NSString *)imageName
-                                              imageViewSize:(CGSize)imageViewSize
-                                            backgroundColor:(UIColor *)backgroundColor
-                                                     target:(id)target
-                                                     action:(SEL)action
-                                                     margin:(CGFloat)margin {
+                                                  frame:(CGRect)frame
+                                                  title:(NSString *)title
+                                             titleColor:(UIColor *)titleColor
+                                                   font:(UIFont *)font
+                                              imageName:(NSString *)imageName
+                                          imageViewSize:(CGSize)imageViewSize
+                                        backgroundColor:(UIColor *)backgroundColor
+                                                 target:(id)target
+                                                 action:(SEL)action
+                                                 margin:(CGFloat)margin {
     
     CICImageTitleButton *customButton = [[CICImageTitleButton alloc] init];
     customButton.cic.frame(frame);
@@ -50,7 +50,6 @@
     //  初始化titleLabel、imageView
     CGFloat titleLabelHeight = font.pointSize;
     UILabel *titleLabel = [[UILabel alloc] init];
-    
     titleLabel.cic.frame(CGRectMake(0, 0, 0, titleLabelHeight))
                   .textColor(titleColor)
                   .font(font);

@@ -79,6 +79,16 @@
         weakSelf.component.backgroundColor = color;
         return weakSelf;
     };
+    
+    _tag = ^CICUIViewConstructor *(NSInteger tag) {
+        weakSelf.component.tag = tag;
+        return weakSelf;
+    };
+    
+    self.hidden = ^CICUIViewConstructor *(BOOL hidden) {
+        weakSelf.component.hidden = hidden;
+        return weakSelf;
+    };
 }
     
 - (void)dealloc {

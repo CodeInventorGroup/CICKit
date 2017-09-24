@@ -16,16 +16,7 @@
 
 @implementation CICUIImageViewConstructor
 
-@dynamic x;
-@dynamic y;
-@dynamic width;
-@dynamic height;
-@dynamic centerX;
-@dynamic centerY;
-@dynamic center;
-@dynamic size;
-@dynamic frame;
-@dynamic backgroundColor;
+CICConstructorBasicDynamics()
 
 - (void)buildConstructor {
 
