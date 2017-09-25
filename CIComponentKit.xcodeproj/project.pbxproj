@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		B01FEDD41F6B6FED005CF333 /* CICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B01FEDD21F6B6FED005CF333 /* CICLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B01FEDD51F6B6FED005CF333 /* CICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B01FEDD31F6B6FED005CF333 /* CICLabel.m */; };
 		B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */; };
-=======
 		1C3F18031F70F5FE00355627 /* UIButton+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F21F70F5FE00355627 /* UIButton+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C3F18041F70F5FE00355627 /* UIButton+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17F31F70F5FE00355627 /* UIButton+CICConstructor.m */; };
 		1C3F18051F70F5FE00355627 /* UIDatePicker+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F51F70F5FE00355627 /* UIDatePicker+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,7 +35,6 @@
 		1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263B1F70BC6600EAF1A1 /* CICFontMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263C1F70BC6600EAF1A1 /* CICSizeMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C4226561F70BC6600EAF1A1 /* CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263D1F70BC6600EAF1A1 /* CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
->>>>>>> 09195e6b476d2fb6bd20456060d08be71bf30ed8
 		B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; };
 		B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
@@ -78,12 +75,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
 		B01FEDD21F6B6FED005CF333 /* CICLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICLabel.h; sourceTree = "<group>"; };
 		B01FEDD31F6B6FED005CF333 /* CICLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICLabel.m; sourceTree = "<group>"; };
 		B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICDemoViewController.h; sourceTree = "<group>"; };
 		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
-=======
 		1C3F17F21F70F5FE00355627 /* UIButton+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CICConstructor.h"; sourceTree = "<group>"; };
 		1C3F17F31F70F5FE00355627 /* UIButton+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CICConstructor.m"; sourceTree = "<group>"; };
 		1C3F17F51F70F5FE00355627 /* UIDatePicker+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDatePicker+CICConstructor.h"; sourceTree = "<group>"; };
@@ -109,7 +104,6 @@
 		1C42263B1F70BC6600EAF1A1 /* CICFontMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICFontMacros.h; sourceTree = "<group>"; };
 		1C42263C1F70BC6600EAF1A1 /* CICSizeMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICSizeMacros.h; sourceTree = "<group>"; };
 		1C42263D1F70BC6600EAF1A1 /* CIComponentKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIComponentKit.h; sourceTree = "<group>"; };
->>>>>>> 09195e6b476d2fb6bd20456060d08be71bf30ed8
 		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85B91F68307300F9ED60 /* CICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICAppDelegate.h; sourceTree = "<group>"; };
