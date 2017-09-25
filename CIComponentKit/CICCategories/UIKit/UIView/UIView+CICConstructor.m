@@ -29,11 +29,7 @@
     __weak typeof(&*self) weakSelf = self;
     
     NSLog(@"CICUIViewConstructor %@", [self description]);
-    //MARK: - Layout
-//    _x = ^id(CGFloat x) {
-//        weakSelf.component.frame = CGRectSetX(weakSelf.component.frame, x);
-//        return weakSelf;
-//    };
+
     self.x = ^CICUIViewConstructor *(CGFloat x) {
         weakSelf.component.frame = CGRectSetX(weakSelf.component.frame, x);
         return weakSelf;
@@ -81,6 +77,16 @@
     //MARK: - Render
     _backgroundColor = ^CICUIViewConstructor *(UIColor *color) {
         weakSelf.component.backgroundColor = color;
+        return weakSelf;
+    };
+    
+    _tag = ^CICUIViewConstructor *(NSInteger tag) {
+        weakSelf.component.tag = tag;
+        return weakSelf;
+    };
+    
+    self.hidden = ^CICUIViewConstructor *(BOOL hidden) {
+        weakSelf.component.hidden = hidden;
         return weakSelf;
     };
 }

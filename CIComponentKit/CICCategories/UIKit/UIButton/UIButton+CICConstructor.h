@@ -19,6 +19,8 @@ CICConstructorProperty(CICUIButtonConstructor, titleColor, UIColor *color)
 
 CICConstructorProperty(CICUIButtonConstructor, font, UIFont *font)
 
+CICConstructorProperty(CICUIButtonConstructor, image, NSString *imageName)
+
 CICConstructorProperty(CICUIButtonConstructor, cornerRadius, CGFloat cornerRadius)
 
 CICConstructorProperty(CICUIButtonConstructor, borderWidth, CGFloat borderWidth)

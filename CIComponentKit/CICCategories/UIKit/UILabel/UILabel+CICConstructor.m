@@ -16,29 +16,24 @@
 
 @implementation CICUILabelConstructor
 
-@dynamic component;
-@dynamic x;
-@dynamic y;
-@dynamic width;
-@dynamic height;
-@dynamic centerX;
-@dynamic centerY;
-@dynamic center;
-@dynamic size;
-@dynamic frame;
-@dynamic backgroundColor;
+CICConstructorBasicDynamics()
 
 - (void)buildConstructor {
     [super buildConstructor];
     
     __weak typeof(&*self) weakSelf = self;
-    _text = ^CICUILabelConstructor *(NSString *string) {
-        weakSelf.component.text = string;
+    _text = ^CICUILabelConstructor *(NSString *text) {
+        weakSelf.component.text = text;
         return weakSelf;
     };
     
     _line = ^CICUILabelConstructor *(NSInteger num) {
         weakSelf.component.numberOfLines = num;
+        return weakSelf;
+    };
+    
+    self.font = ^CICUILabelConstructor *(UIFont *font) {
+        weakSelf.component.font = font;
         return weakSelf;
     };
     

@@ -8,8 +8,6 @@
 
 #import "CICLabel.h"
 
-
-
 @interface CICLabel ()
 
 @property (nonatomic, strong) UIColor *tempBackgroundColor;
@@ -145,23 +143,12 @@
 
 @implementation CICLabelConstructor
 
-@dynamic component;
-@dynamic x;
-@dynamic y;
-@dynamic width;
-@dynamic height;
-@dynamic centerX;
-@dynamic centerY;
-@dynamic center;
-@dynamic size;
-@dynamic frame;
-@dynamic backgroundColor;
+CICConstructorBasicDynamics()
 
 @dynamic line;
 @dynamic text;
 @dynamic textColor;
 @dynamic textAlignment;
-
 
 - (void)buildConstructor {
     [super buildConstructor];

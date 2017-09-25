@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, CICustomButtonType) {
 };
 
 @interface CICImageTitleButton : UIView
-    
+
     /// 自定义button实例(任意buttonType的titleLabel、imageView均居中展示)(点击事件为TapGestue)
 + (CICImageTitleButton *)cic_customButtonWithButtonType:(CICustomButtonType)buttonType
                                                       frame:(CGRect)frame
