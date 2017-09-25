@@ -17,7 +17,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     CICRootViewController *rootViewController = [[CICRootViewController alloc] init];
-    self.window.rootViewController = rootViewController;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     [self.window makeKeyAndVisible];
     return YES;
 }

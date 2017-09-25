@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B01FEDD41F6B6FED005CF333 /* CICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B01FEDD21F6B6FED005CF333 /* CICLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B01FEDD51F6B6FED005CF333 /* CICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B01FEDD31F6B6FED005CF333 /* CICLabel.m */; };
+		B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */; };
 		B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; };
 		B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C64C85981F68300A00F9ED60 /* CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C64C85961F68300A00F9ED60 /* CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -62,6 +63,8 @@
 /* Begin PBXFileReference section */
 		B01FEDD21F6B6FED005CF333 /* CICLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICLabel.h; sourceTree = "<group>"; };
 		B01FEDD31F6B6FED005CF333 /* CICLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICLabel.m; sourceTree = "<group>"; };
+		B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICDemoViewController.h; sourceTree = "<group>"; };
+		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
 		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85961F68300A00F9ED60 /* CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIComponentKit.h; sourceTree = "<group>"; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +162,8 @@
 				C64C85C31F6832A300F9ED60 /* CICRootViewController.h */,
 				C64C85C41F6832A300F9ED60 /* CICRootViewController.m */,
 				C64C85BC1F68321F00F9ED60 /* Supporting Files */,
+				B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */,
+				B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */,
 			);
 			path = CIComponentKitDemo;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64C85C51F6832A300F9ED60 /* CICRootViewController.m in Sources */,
+				B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */,
 				C64C85C21F68321F00F9ED60 /* main.m in Sources */,
 				C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */,
 			);
