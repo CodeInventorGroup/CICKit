@@ -9,6 +9,8 @@
 #import "CICRootViewController.h"
 #import "CIComponentKit.h"
 
+#import "CICDemoViewController.h"
+
 @interface CICRootViewController ()
 
 @end
@@ -30,6 +32,12 @@
         .longPress(CICLabelLongPressCopy)
         .highlightedBackgroundColor([UIColor lightGrayColor]);
     [self.view addSubview:label];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    CICDemoViewController *vc = [CICDemoViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
