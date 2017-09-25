@@ -33,6 +33,8 @@
 		1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263C1F70BC6600EAF1A1 /* CICSizeMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C4226561F70BC6600EAF1A1 /* CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263D1F70BC6600EAF1A1 /* CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */; };
+		B03977C21F78A5E20004C256 /* UIColor+CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B03977C31F78A5E20004C256 /* UIColor+CIComponentKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */; };
 		B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; };
 		B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
@@ -100,6 +102,8 @@
 		1C42263D1F70BC6600EAF1A1 /* CIComponentKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIComponentKit.h; sourceTree = "<group>"; };
 		B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICDemoViewController.h; sourceTree = "<group>"; };
 		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
+		B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CIComponentKit.h"; sourceTree = "<group>"; };
+		B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CIComponentKit.m"; sourceTree = "<group>"; };
 		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85B91F68307300F9ED60 /* CICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICAppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 		1C3F17F01F70F5FE00355627 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				B03977BF1F78A5950004C256 /* UIColor */,
 				C6F69C941F765CEB0014ABD0 /* UIImage */,
 				C6F69C6E1F763EDE0014ABD0 /* UISearchBar */,
 				1C3F17F11F70F5FE00355627 /* UIButton */,
@@ -274,6 +279,15 @@
 			path = CICCategories;
 			sourceTree = "<group>";
 		};
+		B03977BF1F78A5950004C256 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */,
+				B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		C64C85891F68300A00F9ED60 = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +400,7 @@
 				1C42264E1F70BC6600EAF1A1 /* CICImageTitleButton.h in Headers */,
 				1C4226531F70BC6600EAF1A1 /* CICConstructorMacros.h in Headers */,
 				1C4226501F70BC6600EAF1A1 /* CICLabel.h in Headers */,
+				B03977C21F78A5E20004C256 /* UIColor+CIComponentKit.h in Headers */,
 				1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */,
 				C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */,
 				1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */,
@@ -496,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03977C31F78A5E20004C256 /* UIColor+CIComponentKit.m in Sources */,
 				1C4226511F70BC6600EAF1A1 /* CICLabel.m in Sources */,
 				C6F69C981F765D170014ABD0 /* UIImage+CICColor.m in Sources */,
 				1C3F180A1F70F5FE00355627 /* UILabel+CICConstructor.m in Sources */,
