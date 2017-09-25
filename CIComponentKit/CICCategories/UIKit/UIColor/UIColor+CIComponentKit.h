@@ -15,9 +15,8 @@ typedef struct {
     float alpha;
 } CICColorBox;
 
-#define CICColorMake(red,green,blue,alpha) ({    \
-CICColorBox color = {red, green, blue, alpha};  \
-[UIColor cic_srgbColorWithBox: color];   \
+#define CICColorMake(red,green,blue,alpha) ({                         \
+[UIColor cic_srgbColorWithRed:red Green:green Blue:blue Aplha:alpha]; \
 }) \
 
 @interface UIColor (CIComponentKit)

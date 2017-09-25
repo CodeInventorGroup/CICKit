@@ -26,8 +26,9 @@
 //    self.view.backgroundColor = [UIColor cic_srgbColorWithBox: color];
     self.view.backgroundColor = CICColorMake(211, 121, 124, 0.8);
     
-    CICLabel *label = [CICLabel new];
-    label.cic
+    [self.view addSubview:({
+        CICLabel *label = [CICLabel new];
+        label.cic
         .text(@"welcome to cicomponent😄")
         .textColor([UIColor blackColor])
         .frame(CGRectMake(0, 164, self.view.bounds.size.width, 44))
@@ -37,7 +38,8 @@
         .copyRange(NSMakeRange(0, 10))
         .longPress(CICLabelLongPressCopy)
         .highlightedBackgroundColor([UIColor cic_p3RandomColor]);
-    [self.view addSubview:label];
+        label;
+    })];
 }
 
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
