@@ -20,7 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor cic_p3RandomColor];
+    self.title = [[NSBundle mainBundle] bundleIdentifier];
+    
+//    CICColorBox color = {211, 121, 124, 0.8};
+//    self.view.backgroundColor = [UIColor cic_srgbColorWithBox: color];
+    self.view.backgroundColor = CICColorMake(211, 121, 124, 0.8);
     
     CICLabel *label = [CICLabel new];
     label.cic

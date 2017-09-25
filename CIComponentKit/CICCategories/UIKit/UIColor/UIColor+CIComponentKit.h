@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef struct {
+    float red;
+    float green;
+    float blue;
+    float alpha;
+} CICColorBox;
+
+#define CICColorMake(red,green,blue,alpha) ({    \
+CICColorBox color = {red, green, blue, alpha};  \
+[UIColor cic_srgbColorWithBox: color];   \
+}) \
+
 @interface UIColor (CIComponentKit)
 
 /**
@@ -43,5 +55,7 @@
 
 /// srgb color
 + (instancetype)cic_srgbColorWithRed:(CGFloat)red Green:(CGFloat)green Blue:(CGFloat)blue Aplha:(CGFloat)alpha;
+
++ (instancetype)cic_srgbColorWithBox:(CICColorBox)box;
 
 @end

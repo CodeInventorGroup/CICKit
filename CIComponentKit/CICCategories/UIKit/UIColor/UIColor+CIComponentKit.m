@@ -47,4 +47,8 @@ CGFloat CGFloat255Random() {
     return [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];
 }
 
++ (instancetype)cic_srgbColorWithBox:(CICColorBox)box {
+    return [UIColor cic_srgbColorWithRed:box.red Green:box.green Blue:box.blue Aplha:box.alpha];
+}
+
 @end
