@@ -56,11 +56,6 @@ CICConstructorBasicDynamics()
         return weakSelf;
     };
     
-    self.cornerRadius = ^CICSegmentViewConstructor *(NSInteger cornerRadius) {
-        weakSelf.component.cornerRadius = cornerRadius;
-        return weakSelf;
-    };
-    
     self.selectedIndex = ^CICSegmentViewConstructor *(NSInteger selectedIndex) {
         weakSelf.component.selectedIndex = selectedIndex;
         return weakSelf;

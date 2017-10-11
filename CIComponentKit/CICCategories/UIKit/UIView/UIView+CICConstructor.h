@@ -49,6 +49,15 @@ CICConstructorProperty(CICUIViewConstructor, hidden, BOOL hidden)
 
 CICConstructorProperty(CICUIViewConstructor, tag, NSInteger tag)
 
+CICConstructorProperty(CICUIViewConstructor, cornerRadius, CGFloat cornerRadius)
+
+CICConstructorProperty(CICUIViewConstructor, masksToBounds, BOOL masksToBounds)
+
+CICConstructorProperty(CICUIViewConstructor, borderWidth, CGFloat borderWidth)
+
+CICConstructorProperty(CICUIViewConstructor, borderColor, UIColor *borderColor)
+
+
 - (instancetype)initWithComponent:(T)component;
 
 @end

@@ -25,6 +25,8 @@ CICConstructorProperty(CICUISearchBarConstructor, searchBarStyle, UISearchBarSty
 
 CICConstructorProperty(CICUISearchBarConstructor, delegate, id<UISearchBarDelegate> delegate)
 
+CICConstructorProperty(CICUISearchBarConstructor, backgroundImage, UIImage *image)
+
 @end
 
 @interface UISearchBar (CICConstructor)

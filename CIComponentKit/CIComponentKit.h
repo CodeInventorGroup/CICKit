@@ -23,6 +23,5 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 
 //MARK: - UIKit Extensions
 #import "UIColor+CIComponentKit.h"
-#import "CICLabel.h"
-#import "UILabel+CICConstructor.h"
+#import "UIImageView+CICConstructor.h"
 #import "UILabel+CIText.h"

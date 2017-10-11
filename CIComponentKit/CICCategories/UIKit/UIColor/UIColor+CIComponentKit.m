@@ -34,9 +34,9 @@ CGFloat CGFloat255Random() {
 
 + (instancetype)cic_hexColor:(UInt32)hexValue alpha:(float)alpha {
     CGFloat red = (CGFloat)((hexValue & 0xFF0000) >> 16) / 255.0;
-    CGFloat green = (CGFloat)((hexValue & 0xFF00) >> 16) / 255.0;
-    CGFloat blue = (CGFloat)((hexValue & 0xFF) >> 16) / 255.0;
-    return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    CGFloat green = (CGFloat)((hexValue & 0xFF00) >> 8) / 255.0;
+    CGFloat blue = (CGFloat)(hexValue & 0xFF) / 255.0;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 //MARK: - srgb color

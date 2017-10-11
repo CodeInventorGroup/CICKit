@@ -89,6 +89,26 @@
         weakSelf.component.hidden = hidden;
         return weakSelf;
     };
+    
+    self.cornerRadius = ^CICUIViewConstructor *(CGFloat cornerRadius) {
+        weakSelf.component.layer.cornerRadius = cornerRadius;
+        return weakSelf;
+    };
+    
+    self.masksToBounds = ^CICUIViewConstructor *(BOOL masksToBounds) {
+        weakSelf.component.layer.masksToBounds = masksToBounds;
+        return weakSelf;
+    };
+    
+    self.borderWidth = ^CICUIViewConstructor *(CGFloat borderWidth) {
+        weakSelf.component.layer.borderWidth = borderWidth;
+        return weakSelf;
+    };
+    
+    self.borderColor = ^CICUIViewConstructor *(UIColor *borderColor) {
+        weakSelf.component.layer.borderColor = borderColor.CGColor;
+        return weakSelf;
+    };
 }
     
 - (void)dealloc {

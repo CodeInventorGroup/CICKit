@@ -36,7 +36,7 @@
 		B03977C21F78A5E20004C256 /* UIColor+CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B03977C31F78A5E20004C256 /* UIColor+CIComponentKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */; };
 		B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; };
-		B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B06474681F68436B0009A826 /* CIComponentKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
 		C64C85C01F68321F00F9ED60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64C85BD1F68321F00F9ED60 /* Assets.xcassets */; };
 		C64C85C21F68321F00F9ED60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BF1F68321F00F9ED60 /* main.m */; };
@@ -47,7 +47,7 @@
 		C6F69C721F763EDE0014ABD0 /* UISearchBar+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C701F763EDE0014ABD0 /* UISearchBar+CICConstructor.m */; };
 		C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C861F76569F0014ABD0 /* CICSegmentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6F69C891F76569F0014ABD0 /* CICSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C871F76569F0014ABD0 /* CICSegmentView.m */; };
-		C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C951F765D170014ABD0 /* UIImage+CICColor.h */; };
+		C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C951F765D170014ABD0 /* UIImage+CICColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6F69C981F765D170014ABD0 /* UIImage+CICColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C961F765D170014ABD0 /* UIImage+CICColor.m */; };
 /* End PBXBuildFile section */
 
@@ -62,14 +62,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B06474671F68435F0009A826 /* CopyFiles */ = {
+		B06474671F68435F0009A826 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B06474681F68436B0009A826 /* CIComponentKit.framework in CopyFiles */,
+				B06474681F68436B0009A826 /* CIComponentKit.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -387,7 +388,6 @@
 			files = (
 				1C3F18031F70F5FE00355627 /* UIButton+CICConstructor.h in Headers */,
 				1C3F18091F70F5FE00355627 /* UILabel+CICConstructor.h in Headers */,
-				C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */,
 				1C3F18071F70F5FE00355627 /* UIImageView+CICConstructor.h in Headers */,
 				1C3F18121F70F73600355627 /* NSString+CICDate.h in Headers */,
 				1C3F18051F70F5FE00355627 /* UIDatePicker+CICConstructor.h in Headers */,
@@ -402,6 +402,7 @@
 				1C4226501F70BC6600EAF1A1 /* CICLabel.h in Headers */,
 				B03977C21F78A5E20004C256 /* UIColor+CIComponentKit.h in Headers */,
 				1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */,
+				C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */,
 				C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */,
 				1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */,
 			);
@@ -435,7 +436,7 @@
 				C64C859E1F68303B00F9ED60 /* Sources */,
 				C64C859F1F68303B00F9ED60 /* Frameworks */,
 				C64C85A01F68303B00F9ED60 /* Resources */,
-				B06474671F68435F0009A826 /* CopyFiles */,
+				B06474671F68435F0009A826 /* Copy Files */,
 			);
 			buildRules = (
 			);

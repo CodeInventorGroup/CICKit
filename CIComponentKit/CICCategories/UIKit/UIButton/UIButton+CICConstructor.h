@@ -21,14 +21,6 @@ CICConstructorProperty(CICUIButtonConstructor, font, UIFont *font)
 
 CICConstructorProperty(CICUIButtonConstructor, image, NSString *imageName)
 
-CICConstructorProperty(CICUIButtonConstructor, cornerRadius, CGFloat cornerRadius)
-
-CICConstructorProperty(CICUIButtonConstructor, borderWidth, CGFloat borderWidth)
-
-CICConstructorProperty(CICUIButtonConstructor, borderColor, UIColor *color)
-
-CICConstructorProperty(CICUIButtonConstructor, masksToBounds, BOOL isMasksToBounds)
-
 CICConstructorProperty(CICUIButtonConstructor, addTarget, id target, SEL action)
 
 @end

@@ -6,7 +6,6 @@
 //  Copyright © 2017年 codeinventor. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "UIView+CICConstructor.h"
 
 @interface CICUIImageViewConstructor<UIImageView> : CICUIViewConstructor

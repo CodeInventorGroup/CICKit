@@ -23,8 +23,6 @@ CICConstructorProperty(CICSegmentViewConstructor, normalColor, UIColor *color)
 
 CICConstructorProperty(CICSegmentViewConstructor, selectedColor, UIColor *color)
 
-CICConstructorProperty(CICSegmentViewConstructor, cornerRadius, NSInteger cornerRadius)
-
 CICConstructorProperty(CICSegmentViewConstructor, selectedIndex, NSInteger selectedIndex)
 
 CICConstructorProperty(CICSegmentViewConstructor, addTarget, id target, SEL action)

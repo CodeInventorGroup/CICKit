@@ -52,6 +52,11 @@ CICConstructorBasicDynamics()
         weakSelf.component.delegate = delegate;
         return weakSelf;
     };
+    
+    self.backgroundImage = ^CICUISearchBarConstructor *(UIImage *image) {
+        weakSelf.component.backgroundImage = image;
+        return weakSelf;
+    };
 }
 
 @end

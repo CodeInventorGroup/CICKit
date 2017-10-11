@@ -34,7 +34,13 @@ CICConstructorProperty(class, centerX, CGFloat centerX)      \
 CICConstructorProperty(class, centerY, CGFloat centerY)      \
 CICConstructorProperty(class, center, CGPoint center)        \
 CICConstructorProperty(class, frame, CGRect frame)           \
-CICConstructorProperty(class, backgroundColor, UIColor *color)\
+CICConstructorProperty(class, backgroundColor, UIColor *color)      \
+CICConstructorProperty(class, hidden, BOOL hidden)                  \
+CICConstructorProperty(class, tag, NSInteger tag)                   \
+CICConstructorProperty(class, cornerRadius, CGFloat cornerRadius)   \
+CICConstructorProperty(class, masksToBounds, BOOL masksToBounds)    \
+CICConstructorProperty(class, borderWidth, CGFloat borderWidth)     \
+CICConstructorProperty(class, borderColor, UIColor *borderColor)    \
 
 #define CICConstructorBasicDynamics()                            \
 @dynamic x;                                                     \
@@ -49,6 +55,10 @@ CICConstructorProperty(class, backgroundColor, UIColor *color)\
 @dynamic backgroundColor;                                       \
 @dynamic hidden;                                                \
 @dynamic tag;                                                   \
+@dynamic cornerRadius;                                          \
+@dynamic masksToBounds;                                         \
+@dynamic borderWidth;                                           \
+@dynamic borderColor;                                           \
 
 
 /// UILabel基础扩展
