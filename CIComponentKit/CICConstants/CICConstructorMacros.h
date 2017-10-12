@@ -41,6 +41,7 @@ CICConstructorProperty(class, cornerRadius, CGFloat cornerRadius)   \
 CICConstructorProperty(class, masksToBounds, BOOL masksToBounds)    \
 CICConstructorProperty(class, borderWidth, CGFloat borderWidth)     \
 CICConstructorProperty(class, borderColor, UIColor *borderColor)    \
+CICConstructorProperty(class, clipToBounds, BOOL clipToBounds)      \
 
 #define CICConstructorBasicDynamics()                            \
 @dynamic x;                                                     \
@@ -59,7 +60,7 @@ CICConstructorProperty(class, borderColor, UIColor *borderColor)    \
 @dynamic masksToBounds;                                         \
 @dynamic borderWidth;                                           \
 @dynamic borderColor;                                           \
-
+@dynamic clipToBounds;                                          \
 
 /// UILabel基础扩展
 #define CICConstructorUILabelBasicProperties(class)                                     \

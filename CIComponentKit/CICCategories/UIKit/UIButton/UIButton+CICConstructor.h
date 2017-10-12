@@ -17,9 +17,13 @@ CICConstructorProperty(CICUIButtonConstructor, title, NSString *title)
 
 CICConstructorProperty(CICUIButtonConstructor, titleColor, UIColor *color)
 
+CICConstructorProperty(CICUIButtonConstructor, titleColorWithState, UIColor *color, UIControlState state)
+
 CICConstructorProperty(CICUIButtonConstructor, font, UIFont *font)
 
 CICConstructorProperty(CICUIButtonConstructor, image, NSString *imageName)
+
+CICConstructorProperty(CICUIButtonConstructor, imageWithState, NSString *imageName, UIControlState state)
 
 CICConstructorProperty(CICUIButtonConstructor, addTarget, id target, SEL action)
 

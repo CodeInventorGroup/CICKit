@@ -61,7 +61,7 @@
     };
     
     _centerY = ^CICUIViewConstructor *(CGFloat centerY) {
-        weakSelf.component.center = CGPointMake(weakSelf.component.center.y, centerY);
+        weakSelf.component.center = CGPointMake(weakSelf.component.center.x, centerY);
         return weakSelf;
     };
     
@@ -107,6 +107,11 @@
     
     self.borderColor = ^CICUIViewConstructor *(UIColor *borderColor) {
         weakSelf.component.layer.borderColor = borderColor.CGColor;
+        return weakSelf;
+    };
+    
+    self.clipToBounds = ^CICUIViewConstructor *(BOOL clipToBounds) {
+        weakSelf.component.clipsToBounds = clipToBounds;
         return weakSelf;
     };
 }

@@ -34,6 +34,11 @@ CICConstructorBasicDynamics()
         return weakSelf;
     };
     
+    self.titleColorWithState = ^CICUIButtonConstructor *(UIColor *color, UIControlState state) {
+        [weakSelf.component setTitleColor:color forState:state];
+        return weakSelf;
+    };
+    
     self.font = ^CICUIButtonConstructor *(UIFont *font) {
         weakSelf.component.titleLabel.font = font;
         return weakSelf;
@@ -41,6 +46,11 @@ CICConstructorBasicDynamics()
     
     self.image = ^CICUIButtonConstructor *(NSString *imageName) {
         [weakSelf.component setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        return weakSelf;
+    };
+    
+    self.imageWithState = ^CICUIButtonConstructor *(NSString *imageName, UIControlState state) {
+        [weakSelf.component setImage:[UIImage imageNamed:imageName] forState:state];
         return weakSelf;
     };
     

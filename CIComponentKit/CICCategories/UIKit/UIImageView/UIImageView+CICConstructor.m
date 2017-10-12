@@ -32,6 +32,11 @@ CICConstructorBasicDynamics()
         weakSelf.component.contentMode = contentMode;
         return weakSelf;
     };
+    
+    self.userInteractionEnabled = ^CICUIImageViewConstructor *(BOOL userInteractionEnabled) {
+        weakSelf.component.userInteractionEnabled = userInteractionEnabled;
+        return weakSelf;
+    };
 }
 
 @end

@@ -57,6 +57,8 @@ CICConstructorProperty(CICUIViewConstructor, borderWidth, CGFloat borderWidth)
 
 CICConstructorProperty(CICUIViewConstructor, borderColor, UIColor *borderColor)
 
+CICConstructorProperty(CICUIViewConstructor, clipToBounds, BOOL clipToBounds)
+
 
 - (instancetype)initWithComponent:(T)component;
 
