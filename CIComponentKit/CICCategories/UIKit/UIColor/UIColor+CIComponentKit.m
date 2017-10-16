@@ -41,7 +41,7 @@ CGFloat CGFloat255Random() {
 
 //MARK: - srgb color
 + (instancetype)cic_srgbColorWithRed:(CGFloat)red Green:(CGFloat)green Blue:(CGFloat)blue Aplha:(CGFloat)alpha {
-    if ([[UIDevice currentDevice] systemVersion].floatValue >= 10.0) {
+    if ([UIColor respondsToSelector:@selector(colorWithDisplayP3Red:green:blue:alpha:)]) {
         return [UIColor colorWithDisplayP3Red:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];
     }
     return [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];

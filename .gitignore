@@ -64,3 +64,10 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+.idea/.name
+.idea/CIKit-ObjC.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/xcode.xml
+.idea/codeStyles/Project.xml
