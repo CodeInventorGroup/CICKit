@@ -42,6 +42,14 @@
     })];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    CICHUD *hud = [CICHUD share];
+    hud.cic.center(keyWindow.center);
+    [keyWindow addSubview:hud];
+    
+}
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [super touchesBegan:touches withEvent:event];
 //    CICDemoViewController *vc = [CICDemoViewController new];

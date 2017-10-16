@@ -37,6 +37,8 @@
 		B03977C31F78A5E20004C256 /* UIColor+CIComponentKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */; };
 		B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; };
 		B06474681F68436B0009A826 /* CIComponentKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0EC2D541F94FC3900C32C27 /* CICHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = B0EC2D521F94FC3900C32C27 /* CICHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0EC2D551F94FC3900C32C27 /* CICHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EC2D531F94FC3900C32C27 /* CICHUD.m */; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
 		C64C85C01F68321F00F9ED60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64C85BD1F68321F00F9ED60 /* Assets.xcassets */; };
 		C64C85C21F68321F00F9ED60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BF1F68321F00F9ED60 /* main.m */; };
@@ -105,6 +107,8 @@
 		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
 		B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CIComponentKit.h"; sourceTree = "<group>"; };
 		B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CIComponentKit.m"; sourceTree = "<group>"; };
+		B0EC2D521F94FC3900C32C27 /* CICHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICHUD.h; sourceTree = "<group>"; };
+		B0EC2D531F94FC3900C32C27 /* CICHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICHUD.m; sourceTree = "<group>"; };
 		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85B91F68307300F9ED60 /* CICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICAppDelegate.h; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 		1C4226311F70BC6600EAF1A1 /* CICCustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B0EC2D511F94FC2700C32C27 /* HUD */,
 				C6F69C851F7656820014ABD0 /* UISegmentedControl */,
 				1C4226321F70BC6600EAF1A1 /* UIButton */,
 				1C4226351F70BC6600EAF1A1 /* UILabel */,
@@ -287,6 +292,15 @@
 				B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */,
 			);
 			path = UIColor;
+			sourceTree = "<group>";
+		};
+		B0EC2D511F94FC2700C32C27 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				B0EC2D521F94FC3900C32C27 /* CICHUD.h */,
+				B0EC2D531F94FC3900C32C27 /* CICHUD.m */,
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		C64C85891F68300A00F9ED60 = {
@@ -396,6 +410,7 @@
 				C6F69C711F763EDE0014ABD0 /* UISearchBar+CICConstructor.h in Headers */,
 				1C3F180B1F70F5FE00355627 /* UILabel+CIText.h in Headers */,
 				1C4226521F70BC6600EAF1A1 /* CICColorMacros.h in Headers */,
+				B0EC2D541F94FC3900C32C27 /* CICHUD.h in Headers */,
 				1C4226561F70BC6600EAF1A1 /* CIComponentKit.h in Headers */,
 				1C42264E1F70BC6600EAF1A1 /* CICImageTitleButton.h in Headers */,
 				1C4226531F70BC6600EAF1A1 /* CICConstructorMacros.h in Headers */,
@@ -522,6 +537,7 @@
 				1C3F180E1F70F5FE00355627 /* UIView+CICConstructor.m in Sources */,
 				1C3F18081F70F5FE00355627 /* UIImageView+CICConstructor.m in Sources */,
 				C6F69C721F763EDE0014ABD0 /* UISearchBar+CICConstructor.m in Sources */,
+				B0EC2D551F94FC3900C32C27 /* CICHUD.m in Sources */,
 				1C3F18131F70F73600355627 /* NSString+CICDate.m in Sources */,
 				1C3F180C1F70F5FE00355627 /* UILabel+CIText.m in Sources */,
 				1C3F18061F70F5FE00355627 /* UIDatePicker+CICConstructor.m in Sources */,
