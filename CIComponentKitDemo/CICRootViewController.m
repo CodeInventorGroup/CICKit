@@ -29,7 +29,7 @@
     [self.view addSubview:({
         CICLabel *label = [CICLabel new];
         label.cic
-        .text(@"welcome to cicomponent😄")
+        .text(@"😄welcome to cicomponent😄")
         .textColor([UIColor blackColor])
         .frame(CGRectMake(0, 164, self.view.bounds.size.width, 44))
         .textAlignment(NSTextAlignmentCenter)
