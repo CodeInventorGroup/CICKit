@@ -44,11 +44,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    CICHUD *hud = [CICHUD share];
-    hud.cic.center(keyWindow.center);
-    [keyWindow addSubview:hud];
-    
+
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"你开心就好"];
+    [[CICHUD share] toasWithTitle:str];
 }
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [super touchesBegan:touches withEvent:event];

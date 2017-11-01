@@ -58,6 +58,8 @@ typedef enum : NSUInteger {
 
 + (instancetype)share;
 
+- (void)toasWithTitle:(NSAttributedString *)title;
+
 - (instancetype)initWithTitle:(NSAttributedString *)title;
 
 - (instancetype)initWithTitle:(NSAttributedString *)title LayoutStyle:(CICHUDLayoutStyle)layoutStyle;

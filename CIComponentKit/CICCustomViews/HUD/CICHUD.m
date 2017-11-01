@@ -9,13 +9,13 @@
 #import "CICHUD.h"
 
 #import "CICSizeMacros.h"
-#import "UILabel+CICConstructor.h"
+#import "CICLabel.h"
 
 @interface CICHUD()
 
 @property (nonatomic, strong) UIVisualEffectView *contentView;
 
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) CICLabel *titleLabel;
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
 
@@ -41,14 +41,15 @@
     _toastSize = CGSizeMake(CIC_SCREEN_WIDTH - 180, 60);
     _contentInsets = UIEdgeInsetsMake(20, 20, 20, 20);
     _isAutoResize = FALSE;
-    _style = CICHUDStyleLoading;
+    _style = CICHUDStyleToast;
     _blurStyle = UIBlurEffectStyleExtraLight;
     self.cic.size(_loadingSize);
     
     _contentView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:_blurStyle]];
     [self addSubview:_contentView];
     
-    _titleLabel = [[UILabel alloc] init];
+    _titleLabel = [CICLabel new];
+    _titleLabel.cic.textColor([UILabel appearance].textColor).font([UIFont systemFontOfSize:14.0]);
     [_contentView.contentView addSubview:_titleLabel];
     
     _activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 34, 34)];
@@ -64,7 +65,11 @@
 - (void)render {
     _contentView.effect = [UIBlurEffect effectWithStyle:_blurStyle];
     _activityView.hidden = (_style == CICHUDStyleToast);
-    
+    _titleLabel.attributedText = _title;
+    if (_style == CICHUDStyleToast) {
+        [_titleLabel sizeToFit];
+        _titleLabel.cic.center(self.center);
+    }
     
 }
 
@@ -75,8 +80,19 @@ static CICHUD *instancae;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instancae = [[self alloc] initWithFrame:CGRectZero];
+        [instancae render];
     });
     return instancae;
+}
+
+- (void)toasWithTitle:(NSAttributedString *)title {
+    _title = title;
+    [self render];
+    if (![self superview]) {
+        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        self.cic.center(keyWindow.center);
+        [keyWindow addSubview:self];
+    }
 }
 
 - (instancetype)initWithTitle:(NSAttributedString *)title HUDStyle:(CICHUDStyle)style LayoutStyle:(CICHUDLayoutStyle)layoutStyle BlurEffectStyle:(UIBlurEffectStyle)blurStyle {
