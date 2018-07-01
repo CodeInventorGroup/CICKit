@@ -23,10 +23,11 @@ CGFloat CGFloat255Random() {
 
 + (instancetype)cic_p3RandomColor {
     
-    if ([UIColor respondsToSelector:@selector(colorWithDisplayP3Red:green:blue:alpha:)]) {
+    if (@available(iOS 10, *)) {
         return [UIColor colorWithDisplayP3Red:CGFloat255Random() green:CGFloat255Random() blue:CGFloat255Random() alpha:1.0];
+    }else {
+        return [UIColor colorWithRed:CGFloat255Random() green:CGFloat255Random() blue:CGFloat255Random() alpha:1.0];
     }
-    return [UIColor colorWithRed:CGFloat255Random() green:CGFloat255Random() blue:CGFloat255Random() alpha:1.0];
 }
 
 

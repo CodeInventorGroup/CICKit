@@ -128,9 +128,6 @@ CICConstructorBasicDynamics()
 
 - (void)buildConstructor {
     [super buildConstructor];
-    
-    __weak typeof(&*self) weakSelf = self;
-    
 }
 @end
 
