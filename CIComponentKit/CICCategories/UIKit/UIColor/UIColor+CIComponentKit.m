@@ -22,7 +22,11 @@ CGFloat CGFloat255Random() {
 }
 
 + (instancetype)cic_p3RandomColor {
-    return [UIColor colorWithDisplayP3Red:CGFloat255Random() green:CGFloat255Random() blue:CGFloat255Random() alpha:1.0];
+    
+    if ([UIColor respondsToSelector:@selector(colorWithDisplayP3Red:green:blue:alpha:)]) {
+        return [UIColor colorWithDisplayP3Red:CGFloat255Random() green:CGFloat255Random() blue:CGFloat255Random() alpha:1.0];
+    }
+    return [UIColor colorWithRed:CGFloat255Random() green:CGFloat255Random() blue:CGFloat255Random() alpha:1.0];
 }
 
 

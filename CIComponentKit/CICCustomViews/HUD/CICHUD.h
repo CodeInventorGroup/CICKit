@@ -80,5 +80,4 @@ typedef enum : NSUInteger {
 
 CICConstructorBasicProperties(CICHUDConstructor)
 
-
 @end
