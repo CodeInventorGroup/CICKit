@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CICKit"
-  s.version      = "0.0.1-beta.1"
+  s.version      = "0.0.1"
   s.summary      = "CIComponentKit-Objc, a component kit made by ManoBoo & NEWWORLD"
 
   # This description is used to generate tags and improve search results.
