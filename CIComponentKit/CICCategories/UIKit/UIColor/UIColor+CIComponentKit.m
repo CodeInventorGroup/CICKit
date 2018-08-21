@@ -43,12 +43,11 @@ CGFloat CGFloat255Random() {
 
 //MARK: - srgb color
 + (instancetype)cic_srgbColorWithRed:(CGFloat)red Green:(CGFloat)green Blue:(CGFloat)blue Aplha:(CGFloat)alpha {
-//    if (@available(iOS 10.0, *)) {
-//        return [UIColor colorWithDisplayP3Red:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];
-//    }else {
-//        return [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];
-//    }
-    return [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];
+    if (@available(iOS 10.0, *)) {
+        return [UIColor colorWithDisplayP3Red:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];
+    }else {
+        return [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:alpha];
+    }
 }
 
 + (instancetype)cic_srgbColorWithBox:(CICColorBox)box {

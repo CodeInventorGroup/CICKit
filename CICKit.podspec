@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                       CIComponentKit-Objc, a component kit made by ManoBoo & NEWWORLD, issue to us
                    DESC
 
-  s.homepage     = "https://github.com/CodeInventorGroup/CICKit.git"
+  s.homepage     = "https://github.com/CodeInventorGroup/CICKit"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
