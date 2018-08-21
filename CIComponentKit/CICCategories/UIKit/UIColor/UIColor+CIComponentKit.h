@@ -31,7 +31,7 @@ typedef struct {
  返回一个随机p3色域颜色 (iOS version >= 10.0)
  P3色彩覆盖度为 100%
  */
-+ (instancetype)cic_p3RandomColor NS_AVAILABLE_IOS(10_0);
++ (instancetype)cic_p3RandomColor API_AVAILABLE(ios(10));
 
 
 /**

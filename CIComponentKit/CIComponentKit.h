@@ -32,6 +32,8 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 
 #import "UIColor+CIComponentKit.h"
 
+#import "CICSegmentView.h"
+#import "CICImageTitleButton.h"
 #import "UIImage+CICColor.h"
 #import "UILabel+CIText.h"
 #import "CICLabel.h"
