@@ -3,7 +3,7 @@
 //  DistanceWay
 //
 //  Created by NEWWORLD on 2017/11/10.
-//  Copyright © 2017年 tianzhongtao. All rights reserved.
+//  Copyright © 2017年 codeinventor. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

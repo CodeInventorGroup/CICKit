@@ -26,6 +26,4 @@
 /// 将汉字转化成拼音
 + (NSString *)toChinesPinYin:(NSString *)str;
 
-+ (CGFloat)getWidthWithText:(NSString *)text font:(UIFont *)font;
-
 @end

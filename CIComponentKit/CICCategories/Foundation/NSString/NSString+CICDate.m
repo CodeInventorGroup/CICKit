@@ -76,14 +76,4 @@
     return [ss lowercaseString];
 }
 
-+ (CGFloat)getWidthWithText:(NSString *)text font:(UIFont *)font
-{
-    UILabel *label = [[UILabel alloc] init];
-    label.font = font;
-    label.text = text;
-    [label sizeToFit];
-    
-    return label.width;
-}
-
 @end
