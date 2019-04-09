@@ -71,15 +71,11 @@
     self.window.rootViewController = tabbarController;
     tabbarController.childViewControllers[2].tabBarItem.badgeValue = @"100";
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSArray *urls = @[@[@"https://ps.sfimg.cn/mapp/resource/4f/4fc14c6fe2be6143eb37d31de5fc60b6.png",
-                            @"https://ps.sfimg.cn/mapp/resource/ec/ec7e6a456f0600ffe842145d6ad074d2.png"],
-                          @[@"https://ps.sfimg.cn/mapp/resource/99/99e438262f289d87ff89b28d802ab1a9.png",
-                            @"https://ps.sfimg.cn/mapp/resource/34/34a675ee5c93246cd3a96eaca4fd1541.png"],
-                          @[@"https://ps.sfimg.cn/mapp/resource/c7/c7313630ac7b4b3cae21ae6d9c921167.png",
-                            @"https://ps.sfimg.cn/mapp/resource/3e/3e2c08724c73dee6398dadee0c2d3e99.png"]];
-        tabbarController.cic.itemDataNoTitle(urls).barBackgroundImage(@"http://pic.58pic.com/58pic/15/68/59/71X58PICNjx_1024.jpg");
-    });
+    //  动态加载tabbar图片的数据
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSArray *urls = [NSArray array];
+//        tabbarController.cic.itemDataNoTitle(urls).barBackgroundImage(@"");
+//    });
 }
 
 
