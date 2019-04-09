@@ -114,6 +114,11 @@
         weakSelf.component.clipsToBounds = clipToBounds;
         return weakSelf;
     };
+    
+    self.addTo = ^CICUIViewConstructor *(UIView *toView) {
+        [toView addSubview:weakSelf.component];
+        return weakSelf;
+    };
 }
     
 - (void)dealloc {

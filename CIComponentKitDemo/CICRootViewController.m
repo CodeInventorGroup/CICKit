@@ -29,7 +29,7 @@
     [self.view addSubview:({
         CICLabel *label = [CICLabel new];
         label.cic
-        .text(@"😄welcome to cicomponent😄")
+        .text(@"😄Welcome to CIComponent😄")
         .textColor([UIColor blackColor])
         .frame(CGRectMake(0, 164, self.view.bounds.size.width, 44))
         .textAlignment(NSTextAlignmentCenter)
@@ -47,11 +47,11 @@
 
     NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"你开心就好"];
     [[CICHUD share] toasWithTitle:str];
+    
 }
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [super touchesBegan:touches withEvent:event];
 //    CICDemoViewController *vc = [CICDemoViewController new];
 //    [self.navigationController pushViewController:vc animated:YES];
 //}
-
 @end

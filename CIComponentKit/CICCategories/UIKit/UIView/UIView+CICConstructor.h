@@ -21,7 +21,7 @@
     
 @end
 
-@interface CICUIViewConstructor<T: __kindof UIView *> : NSObject <CIUIViewConstructorProtocol>
+@interface CICUIViewConstructor<T> : NSObject <CIUIViewConstructorProtocol>
 
 // UIView的一些基本属性
 
@@ -59,6 +59,7 @@ CICConstructorProperty(CICUIViewConstructor, borderColor, UIColor *borderColor)
 
 CICConstructorProperty(CICUIViewConstructor, clipToBounds, BOOL clipToBounds)
 
+CICConstructorProperty(CICUIViewConstructor, addTo, UIView *toView)
 
 - (instancetype)initWithComponent:(T)component;
 

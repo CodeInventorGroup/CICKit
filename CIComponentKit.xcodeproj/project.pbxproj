@@ -32,8 +32,19 @@
 		1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263B1F70BC6600EAF1A1 /* CICFontMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263C1F70BC6600EAF1A1 /* CICSizeMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C4226561F70BC6600EAF1A1 /* CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263D1F70BC6600EAF1A1 /* CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C50F24E225C306B00D5748B /* CICTabbarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C50F24C225C306B00D5748B /* CICTabbarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C50F24F225C306B00D5748B /* CICTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F24D225C306B00D5748B /* CICTabbarController.m */; };
+		1C50F252225C342D00D5748B /* CICBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F251225C342D00D5748B /* CICBaseViewController.m */; };
+		1C50F255225C346400D5748B /* CICFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F254225C346400D5748B /* CICFirstViewController.m */; };
+		1C50F258225C349F00D5748B /* CICSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F257225C349F00D5748B /* CICSecondViewController.m */; };
+		1C50F25B225C34AC00D5748B /* CICThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F25A225C34AC00D5748B /* CICThirdViewController.m */; };
 		1CDF6E50212BCE770011AA5F /* NSNumber+DWWordFigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CDF6E4E212BCE770011AA5F /* NSNumber+DWWordFigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CDF6E51212BCE770011AA5F /* NSNumber+DWWordFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */; };
+		1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */; };
+		1CFD08A3225C940000E3ED15 /* NSString+CICNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD08A1225C940000E3ED15 /* NSString+CICNetwork.m */; };
+		1CFD08A6225C9D4800E3ED15 /* UIImage+CICSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFD08A4225C9D4800E3ED15 /* UIImage+CICSize.h */; };
+		1CFD08A7225C9D4800E3ED15 /* UIImage+CICSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD08A5225C9D4800E3ED15 /* UIImage+CICSize.m */; };
+		978E0AD628A6625CE25FCFA8 /* libPods-CIComponentKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */; };
 		B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */; };
 		B03977C21F78A5E20004C256 /* UIColor+CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B03977C31F78A5E20004C256 /* UIColor+CIComponentKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */; };
@@ -46,7 +57,6 @@
 		C64C85C21F68321F00F9ED60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BF1F68321F00F9ED60 /* main.m */; };
 		C64C85C51F6832A300F9ED60 /* CICRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85C41F6832A300F9ED60 /* CICRootViewController.m */; };
 		C64C85C71F6832E700F9ED60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */; };
-		C64C85CA1F6834BE00F9ED60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C64C85C91F6834BE00F9ED60 /* Info.plist */; };
 		C6F69C711F763EDE0014ABD0 /* UISearchBar+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C6F1F763EDE0014ABD0 /* UISearchBar+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6F69C721F763EDE0014ABD0 /* UISearchBar+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C701F763EDE0014ABD0 /* UISearchBar+CICConstructor.m */; };
 		C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C861F76569F0014ABD0 /* CICSegmentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17F7698AEDE151DA5CD9B090 /* Pods-CIComponentKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKit.debug.xcconfig"; path = "Target Support Files/Pods-CIComponentKit/Pods-CIComponentKit.debug.xcconfig"; sourceTree = "<group>"; };
 		1C3F17F21F70F5FE00355627 /* UIButton+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CICConstructor.h"; sourceTree = "<group>"; };
 		1C3F17F31F70F5FE00355627 /* UIButton+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CICConstructor.m"; sourceTree = "<group>"; };
 		1C3F17F51F70F5FE00355627 /* UIDatePicker+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDatePicker+CICConstructor.h"; sourceTree = "<group>"; };
@@ -105,14 +116,30 @@
 		1C42263B1F70BC6600EAF1A1 /* CICFontMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICFontMacros.h; sourceTree = "<group>"; };
 		1C42263C1F70BC6600EAF1A1 /* CICSizeMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICSizeMacros.h; sourceTree = "<group>"; };
 		1C42263D1F70BC6600EAF1A1 /* CIComponentKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIComponentKit.h; sourceTree = "<group>"; };
+		1C50F24C225C306B00D5748B /* CICTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICTabbarController.h; sourceTree = "<group>"; };
+		1C50F24D225C306B00D5748B /* CICTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICTabbarController.m; sourceTree = "<group>"; };
+		1C50F250225C342D00D5748B /* CICBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICBaseViewController.h; sourceTree = "<group>"; };
+		1C50F251225C342D00D5748B /* CICBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICBaseViewController.m; sourceTree = "<group>"; };
+		1C50F253225C346400D5748B /* CICFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICFirstViewController.h; sourceTree = "<group>"; };
+		1C50F254225C346400D5748B /* CICFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICFirstViewController.m; sourceTree = "<group>"; };
+		1C50F256225C349F00D5748B /* CICSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICSecondViewController.h; sourceTree = "<group>"; };
+		1C50F257225C349F00D5748B /* CICSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICSecondViewController.m; sourceTree = "<group>"; };
+		1C50F259225C34AC00D5748B /* CICThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICThirdViewController.h; sourceTree = "<group>"; };
+		1C50F25A225C34AC00D5748B /* CICThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICThirdViewController.m; sourceTree = "<group>"; };
 		1CDF6E4E212BCE770011AA5F /* NSNumber+DWWordFigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DWWordFigure.h"; sourceTree = "<group>"; };
 		1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+DWWordFigure.m"; sourceTree = "<group>"; };
+		1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CICNetwork.h"; sourceTree = "<group>"; };
+		1CFD08A1225C940000E3ED15 /* NSString+CICNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CICNetwork.m"; sourceTree = "<group>"; };
+		1CFD08A4225C9D4800E3ED15 /* UIImage+CICSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CICSize.h"; sourceTree = "<group>"; };
+		1CFD08A5225C9D4800E3ED15 /* UIImage+CICSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CICSize.m"; sourceTree = "<group>"; };
+		26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIComponentKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICDemoViewController.h; sourceTree = "<group>"; };
 		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
 		B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CIComponentKit.h"; sourceTree = "<group>"; };
 		B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CIComponentKit.m"; sourceTree = "<group>"; };
 		B0EC2D521F94FC3900C32C27 /* CICHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICHUD.h; sourceTree = "<group>"; };
 		B0EC2D531F94FC3900C32C27 /* CICHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICHUD.m; sourceTree = "<group>"; };
+		B77CAD38DDFCE99F627F622A /* Pods-CIComponentKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKit.release.xcconfig"; path = "Target Support Files/Pods-CIComponentKit/Pods-CIComponentKit.release.xcconfig"; sourceTree = "<group>"; };
 		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85B91F68307300F9ED60 /* CICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICAppDelegate.h; sourceTree = "<group>"; };
@@ -137,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				978E0AD628A6625CE25FCFA8 /* libPods-CIComponentKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +256,8 @@
 			children = (
 				1C3F18101F70F73600355627 /* NSString+CICDate.h */,
 				1C3F18111F70F73600355627 /* NSString+CICDate.m */,
+				1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */,
+				1CFD08A1225C940000E3ED15 /* NSString+CICNetwork.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -244,6 +274,7 @@
 		1C4226311F70BC6600EAF1A1 /* CICCustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				1C50F24B225C305A00D5748B /* TabBarController */,
 				B0EC2D511F94FC2700C32C27 /* HUD */,
 				C6F69C851F7656820014ABD0 /* UISegmentedControl */,
 				1C4226321F70BC6600EAF1A1 /* UIButton */,
@@ -290,6 +321,28 @@
 			path = CICCategories;
 			sourceTree = "<group>";
 		};
+		1C50F24B225C305A00D5748B /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1C50F24C225C306B00D5748B /* CICTabbarController.h */,
+				1C50F24D225C306B00D5748B /* CICTabbarController.m */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		1C50F25C225C34C200D5748B /* TabbarControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1C50F253225C346400D5748B /* CICFirstViewController.h */,
+				1C50F254225C346400D5748B /* CICFirstViewController.m */,
+				1C50F256225C349F00D5748B /* CICSecondViewController.h */,
+				1C50F257225C349F00D5748B /* CICSecondViewController.m */,
+				1C50F259225C34AC00D5748B /* CICThirdViewController.h */,
+				1C50F25A225C34AC00D5748B /* CICThirdViewController.m */,
+			);
+			path = TabbarControllerDemo;
+			sourceTree = "<group>";
+		};
 		1CDF6E4D212BCE770011AA5F /* NSNumber */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +350,23 @@
 				1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */,
 			);
 			path = NSNumber;
+			sourceTree = "<group>";
+		};
+		5F3106DC27AC902E3ABA1936 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7768958D39EC18B803803A6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17F7698AEDE151DA5CD9B090 /* Pods-CIComponentKit.debug.xcconfig */,
+				B77CAD38DDFCE99F627F622A /* Pods-CIComponentKit.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		B03977BF1F78A5950004C256 /* UIColor */ = {
@@ -325,6 +395,8 @@
 				C64C85A31F68303B00F9ED60 /* CIComponentKitDemo */,
 				C64C85C81F6834BE00F9ED60 /* Supporting Files */,
 				C64C85941F68300A00F9ED60 /* Products */,
+				7768958D39EC18B803803A6A /* Pods */,
+				5F3106DC27AC902E3ABA1936 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -355,9 +427,12 @@
 				C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */,
 				C64C85C31F6832A300F9ED60 /* CICRootViewController.h */,
 				C64C85C41F6832A300F9ED60 /* CICRootViewController.m */,
-				C64C85BC1F68321F00F9ED60 /* Supporting Files */,
 				B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */,
 				B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */,
+				1C50F250225C342D00D5748B /* CICBaseViewController.h */,
+				1C50F251225C342D00D5748B /* CICBaseViewController.m */,
+				1C50F25C225C34C200D5748B /* TabbarControllerDemo */,
+				C64C85BC1F68321F00F9ED60 /* Supporting Files */,
 			);
 			path = CIComponentKitDemo;
 			sourceTree = "<group>";
@@ -403,6 +478,8 @@
 			children = (
 				C6F69C951F765D170014ABD0 /* UIImage+CICColor.h */,
 				C6F69C961F765D170014ABD0 /* UIImage+CICColor.m */,
+				1CFD08A4225C9D4800E3ED15 /* UIImage+CICSize.h */,
+				1CFD08A5225C9D4800E3ED15 /* UIImage+CICSize.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -432,8 +509,11 @@
 				B03977C21F78A5E20004C256 /* UIColor+CIComponentKit.h in Headers */,
 				1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */,
 				C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */,
+				1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */,
 				C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */,
 				1CDF6E50212BCE770011AA5F /* NSNumber+DWWordFigure.h in Headers */,
+				1CFD08A6225C9D4800E3ED15 /* UIImage+CICSize.h in Headers */,
+				1C50F24E225C306B00D5748B /* CICTabbarController.h in Headers */,
 				1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +525,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C64C859B1F68300A00F9ED60 /* Build configuration list for PBXNativeTarget "CIComponentKit" */;
 			buildPhases = (
+				233F93F84AD405DB2E55FDA3 /* [CP] Check Pods Manifest.lock */,
 				C64C858E1F68300A00F9ED60 /* Sources */,
 				C64C858F1F68300A00F9ED60 /* Frameworks */,
 				C64C85901F68300A00F9ED60 /* Headers */,
@@ -485,7 +566,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CIC;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = codeinventor;
 				TargetAttributes = {
 					C64C85921F68300A00F9ED60 = {
@@ -503,6 +584,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -531,17 +613,42 @@
 			files = (
 				C64C85C01F68321F00F9ED60 /* Assets.xcassets in Resources */,
 				C64C85C71F6832E700F9ED60 /* Default-568h@2x.png in Resources */,
-				C64C85CA1F6834BE00F9ED60 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		233F93F84AD405DB2E55FDA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CIComponentKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C64C858E1F68300A00F9ED60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C50F24F225C306B00D5748B /* CICTabbarController.m in Sources */,
 				1CDF6E51212BCE770011AA5F /* NSNumber+DWWordFigure.m in Sources */,
 				B03977C31F78A5E20004C256 /* UIColor+CIComponentKit.m in Sources */,
 				1C4226511F70BC6600EAF1A1 /* CICLabel.m in Sources */,
@@ -555,6 +662,8 @@
 				C6F69C721F763EDE0014ABD0 /* UISearchBar+CICConstructor.m in Sources */,
 				B0EC2D551F94FC3900C32C27 /* CICHUD.m in Sources */,
 				1C3F18131F70F73600355627 /* NSString+CICDate.m in Sources */,
+				1CFD08A7225C9D4800E3ED15 /* UIImage+CICSize.m in Sources */,
+				1CFD08A3225C940000E3ED15 /* NSString+CICNetwork.m in Sources */,
 				1C3F180C1F70F5FE00355627 /* UILabel+CIText.m in Sources */,
 				1C3F18061F70F5FE00355627 /* UIDatePicker+CICConstructor.m in Sources */,
 				1C42264F1F70BC6600EAF1A1 /* CICImageTitleButton.m in Sources */,
@@ -566,9 +675,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64C85C51F6832A300F9ED60 /* CICRootViewController.m in Sources */,
+				1C50F258225C349F00D5748B /* CICSecondViewController.m in Sources */,
 				B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */,
 				C64C85C21F68321F00F9ED60 /* main.m in Sources */,
+				1C50F25B225C34AC00D5748B /* CICThirdViewController.m in Sources */,
+				1C50F252225C342D00D5748B /* CICBaseViewController.m in Sources */,
 				C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */,
+				1C50F255225C346400D5748B /* CICFirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +700,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -647,6 +761,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -699,6 +814,7 @@
 		};
 		C64C859C1F68300A00F9ED60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17F7698AEDE151DA5CD9B090 /* Pods-CIComponentKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -717,6 +833,7 @@
 		};
 		C64C859D1F68300A00F9ED60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B77CAD38DDFCE99F627F622A /* Pods-CIComponentKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -737,6 +854,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "$(SRCROOT)/CIComponentKitDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -749,6 +867,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "$(SRCROOT)/CIComponentKitDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
