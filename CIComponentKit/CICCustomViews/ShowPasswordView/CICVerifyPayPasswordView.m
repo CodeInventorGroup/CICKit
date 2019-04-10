@@ -97,7 +97,7 @@ static NSString *const kTimeDuration = @"0.3";
     
     NSLog(@"keyboardinputvalue %@", value);
     NSUInteger length = self.password.length;
-    if (length == [kPasswordNumber integerValue] && [NSString cic_isEmpty:value]) {
+    if (length == [kPasswordNumber integerValue] && ![NSString cic_isEmpty:value]) {
         return;
     }
     

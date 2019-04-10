@@ -126,8 +126,11 @@ static NSString *const kLineNumber = @"4";
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:20];
     }else if ([title isEqualToString:kDeleteNumber]) {
-        [button setImage:[UIImage imageNamed:@"keyboard_del"] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"keyboard_del"] forState:UIControlStateHighlighted];
+        NSBundle *bundle = [NSBundle bundleForClass:self.class];
+        NSString *filePath = [bundle pathForResource:@"keyboard_delete_icon" ofType:@"png" inDirectory:@"CICKit.bundle"];
+        UIImage * image = [UIImage imageWithContentsOfFile:filePath];
+        [button setImage:image forState:UIControlStateNormal];
+        [button setImage:image forState:UIControlStateHighlighted];
     }
     button.backgroundColor = [self.numberArray containsObject:title] ? [UIColor whiteColor] : [UIColor cic_hexColor:0xe2e2e2];
     [button addTarget:self action:@selector(clickKeyboardButton:) forControlEvents:UIControlEventTouchUpInside];
