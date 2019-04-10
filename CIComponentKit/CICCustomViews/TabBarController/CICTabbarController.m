@@ -8,7 +8,7 @@
 //
 
 #import "CICTabbarController.h"
-#import "SDWebImage.h"
+#import <SDWebImage/SDWebImage.h>
 #import "NSString+CICNetwork.h"
 #import "NSDate+CICString.h"
 #import "UIImage+CICSize.h"
