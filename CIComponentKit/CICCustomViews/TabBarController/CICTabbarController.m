@@ -216,7 +216,7 @@
         }
     }
     if ([NSString cic_isEmpty:title]) {
-        CGFloat margin = (CIC_TABBAR_HEIGHT - self.imageSize.height)/2.0;
+        CGFloat margin = (CIC_TAB_BAR_HEIGHT - self.imageSize.height)/2.0;
         childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(margin, 0, -margin, 0);
     }
 }

@@ -7,7 +7,6 @@
 //
 
 #import "CICAppDelegate.h"
-#import "CICRootViewController.h"
 #import "CICTabbarController.h"
 #import "UIColor+CIComponentKit.h"
 
@@ -22,11 +21,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    CICRootViewController *rootViewController = [[CICRootViewController alloc] init];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    [self showTabbarController];
     [self.window makeKeyAndVisible];
     
-    [self showTabbarController];
     return YES;
 }
 
@@ -61,9 +58,9 @@
 - (void)showTabbarController {
     
     CICTabbarController *tabbarController = [[CICTabbarController alloc] init];
-    
+
     //  首先设置类名数据
-    tabbarController.cic.classNameData(@[@"CICFirstViewController", @"CICSecondViewController", @"CICThirdViewController"])
+    tabbarController.cic.classNameData(@[@"CICRootViewController", @"CICSecondViewController", @"CICThirdViewController"])
                         .itemDataTitleNormalImage(@[@[@"首页", @"home_tabbar_icon"],
                                                    @[@"聚中", @"center_tabbar_icon"],
                                                    @[@"工具", @"tool_tabbar_icon"]])
@@ -78,9 +75,8 @@
 //        tabbarController.cic.itemDataNormalSelectedImage(urls).barBackgroundImage(@"");
         tabbarController.cic.imageSize(CGSizeMake(34, 34))
                             .itemDataTitleNormalImage(@[@[@"",@"home_tabbar_icon"],
-                                                       @[@"",@"center_tabbar_icon"],
-                                                       @[@"",@"tool_tabbar_icon"]])
-                            .selectedIndex(2);
+                                                        @[@"",@"center_tabbar_icon"],
+                                                        @[@"",@"tool_tabbar_icon"]]);
         tabbarController.didSelectedTabbarBlock = ^(NSInteger selectedIndex) {
             NSLog(@"selectedIndex = %ld", selectedIndex);
         };

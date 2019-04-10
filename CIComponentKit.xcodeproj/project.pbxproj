@@ -38,8 +38,16 @@
 		1C50F255225C346400D5748B /* CICFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F254225C346400D5748B /* CICFirstViewController.m */; };
 		1C50F258225C349F00D5748B /* CICSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F257225C349F00D5748B /* CICSecondViewController.m */; };
 		1C50F25B225C34AC00D5748B /* CICThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F25A225C34AC00D5748B /* CICThirdViewController.m */; };
+		1C8B8493225DC512005B263C /* CICVerifyPayPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B8491225DC512005B263C /* CICVerifyPayPasswordView.m */; };
+		1C8B8494225DC512005B263C /* CICVerifyPayPasswordView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C8B8492225DC512005B263C /* CICVerifyPayPasswordView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C8B8497225DC573005B263C /* CICNumberKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B8495225DC573005B263C /* CICNumberKeyboardView.m */; };
+		1C8B8498225DC573005B263C /* CICNumberKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C8B8496225DC573005B263C /* CICNumberKeyboardView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C8B849B225DC5A0005B263C /* UIView+CICSeparatorLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C8B8499225DC5A0005B263C /* UIView+CICSeparatorLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C8B849C225DC5A0005B263C /* UIView+CICSeparatorLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B849A225DC5A0005B263C /* UIView+CICSeparatorLine.m */; };
 		1CCC48D1225D7AC800B1A3F4 /* NSString+CICBaseProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CCC48D2225D7AC800B1A3F4 /* NSString+CICBaseProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */; };
+		1CCC48E8225DC00E00B1A3F4 /* UIDevice+CICUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCC48E6225DC00E00B1A3F4 /* UIDevice+CICUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CCC48E9225DC00E00B1A3F4 /* UIDevice+CICUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC48E7225DC00E00B1A3F4 /* UIDevice+CICUtils.m */; };
 		1CDF6E50212BCE770011AA5F /* NSNumber+DWWordFigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CDF6E4E212BCE770011AA5F /* NSNumber+DWWordFigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CDF6E51212BCE770011AA5F /* NSNumber+DWWordFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */; };
 		1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -128,8 +136,16 @@
 		1C50F257225C349F00D5748B /* CICSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICSecondViewController.m; sourceTree = "<group>"; };
 		1C50F259225C34AC00D5748B /* CICThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICThirdViewController.h; sourceTree = "<group>"; };
 		1C50F25A225C34AC00D5748B /* CICThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICThirdViewController.m; sourceTree = "<group>"; };
+		1C8B8491225DC512005B263C /* CICVerifyPayPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICVerifyPayPasswordView.m; sourceTree = "<group>"; };
+		1C8B8492225DC512005B263C /* CICVerifyPayPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICVerifyPayPasswordView.h; sourceTree = "<group>"; };
+		1C8B8495225DC573005B263C /* CICNumberKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICNumberKeyboardView.m; sourceTree = "<group>"; };
+		1C8B8496225DC573005B263C /* CICNumberKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICNumberKeyboardView.h; sourceTree = "<group>"; };
+		1C8B8499225DC5A0005B263C /* UIView+CICSeparatorLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CICSeparatorLine.h"; sourceTree = "<group>"; };
+		1C8B849A225DC5A0005B263C /* UIView+CICSeparatorLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CICSeparatorLine.m"; sourceTree = "<group>"; };
 		1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CICBaseProperty.h"; sourceTree = "<group>"; };
 		1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CICBaseProperty.m"; sourceTree = "<group>"; };
+		1CCC48E6225DC00E00B1A3F4 /* UIDevice+CICUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CICUtils.h"; sourceTree = "<group>"; };
+		1CCC48E7225DC00E00B1A3F4 /* UIDevice+CICUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+CICUtils.m"; sourceTree = "<group>"; };
 		1CDF6E4E212BCE770011AA5F /* NSNumber+DWWordFigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DWWordFigure.h"; sourceTree = "<group>"; };
 		1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+DWWordFigure.m"; sourceTree = "<group>"; };
 		1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CICNetwork.h"; sourceTree = "<group>"; };
@@ -186,6 +202,7 @@
 		1C3F17F01F70F5FE00355627 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				1CCC48E5225DBFAE00B1A3F4 /* UIDevice */,
 				B03977BF1F78A5950004C256 /* UIColor */,
 				C6F69C941F765CEB0014ABD0 /* UIImage */,
 				C6F69C6E1F763EDE0014ABD0 /* UISearchBar */,
@@ -239,6 +256,8 @@
 		1C3F17FF1F70F5FE00355627 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				1C8B8499225DC5A0005B263C /* UIView+CICSeparatorLine.h */,
+				1C8B849A225DC5A0005B263C /* UIView+CICSeparatorLine.m */,
 				1C3F18001F70F5FE00355627 /* UIView+CICConstructor.h */,
 				1C3F18011F70F5FE00355627 /* UIView+CICConstructor.m */,
 			);
@@ -280,6 +299,8 @@
 		1C4226311F70BC6600EAF1A1 /* CICCustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				1CCC48D7225D924D00B1A3F4 /* Keyboard */,
+				1CCC48D8225D924D00B1A3F4 /* ShowPasswordView */,
 				1C50F24B225C305A00D5748B /* TabBarController */,
 				B0EC2D511F94FC2700C32C27 /* HUD */,
 				C6F69C851F7656820014ABD0 /* UISegmentedControl */,
@@ -347,6 +368,40 @@
 				1C50F25A225C34AC00D5748B /* CICThirdViewController.m */,
 			);
 			path = TabbarControllerDemo;
+			sourceTree = "<group>";
+		};
+		1C8B849D225DC77A005B263C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		1CCC48D7225D924D00B1A3F4 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1C8B8496225DC573005B263C /* CICNumberKeyboardView.h */,
+				1C8B8495225DC573005B263C /* CICNumberKeyboardView.m */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		1CCC48D8225D924D00B1A3F4 /* ShowPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				1C8B8492225DC512005B263C /* CICVerifyPayPasswordView.h */,
+				1C8B8491225DC512005B263C /* CICVerifyPayPasswordView.m */,
+			);
+			path = ShowPasswordView;
+			sourceTree = "<group>";
+		};
+		1CCC48E5225DBFAE00B1A3F4 /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				1CCC48E6225DC00E00B1A3F4 /* UIDevice+CICUtils.h */,
+				1CCC48E7225DC00E00B1A3F4 /* UIDevice+CICUtils.m */,
+			);
+			path = UIDevice;
 			sourceTree = "<group>";
 		};
 		1CDF6E4D212BCE770011AA5F /* NSNumber */ = {
@@ -418,6 +473,7 @@
 		C64C85951F68300A00F9ED60 /* CIComponentKit */ = {
 			isa = PBXGroup;
 			children = (
+				1C8B849D225DC77A005B263C /* Resource */,
 				1C42263E1F70BC6600EAF1A1 /* CICCategories */,
 				1C4226381F70BC6600EAF1A1 /* CICConstants */,
 				1C4226311F70BC6600EAF1A1 /* CICCustomViews */,
@@ -519,9 +575,13 @@
 				1CDF6E50212BCE770011AA5F /* NSNumber+DWWordFigure.h in Headers */,
 				1CCC48D1225D7AC800B1A3F4 /* NSString+CICBaseProperty.h in Headers */,
 				1CFD08A6225C9D4800E3ED15 /* UIImage+CICSize.h in Headers */,
+				1CCC48E8225DC00E00B1A3F4 /* UIDevice+CICUtils.h in Headers */,
 				1C50F24E225C306B00D5748B /* CICTabbarController.h in Headers */,
+				1C8B849B225DC5A0005B263C /* UIView+CICSeparatorLine.h in Headers */,
 				1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */,
 				1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */,
+				1C8B8494225DC512005B263C /* CICVerifyPayPasswordView.h in Headers */,
+				1C8B8498225DC573005B263C /* CICNumberKeyboardView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +722,8 @@
 				1C4226511F70BC6600EAF1A1 /* CICLabel.m in Sources */,
 				C6F69C981F765D170014ABD0 /* UIImage+CICColor.m in Sources */,
 				1C3F180A1F70F5FE00355627 /* UILabel+CICConstructor.m in Sources */,
+				1CCC48E9225DC00E00B1A3F4 /* UIDevice+CICUtils.m in Sources */,
+				1C8B849C225DC5A0005B263C /* UIView+CICSeparatorLine.m in Sources */,
 				1C3F18041F70F5FE00355627 /* UIButton+CICConstructor.m in Sources */,
 				1C3F18181F70FD5C00355627 /* NSDate+CICString.m in Sources */,
 				C6F69C891F76569F0014ABD0 /* CICSegmentView.m in Sources */,
@@ -669,11 +731,13 @@
 				1C3F18081F70F5FE00355627 /* UIImageView+CICConstructor.m in Sources */,
 				C6F69C721F763EDE0014ABD0 /* UISearchBar+CICConstructor.m in Sources */,
 				B0EC2D551F94FC3900C32C27 /* CICHUD.m in Sources */,
+				1C8B8493225DC512005B263C /* CICVerifyPayPasswordView.m in Sources */,
 				1C3F18131F70F73600355627 /* NSString+CICDate.m in Sources */,
 				1CFD08A7225C9D4800E3ED15 /* UIImage+CICSize.m in Sources */,
 				1CFD08A3225C940000E3ED15 /* NSString+CICNetwork.m in Sources */,
 				1C3F180C1F70F5FE00355627 /* UILabel+CIText.m in Sources */,
 				1C3F18061F70F5FE00355627 /* UIDatePicker+CICConstructor.m in Sources */,
+				1C8B8497225DC573005B263C /* CICNumberKeyboardView.m in Sources */,
 				1C42264F1F70BC6600EAF1A1 /* CICImageTitleButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

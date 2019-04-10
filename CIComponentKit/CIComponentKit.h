@@ -33,8 +33,8 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 #import "UIButton+CICConstructor.h"
 #import "UIDatePicker+CICConstructor.h"
 #import "UILabel+CICConstructor.h"
-
 #import "UIColor+CIComponentKit.h"
+#import "UIView+CICSeparatorLine.h"
 
 #import "CICSegmentView.h"
 #import "CICImageTitleButton.h"
@@ -43,5 +43,7 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 #import "UILabel+CIText.h"
 #import "CICLabel.h"
 #import "CICHUD.h"
+#import "CICNumberKeyboardView.h"
+#import "CICVerifyPayPasswordView.h"
 #import "CICTabbarController.h"
 

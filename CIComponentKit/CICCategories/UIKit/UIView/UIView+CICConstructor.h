@@ -12,6 +12,13 @@
 #import "CICSizeMacros.h"
 #import "CICColorMacros.h"
 
+typedef enum : NSUInteger {
+    CICSeparatorLinePositionTop = 0,
+    CICSeparatorLinePositionLeft,
+    CICSeparatorLinePositionBottom,
+    CICSeparatorLinePositionRight
+}CICSeparatorLinePosition;
+
 @class CICUIViewConstructor;
 @protocol CIUIViewConstructorProtocol <NSObject>
     

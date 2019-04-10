@@ -92,6 +92,9 @@ static CICHUD *instancae;
         UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
         self.cic.center(keyWindow.center);
         [keyWindow addSubview:self];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self removeFromSuperview];
+        });
     }
 }
 
