@@ -7,86 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C3F18031F70F5FE00355627 /* UIButton+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F21F70F5FE00355627 /* UIButton+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C3F18041F70F5FE00355627 /* UIButton+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17F31F70F5FE00355627 /* UIButton+CICConstructor.m */; };
-		1C3F18051F70F5FE00355627 /* UIDatePicker+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F51F70F5FE00355627 /* UIDatePicker+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C3F18061F70F5FE00355627 /* UIDatePicker+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17F61F70F5FE00355627 /* UIDatePicker+CICConstructor.m */; };
-		1C3F18071F70F5FE00355627 /* UIImageView+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17F81F70F5FE00355627 /* UIImageView+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C3F18081F70F5FE00355627 /* UIImageView+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17F91F70F5FE00355627 /* UIImageView+CICConstructor.m */; };
-		1C3F18091F70F5FE00355627 /* UILabel+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17FB1F70F5FE00355627 /* UILabel+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C3F180A1F70F5FE00355627 /* UILabel+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17FC1F70F5FE00355627 /* UILabel+CICConstructor.m */; };
-		1C3F180B1F70F5FE00355627 /* UILabel+CIText.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F17FD1F70F5FE00355627 /* UILabel+CIText.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C3F180C1F70F5FE00355627 /* UILabel+CIText.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F17FE1F70F5FE00355627 /* UILabel+CIText.m */; };
-		1C3F180D1F70F5FE00355627 /* UIView+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F18001F70F5FE00355627 /* UIView+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C3F180E1F70F5FE00355627 /* UIView+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F18011F70F5FE00355627 /* UIView+CICConstructor.m */; };
-		1C3F18121F70F73600355627 /* NSString+CICDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F18101F70F73600355627 /* NSString+CICDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C3F18131F70F73600355627 /* NSString+CICDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F18111F70F73600355627 /* NSString+CICDate.m */; };
-		1C3F18171F70FD5C00355627 /* NSDate+CICString.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3F18151F70FD5C00355627 /* NSDate+CICString.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C3F18181F70FD5C00355627 /* NSDate+CICString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F18161F70FD5C00355627 /* NSDate+CICString.m */; };
-		1C42264E1F70BC6600EAF1A1 /* CICImageTitleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C4226331F70BC6600EAF1A1 /* CICImageTitleButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C42264F1F70BC6600EAF1A1 /* CICImageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4226341F70BC6600EAF1A1 /* CICImageTitleButton.m */; };
-		1C4226501F70BC6600EAF1A1 /* CICLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C4226361F70BC6600EAF1A1 /* CICLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C4226511F70BC6600EAF1A1 /* CICLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4226371F70BC6600EAF1A1 /* CICLabel.m */; };
-		1C4226521F70BC6600EAF1A1 /* CICColorMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C4226391F70BC6600EAF1A1 /* CICColorMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C4226531F70BC6600EAF1A1 /* CICConstructorMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263A1F70BC6600EAF1A1 /* CICConstructorMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263B1F70BC6600EAF1A1 /* CICFontMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263C1F70BC6600EAF1A1 /* CICSizeMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C4226561F70BC6600EAF1A1 /* CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C42263D1F70BC6600EAF1A1 /* CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C50F24E225C306B00D5748B /* CICTabbarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C50F24C225C306B00D5748B /* CICTabbarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C50F24F225C306B00D5748B /* CICTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F24D225C306B00D5748B /* CICTabbarController.m */; };
 		1C50F252225C342D00D5748B /* CICBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F251225C342D00D5748B /* CICBaseViewController.m */; };
 		1C50F255225C346400D5748B /* CICFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F254225C346400D5748B /* CICFirstViewController.m */; };
 		1C50F258225C349F00D5748B /* CICSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F257225C349F00D5748B /* CICSecondViewController.m */; };
 		1C50F25B225C34AC00D5748B /* CICThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F25A225C34AC00D5748B /* CICThirdViewController.m */; };
-		1C8B8493225DC512005B263C /* CICVerifyPayPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B8491225DC512005B263C /* CICVerifyPayPasswordView.m */; };
-		1C8B8494225DC512005B263C /* CICVerifyPayPasswordView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C8B8492225DC512005B263C /* CICVerifyPayPasswordView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C8B8497225DC573005B263C /* CICNumberKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B8495225DC573005B263C /* CICNumberKeyboardView.m */; };
-		1C8B8498225DC573005B263C /* CICNumberKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C8B8496225DC573005B263C /* CICNumberKeyboardView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C8B849B225DC5A0005B263C /* UIView+CICSeparatorLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C8B8499225DC5A0005B263C /* UIView+CICSeparatorLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C8B849C225DC5A0005B263C /* UIView+CICSeparatorLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B849A225DC5A0005B263C /* UIView+CICSeparatorLine.m */; };
-		1C8B84D3225DCCDC005B263C /* dot_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8B84D0225DCCDC005B263C /* dot_icon@2x.png */; };
-		1C8B84D4225DCCDC005B263C /* dot_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8B84D1225DCCDC005B263C /* dot_icon@3x.png */; };
-		1C8B84D5225DCCDC005B263C /* dot_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8B84D2225DCCDC005B263C /* dot_icon.png */; };
-		1CCC48D1225D7AC800B1A3F4 /* NSString+CICBaseProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1CCC48D2225D7AC800B1A3F4 /* NSString+CICBaseProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */; };
-		1CCC48E8225DC00E00B1A3F4 /* UIDevice+CICUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCC48E6225DC00E00B1A3F4 /* UIDevice+CICUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1CCC48E9225DC00E00B1A3F4 /* UIDevice+CICUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC48E7225DC00E00B1A3F4 /* UIDevice+CICUtils.m */; };
-		1CDF6E50212BCE770011AA5F /* NSNumber+DWWordFigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CDF6E4E212BCE770011AA5F /* NSNumber+DWWordFigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1CDF6E51212BCE770011AA5F /* NSNumber+DWWordFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */; };
-		1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1CFD08A3225C940000E3ED15 /* NSString+CICNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD08A1225C940000E3ED15 /* NSString+CICNetwork.m */; };
-		1CFD08A6225C9D4800E3ED15 /* UIImage+CICSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFD08A4225C9D4800E3ED15 /* UIImage+CICSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1CFD08A7225C9D4800E3ED15 /* UIImage+CICSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD08A5225C9D4800E3ED15 /* UIImage+CICSize.m */; };
-		978E0AD628A6625CE25FCFA8 /* libPods-CIComponentKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */; };
 		B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */; };
-		B03977C21F78A5E20004C256 /* UIColor+CIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B03977C31F78A5E20004C256 /* UIColor+CIComponentKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */; };
-		B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; };
-		B06474681F68436B0009A826 /* CIComponentKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B0EC2D541F94FC3900C32C27 /* CICHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = B0EC2D521F94FC3900C32C27 /* CICHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0EC2D551F94FC3900C32C27 /* CICHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EC2D531F94FC3900C32C27 /* CICHUD.m */; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
 		C64C85C01F68321F00F9ED60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64C85BD1F68321F00F9ED60 /* Assets.xcassets */; };
 		C64C85C21F68321F00F9ED60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BF1F68321F00F9ED60 /* main.m */; };
 		C64C85C51F6832A300F9ED60 /* CICRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85C41F6832A300F9ED60 /* CICRootViewController.m */; };
 		C64C85C71F6832E700F9ED60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */; };
-		C6F69C711F763EDE0014ABD0 /* UISearchBar+CICConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C6F1F763EDE0014ABD0 /* UISearchBar+CICConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C6F69C721F763EDE0014ABD0 /* UISearchBar+CICConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C701F763EDE0014ABD0 /* UISearchBar+CICConstructor.m */; };
-		C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C861F76569F0014ABD0 /* CICSegmentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C6F69C891F76569F0014ABD0 /* CICSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C871F76569F0014ABD0 /* CICSegmentView.m */; };
-		C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F69C951F765D170014ABD0 /* UIImage+CICColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C6F69C981F765D170014ABD0 /* UIImage+CICColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F69C961F765D170014ABD0 /* UIImage+CICColor.m */; };
+		DAE7615581B38AF34860406B /* libPods-CIComponentKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8612034BAD067DF1E99FDB55 /* libPods-CIComponentKitDemo.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B06474651F6843530009A826 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C64C858A1F68300A00F9ED60 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C64C85921F68300A00F9ED60;
-			remoteInfo = CIComponentKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B06474671F68435F0009A826 /* Copy Files */ = {
@@ -95,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B06474681F68436B0009A826 /* CIComponentKit.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,7 +34,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		17F7698AEDE151DA5CD9B090 /* Pods-CIComponentKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKit.debug.xcconfig"; path = "Target Support Files/Pods-CIComponentKit/Pods-CIComponentKit.debug.xcconfig"; sourceTree = "<group>"; };
 		1C3F17F21F70F5FE00355627 /* UIButton+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CICConstructor.h"; sourceTree = "<group>"; };
 		1C3F17F31F70F5FE00355627 /* UIButton+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CICConstructor.m"; sourceTree = "<group>"; };
 		1C3F17F51F70F5FE00355627 /* UIDatePicker+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDatePicker+CICConstructor.h"; sourceTree = "<group>"; };
@@ -159,14 +89,15 @@
 		1CFD08A4225C9D4800E3ED15 /* UIImage+CICSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CICSize.h"; sourceTree = "<group>"; };
 		1CFD08A5225C9D4800E3ED15 /* UIImage+CICSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CICSize.m"; sourceTree = "<group>"; };
 		26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIComponentKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FC06026A0D4155186ACCCA3 /* Pods-CIComponentKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKitDemo.release.xcconfig"; path = "Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7934B378314D14B35A1815F5 /* Pods-CIComponentKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		8612034BAD067DF1E99FDB55 /* libPods-CIComponentKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIComponentKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICDemoViewController.h; sourceTree = "<group>"; };
 		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
 		B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CIComponentKit.h"; sourceTree = "<group>"; };
 		B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CIComponentKit.m"; sourceTree = "<group>"; };
 		B0EC2D521F94FC3900C32C27 /* CICHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICHUD.h; sourceTree = "<group>"; };
 		B0EC2D531F94FC3900C32C27 /* CICHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICHUD.m; sourceTree = "<group>"; };
-		B77CAD38DDFCE99F627F622A /* Pods-CIComponentKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKit.release.xcconfig"; path = "Target Support Files/Pods-CIComponentKit/Pods-CIComponentKit.release.xcconfig"; sourceTree = "<group>"; };
-		C64C85931F68300A00F9ED60 /* CIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85B91F68307300F9ED60 /* CICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICAppDelegate.h; sourceTree = "<group>"; };
 		C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICAppDelegate.m; sourceTree = "<group>"; };
@@ -186,19 +117,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C64C858F1F68300A00F9ED60 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				978E0AD628A6625CE25FCFA8 /* libPods-CIComponentKit.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C64C859F1F68303B00F9ED60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B04769781F6936FB0095BB6C /* CIComponentKit.framework in Frameworks */,
+				DAE7615581B38AF34860406B /* libPods-CIComponentKitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */,
+				8612034BAD067DF1E99FDB55 /* libPods-CIComponentKitDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -433,8 +357,8 @@
 		7768958D39EC18B803803A6A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				17F7698AEDE151DA5CD9B090 /* Pods-CIComponentKit.debug.xcconfig */,
-				B77CAD38DDFCE99F627F622A /* Pods-CIComponentKit.release.xcconfig */,
+				7934B378314D14B35A1815F5 /* Pods-CIComponentKitDemo.debug.xcconfig */,
+				5FC06026A0D4155186ACCCA3 /* Pods-CIComponentKitDemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -473,7 +397,6 @@
 		C64C85941F68300A00F9ED60 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C64C85931F68300A00F9ED60 /* CIComponentKit.framework */,
 				C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */,
 			);
 			name = Products;
@@ -557,78 +480,21 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		C64C85901F68300A00F9ED60 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C3F18031F70F5FE00355627 /* UIButton+CICConstructor.h in Headers */,
-				1C3F18091F70F5FE00355627 /* UILabel+CICConstructor.h in Headers */,
-				1C3F18071F70F5FE00355627 /* UIImageView+CICConstructor.h in Headers */,
-				1C3F18121F70F73600355627 /* NSString+CICDate.h in Headers */,
-				1C3F18051F70F5FE00355627 /* UIDatePicker+CICConstructor.h in Headers */,
-				1C3F18171F70FD5C00355627 /* NSDate+CICString.h in Headers */,
-				1C3F180D1F70F5FE00355627 /* UIView+CICConstructor.h in Headers */,
-				C6F69C711F763EDE0014ABD0 /* UISearchBar+CICConstructor.h in Headers */,
-				1C3F180B1F70F5FE00355627 /* UILabel+CIText.h in Headers */,
-				1C4226521F70BC6600EAF1A1 /* CICColorMacros.h in Headers */,
-				B0EC2D541F94FC3900C32C27 /* CICHUD.h in Headers */,
-				1C4226561F70BC6600EAF1A1 /* CIComponentKit.h in Headers */,
-				1C42264E1F70BC6600EAF1A1 /* CICImageTitleButton.h in Headers */,
-				1C4226531F70BC6600EAF1A1 /* CICConstructorMacros.h in Headers */,
-				1C4226501F70BC6600EAF1A1 /* CICLabel.h in Headers */,
-				B03977C21F78A5E20004C256 /* UIColor+CIComponentKit.h in Headers */,
-				1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */,
-				C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */,
-				C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */,
-				1CDF6E50212BCE770011AA5F /* NSNumber+DWWordFigure.h in Headers */,
-				1CCC48D1225D7AC800B1A3F4 /* NSString+CICBaseProperty.h in Headers */,
-				1CFD08A6225C9D4800E3ED15 /* UIImage+CICSize.h in Headers */,
-				1CCC48E8225DC00E00B1A3F4 /* UIDevice+CICUtils.h in Headers */,
-				1C50F24E225C306B00D5748B /* CICTabbarController.h in Headers */,
-				1C8B849B225DC5A0005B263C /* UIView+CICSeparatorLine.h in Headers */,
-				1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */,
-				1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */,
-				1C8B8494225DC512005B263C /* CICVerifyPayPasswordView.h in Headers */,
-				1C8B8498225DC573005B263C /* CICNumberKeyboardView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		C64C85921F68300A00F9ED60 /* CIComponentKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C64C859B1F68300A00F9ED60 /* Build configuration list for PBXNativeTarget "CIComponentKit" */;
-			buildPhases = (
-				233F93F84AD405DB2E55FDA3 /* [CP] Check Pods Manifest.lock */,
-				C64C858E1F68300A00F9ED60 /* Sources */,
-				C64C858F1F68300A00F9ED60 /* Frameworks */,
-				C64C85901F68300A00F9ED60 /* Headers */,
-				C64C85911F68300A00F9ED60 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CIComponentKit;
-			productName = CIComponentKit;
-			productReference = C64C85931F68300A00F9ED60 /* CIComponentKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		C64C85A11F68303B00F9ED60 /* CIComponentKitDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C64C85B61F68303B00F9ED60 /* Build configuration list for PBXNativeTarget "CIComponentKitDemo" */;
 			buildPhases = (
+				D1664A2EFD1FBFFEE4A3005E /* [CP] Check Pods Manifest.lock */,
 				C64C859E1F68303B00F9ED60 /* Sources */,
 				C64C859F1F68303B00F9ED60 /* Frameworks */,
 				C64C85A01F68303B00F9ED60 /* Resources */,
 				B06474671F68435F0009A826 /* Copy Files */,
+				42AEC63AE903E1DCE6C23D82 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B06474661F6843530009A826 /* PBXTargetDependency */,
 			);
 			name = CIComponentKitDemo;
 			productName = CIComponentKitDemo;
@@ -645,10 +511,6 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = codeinventor;
 				TargetAttributes = {
-					C64C85921F68300A00F9ED60 = {
-						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Automatic;
-					};
 					C64C85A11F68303B00F9ED60 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
@@ -669,23 +531,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C64C85921F68300A00F9ED60 /* CIComponentKit */,
 				C64C85A11F68303B00F9ED60 /* CIComponentKitDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C64C85911F68300A00F9ED60 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C8B84D5225DCCDC005B263C /* dot_icon.png in Resources */,
-				1C8B84D4225DCCDC005B263C /* dot_icon@3x.png in Resources */,
-				1C8B84D3225DCCDC005B263C /* dot_icon@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C64C85A01F68303B00F9ED60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -698,7 +549,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		233F93F84AD405DB2E55FDA3 /* [CP] Check Pods Manifest.lock */ = {
+		42AEC63AE903E1DCE6C23D82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-resources.sh",
+				"${PODS_ROOT}/../CIComponentKit/Resources/dot_icon.png",
+				"${PODS_ROOT}/../CIComponentKit/Resources/dot_icon@2x.png",
+				"${PODS_ROOT}/../CIComponentKit/Resources/dot_icon@3x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/dot_icon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/dot_icon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/dot_icon@3x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1664A2EFD1FBFFEE4A3005E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -713,7 +586,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CIComponentKit-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CIComponentKitDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -723,37 +596,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C64C858E1F68300A00F9ED60 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C50F24F225C306B00D5748B /* CICTabbarController.m in Sources */,
-				1CDF6E51212BCE770011AA5F /* NSNumber+DWWordFigure.m in Sources */,
-				B03977C31F78A5E20004C256 /* UIColor+CIComponentKit.m in Sources */,
-				1CCC48D2225D7AC800B1A3F4 /* NSString+CICBaseProperty.m in Sources */,
-				1C4226511F70BC6600EAF1A1 /* CICLabel.m in Sources */,
-				C6F69C981F765D170014ABD0 /* UIImage+CICColor.m in Sources */,
-				1C3F180A1F70F5FE00355627 /* UILabel+CICConstructor.m in Sources */,
-				1CCC48E9225DC00E00B1A3F4 /* UIDevice+CICUtils.m in Sources */,
-				1C8B849C225DC5A0005B263C /* UIView+CICSeparatorLine.m in Sources */,
-				1C3F18041F70F5FE00355627 /* UIButton+CICConstructor.m in Sources */,
-				1C3F18181F70FD5C00355627 /* NSDate+CICString.m in Sources */,
-				C6F69C891F76569F0014ABD0 /* CICSegmentView.m in Sources */,
-				1C3F180E1F70F5FE00355627 /* UIView+CICConstructor.m in Sources */,
-				1C3F18081F70F5FE00355627 /* UIImageView+CICConstructor.m in Sources */,
-				C6F69C721F763EDE0014ABD0 /* UISearchBar+CICConstructor.m in Sources */,
-				B0EC2D551F94FC3900C32C27 /* CICHUD.m in Sources */,
-				1C8B8493225DC512005B263C /* CICVerifyPayPasswordView.m in Sources */,
-				1C3F18131F70F73600355627 /* NSString+CICDate.m in Sources */,
-				1CFD08A7225C9D4800E3ED15 /* UIImage+CICSize.m in Sources */,
-				1CFD08A3225C940000E3ED15 /* NSString+CICNetwork.m in Sources */,
-				1C3F180C1F70F5FE00355627 /* UILabel+CIText.m in Sources */,
-				1C3F18061F70F5FE00355627 /* UIDatePicker+CICConstructor.m in Sources */,
-				1C8B8497225DC573005B263C /* CICNumberKeyboardView.m in Sources */,
-				1C42264F1F70BC6600EAF1A1 /* CICImageTitleButton.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C64C859E1F68303B00F9ED60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -770,14 +612,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B06474661F6843530009A826 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C64C85921F68300A00F9ED60 /* CIComponentKit */;
-			targetProxy = B06474651F6843530009A826 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C64C85991F68300A00F9ED60 /* Debug */ = {
@@ -896,46 +730,9 @@
 			};
 			name = Release;
 		};
-		C64C859C1F68300A00F9ED60 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17F7698AEDE151DA5CD9B090 /* Pods-CIComponentKit.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = club.codeinventor.CIComponentKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		C64C859D1F68300A00F9ED60 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B77CAD38DDFCE99F627F622A /* Pods-CIComponentKit.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = club.codeinventor.CIComponentKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		C64C85B71F68303B00F9ED60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7934B378314D14B35A1815F5 /* Pods-CIComponentKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -951,6 +748,7 @@
 		};
 		C64C85B81F68303B00F9ED60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FC06026A0D4155186ACCCA3 /* Pods-CIComponentKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -972,15 +770,6 @@
 			buildConfigurations = (
 				C64C85991F68300A00F9ED60 /* Debug */,
 				C64C859A1F68300A00F9ED60 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C64C859B1F68300A00F9ED60 /* Build configuration list for PBXNativeTarget "CIComponentKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C64C859C1F68300A00F9ED60 /* Debug */,
-				C64C859D1F68300A00F9ED60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
