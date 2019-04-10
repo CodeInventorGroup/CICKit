@@ -8,8 +8,8 @@
 
 #import "CICAppDelegate.h"
 #import "CICRootViewController.h"
-
-#import "CIComponentKit.h"
+#import "CICTabbarController.h"
+#import "UIColor+CIComponentKit.h"
 
 @interface CICAppDelegate ()
 
@@ -62,20 +62,29 @@
     
     CICTabbarController *tabbarController = [[CICTabbarController alloc] init];
     
+    //  首先设置类名数据
     tabbarController.cic.classNameData(@[@"CICFirstViewController", @"CICSecondViewController", @"CICThirdViewController"])
-                        .itemDataNoSelectedImage(@[@[@"首页", @"home_tabbar_icon"],
+                        .itemDataTitleNormalImage(@[@[@"首页", @"home_tabbar_icon"],
                                                    @[@"聚中", @"center_tabbar_icon"],
                                                    @[@"工具", @"tool_tabbar_icon"]])
                         .selectedTextColor([UIColor cic_hexColor:0x1296db])
                         .normalTextColor([UIColor cic_hexColor:0x646464]);
     self.window.rootViewController = tabbarController;
-    tabbarController.childViewControllers[2].tabBarItem.badgeValue = @"100";
+    tabbarController.cic.badgeValue(2, @"100");
     
     //  动态加载tabbar图片的数据
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        NSArray *urls = [NSArray array];
-//        tabbarController.cic.itemDataNoTitle(urls).barBackgroundImage(@"");
-//    });
+//        tabbarController.cic.itemDataNormalSelectedImage(urls).barBackgroundImage(@"");
+        tabbarController.cic.imageSize(CGSizeMake(34, 34))
+                            .itemDataTitleNormalImage(@[@[@"",@"home_tabbar_icon"],
+                                                       @[@"",@"center_tabbar_icon"],
+                                                       @[@"",@"tool_tabbar_icon"]])
+                            .selectedIndex(2);
+        tabbarController.didSelectedTabbarBlock = ^(NSInteger selectedIndex) {
+            NSLog(@"selectedIndex = %ld", selectedIndex);
+        };
+    });
 }
 
 

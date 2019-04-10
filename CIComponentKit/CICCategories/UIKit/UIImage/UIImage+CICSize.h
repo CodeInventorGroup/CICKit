@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 对图片尺寸进行压缩--
 + (UIImage *)cic_imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
+/// 对图片尺寸进行压缩
+- (UIImage *)cic_imageScaleToSize:(CGSize)size;
+
 @end
 
 NS_ASSUME_NONNULL_END

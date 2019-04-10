@@ -10,8 +10,10 @@
 #import "CICTabbarController.h"
 #import <UIImageView+WebCache.h>
 #import "NSString+CICNetwork.h"
-#import "UIImage+CICColor.h"
+#import "NSDate+CICString.h"
 #import "UIImage+CICSize.h"
+#import "UIImage+CICColor.h"
+#import "NSString+CICBaseProperty.h"
 
 @interface CICTabbarController ()<UITabBarControllerDelegate>
 
@@ -21,6 +23,30 @@
 
 @implementation CICTabbarController
 
+#pragma mark - Life Cycle
+- (instancetype)init {
+    if (self = [super init]) {
+        self.imageSize = CGSizeMake(23, 23);
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    
+    if (self = [super initWithCoder:aDecoder]) {
+        self.imageSize = CGSizeMake(23, 23);
+    }
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        self.imageSize = CGSizeMake(23, 23);
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
@@ -28,7 +54,9 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     
-    NSLog(@"didSelectViewController %ld", tabBarController.selectedIndex);
+    if (self.didSelectedTabbarBlock) {
+        self.didSelectedTabbarBlock(tabBarController.selectedIndex);
+    }
 }
 
 #pragma mark - Setter Methods
@@ -40,35 +68,35 @@
     }
 }
 
-- (void)setItemDataNoTitleSelectedImage:(NSArray *)itemDataNoTitleSelectedImage {
+- (void)setItemDataNormalImage:(NSArray *)itemDataNormalImage {
     
-    _itemDataNoTitleSelectedImage = itemDataNoTitleSelectedImage;
-    for (NSString *data in itemDataNoTitleSelectedImage) {
-        [self updateChildViewControllerItemAtIndex:[itemDataNoTitleSelectedImage indexOfObject:data] normalImageName:data];
+    _itemDataNormalImage = itemDataNormalImage;
+    for (NSString *data in itemDataNormalImage) {
+        [self updateChildViewControllerItemAtIndex:[itemDataNormalImage indexOfObject:data] normalImageName:data];
     }
 }
 
-- (void)setItemDataNoSelectedImage:(NSArray *)itemDataNoSelectedImage {
+- (void)setItemDataTitleNormalImage:(NSArray *)itemDataTitleNormalImage {
     
-    _itemDataNoSelectedImage = itemDataNoSelectedImage;
-    for (NSArray *data in itemDataNoSelectedImage) {
-        [self updateChildViewControllerItemAtIndex:[itemDataNoSelectedImage indexOfObject:data] normalImageName:data.lastObject title:data.firstObject];
+    _itemDataTitleNormalImage = itemDataTitleNormalImage;
+    for (NSArray *data in itemDataTitleNormalImage) {
+        [self updateChildViewControllerItemAtIndex:[itemDataTitleNormalImage indexOfObject:data] normalImageName:data.lastObject title:data.firstObject];
     }
 }
 
-- (void)setItemDataNoTitle:(NSArray *)itemDataNoTitle {
+- (void)setItemDataNormalSelectedImage:(NSArray *)itemDataNormalSelectedImage {
     
-    _itemDataNoTitle = itemDataNoTitle;
-    for (NSArray *data in itemDataNoTitle) {
-        [self updateChildViewControllerItemAtIndex:[itemDataNoTitle indexOfObject:data] normalImageName:data.firstObject title:nil selectedImageName:data.lastObject];
+    _itemDataNormalSelectedImage = itemDataNormalSelectedImage;
+    for (NSArray *data in itemDataNormalSelectedImage) {
+        [self updateChildViewControllerItemAtIndex:[itemDataNormalSelectedImage indexOfObject:data] normalImageName:data.firstObject title:nil selectedImageName:data.lastObject];
     }
 }
 
-- (void)setItemData:(NSArray *)itemData {
+- (void)setItemDataTitleNormalSelectedImage:(NSArray *)itemDataTitleNormalSelectedImage {
     
-    _itemData = itemData;
-    for (NSArray *data in itemData) {
-        [self updateChildViewControllerItemAtIndex:[itemData indexOfObject:data] normalImageName:data[1] title:data.firstObject selectedImageName:data.lastObject];
+    _itemDataTitleNormalSelectedImage = itemDataTitleNormalSelectedImage;
+    for (NSArray *data in itemDataTitleNormalSelectedImage) {
+        [self updateChildViewControllerItemAtIndex:[itemDataTitleNormalSelectedImage indexOfObject:data] normalImageName:data[1] title:data.firstObject selectedImageName:data.lastObject];
     }
 }
 
@@ -91,6 +119,24 @@
         [self.tempImageViewData addObject:imageView];
     }else {
         self.tabBar.backgroundImage = [UIImage imageNamed:barBackgroundImage];
+    }
+}
+
+- (void)setNormalTitleColr:(UIColor *)normalTitleColr {
+    
+    _normalTitleColr = normalTitleColr;
+    
+    for (UIViewController *childViewController in self.childViewControllers) {
+        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: normalTitleColr} forState:UIControlStateNormal];
+    }
+}
+
+- (void)setSelectedTitleColr:(UIColor *)selectedTitleColr {
+    
+    _selectedTitleColr = selectedTitleColr;
+    
+    for (UIViewController *childViewController in self.childViewControllers) {
+        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTitleColr} forState:UIControlStateSelected];
     }
 }
 
@@ -117,14 +163,14 @@
     
     __block UIViewController *childViewController = self.childViewControllers[index];
     __weak typeof(self) weakSelf = self;
-    if (title) {    
+    if (title) {
         childViewController.tabBarItem.title = title;
     }
-    if ([normalImageName cic_isUrl]) {
+    if (normalImageName && [normalImageName cic_isUrl]) {
         UIImageView *imageView = [[UIImageView alloc] init];
         [imageView sd_setImageWithURL:[NSURL URLWithString:normalImageName] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             if (!error) {
-                UIImage *scaleSizeImage = [UIImage cic_imageWithImage:image scaledToSize:CGSizeMake(23, 23)];
+                UIImage *scaleSizeImage = [UIImage cic_imageWithImage:image scaledToSize:self.imageSize];
                 childViewController.tabBarItem.image = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
                 if (!selectedImageName) {
                     childViewController.tabBarItem.selectedImage = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -137,24 +183,41 @@
         }];
         [self.tempImageViewData addObject:imageView];
     }else {
-        childViewController.tabBarItem.image = [UIImage imageNamed:normalImageName];
+        UIImage *normalImage = [UIImage imageNamed:normalImageName];
+        if (!CGSizeEqualToSize(normalImage.size, self.imageSize)) {
+            normalImage = [normalImage cic_imageScaleToSize:self.imageSize];
+        }
+        childViewController.tabBarItem.image = normalImage;
+        if ([NSString cic_isEmpty:selectedImageName]) {
+            childViewController.tabBarItem.selectedImage = [normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        }
     }
-    if (selectedImageName && [selectedImageName cic_isUrl]) {
-        UIImageView *imageView = [[UIImageView alloc] init];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:selectedImageName] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-            if (!error) {
-                UIImage *scaleSizeImage = [UIImage cic_imageWithImage:image scaledToSize:CGSizeMake(23, 23)];
-                childViewController.tabBarItem.selectedImage = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-                
+    if (selectedImageName) {
+        if ([selectedImageName cic_isUrl]) {
+            UIImageView *imageView = [[UIImageView alloc] init];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:selectedImageName] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                if (!error) {
+                    UIImage *scaleSizeImage = [UIImage cic_imageWithImage:image scaledToSize:self.imageSize];
+                    childViewController.tabBarItem.selectedImage = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    
+                }
+                [weakSelf.tempImageViewData removeObject:imageView];
+                if (weakSelf.tempImageViewData.count == 0) {
+                    weakSelf.tempImageViewData = nil;
+                }
+            }];
+            [self.tempImageViewData addObject:imageView];
+        }else {
+            UIImage *selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            if (!CGSizeEqualToSize(selectedImage.size, self.imageSize)) {
+                selectedImage = [selectedImage cic_imageScaleToSize:self.imageSize];
             }
-            [weakSelf.tempImageViewData removeObject:imageView];
-            if (weakSelf.tempImageViewData.count == 0) {
-                weakSelf.tempImageViewData = nil;
-            }
-        }];
-        [self.tempImageViewData addObject:imageView];
-    }else {
-        childViewController.tabBarItem.selectedImage = [UIImage imageNamed:selectedImageName];
+            childViewController.tabBarItem.selectedImage = selectedImage;
+        }
+    }
+    if ([NSString cic_isEmpty:title]) {
+        CGFloat margin = (CIC_TABBAR_HEIGHT - self.imageSize.height)/2.0;
+        childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(margin, 0, -margin, 0);
     }
 }
 
@@ -187,33 +250,33 @@
         return weakSelf;
     };
     
-    self.itemDataNoTitleSelectedImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataNoTitleSelectedImage) {
-        weakSelf.component.itemDataNoTitleSelectedImage = itemDataNoTitleSelectedImage;
+    self.itemDataNormalImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataNormalImage) {
+        weakSelf.component.itemDataNormalImage = itemDataNormalImage;
         return weakSelf;
     };
     
-    self.itemDataNoSelectedImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataNoSelectedImage) {
-        weakSelf.component.itemDataNoSelectedImage = itemDataNoSelectedImage;
+    self.itemDataTitleNormalImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataTitleNormalImage) {
+        weakSelf.component.itemDataTitleNormalImage = itemDataTitleNormalImage;
         return weakSelf;
     };
     
-    self.itemData = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemData) {
-        weakSelf.component.itemData = itemData;
+    self.itemDataTitleNormalSelectedImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataTitleNormalSelectedImage) {
+        weakSelf.component.itemDataTitleNormalSelectedImage = itemDataTitleNormalSelectedImage;
         return weakSelf;
     };
     
     self.selectedTextColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull selectedColor) {
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedColor} forState:UIControlStateSelected];
+        weakSelf.component.selectedTitleColr = selectedColor;
         return weakSelf;
     };
     
     self.normalTextColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull normalColor) {
-        [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: normalColor} forState:UIControlStateNormal];
+        weakSelf.component.normalTitleColr = normalColor;
         return weakSelf;
     };
     
-    self.itemDataNoTitle = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataNoTitle) {
-        weakSelf.component.itemDataNoTitle = itemDataNoTitle;
+    self.itemDataNormalSelectedImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataNormalSelectedImage) {
+        weakSelf.component.itemDataNormalSelectedImage = itemDataNormalSelectedImage;
         return weakSelf;
     };
     
@@ -224,6 +287,21 @@
     
     self.barBackgroundImage = ^CICTabbarControllerConstructor * _Nonnull(NSString * _Nonnull backgroundImage) {
         weakSelf.component.barBackgroundImage = backgroundImage;
+        return weakSelf;
+    };
+    
+    self.imageSize = ^CICTabbarControllerConstructor * _Nonnull(CGSize imageSize) {
+        weakSelf.component.imageSize = imageSize;
+        return weakSelf;
+    };
+    
+    self.badgeValue = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger index, NSString *value) {
+        weakSelf.component.childViewControllers[index].tabBarItem.badgeValue = value;
+        return weakSelf;
+    };
+    
+    self.selectedIndex = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger selectedIndex) {
+        weakSelf.component.selectedIndex = selectedIndex;
         return weakSelf;
     };
 }

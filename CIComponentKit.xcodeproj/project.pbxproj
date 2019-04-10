@@ -38,11 +38,13 @@
 		1C50F255225C346400D5748B /* CICFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F254225C346400D5748B /* CICFirstViewController.m */; };
 		1C50F258225C349F00D5748B /* CICSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F257225C349F00D5748B /* CICSecondViewController.m */; };
 		1C50F25B225C34AC00D5748B /* CICThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F25A225C34AC00D5748B /* CICThirdViewController.m */; };
+		1CCC48D1225D7AC800B1A3F4 /* NSString+CICBaseProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CCC48D2225D7AC800B1A3F4 /* NSString+CICBaseProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */; };
 		1CDF6E50212BCE770011AA5F /* NSNumber+DWWordFigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CDF6E4E212BCE770011AA5F /* NSNumber+DWWordFigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CDF6E51212BCE770011AA5F /* NSNumber+DWWordFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */; };
-		1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */; };
+		1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CFD08A3225C940000E3ED15 /* NSString+CICNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD08A1225C940000E3ED15 /* NSString+CICNetwork.m */; };
-		1CFD08A6225C9D4800E3ED15 /* UIImage+CICSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFD08A4225C9D4800E3ED15 /* UIImage+CICSize.h */; };
+		1CFD08A6225C9D4800E3ED15 /* UIImage+CICSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CFD08A4225C9D4800E3ED15 /* UIImage+CICSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CFD08A7225C9D4800E3ED15 /* UIImage+CICSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFD08A5225C9D4800E3ED15 /* UIImage+CICSize.m */; };
 		978E0AD628A6625CE25FCFA8 /* libPods-CIComponentKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */; };
 		B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */; };
@@ -126,6 +128,8 @@
 		1C50F257225C349F00D5748B /* CICSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICSecondViewController.m; sourceTree = "<group>"; };
 		1C50F259225C34AC00D5748B /* CICThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICThirdViewController.h; sourceTree = "<group>"; };
 		1C50F25A225C34AC00D5748B /* CICThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICThirdViewController.m; sourceTree = "<group>"; };
+		1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CICBaseProperty.h"; sourceTree = "<group>"; };
+		1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CICBaseProperty.m"; sourceTree = "<group>"; };
 		1CDF6E4E212BCE770011AA5F /* NSNumber+DWWordFigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DWWordFigure.h"; sourceTree = "<group>"; };
 		1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+DWWordFigure.m"; sourceTree = "<group>"; };
 		1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CICNetwork.h"; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 				1C3F18111F70F73600355627 /* NSString+CICDate.m */,
 				1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */,
 				1CFD08A1225C940000E3ED15 /* NSString+CICNetwork.m */,
+				1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */,
+				1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -509,11 +515,12 @@
 				B03977C21F78A5E20004C256 /* UIColor+CIComponentKit.h in Headers */,
 				1C4226551F70BC6600EAF1A1 /* CICSizeMacros.h in Headers */,
 				C6F69C971F765D170014ABD0 /* UIImage+CICColor.h in Headers */,
-				1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */,
 				C6F69C881F76569F0014ABD0 /* CICSegmentView.h in Headers */,
 				1CDF6E50212BCE770011AA5F /* NSNumber+DWWordFigure.h in Headers */,
+				1CCC48D1225D7AC800B1A3F4 /* NSString+CICBaseProperty.h in Headers */,
 				1CFD08A6225C9D4800E3ED15 /* UIImage+CICSize.h in Headers */,
 				1C50F24E225C306B00D5748B /* CICTabbarController.h in Headers */,
+				1CFD08A2225C940000E3ED15 /* NSString+CICNetwork.h in Headers */,
 				1C4226541F70BC6600EAF1A1 /* CICFontMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,6 +658,7 @@
 				1C50F24F225C306B00D5748B /* CICTabbarController.m in Sources */,
 				1CDF6E51212BCE770011AA5F /* NSNumber+DWWordFigure.m in Sources */,
 				B03977C31F78A5E20004C256 /* UIColor+CIComponentKit.m in Sources */,
+				1CCC48D2225D7AC800B1A3F4 /* NSString+CICBaseProperty.m in Sources */,
 				1C4226511F70BC6600EAF1A1 /* CICLabel.m in Sources */,
 				C6F69C981F765D170014ABD0 /* UIImage+CICColor.m in Sources */,
 				1C3F180A1F70F5FE00355627 /* UILabel+CICConstructor.m in Sources */,
@@ -855,6 +863,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/CIComponentKitDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -868,6 +878,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/CIComponentKitDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

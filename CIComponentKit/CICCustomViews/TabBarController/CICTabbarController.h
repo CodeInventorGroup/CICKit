@@ -13,18 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CICTabbarController : UITabBarController
 
-/// Controller 类名
 @property (nonatomic, copy) NSArray *classNameData;
-/// 包含image
-@property (nonatomic, copy) NSArray *itemDataNoTitleSelectedImage;
-/// 包含title、image、(selectedImage 为orignal模式渲染)
-@property (nonatomic, copy) NSArray *itemDataNoSelectedImage;
-/// 包含title、image、selectedImage
-@property (nonatomic, copy) NSArray *itemData;
-/// 包含image、selectedImage
-@property (nonatomic, copy) NSArray *itemDataNoTitle;
-/// 设置背景图片url或者图片名称
+@property (nonatomic, copy) NSArray *itemDataNormalImage;
+@property (nonatomic, copy) NSArray *itemDataTitleNormalImage;
+@property (nonatomic, copy) NSArray *itemDataTitleNormalSelectedImage;
+@property (nonatomic, copy) NSArray *itemDataNormalSelectedImage;
 @property (nonatomic, copy) NSString *barBackgroundImage;
+@property (nonatomic, strong) UIColor *selectedTitleColr;
+@property (nonatomic, strong) UIColor *normalTitleColr;
+@property (nonatomic, assign) CGSize imageSize;
+@property (nonatomic, copy) void(^didSelectedTabbarBlock)(NSInteger selectedIndex);
 
 @end
 
@@ -32,19 +30,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Controller 类名
 CICConstructorProperty(CICTabbarControllerConstructor, classNameData, NSArray *classNameData)
-/// 包含image
-CICConstructorProperty(CICTabbarControllerConstructor, itemDataNoTitleSelectedImage, NSArray *itemDataNoTitleSelectedImage)
-/// 包含title、image、(selectedImage 为orignal模式渲染)
-CICConstructorProperty(CICTabbarControllerConstructor, itemDataNoSelectedImage, NSArray *itemDataNoSelectedImage)
-/// 包含title、image、selectedImage
-CICConstructorProperty(CICTabbarControllerConstructor, itemData, NSArray *itemData)
-/// 包含image、selectedImage
-CICConstructorProperty(CICTabbarControllerConstructor, itemDataNoTitle, NSArray *itemDataNoTitle)
+/// 包含image(image可以用图片名或者url链接)(不修改title内容)
+CICConstructorProperty(CICTabbarControllerConstructor, itemDataNormalImage, NSArray *itemDataNormalImage)
+/// 包含title、image、(selectedImage 为orignal模式渲染)(不显示title时，title传@"")
+CICConstructorProperty(CICTabbarControllerConstructor, itemDataTitleNormalImage, NSArray *itemDataTitleNormalImage)
+/// 包含title、image、selectedImage(不显示title时，title传@"")
+CICConstructorProperty(CICTabbarControllerConstructor, itemDataTitleNormalSelectedImage, NSArray *itemDataTitleNormalSelectedImage)
+/// 包含image、selectedImage(Tabbar不修改title内容)
+CICConstructorProperty(CICTabbarControllerConstructor, itemDataNormalSelectedImage, NSArray *itemDataNormalSelectedImage)
 
 CICConstructorProperty(CICTabbarControllerConstructor, selectedTextColor, UIColor *selectedColor)
 CICConstructorProperty(CICTabbarControllerConstructor, normalTextColor, UIColor *normalColor)
 CICConstructorProperty(CICTabbarControllerConstructor, barBackgroundColor, UIColor *color)
 CICConstructorProperty(CICTabbarControllerConstructor, barBackgroundImage, NSString *backgroundImage)
+/// 如果设置大小，在设置图片之前设置大小
+CICConstructorProperty(CICTabbarControllerConstructor, imageSize, CGSize imageSize)
+CICConstructorProperty(CICTabbarControllerConstructor, badgeValue, NSUInteger index, NSString *value)
+CICConstructorProperty(CICTabbarControllerConstructor, selectedIndex, NSUInteger selectedIndex)
 
 @end
 

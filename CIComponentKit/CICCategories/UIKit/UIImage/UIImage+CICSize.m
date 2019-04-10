@@ -19,5 +19,14 @@
     return newImage;
 }
 
+/// 对图片尺寸进行压缩
+- (UIImage *)cic_imageScaleToSize:(CGSize)size {
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    [self drawInRect:CGRectMake(0 , 0, size.width, size.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
 @end

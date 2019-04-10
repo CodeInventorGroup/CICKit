@@ -7,9 +7,11 @@
 //
 
 #import "CICRootViewController.h"
-#import "CIComponentKit.h"
 
 #import "CICDemoViewController.h"
+#import "UIColor+CIComponentKit.h"
+#import "CICLabel.h"
+#import "CICHUD.h"
 
 @interface CICRootViewController ()
 

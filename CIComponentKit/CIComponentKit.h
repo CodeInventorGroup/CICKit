@@ -23,6 +23,8 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 #import "NSNumber+DWWordFigure.h"
 #import "NSDate+CICString.h"
 #import "NSString+CICDate.h"
+#import "NSString+CICNetwork.h"
+#import "NSString+CICBaseProperty.h"
 
 //MARK: - UIKit Extensions
 #import "UIView+CICConstructor.h"
@@ -37,6 +39,7 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 #import "CICSegmentView.h"
 #import "CICImageTitleButton.h"
 #import "UIImage+CICColor.h"
+#import "UIImage+CICSize.h"
 #import "UILabel+CIText.h"
 #import "CICLabel.h"
 #import "CICHUD.h"
