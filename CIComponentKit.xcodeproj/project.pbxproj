@@ -44,6 +44,9 @@
 		1C8B8498225DC573005B263C /* CICNumberKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C8B8496225DC573005B263C /* CICNumberKeyboardView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C8B849B225DC5A0005B263C /* UIView+CICSeparatorLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C8B8499225DC5A0005B263C /* UIView+CICSeparatorLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C8B849C225DC5A0005B263C /* UIView+CICSeparatorLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B849A225DC5A0005B263C /* UIView+CICSeparatorLine.m */; };
+		1C8B84D3225DCCDC005B263C /* dot_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8B84D0225DCCDC005B263C /* dot_icon@2x.png */; };
+		1C8B84D4225DCCDC005B263C /* dot_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8B84D1225DCCDC005B263C /* dot_icon@3x.png */; };
+		1C8B84D5225DCCDC005B263C /* dot_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8B84D2225DCCDC005B263C /* dot_icon.png */; };
 		1CCC48D1225D7AC800B1A3F4 /* NSString+CICBaseProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CCC48D2225D7AC800B1A3F4 /* NSString+CICBaseProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */; };
 		1CCC48E8225DC00E00B1A3F4 /* UIDevice+CICUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCC48E6225DC00E00B1A3F4 /* UIDevice+CICUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -142,6 +145,9 @@
 		1C8B8496225DC573005B263C /* CICNumberKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICNumberKeyboardView.h; sourceTree = "<group>"; };
 		1C8B8499225DC5A0005B263C /* UIView+CICSeparatorLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CICSeparatorLine.h"; sourceTree = "<group>"; };
 		1C8B849A225DC5A0005B263C /* UIView+CICSeparatorLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CICSeparatorLine.m"; sourceTree = "<group>"; };
+		1C8B84D0225DCCDC005B263C /* dot_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot_icon@2x.png"; sourceTree = "<group>"; };
+		1C8B84D1225DCCDC005B263C /* dot_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot_icon@3x.png"; sourceTree = "<group>"; };
+		1C8B84D2225DCCDC005B263C /* dot_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_icon.png; sourceTree = "<group>"; };
 		1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CICBaseProperty.h"; sourceTree = "<group>"; };
 		1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CICBaseProperty.m"; sourceTree = "<group>"; };
 		1CCC48E6225DC00E00B1A3F4 /* UIDevice+CICUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CICUtils.h"; sourceTree = "<group>"; };
@@ -370,11 +376,14 @@
 			path = TabbarControllerDemo;
 			sourceTree = "<group>";
 		};
-		1C8B849D225DC77A005B263C /* Resource */ = {
+		1C8B84CF225DCCDC005B263C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C8B84D0225DCCDC005B263C /* dot_icon@2x.png */,
+				1C8B84D1225DCCDC005B263C /* dot_icon@3x.png */,
+				1C8B84D2225DCCDC005B263C /* dot_icon.png */,
 			);
-			path = Resource;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		1CCC48D7225D924D00B1A3F4 /* Keyboard */ = {
@@ -473,7 +482,7 @@
 		C64C85951F68300A00F9ED60 /* CIComponentKit */ = {
 			isa = PBXGroup;
 			children = (
-				1C8B849D225DC77A005B263C /* Resource */,
+				1C8B84CF225DCCDC005B263C /* Resources */,
 				1C42263E1F70BC6600EAF1A1 /* CICCategories */,
 				1C4226381F70BC6600EAF1A1 /* CICConstants */,
 				1C4226311F70BC6600EAF1A1 /* CICCustomViews */,
@@ -671,6 +680,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C8B84D5225DCCDC005B263C /* dot_icon.png in Resources */,
+				1C8B84D4225DCCDC005B263C /* dot_icon@3x.png in Resources */,
+				1C8B84D3225DCCDC005B263C /* dot_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

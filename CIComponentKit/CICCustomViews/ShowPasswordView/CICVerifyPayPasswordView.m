@@ -12,6 +12,7 @@
 #import "CICNumberKeyboardView.h"
 #import "NSString+CICBaseProperty.h"
 #import "UIView+CICSeparatorLine.h"
+#import "UIImageView+CICConstructor.h"
 
 /// 密码位数
 static NSString *const kPasswordNumber = @"6";
@@ -143,13 +144,13 @@ static NSString *const kTimeDuration = @"0.3";
         CGFloat perLabelWidth = width / number;
         for (NSUInteger i = 0; i < number; i++) {
             CGFloat perDotWidth = 10;
-            UIView *dotView = [[UIView alloc] initWithFrame:CGRectMake(i * perLabelWidth + (perLabelWidth - perDotWidth)/2.0, (CGRectGetHeight(_passwordInputView.frame) - perDotWidth)/2.0, perDotWidth, perDotWidth)];
-            dotView.layer.cornerRadius = perDotWidth/2.0;
-            dotView.layer.masksToBounds = YES;
-            dotView.backgroundColor = [UIColor blackColor];
-            dotView.tag = i + [kDotViewTagMargin integerValue];
-            dotView.hidden = YES;
-            [_passwordInputView addSubview:dotView];
+            UIImageView *dotImageView = [[UIImageView alloc] init];
+            dotImageView.cic.frame(CGRectMake(i * perLabelWidth + (perLabelWidth - perDotWidth)/2.0, (CGRectGetHeight(_passwordInputView.frame) - perDotWidth)/2.0, perDotWidth, perDotWidth))
+            .tag(i + [kDotViewTagMargin integerValue])
+            .hidden(YES)
+            .userInteractionEnabled(YES)
+            .imageName(@"dot_icon")
+            .addTo(_passwordInputView);
             if (i > 0) {
                 [_passwordInputView addSubview:[UIView cic_separatorLineWithFrame:CGRectMake(i * perLabelWidth, 0, CIC_SEPARATOR_LINE_SIZE, CGRectGetHeight(_passwordInputView.frame))]];
             }
