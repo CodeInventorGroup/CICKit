@@ -34,33 +34,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1C3F17F21F70F5FE00355627 /* UIButton+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CICConstructor.h"; sourceTree = "<group>"; };
-		1C3F17F31F70F5FE00355627 /* UIButton+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CICConstructor.m"; sourceTree = "<group>"; };
-		1C3F17F51F70F5FE00355627 /* UIDatePicker+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDatePicker+CICConstructor.h"; sourceTree = "<group>"; };
-		1C3F17F61F70F5FE00355627 /* UIDatePicker+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDatePicker+CICConstructor.m"; sourceTree = "<group>"; };
-		1C3F17F81F70F5FE00355627 /* UIImageView+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CICConstructor.h"; sourceTree = "<group>"; };
-		1C3F17F91F70F5FE00355627 /* UIImageView+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CICConstructor.m"; sourceTree = "<group>"; };
-		1C3F17FB1F70F5FE00355627 /* UILabel+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CICConstructor.h"; sourceTree = "<group>"; };
-		1C3F17FC1F70F5FE00355627 /* UILabel+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CICConstructor.m"; sourceTree = "<group>"; };
-		1C3F17FD1F70F5FE00355627 /* UILabel+CIText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CIText.h"; sourceTree = "<group>"; };
-		1C3F17FE1F70F5FE00355627 /* UILabel+CIText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CIText.m"; sourceTree = "<group>"; };
-		1C3F18001F70F5FE00355627 /* UIView+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CICConstructor.h"; sourceTree = "<group>"; };
-		1C3F18011F70F5FE00355627 /* UIView+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CICConstructor.m"; sourceTree = "<group>"; };
-		1C3F18101F70F73600355627 /* NSString+CICDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CICDate.h"; sourceTree = "<group>"; };
-		1C3F18111F70F73600355627 /* NSString+CICDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CICDate.m"; sourceTree = "<group>"; };
-		1C3F18151F70FD5C00355627 /* NSDate+CICString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+CICString.h"; sourceTree = "<group>"; };
-		1C3F18161F70FD5C00355627 /* NSDate+CICString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CICString.m"; sourceTree = "<group>"; };
-		1C4226331F70BC6600EAF1A1 /* CICImageTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICImageTitleButton.h; sourceTree = "<group>"; };
-		1C4226341F70BC6600EAF1A1 /* CICImageTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICImageTitleButton.m; sourceTree = "<group>"; };
-		1C4226361F70BC6600EAF1A1 /* CICLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICLabel.h; sourceTree = "<group>"; };
-		1C4226371F70BC6600EAF1A1 /* CICLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICLabel.m; sourceTree = "<group>"; };
-		1C4226391F70BC6600EAF1A1 /* CICColorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICColorMacros.h; sourceTree = "<group>"; };
-		1C42263A1F70BC6600EAF1A1 /* CICConstructorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICConstructorMacros.h; sourceTree = "<group>"; };
-		1C42263B1F70BC6600EAF1A1 /* CICFontMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICFontMacros.h; sourceTree = "<group>"; };
-		1C42263C1F70BC6600EAF1A1 /* CICSizeMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICSizeMacros.h; sourceTree = "<group>"; };
-		1C42263D1F70BC6600EAF1A1 /* CIComponentKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIComponentKit.h; sourceTree = "<group>"; };
-		1C50F24C225C306B00D5748B /* CICTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICTabbarController.h; sourceTree = "<group>"; };
-		1C50F24D225C306B00D5748B /* CICTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICTabbarController.m; sourceTree = "<group>"; };
 		1C50F250225C342D00D5748B /* CICBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICBaseViewController.h; sourceTree = "<group>"; };
 		1C50F251225C342D00D5748B /* CICBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICBaseViewController.m; sourceTree = "<group>"; };
 		1C50F253225C346400D5748B /* CICFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICFirstViewController.h; sourceTree = "<group>"; };
@@ -69,35 +42,12 @@
 		1C50F257225C349F00D5748B /* CICSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICSecondViewController.m; sourceTree = "<group>"; };
 		1C50F259225C34AC00D5748B /* CICThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICThirdViewController.h; sourceTree = "<group>"; };
 		1C50F25A225C34AC00D5748B /* CICThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICThirdViewController.m; sourceTree = "<group>"; };
-		1C8B8491225DC512005B263C /* CICVerifyPayPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICVerifyPayPasswordView.m; sourceTree = "<group>"; };
-		1C8B8492225DC512005B263C /* CICVerifyPayPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICVerifyPayPasswordView.h; sourceTree = "<group>"; };
-		1C8B8495225DC573005B263C /* CICNumberKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICNumberKeyboardView.m; sourceTree = "<group>"; };
-		1C8B8496225DC573005B263C /* CICNumberKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICNumberKeyboardView.h; sourceTree = "<group>"; };
-		1C8B8499225DC5A0005B263C /* UIView+CICSeparatorLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CICSeparatorLine.h"; sourceTree = "<group>"; };
-		1C8B849A225DC5A0005B263C /* UIView+CICSeparatorLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CICSeparatorLine.m"; sourceTree = "<group>"; };
-		1C8B84D0225DCCDC005B263C /* dot_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot_icon@2x.png"; sourceTree = "<group>"; };
-		1C8B84D1225DCCDC005B263C /* dot_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot_icon@3x.png"; sourceTree = "<group>"; };
-		1C8B84D2225DCCDC005B263C /* dot_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot_icon.png; sourceTree = "<group>"; };
-		1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CICBaseProperty.h"; sourceTree = "<group>"; };
-		1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CICBaseProperty.m"; sourceTree = "<group>"; };
-		1CCC48E6225DC00E00B1A3F4 /* UIDevice+CICUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CICUtils.h"; sourceTree = "<group>"; };
-		1CCC48E7225DC00E00B1A3F4 /* UIDevice+CICUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+CICUtils.m"; sourceTree = "<group>"; };
-		1CDF6E4E212BCE770011AA5F /* NSNumber+DWWordFigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DWWordFigure.h"; sourceTree = "<group>"; };
-		1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+DWWordFigure.m"; sourceTree = "<group>"; };
-		1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CICNetwork.h"; sourceTree = "<group>"; };
-		1CFD08A1225C940000E3ED15 /* NSString+CICNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CICNetwork.m"; sourceTree = "<group>"; };
-		1CFD08A4225C9D4800E3ED15 /* UIImage+CICSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CICSize.h"; sourceTree = "<group>"; };
-		1CFD08A5225C9D4800E3ED15 /* UIImage+CICSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CICSize.m"; sourceTree = "<group>"; };
 		26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIComponentKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC06026A0D4155186ACCCA3 /* Pods-CIComponentKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKitDemo.release.xcconfig"; path = "Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7934B378314D14B35A1815F5 /* Pods-CIComponentKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8612034BAD067DF1E99FDB55 /* libPods-CIComponentKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIComponentKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICDemoViewController.h; sourceTree = "<group>"; };
 		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
-		B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CIComponentKit.h"; sourceTree = "<group>"; };
-		B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CIComponentKit.m"; sourceTree = "<group>"; };
-		B0EC2D521F94FC3900C32C27 /* CICHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICHUD.h; sourceTree = "<group>"; };
-		B0EC2D531F94FC3900C32C27 /* CICHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICHUD.m; sourceTree = "<group>"; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85B91F68307300F9ED60 /* CICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICAppDelegate.h; sourceTree = "<group>"; };
 		C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICAppDelegate.m; sourceTree = "<group>"; };
@@ -108,12 +58,6 @@
 		C64C85C41F6832A300F9ED60 /* CICRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICRootViewController.m; sourceTree = "<group>"; };
 		C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C64C85C91F6834BE00F9ED60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6F69C6F1F763EDE0014ABD0 /* UISearchBar+CICConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+CICConstructor.h"; sourceTree = "<group>"; };
-		C6F69C701F763EDE0014ABD0 /* UISearchBar+CICConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+CICConstructor.m"; sourceTree = "<group>"; };
-		C6F69C861F76569F0014ABD0 /* CICSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICSegmentView.h; sourceTree = "<group>"; };
-		C6F69C871F76569F0014ABD0 /* CICSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICSegmentView.m; sourceTree = "<group>"; };
-		C6F69C951F765D170014ABD0 /* UIImage+CICColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CICColor.h"; sourceTree = "<group>"; };
-		C6F69C961F765D170014ABD0 /* UIImage+CICColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CICColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,164 +72,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C3F17F01F70F5FE00355627 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				1CCC48E5225DBFAE00B1A3F4 /* UIDevice */,
-				B03977BF1F78A5950004C256 /* UIColor */,
-				C6F69C941F765CEB0014ABD0 /* UIImage */,
-				C6F69C6E1F763EDE0014ABD0 /* UISearchBar */,
-				1C3F17F11F70F5FE00355627 /* UIButton */,
-				1C3F17F41F70F5FE00355627 /* UIDatePicker */,
-				1C3F17F71F70F5FE00355627 /* UIImageView */,
-				1C3F17FA1F70F5FE00355627 /* UILabel */,
-				1C3F17FF1F70F5FE00355627 /* UIView */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		1C3F17F11F70F5FE00355627 /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-				1C3F17F21F70F5FE00355627 /* UIButton+CICConstructor.h */,
-				1C3F17F31F70F5FE00355627 /* UIButton+CICConstructor.m */,
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
-		1C3F17F41F70F5FE00355627 /* UIDatePicker */ = {
-			isa = PBXGroup;
-			children = (
-				1C3F17F51F70F5FE00355627 /* UIDatePicker+CICConstructor.h */,
-				1C3F17F61F70F5FE00355627 /* UIDatePicker+CICConstructor.m */,
-			);
-			path = UIDatePicker;
-			sourceTree = "<group>";
-		};
-		1C3F17F71F70F5FE00355627 /* UIImageView */ = {
-			isa = PBXGroup;
-			children = (
-				1C3F17F81F70F5FE00355627 /* UIImageView+CICConstructor.h */,
-				1C3F17F91F70F5FE00355627 /* UIImageView+CICConstructor.m */,
-			);
-			path = UIImageView;
-			sourceTree = "<group>";
-		};
-		1C3F17FA1F70F5FE00355627 /* UILabel */ = {
-			isa = PBXGroup;
-			children = (
-				1C3F17FB1F70F5FE00355627 /* UILabel+CICConstructor.h */,
-				1C3F17FC1F70F5FE00355627 /* UILabel+CICConstructor.m */,
-				1C3F17FD1F70F5FE00355627 /* UILabel+CIText.h */,
-				1C3F17FE1F70F5FE00355627 /* UILabel+CIText.m */,
-			);
-			path = UILabel;
-			sourceTree = "<group>";
-		};
-		1C3F17FF1F70F5FE00355627 /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				1C8B8499225DC5A0005B263C /* UIView+CICSeparatorLine.h */,
-				1C8B849A225DC5A0005B263C /* UIView+CICSeparatorLine.m */,
-				1C3F18001F70F5FE00355627 /* UIView+CICConstructor.h */,
-				1C3F18011F70F5FE00355627 /* UIView+CICConstructor.m */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
-		1C3F18021F70F5FE00355627 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				1CDF6E4D212BCE770011AA5F /* NSNumber */,
-				1C3F18141F70FD4800355627 /* NSDate */,
-				1C3F180F1F70F6F200355627 /* NSString */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		1C3F180F1F70F6F200355627 /* NSString */ = {
-			isa = PBXGroup;
-			children = (
-				1C3F18101F70F73600355627 /* NSString+CICDate.h */,
-				1C3F18111F70F73600355627 /* NSString+CICDate.m */,
-				1CFD08A0225C940000E3ED15 /* NSString+CICNetwork.h */,
-				1CFD08A1225C940000E3ED15 /* NSString+CICNetwork.m */,
-				1CCC48CF225D7AC800B1A3F4 /* NSString+CICBaseProperty.h */,
-				1CCC48D0225D7AC800B1A3F4 /* NSString+CICBaseProperty.m */,
-			);
-			path = NSString;
-			sourceTree = "<group>";
-		};
-		1C3F18141F70FD4800355627 /* NSDate */ = {
-			isa = PBXGroup;
-			children = (
-				1C3F18151F70FD5C00355627 /* NSDate+CICString.h */,
-				1C3F18161F70FD5C00355627 /* NSDate+CICString.m */,
-			);
-			path = NSDate;
-			sourceTree = "<group>";
-		};
-		1C4226311F70BC6600EAF1A1 /* CICCustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				1CCC48D7225D924D00B1A3F4 /* Keyboard */,
-				1CCC48D8225D924D00B1A3F4 /* ShowPasswordView */,
-				1C50F24B225C305A00D5748B /* TabBarController */,
-				B0EC2D511F94FC2700C32C27 /* HUD */,
-				C6F69C851F7656820014ABD0 /* UISegmentedControl */,
-				1C4226321F70BC6600EAF1A1 /* UIButton */,
-				1C4226351F70BC6600EAF1A1 /* UILabel */,
-			);
-			path = CICCustomViews;
-			sourceTree = "<group>";
-		};
-		1C4226321F70BC6600EAF1A1 /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-				1C4226331F70BC6600EAF1A1 /* CICImageTitleButton.h */,
-				1C4226341F70BC6600EAF1A1 /* CICImageTitleButton.m */,
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
-		1C4226351F70BC6600EAF1A1 /* UILabel */ = {
-			isa = PBXGroup;
-			children = (
-				1C4226361F70BC6600EAF1A1 /* CICLabel.h */,
-				1C4226371F70BC6600EAF1A1 /* CICLabel.m */,
-			);
-			path = UILabel;
-			sourceTree = "<group>";
-		};
-		1C4226381F70BC6600EAF1A1 /* CICConstants */ = {
-			isa = PBXGroup;
-			children = (
-				1C4226391F70BC6600EAF1A1 /* CICColorMacros.h */,
-				1C42263A1F70BC6600EAF1A1 /* CICConstructorMacros.h */,
-				1C42263B1F70BC6600EAF1A1 /* CICFontMacros.h */,
-				1C42263C1F70BC6600EAF1A1 /* CICSizeMacros.h */,
-			);
-			path = CICConstants;
-			sourceTree = "<group>";
-		};
-		1C42263E1F70BC6600EAF1A1 /* CICCategories */ = {
-			isa = PBXGroup;
-			children = (
-				1C3F18021F70F5FE00355627 /* Foundation */,
-				1C3F17F01F70F5FE00355627 /* UIKit */,
-			);
-			path = CICCategories;
-			sourceTree = "<group>";
-		};
-		1C50F24B225C305A00D5748B /* TabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				1C50F24C225C306B00D5748B /* CICTabbarController.h */,
-				1C50F24D225C306B00D5748B /* CICTabbarController.m */,
-			);
-			path = TabBarController;
-			sourceTree = "<group>";
-		};
 		1C50F25C225C34C200D5748B /* TabbarControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,52 +83,6 @@
 				1C50F25A225C34AC00D5748B /* CICThirdViewController.m */,
 			);
 			path = TabbarControllerDemo;
-			sourceTree = "<group>";
-		};
-		1C8B84CF225DCCDC005B263C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1C8B84D0225DCCDC005B263C /* dot_icon@2x.png */,
-				1C8B84D1225DCCDC005B263C /* dot_icon@3x.png */,
-				1C8B84D2225DCCDC005B263C /* dot_icon.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		1CCC48D7225D924D00B1A3F4 /* Keyboard */ = {
-			isa = PBXGroup;
-			children = (
-				1C8B8496225DC573005B263C /* CICNumberKeyboardView.h */,
-				1C8B8495225DC573005B263C /* CICNumberKeyboardView.m */,
-			);
-			path = Keyboard;
-			sourceTree = "<group>";
-		};
-		1CCC48D8225D924D00B1A3F4 /* ShowPasswordView */ = {
-			isa = PBXGroup;
-			children = (
-				1C8B8492225DC512005B263C /* CICVerifyPayPasswordView.h */,
-				1C8B8491225DC512005B263C /* CICVerifyPayPasswordView.m */,
-			);
-			path = ShowPasswordView;
-			sourceTree = "<group>";
-		};
-		1CCC48E5225DBFAE00B1A3F4 /* UIDevice */ = {
-			isa = PBXGroup;
-			children = (
-				1CCC48E6225DC00E00B1A3F4 /* UIDevice+CICUtils.h */,
-				1CCC48E7225DC00E00B1A3F4 /* UIDevice+CICUtils.m */,
-			);
-			path = UIDevice;
-			sourceTree = "<group>";
-		};
-		1CDF6E4D212BCE770011AA5F /* NSNumber */ = {
-			isa = PBXGroup;
-			children = (
-				1CDF6E4E212BCE770011AA5F /* NSNumber+DWWordFigure.h */,
-				1CDF6E4F212BCE770011AA5F /* NSNumber+DWWordFigure.m */,
-			);
-			path = NSNumber;
 			sourceTree = "<group>";
 		};
 		5F3106DC27AC902E3ABA1936 /* Frameworks */ = {
@@ -363,29 +103,10 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B03977BF1F78A5950004C256 /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
-				B03977C01F78A5E20004C256 /* UIColor+CIComponentKit.h */,
-				B03977C11F78A5E20004C256 /* UIColor+CIComponentKit.m */,
-			);
-			path = UIColor;
-			sourceTree = "<group>";
-		};
-		B0EC2D511F94FC2700C32C27 /* HUD */ = {
-			isa = PBXGroup;
-			children = (
-				B0EC2D521F94FC3900C32C27 /* CICHUD.h */,
-				B0EC2D531F94FC3900C32C27 /* CICHUD.m */,
-			);
-			path = HUD;
-			sourceTree = "<group>";
-		};
 		C64C85891F68300A00F9ED60 = {
 			isa = PBXGroup;
 			children = (
 				C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */,
-				C64C85951F68300A00F9ED60 /* CIComponentKit */,
 				C64C85A31F68303B00F9ED60 /* CIComponentKitDemo */,
 				C64C85C81F6834BE00F9ED60 /* Supporting Files */,
 				C64C85941F68300A00F9ED60 /* Products */,
@@ -400,18 +121,6 @@
 				C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		C64C85951F68300A00F9ED60 /* CIComponentKit */ = {
-			isa = PBXGroup;
-			children = (
-				1C8B84CF225DCCDC005B263C /* Resources */,
-				1C42263E1F70BC6600EAF1A1 /* CICCategories */,
-				1C4226381F70BC6600EAF1A1 /* CICConstants */,
-				1C4226311F70BC6600EAF1A1 /* CICCustomViews */,
-				1C42263D1F70BC6600EAF1A1 /* CIComponentKit.h */,
-			);
-			path = CIComponentKit;
 			sourceTree = "<group>";
 		};
 		C64C85A31F68303B00F9ED60 /* CIComponentKitDemo */ = {
@@ -447,35 +156,6 @@
 				C64C85C91F6834BE00F9ED60 /* Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C6F69C6E1F763EDE0014ABD0 /* UISearchBar */ = {
-			isa = PBXGroup;
-			children = (
-				C6F69C6F1F763EDE0014ABD0 /* UISearchBar+CICConstructor.h */,
-				C6F69C701F763EDE0014ABD0 /* UISearchBar+CICConstructor.m */,
-			);
-			path = UISearchBar;
-			sourceTree = "<group>";
-		};
-		C6F69C851F7656820014ABD0 /* UISegmentedControl */ = {
-			isa = PBXGroup;
-			children = (
-				C6F69C861F76569F0014ABD0 /* CICSegmentView.h */,
-				C6F69C871F76569F0014ABD0 /* CICSegmentView.m */,
-			);
-			path = UISegmentedControl;
-			sourceTree = "<group>";
-		};
-		C6F69C941F765CEB0014ABD0 /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-				C6F69C951F765D170014ABD0 /* UIImage+CICColor.h */,
-				C6F69C961F765D170014ABD0 /* UIImage+CICColor.m */,
-				1CFD08A4225C9D4800E3ED15 /* UIImage+CICSize.h */,
-				1CFD08A5225C9D4800E3ED15 /* UIImage+CICSize.m */,
-			);
-			path = UIImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

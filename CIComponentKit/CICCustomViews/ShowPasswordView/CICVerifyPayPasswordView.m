@@ -13,6 +13,7 @@
 #import "NSString+CICBaseProperty.h"
 #import "UIView+CICSeparatorLine.h"
 #import "UIImageView+CICConstructor.h"
+#import "UIImage+CICLibrary.h"
 
 /// 密码位数
 static NSString *const kPasswordNumber = @"6";
@@ -149,8 +150,8 @@ static NSString *const kTimeDuration = @"0.3";
             .tag(i + [kDotViewTagMargin integerValue])
             .hidden(YES)
             .userInteractionEnabled(YES)
-            .imageName(@"dot_icon")
             .addTo(_passwordInputView);
+            dotImageView.image = [UIImage cic_localBundleImageNamed:@"dot_icon"];
             if (i > 0) {
                 [_passwordInputView addSubview:[UIView cic_separatorLineWithFrame:CGRectMake(i * perLabelWidth, 0, CIC_SEPARATOR_LINE_SIZE, CGRectGetHeight(_passwordInputView.frame))]];
             }

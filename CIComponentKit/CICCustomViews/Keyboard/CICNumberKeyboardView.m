@@ -10,6 +10,7 @@
 #import "CICNumberKeyboardView.h"
 #import "UIColor+CIComponentKit.h"
 #import "UIView+CICSeparatorLine.h"
+#import "UIImage+CICLibrary.h"
 
 static NSString *const kEmptyNumber = @"10";
 static NSString *const kDeleteNumber = @"12";
@@ -126,9 +127,7 @@ static NSString *const kLineNumber = @"4";
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:20];
     }else if ([title isEqualToString:kDeleteNumber]) {
-        NSBundle *bundle = [NSBundle bundleForClass:self.class];
-        NSString *filePath = [bundle pathForResource:@"keyboard_delete_icon" ofType:@"png" inDirectory:@"CICKit.bundle"];
-        UIImage * image = [UIImage imageWithContentsOfFile:filePath];
+        UIImage * image = [UIImage cic_localBundleImageNamed:@"keyboard_delete_icon"];
         [button setImage:image forState:UIControlStateNormal];
         [button setImage:image forState:UIControlStateHighlighted];
     }
