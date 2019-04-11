@@ -17,7 +17,7 @@
 		C64C85C21F68321F00F9ED60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BF1F68321F00F9ED60 /* main.m */; };
 		C64C85C51F6832A300F9ED60 /* CICRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85C41F6832A300F9ED60 /* CICRootViewController.m */; };
 		C64C85C71F6832E700F9ED60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */; };
-		DAE7615581B38AF34860406B /* libPods-CIComponentKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8612034BAD067DF1E99FDB55 /* libPods-CIComponentKitDemo.a */; };
+		D0E9D9647BDCAD8810860B3C /* Pods_CIComponentKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A879D584158D69EBDA0B4DBC /* Pods_CIComponentKitDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +45,7 @@
 		26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIComponentKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC06026A0D4155186ACCCA3 /* Pods-CIComponentKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKitDemo.release.xcconfig"; path = "Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7934B378314D14B35A1815F5 /* Pods-CIComponentKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		8612034BAD067DF1E99FDB55 /* libPods-CIComponentKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIComponentKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A879D584158D69EBDA0B4DBC /* Pods_CIComponentKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CIComponentKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICDemoViewController.h; sourceTree = "<group>"; };
 		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE7615581B38AF34860406B /* libPods-CIComponentKitDemo.a in Frameworks */,
+				D0E9D9647BDCAD8810860B3C /* Pods_CIComponentKitDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */,
-				8612034BAD067DF1E99FDB55 /* libPods-CIComponentKitDemo.a */,
+				A879D584158D69EBDA0B4DBC /* Pods_CIComponentKitDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 				C64C859F1F68303B00F9ED60 /* Frameworks */,
 				C64C85A01F68303B00F9ED60 /* Resources */,
 				B06474671F68435F0009A826 /* Copy Files */,
-				42AEC63AE903E1DCE6C23D82 /* [CP] Copy Pods Resources */,
+				7A33911FE4085E1D84C77FD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,26 +229,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		42AEC63AE903E1DCE6C23D82 /* [CP] Copy Pods Resources */ = {
+		7A33911FE4085E1D84C77FD6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-resources.sh",
-				"${PODS_ROOT}/../CIComponentKit/Resources/dot_icon.png",
-				"${PODS_ROOT}/../CIComponentKit/Resources/dot_icon@2x.png",
-				"${PODS_ROOT}/../CIComponentKit/Resources/dot_icon@3x.png",
+				"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CICKit/CICKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/dot_icon.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/dot_icon@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/dot_icon@3x.png",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CICKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D1664A2EFD1FBFFEE4A3005E /* [CP] Check Pods Manifest.lock */ = {

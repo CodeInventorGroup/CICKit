@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '8.0'
 
-use_framework!
+use_frameworks!
 target 'CIComponentKitDemo' do
   pod 'CICKit', :path => '../CICKit'
 end

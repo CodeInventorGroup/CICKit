@@ -1,5 +1,5 @@
 PODS:
-  - CICKit (0.0.3):
+  - CICKit (0.0.3.2):
     - SDWebImage (~> 5.0)
   - SDWebImage (5.0.0):
     - SDWebImage/Core (= 5.0.0)
@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
     :path: "../CICKit"
 
 SPEC CHECKSUMS:
-  CICKit: c0dc9653f6a11cd00137684c9605eba33a877d5e
+  CICKit: dab2e85567d29f18387a7182e8e85eda2df9e41b
   SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
 
-PODFILE CHECKSUM: a96f7295460212d87fe389390fb6e0c7b847b5cc
+PODFILE CHECKSUM: 93425ea27d9714574d7510577ac516366266697b
 
 COCOAPODS: 1.7.0.beta.3

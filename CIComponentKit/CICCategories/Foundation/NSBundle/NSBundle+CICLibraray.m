@@ -8,6 +8,7 @@
 #import "NSBundle+CICLibraray.h"
 
 static NSString *const kLocalBundleName = @"CIComponentKit";
+static NSString *const kTabbarControllerClassName = @"CICTabbarController";
 
 @implementation NSBundle (CICLibraray)
 
@@ -18,7 +19,7 @@ static NSString *const kLocalBundleName = @"CIComponentKit";
 
 + (NSURL *)cic_localLibraryBundleURL {
     
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(kTabbarControllerClassName)];
     return [bundle URLForResource:kLocalBundleName withExtension:@"bundle"];
 }
 
