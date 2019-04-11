@@ -6,7 +6,7 @@
 ![CocoaPods Compatible](https://img.shields.io/cocoapods/v/CICKit.svg?style=flat)
 ![Pod License](https://img.shields.io/cocoapods/l/CICKit.svg)
 
-`CIComponentKit` 组件库是一个由 `ManoBoo` & `NEWWORLD` 支持和维护的基础组件库，里面包含了一些基础库 `UIKit` 和 `UIFoundation` 的 `Categories` ，通过使用链式写法前缀 `cic.` 可快速创建视图，也包含了一些常用视图组件的封装。
+`CIComponentKit` 是一个由 `ManoBoo` & `NEWWORLD` 支持和维护的基础组件库，里面包含了一些基础库 `UIKit` 和 `UIFoundation` 的 `Categories` ，通过使用链式写法，添加前缀 `cic.` 可快速设置组件属性创建视图，也包含了一些常用视图组件的封装。
 
 当前 `CICKit` 支持 `Objective-C` 语言，如使用 `Swift` 语言，使用 **[CIComponentKit](https://github.com/CodeInventorGroup/CIComponentKit)** 更方便。
 
