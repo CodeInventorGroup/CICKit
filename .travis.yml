@@ -6,7 +6,9 @@ xcode_sdk: iphonesimulator12.2
 
 before_install:
   - rvm use system
-  - sudo gem install cocoapods
+  - brew update
+  - sudo gem install cocoapods --pre
+  - pod repo update
   - xcodebuild -showsdks
 script:
   - xcodebuild clean build -project CIComponentKit.xcworkspace -scheme CIComponentKit CODE_SIGNING_REQUIRED=NO
