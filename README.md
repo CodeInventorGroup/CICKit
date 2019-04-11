@@ -10,10 +10,11 @@
 
 当前 `CICKit` 支持 `Objective-C` 语言，如使用 `Swift` 语言，使用 **[CIComponentKit](https://github.com/CodeInventorGroup/CIComponentKit)** 更方便。
 
-- [ ] Categories for `UIImage`,`UIButton`,`UIImageView`,`UILabel`等
-- [ ] `CICNumberKeyboardView` 自定义10位数字键盘
-- [ ] `CICVerifyPayPasswordView` 类似微信的密码输入框
-- [ ] `CICTabBarController` 支持动态更新tabbar图片、文字、背景及颜色
+- [x] Categories for `UIImage`,`UIButton`,`UIImageView`,`UILabel`等
+- [x] `CICNumberKeyboardView` 自定义10位数字键盘
+- [x] `CICVerifyPayPasswordView` 类似微信的密码输入框
+- [x] `CICTabBarController` 支持动态更新tabbar图片、文字、背景及颜色
+- [ ] 后续更多便捷功能正在开发中...
 
 ## Installation with CocoaPods
 
