@@ -49,13 +49,13 @@ Pod installation complete! There is 1 dependency from the Podfile and 2 total po
 
   - 只更新图片 `itemDataNormalImage`
 
-    ```ObjectiveC
+    ```objectivec
     @[@"home_tabbar_icon", @"home_tabbar_icon", @"tool_tabbar_icon"]
     ```
 
   - 更新图片和文字 `itemDataTitleNormalImage`
 
-    ```ObjectiveC
+    ```objectivec
     @[@[@"首页", @"home_tabbar_icon"],
       @[@"聚中", @"center_tabbar_icon"],
       @[@"工具", @"tool_tabbar_icon"]]
