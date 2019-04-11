@@ -49,13 +49,13 @@ Pod installation complete! There is 1 dependency from the Podfile and 2 total po
 
   - 只更新图片 `itemDataNormalImage`
 
-    ```objectivec
+    ```objective-c
     @[@"home_tabbar_icon", @"home_tabbar_icon", @"tool_tabbar_icon"]
     ```
 
   - 更新图片和文字 `itemDataTitleNormalImage`
 
-    ```objectivec
+    ```objective-c
     @[@[@"首页", @"home_tabbar_icon"],
       @[@"聚中", @"center_tabbar_icon"],
       @[@"工具", @"tool_tabbar_icon"]]
@@ -68,7 +68,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 2 total po
 
 #### 快速创建TabbarController
 
-```ObjectiveC
+```objective-c
 CICTabbarController *tabbarController = [[CICTabbarController alloc] init];
 //  首先设置类名数据
 tabbarController.cic
@@ -105,7 +105,7 @@ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), di
 
 #### 使用数字键盘 (默认不设置键盘总高度)
 
-```ObjectiveC
+```objective-c
 CICNumberKeyboardView *keyboardView = [CICNumberKeyboardView keyboardViewWithType:CICKeyboardTypeNumber];
 
 __weak  typeof(self) weakSelf = self;
@@ -116,7 +116,7 @@ keyboardView.clickKeyboardButtonBlock = ^(NSString * _Nonnull value) {
 
 #### 设置键盘高度
 
-```ObjectiveC
+```objective-c
 CICNumberKeyboardView *keyboardView = [CICNumberKeyboardView keyboardViewWithType:CICKeyboardTypeRandomNumber keyboardHeight:200];
 ```
 
@@ -129,7 +129,7 @@ CICNumberKeyboardView *keyboardView = [CICNumberKeyboardView keyboardViewWithTyp
 
 #### 展示 密码输入框
 
-```ObjectiveC
+```objective-c
 CGFloat width = 300;
 CICVerifyPayPasswordView *verifyPasswordView = [CICVerifyPayPasswordView verifyPayPasswordViewWithFrame:CGRectMake((CIC_SCREEN_WIDTH - width)/2.0, 200, width, 50) showKeyboardBottomHeight:CIC_TAB_BAR_HEIGHT keyboardHeight:0 keyboardType:CICKeyboardTypeRandomNumber verifyPayPasswordBlock:^(NSString * _Nonnull password) {
 
