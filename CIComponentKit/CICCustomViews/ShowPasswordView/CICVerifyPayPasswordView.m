@@ -9,7 +9,6 @@
 
 #import "CICVerifyPayPasswordView.h"
 
-#import "CICNumberKeyboardView.h"
 #import "NSString+CICBaseProperty.h"
 #import "UIView+CICSeparatorLine.h"
 #import "UIImageView+CICConstructor.h"
@@ -34,6 +33,10 @@ static NSString *const kTimeDuration = @"0.3";
 /// 密码
 @property (nonatomic, copy) NSString *password;
 
+@property (nonatomic, assign) CGFloat keyboardBottomHeight;
+@property (nonatomic, assign) CGFloat keyboardHeight;
+@property (nonatomic, assign) CICKeyboardType keyboardType;
+
 @end
 
 @implementation CICVerifyPayPasswordView
@@ -42,8 +45,21 @@ static NSString *const kTimeDuration = @"0.3";
 + (CICVerifyPayPasswordView *)verifyPayPasswordViewWithFrame:(CGRect)frame
                                       verifyPayPasswordBlock:(void(^)(NSString *))verifyPayPasswordBlock {
     
+    return [self verifyPayPasswordViewWithFrame:frame showKeyboardBottomHeight:0 keyboardHeight:0 keyboardType:CICKeyboardTypeRandomNumber verifyPayPasswordBlock:verifyPayPasswordBlock];
+}
+
++ (CICVerifyPayPasswordView *)verifyPayPasswordViewWithFrame:(CGRect)frame
+                                    showKeyboardBottomHeight:(CGFloat)bottomHeight
+                                              keyboardHeight:(CGFloat)keyboardHeight
+                                                keyboardType:(CICKeyboardType)keyboardType
+                                      verifyPayPasswordBlock:(void(^)(NSString *))verifyPayPasswordBlock {
+    
     CICVerifyPayPasswordView *verifyPayPasswordView = [[CICVerifyPayPasswordView alloc] initWithFrame:frame];
+    verifyPayPasswordView.keyboardHeight = keyboardHeight;
+    verifyPayPasswordView.keyboardBottomHeight = bottomHeight;
+    verifyPayPasswordView.keyboardType = keyboardType;
     verifyPayPasswordView.verifyPayPasswordBlock = verifyPayPasswordBlock;
+    [verifyPayPasswordView buildView];
     return verifyPayPasswordView;
 }
 
@@ -54,8 +70,6 @@ static NSString *const kTimeDuration = @"0.3";
         //  当前 无任何输入值
         _inputIndex = -1;
         self.password = @"";
-        
-        [self buildView];
     }
     return self;
 }
@@ -63,9 +77,15 @@ static NSString *const kTimeDuration = @"0.3";
 #pragma mark - Build View
 - (void)buildView {
     
-    self.passwordInputView.cic.y(200);
+    [self addSubview:self.passwordInputView];
+}
+
+#pragma mark - Public Methods
+- (void)cic_addTo:(UIView *)superview {
     
-    [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOtherEmptyView)]];
+    [superview addSubview:self];
+    [superview sendSubviewToBack:self];
+    [superview addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOtherEmptyView)]];
 }
 
 #pragma mark - Actions
@@ -74,7 +94,7 @@ static NSString *const kTimeDuration = @"0.3";
     
     if (!_keyboardView) {
         [UIView animateWithDuration:[kTimeDuration floatValue] animations:^{
-            self.keyboardView.cic.y(CIC_SCREEN_HEIGHT - CIC_TAB_BAR_HEIGHT - CGRectGetHeight(self.keyboardView.frame) - CIC_BOTTOM_INDICATE_HEIGHT);
+            self.keyboardView.cic.y(CIC_SCREEN_HEIGHT - self.keyboardBottomHeight - CGRectGetHeight(self.keyboardView.frame) - CIC_BOTTOM_INDICATE_HEIGHT);
         }];
     }
 }
@@ -96,7 +116,6 @@ static NSString *const kTimeDuration = @"0.3";
 #pragma mark - Private Methods
 - (void)handleKeyboardInputValue:(NSString *)value {
     
-    NSLog(@"keyboardinputvalue %@", value);
     NSUInteger length = self.password.length;
     if (length == [kPasswordNumber integerValue] && ![NSString cic_isEmpty:value]) {
         return;
@@ -121,7 +140,6 @@ static NSString *const kTimeDuration = @"0.3";
             }
         }
     }
-    NSLog(@"password : %@", self.password);
 }
 
 - (void)handleLabelContentIsShow:(BOOL)isShow {
@@ -134,8 +152,8 @@ static NSString *const kTimeDuration = @"0.3";
 - (UIView *)passwordInputView {
     
     if (!_passwordInputView) {
-        CGFloat width = 300;
-        _passwordInputView = [[UIView alloc] initWithFrame:CGRectMake((CIC_SCREEN_WIDTH - width)/2.0, 200, width, 50)];
+        CGFloat width = CGRectGetWidth(self.frame);
+        _passwordInputView = [[UIView alloc] initWithFrame:self.bounds];
         _passwordInputView.backgroundColor = [UIColor whiteColor];
         [_passwordInputView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapInputPasswordView)]];
         _passwordInputView.layer.borderWidth = CIC_SEPARATOR_LINE_SIZE;
@@ -156,7 +174,6 @@ static NSString *const kTimeDuration = @"0.3";
                 [_passwordInputView addSubview:[UIView cic_separatorLineWithFrame:CGRectMake(i * perLabelWidth, 0, CIC_SEPARATOR_LINE_SIZE, CGRectGetHeight(_passwordInputView.frame))]];
             }
         }
-        [self addSubview:_passwordInputView];
     }
     return _passwordInputView;
 }
@@ -164,13 +181,18 @@ static NSString *const kTimeDuration = @"0.3";
 - (CICNumberKeyboardView *)keyboardView {
     
     if (!_keyboardView) {
-        _keyboardView = [CICNumberKeyboardView keyboardViewWithType:CICKeyboardTypeRandomNumber];
+        if (self.keyboardHeight > 0) {
+            _keyboardView = [CICNumberKeyboardView keyboardViewWithType:self.keyboardType keyboardHeight:self.keyboardHeight];
+        }else {
+            _keyboardView = [CICNumberKeyboardView keyboardViewWithType:self.keyboardType];
+        }
         
         __weak  typeof(self) weakSelf = self;
         _keyboardView.clickKeyboardButtonBlock = ^(NSString * _Nonnull value) {
             [weakSelf handleKeyboardInputValue:value];
         };
-        [self addSubview:_keyboardView];
+        [self.superview addSubview:_keyboardView];
+        [self.superview bringSubviewToFront:_keyboardView];
     }
     return _keyboardView;
 }

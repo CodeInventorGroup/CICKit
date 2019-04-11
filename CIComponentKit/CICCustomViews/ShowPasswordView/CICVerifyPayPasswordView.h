@@ -9,6 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIView+CICConstructor.h"
+#import "CICNumberKeyboardView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (CICVerifyPayPasswordView *)verifyPayPasswordViewWithFrame:(CGRect)frame
                                       verifyPayPasswordBlock:(void(^)(NSString *))verifyPayPasswordBlock;
+
++ (CICVerifyPayPasswordView *)verifyPayPasswordViewWithFrame:(CGRect)frame
+                                    showKeyboardBottomHeight:(CGFloat)bottomHeight
+                                              keyboardHeight:(CGFloat)keyboardHeight
+                                                keyboardType:(CICKeyboardType)keyboardType
+                                      verifyPayPasswordBlock:(void(^)(NSString *))verifyPayPasswordBlock;
+
+- (void)cic_addTo:(UIView *)superview;
 
 @end
 

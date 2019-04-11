@@ -7,8 +7,7 @@
 //
 
 #import "CICSecondViewController.h"
-
-#import "CICVerifyPayPasswordView.h"
+#import <CICKit/CICVerifyPayPasswordView.h>
 
 @interface CICSecondViewController ()
 
@@ -23,28 +22,18 @@
     [self buildView];
 }
 
-#pragma mark - ViewModel LoadData
-- (void)verifyPayPassword {
-    
-    NSLog(@"verifyPayPassword 验证支付密码");
-}
-
-
 #pragma mark - Build View
 - (void)buildView {
     
-    __weak typeof(self) weakSelf = self;
-    CICVerifyPayPasswordView *verifyPayPasswordView = [CICVerifyPayPasswordView verifyPayPasswordViewWithFrame:self.view.bounds verifyPayPasswordBlock:^(NSString * _Nonnull password) {
-        [weakSelf verifyPayPassword];
+    CGFloat width = 300;
+//    CICVerifyPayPasswordView *verifyPasswordView = [CICVerifyPayPasswordView verifyPayPasswordViewWithFrame:CGRectMake((CIC_SCREEN_WIDTH - width)/2.0, 200, width, 50) verifyPayPasswordBlock:^(NSString * _Nonnull password) {
+//        NSLog(@"password: %@", password);
+//    }];
+    
+    CICVerifyPayPasswordView *verifyPasswordView = [CICVerifyPayPasswordView verifyPayPasswordViewWithFrame:CGRectMake((CIC_SCREEN_WIDTH - width)/2.0, 200, width, 50) showKeyboardBottomHeight:CIC_TAB_BAR_HEIGHT keyboardHeight:0 keyboardType:CICKeyboardTypeRandomNumber verifyPayPasswordBlock:^(NSString * _Nonnull password) {
+        
     }];
-    [self.view addSubview:verifyPayPasswordView];
-}
-
-#pragma mark - Actions
-/// 取消支付
-- (void)cancelPay {
-    
-    
+    [verifyPasswordView cic_addTo:self.view];
 }
 
 @end
