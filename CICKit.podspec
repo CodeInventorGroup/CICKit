@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CICKit"
-  s.version      = "0.0.3.2"
+  s.version      = "0.0.3.3"
   s.summary      = "CIComponentKit-Objc, a component kit made by ManoBoo & NEWWORLD"
 
   # This description is used to generate tags and improve search results.
@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
 
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
-  s.frameworks = "UIKit", "Foundation", "MapKit"
+  s.frameworks = "UIKit", "Foundation"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
@@ -134,6 +134,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "SDWebImage"
+  s.dependency "SDWebImage/Core"
 
 end
