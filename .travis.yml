@@ -1,10 +1,12 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode10.2
 xcode_project: CIComponentKit
 xcode_scheme: CIComponentKit
-xcode_sdk: iphonesimulator10.3
+xcode_sdk: iphonesimulator12.2
 
 before_install:
+  - rvm use system
+  - sudo gem install cocoapods
   - xcodebuild -showsdks
 script:
   - xcodebuild clean build -project CIComponentKit.xcodeproj -scheme CIComponentKit CODE_SIGNING_REQUIRED=NO
