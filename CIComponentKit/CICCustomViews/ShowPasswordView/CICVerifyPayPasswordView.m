@@ -49,6 +49,13 @@ static NSString *const kTimeDuration = @"0.3";
 }
 
 + (CICVerifyPayPasswordView *)verifyPayPasswordViewWithFrame:(CGRect)frame
+                                                keyboardType:(CICKeyboardType)keyboardType
+                                      verifyPayPasswordBlock:(void(^)(NSString *))verifyPayPasswordBlock {
+    
+    return [self verifyPayPasswordViewWithFrame:frame showKeyboardBottomHeight:0 keyboardHeight:0 keyboardType:keyboardType verifyPayPasswordBlock:verifyPayPasswordBlock];
+}
+
++ (CICVerifyPayPasswordView *)verifyPayPasswordViewWithFrame:(CGRect)frame
                                     showKeyboardBottomHeight:(CGFloat)bottomHeight
                                               keyboardHeight:(CGFloat)keyboardHeight
                                                 keyboardType:(CICKeyboardType)keyboardType

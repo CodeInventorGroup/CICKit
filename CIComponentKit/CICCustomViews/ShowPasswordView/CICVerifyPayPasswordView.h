@@ -19,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
                                       verifyPayPasswordBlock:(void(^)(NSString *))verifyPayPasswordBlock;
 
 + (CICVerifyPayPasswordView *)verifyPayPasswordViewWithFrame:(CGRect)frame
+                                                keyboardType:(CICKeyboardType)keyboardType
+                                      verifyPayPasswordBlock:(void(^)(NSString *))verifyPayPasswordBlock;
+
++ (CICVerifyPayPasswordView *)verifyPayPasswordViewWithFrame:(CGRect)frame
                                     showKeyboardBottomHeight:(CGFloat)bottomHeight
                                               keyboardHeight:(CGFloat)keyboardHeight
                                                 keyboardType:(CICKeyboardType)keyboardType
