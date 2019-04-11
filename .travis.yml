@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode10.2
-xcode_workspace: CIComponentKit
+xcode_workspace: CIComponentKit.xcworkspace
 xcode_scheme: CIComponentKit
 xcode_sdk: iphonesimulator12.2
 
