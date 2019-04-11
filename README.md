@@ -69,6 +69,22 @@ Pod installation complete! There is 1 dependency from the Podfile and 2 total po
 #### 快速创建TabbarController
 
 ```objective-c
+NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+
+NSURL *URL = [NSURL URLWithString:@"http://example.com/download.zip"];
+NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+
+NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+    NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+    return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+} completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+    NSLog(@"File downloaded to: %@", filePath);
+}];
+[downloadTask resume];
+```
+
+```objective-c
 CICTabbarController *tabbarController = [[CICTabbarController alloc] init];
 //  首先设置类名数据
 tabbarController.cic
