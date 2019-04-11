@@ -9,4 +9,4 @@ before_install:
   - sudo gem install cocoapods
   - xcodebuild -showsdks
 script:
-  - xcodebuild clean build -project CIComponentKit.xcodeproj -scheme CIComponentKit CODE_SIGNING_REQUIRED=NO
+  - xcodebuild clean build -project CIComponentKit.xcworkspace -scheme CIComponentKit CODE_SIGNING_REQUIRED=NO
