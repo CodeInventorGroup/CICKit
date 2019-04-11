@@ -55,7 +55,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 2 total po
 
   - 更新图片和文字 `itemDataTitleNormalImage`
 
-    ```objective-c
+    ```Objective-C
     @[@[@"首页", @"home_tabbar_icon"],
       @[@"聚中", @"center_tabbar_icon"],
       @[@"工具", @"tool_tabbar_icon"]]
@@ -84,7 +84,7 @@ NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:reques
 [downloadTask resume];
 ```
 
-```objective-c
+```Objective-C
 CICTabbarController *tabbarController = [[CICTabbarController alloc] init];
 //  首先设置类名数据
 tabbarController.cic
