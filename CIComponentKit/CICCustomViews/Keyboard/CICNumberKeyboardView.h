@@ -19,8 +19,8 @@ typedef enum : NSUInteger {
 
 @interface CICNumberKeyboardView : UIView
 
-+ (CICNumberKeyboardView *)keyboardViewWithType:(CICKeyboardType)keyboardType;
-+ (CICNumberKeyboardView *)keyboardViewWithType:(CICKeyboardType)keyboardType keyboardHeight:(CGFloat)keyboardHeight;
++ (CICNumberKeyboardView *)cic_keyboardViewWithType:(CICKeyboardType)keyboardType;
++ (CICNumberKeyboardView *)cic_keyboardViewWithType:(CICKeyboardType)keyboardType keyboardHeight:(CGFloat)keyboardHeight;
 
 /// value为空，表示删除；其他为键盘数值
 @property (nonatomic, copy) void(^clickKeyboardButtonBlock)(NSString *value);
@@ -32,6 +32,7 @@ typedef enum : NSUInteger {
 CICConstructorBasicProperties(CICNumberKeyboardViewConstructor)
 
 CICConstructorProperty(CICNumberKeyboardViewConstructor, keyboardType, CICKeyboardType keyboardType)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, lineColor, UIColor *lineColor)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, titleColor, UIColor *titleColor)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, titleHighlightColor, UIColor *titleHighlightColor)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, fontSize, CGFloat fontSize)
@@ -40,7 +41,7 @@ CICConstructorProperty(CICNumberKeyboardViewConstructor, numberButtonBackgroundC
 CICConstructorProperty(CICNumberKeyboardViewConstructor, otherButtonBackgroundColor, UIColor *otherButtonBackgroundColor)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconNormalImageSource, NSString *deleteIconNormalImageSource)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconHighlightImageSource, NSString *deleteIconHighlightImageSource)
-CICConstructorProperty(CICNumberKeyboardViewConstructor, lineColor, UIColor *lineColor)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, changeRandomNumber, BOOL changeRandomNumber)
 
 @end
 

@@ -73,10 +73,12 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        NSArray *urls = [NSArray array];
 //        tabbarController.cic.itemDataNormalSelectedImage(urls).barBackgroundImage(@"");
-        tabbarController.cic.imageSize(CGSizeMake(34, 34))
-                            .itemDataTitleNormalImage(@[@[@"",@"home_tabbar_icon"],
-                                                        @[@"",@"center_tabbar_icon"],
-                                                        @[@"",@"tool_tabbar_icon"]]);
+        tabbarController.cic
+        .imageSize(CGSizeMake(34, 34))
+        .barBackgroundColor([UIColor purpleColor])
+        .itemDataTitleNormalImage(@[@[@"",@"home_tabbar_icon"],
+                                    @[@"",@"center_tabbar_icon"],
+                                    @[@"",@"tool_tabbar_icon"]]);
         tabbarController.didSelectedTabbarBlock = ^(NSInteger selectedIndex) {
             NSLog(@"selectedIndex = %ld", selectedIndex);
         };

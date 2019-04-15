@@ -99,12 +99,10 @@ static NSTimeInterval const kTimeDuration = 0.3;
 /// 点击 密码输入区域
 - (void)tapInputPasswordView {
     
-    if (!_keyboardView) {
-        self.keyboardView.cic.y(CIC_SCREEN_HEIGHT);
-        [UIView animateWithDuration:kTimeDuration animations:^{
-            self.keyboardView.cic.y(CIC_SCREEN_HEIGHT - self.keyboardBottomHeight - CGRectGetHeight(self.keyboardView.frame) - CIC_BOTTOM_INDICATE_HEIGHT);
-        }];
-    }
+    self.keyboardView.cic.changeRandomNumber(YES);
+    [UIView animateWithDuration:kTimeDuration animations:^{
+        self.keyboardView.cic.y(CIC_SCREEN_HEIGHT - self.keyboardBottomHeight - CGRectGetHeight(self.keyboardView.frame) - CIC_BOTTOM_INDICATE_HEIGHT);
+    }];
 }
 
 /// 点击 其他空白区域
@@ -114,11 +112,6 @@ static NSTimeInterval const kTimeDuration = 0.3;
         __weak typeof(self) weakSelf = self;
         [UIView animateWithDuration:kTimeDuration animations:^{
             weakSelf.keyboardView.cic.y(CIC_SCREEN_HEIGHT);
-        } completion:^(BOOL finished) {
-            if (finished) {
-                [weakSelf.keyboardView removeFromSuperview];
-                weakSelf.keyboardView = nil;
-            }
         }];
     }
 }
@@ -192,8 +185,15 @@ static NSTimeInterval const kTimeDuration = 0.3;
     if (!_keyboardView) {
         _keyboardView = [[CICNumberKeyboardView alloc] init];
         _keyboardView.cic
-        .lineColor([UIColor purpleColor])
+        .lineColor(CIC_COLOR_SEPARATOR_LINE)
+        .keyboardType(CICKeyboardTypeRandomNumber)
+        .titleColor([UIColor blackColor])
+        .titleHighlightColor([UIColor redColor])
+        .fontSize(20)
+        .numberButtonBackgroundColor([UIColor whiteColor])
+        .otherButtonBackgroundColor(CIC_COLOR_E2E2E2)
         .addTo(self.superview);
+        
         if (self.keyboardHeight > 0) {
             _keyboardView.cic.height(self.keyboardHeight);
         }

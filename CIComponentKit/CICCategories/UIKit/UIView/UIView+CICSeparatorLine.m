@@ -82,6 +82,7 @@
             lineFrame = CGRectMake(ZERO_ORIGIN, size.height - CIC_SEPARATOR_LINE_SIZE, size.width, CIC_SEPARATOR_LINE_SIZE);
             break;
     }
+    line.frame = lineFrame;
     line.backgroundColor = lineColor;
     [self addSubview:line];
     return line;

@@ -47,17 +47,19 @@ static NSUInteger const kLineNumber = 4;
 /// 键盘删除图标 本地图片名称或者图片链接
 @property (nonatomic, copy) NSString *deleteIconNormalImageSource;
 @property (nonatomic, copy) NSString *deleteIconHighlightImageSource;
+/// 动态变化键盘数字顺序
+@property (nonatomic, assign) BOOL changeRandomNumber;
 
 @end
 
 @implementation CICNumberKeyboardView
 
-+ (CICNumberKeyboardView *)keyboardViewWithType:(CICKeyboardType)keyboardType {
++ (CICNumberKeyboardView *)cic_keyboardViewWithType:(CICKeyboardType)keyboardType {
     
-    return [CICNumberKeyboardView keyboardViewWithType:keyboardType keyboardHeight:200];
+    return [CICNumberKeyboardView cic_keyboardViewWithType:keyboardType keyboardHeight:200];
 }
 
-+ (CICNumberKeyboardView *)keyboardViewWithType:(CICKeyboardType)keyboardType keyboardHeight:(CGFloat)keyboardHeight {
++ (CICNumberKeyboardView *)cic_keyboardViewWithType:(CICKeyboardType)keyboardType keyboardHeight:(CGFloat)keyboardHeight {
     
     CICNumberKeyboardView *keyboardView = [[CICNumberKeyboardView alloc] init];
     keyboardView.cic
@@ -73,15 +75,14 @@ static NSUInteger const kLineNumber = 4;
         self.backgroundColor = [UIColor whiteColor];
         self.isRandom = NO;
         self.numberArray = [NSArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0",nil];
-        self.numberData = [NSMutableArray array];
         
         self.frame = CGRectMake(0, CIC_SCREEN_HEIGHT, CIC_SCREEN_WIDTH, 200);
         self.keyboardType = CICKeyboardTypeRandomNumber;
-        _titleColor = [UIColor blackColor];
+        self.titleHighlightColor = self.titleColor = [UIColor blackColor];
         _fontSize = 20;
         _lineColor = CIC_COLOR_SEPARATOR_LINE;
         _numberButtonBackgroundColor = [UIColor whiteColor];
-        _otherButtonBackgroundColor = [UIColor cic_hexColor:0xe2e2e2];
+        _otherButtonBackgroundColor = CIC_COLOR_E2E2E2;
     }
     return self;
 }
@@ -137,7 +138,7 @@ static NSUInteger const kLineNumber = 4;
         for (UIView *subView in self.subviews) {
             if ([subView isKindOfClass:[UIButton class]]) {
                 UIButton *tempButton = (UIButton *)subView;
-                [tempButton setTitleColor:titleHighlightColor forState:UIControlStateNormal];
+                [tempButton setTitleColor:titleHighlightColor forState:UIControlStateHighlighted];
             }
         }
     }
@@ -219,9 +220,29 @@ static NSUInteger const kLineNumber = 4;
     }
 }
 
+- (void)setChangeRandomNumber:(BOOL)changeRandomNumber {
+    
+    _changeRandomNumber = changeRandomNumber;
+    
+    if (changeRandomNumber && self.keyboardType == CICKeyboardTypeRandomNumber && [self viewWithTag:kKeyboardButtonTagMargin]) {
+        [self initNumberDataWithKeyboardType:CICKeyboardTypeRandomNumber];
+        for (NSUInteger index = 0; index < kNumberKeyboardMaxNumber - 1; index++) {
+            if (index + 1 == kEmptyNumber || index + 1 == kDeleteNumber) {
+                continue;
+            }
+            
+            UIButton *tempButton = [self viewWithTag:index + kKeyboardButtonTagMargin];
+            [tempButton setTitle:self.numberData[index] forState:UIControlStateNormal];
+            [tempButton setTitle:self.numberData[index] forState:UIControlStateHighlighted];
+        }
+    }
+}
+
 #pragma mark - Private Methods
 /// 初始化数字键盘数组
 - (void)initNumberDataWithKeyboardType:(CICKeyboardType)type {
+    
+    self.numberData = [NSMutableArray array];
     
     NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.numberArray];
     if (type == CICKeyboardTypeRandomNumber) {
@@ -256,6 +277,7 @@ static NSUInteger const kLineNumber = 4;
         [button setTitle:title forState:UIControlStateNormal];
         [button setTitle:title forState:UIControlStateHighlighted];
         [button setTitleColor:self.titleColor forState:UIControlStateNormal];
+        [button setTitleColor:self.titleHighlightColor forState:UIControlStateHighlighted];
         button.titleLabel.font = self.titleFont ? self.titleFont : [UIFont systemFontOfSize:self.fontSize];
     }else if ([title integerValue] == kDeleteNumber) {
         if ([NSString cic_isEmpty:self.deleteIconNormalImageSource]) {
@@ -329,6 +351,11 @@ CICConstructorBasicDynamics()
         return weakSelf;
     };
     
+    self.keyboardType = ^CICNumberKeyboardViewConstructor * _Nonnull(CICKeyboardType keyboardType) {
+        weakSelf.component.keyboardType = keyboardType;
+        return weakSelf;
+    };
+    
     self.titleHighlightColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull titleHighlightColor) {
         weakSelf.component.titleHighlightColor = titleHighlightColor;
         return weakSelf;
@@ -366,6 +393,11 @@ CICConstructorBasicDynamics()
     
     self.lineColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull lineColor) {
         weakSelf.component.lineColor = lineColor;
+        return weakSelf;
+    };
+    
+    self.changeRandomNumber = ^CICNumberKeyboardViewConstructor * _Nonnull(BOOL changeRandomNumber) {
+        weakSelf.component.changeRandomNumber = changeRandomNumber;
         return weakSelf;
     };
     
