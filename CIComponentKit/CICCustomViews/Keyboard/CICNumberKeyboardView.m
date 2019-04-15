@@ -79,6 +79,7 @@ static NSUInteger const kLineNumber = 4;
         self.keyboardType = CICKeyboardTypeRandomNumber;
         _titleColor = [UIColor blackColor];
         _fontSize = 20;
+        _lineColor = CIC_COLOR_SEPARATOR_LINE;
         _numberButtonBackgroundColor = [UIColor whiteColor];
         _otherButtonBackgroundColor = [UIColor cic_hexColor:0xe2e2e2];
     }
@@ -125,16 +126,6 @@ static NSUInteger const kLineNumber = 4;
                 UIButton *tempButton = (UIButton *)subView;
                 [tempButton setTitleColor:titleColor forState:UIControlStateNormal];
             }
-        }
-    }
-}
-
-- (void)setLineColor:(UIColor *)lineColor {
-    
-    _lineColor = lineColor;
-    for (UIView *subview in self.subviews) {
-        if (![subview isKindOfClass:[UIButton class]]) {
-            subview.backgroundColor = lineColor;
         }
     }
 }
@@ -279,10 +270,10 @@ static NSUInteger const kLineNumber = 4;
     [button addTarget:self action:@selector(clickKeyboardButton:) forControlEvents:UIControlEventTouchUpInside];
     
     if (index % kPerLineNumber != 0) {
-        button.cic.addLineView(CICSeparatorLinePositionLeft);
+        button.cic.addLineViewWithColor(CICSeparatorLinePositionLeft, _lineColor);
     }
     if (index / kPerLineNumber != 0) {
-        button.cic.addLineView(CICSeparatorLinePositionTop);
+        button.cic.addLineViewWithColor(CICSeparatorLinePositionTop, _lineColor);
     }
     
     return button;

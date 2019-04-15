@@ -191,7 +191,9 @@ static NSTimeInterval const kTimeDuration = 0.3;
     
     if (!_keyboardView) {
         _keyboardView = [[CICNumberKeyboardView alloc] init];
-        _keyboardView.cic.addTo(self.superview);
+        _keyboardView.cic
+        .lineColor([UIColor purpleColor])
+        .addTo(self.superview);
         if (self.keyboardHeight > 0) {
             _keyboardView.cic.height(self.keyboardHeight);
         }
@@ -201,8 +203,6 @@ static NSTimeInterval const kTimeDuration = 0.3;
         _keyboardView.clickKeyboardButtonBlock = ^(NSString * _Nonnull value) {
             [weakSelf handleKeyboardInputValue:value];
         };
-        _keyboardView.cic.lineColor([UIColor yellowColor]);
-        
     }
     return _keyboardView;
 }
