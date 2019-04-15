@@ -99,10 +99,12 @@ static NSTimeInterval const kTimeDuration = 0.3;
 /// 点击 密码输入区域
 - (void)tapInputPasswordView {
     
-    self.keyboardView.cic.changeRandomNumber(YES);
-    [UIView animateWithDuration:kTimeDuration animations:^{
-        self.keyboardView.cic.y(CIC_SCREEN_HEIGHT - self.keyboardBottomHeight - CGRectGetHeight(self.keyboardView.frame) - CIC_BOTTOM_INDICATE_HEIGHT);
-    }];
+    if (!_keyboardView || self.keyboardView.hidden) {
+        self.keyboardView.cic.changeRandomNumber(YES).hidden(NO);
+        [UIView animateWithDuration:kTimeDuration animations:^{
+            self.keyboardView.cic.y(CIC_SCREEN_HEIGHT - self.keyboardBottomHeight - CGRectGetHeight(self.keyboardView.frame) - CIC_BOTTOM_INDICATE_HEIGHT);
+        }];
+    }
 }
 
 /// 点击 其他空白区域
@@ -112,6 +114,8 @@ static NSTimeInterval const kTimeDuration = 0.3;
         __weak typeof(self) weakSelf = self;
         [UIView animateWithDuration:kTimeDuration animations:^{
             weakSelf.keyboardView.cic.y(CIC_SCREEN_HEIGHT);
+        } completion:^(BOOL finished) {
+            weakSelf.keyboardView.hidden = YES;
         }];
     }
 }

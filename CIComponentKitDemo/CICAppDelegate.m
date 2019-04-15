@@ -75,7 +75,7 @@
 //        tabbarController.cic.itemDataNormalSelectedImage(urls).barBackgroundImage(@"");
         tabbarController.cic
         .imageSize(CGSizeMake(34, 34))
-        .barBackgroundColor([UIColor purpleColor])
+        .barBackgroundColor([UIColor yellowColor])
         .itemDataTitleNormalImage(@[@[@"",@"home_tabbar_icon"],
                                     @[@"",@"center_tabbar_icon"],
                                     @[@"",@"tool_tabbar_icon"]]);
