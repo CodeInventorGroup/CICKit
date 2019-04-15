@@ -11,13 +11,7 @@
 #import "CICFontMacros.h"
 #import "CICSizeMacros.h"
 #import "CICColorMacros.h"
-
-typedef enum : NSUInteger {
-    CICSeparatorLinePositionTop = 0,
-    CICSeparatorLinePositionLeft,
-    CICSeparatorLinePositionBottom,
-    CICSeparatorLinePositionRight
-}CICSeparatorLinePosition;
+#import "UIView+CICSeparatorLine.h"
 
 @class CICUIViewConstructor;
 @protocol CIUIViewConstructorProtocol <NSObject>
@@ -67,6 +61,9 @@ CICConstructorProperty(CICUIViewConstructor, borderColor, UIColor *borderColor)
 CICConstructorProperty(CICUIViewConstructor, clipToBounds, BOOL clipToBounds)
 
 CICConstructorProperty(CICUIViewConstructor, addTo, UIView *toView)
+
+CICConstructorProperty(CICUIViewConstructor, addLineView, CICSeparatorLinePosition position)
+CICConstructorProperty(CICUIViewConstructor, addLineViewWithColor, CICSeparatorLinePosition position, UIColor *lineColor)
 
 - (instancetype)initWithComponent:(T)component;
 

@@ -119,6 +119,16 @@
         [toView addSubview:weakSelf.component];
         return weakSelf;
     };
+    
+    self.addLineView = ^CICUIViewConstructor *(CICSeparatorLinePosition position) {
+        [weakSelf.component cic_addSeparatorLineViewWithPosition:position];
+        return weakSelf;
+    };
+    
+    self.addLineViewWithColor = ^CICUIViewConstructor *(CICSeparatorLinePosition position, UIColor *lineColor) {
+        [weakSelf.component cic_addSeparatorLineViewWithPosition:position lineColor:lineColor];
+        return weakSelf;
+    };
 }
     
 - (void)dealloc {

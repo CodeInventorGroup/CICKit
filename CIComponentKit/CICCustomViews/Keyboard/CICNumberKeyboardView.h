@@ -27,4 +27,27 @@ typedef enum : NSUInteger {
 
 @end
 
+@interface CICNumberKeyboardViewConstructor<CICNumberKeyboardView> : CICUIViewConstructor
+
+CICConstructorBasicProperties(CICNumberKeyboardViewConstructor)
+
+CICConstructorProperty(CICNumberKeyboardViewConstructor, keyboardType, CICKeyboardType keyboardType)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, titleColor, UIColor *titleColor)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, titleHighlightColor, UIColor *titleHighlightColor)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, fontSize, CGFloat fontSize)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, titleFont, UIFont *titleFont)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, numberButtonBackgroundColor, UIColor *numberButtonBackgroundColor)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, otherButtonBackgroundColor, UIColor *otherButtonBackgroundColor)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconNormalImageSource, NSString *deleteIconNormalImageSource)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconHighlightImageSource, NSString *deleteIconHighlightImageSource)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, lineColor, UIColor *lineColor)
+
+@end
+
+@interface CICNumberKeyboardView (CICConstructor)
+
+- (CICNumberKeyboardViewConstructor *)cic;
+
+@end
+
 NS_ASSUME_NONNULL_END

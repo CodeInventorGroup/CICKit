@@ -15,11 +15,11 @@
 #import "UIImage+CICLibrary.h"
 
 /// 密码位数
-static NSString *const kPasswordNumber = @"6";
+static NSUInteger const kPasswordNumber = 6;
 /// 显示密码的View tag
-static NSString *const kDotViewTagMargin = @"280";
+static NSUInteger const kDotViewTagMargin = 280;
 
-static NSString *const kTimeDuration = @"0.3";
+static NSTimeInterval const kTimeDuration = 0.3;
 
 @interface CICVerifyPayPasswordView ()
 
@@ -100,7 +100,8 @@ static NSString *const kTimeDuration = @"0.3";
 - (void)tapInputPasswordView {
     
     if (!_keyboardView) {
-        [UIView animateWithDuration:[kTimeDuration floatValue] animations:^{
+        self.keyboardView.cic.y(CIC_SCREEN_HEIGHT);
+        [UIView animateWithDuration:kTimeDuration animations:^{
             self.keyboardView.cic.y(CIC_SCREEN_HEIGHT - self.keyboardBottomHeight - CGRectGetHeight(self.keyboardView.frame) - CIC_BOTTOM_INDICATE_HEIGHT);
         }];
     }
@@ -109,22 +110,24 @@ static NSString *const kTimeDuration = @"0.3";
 /// 点击 其他空白区域
 - (void)tapOtherEmptyView {
     
-    __weak typeof(self) weakSelf = self;
-    [UIView animateWithDuration:[kTimeDuration floatValue] animations:^{
-        weakSelf.keyboardView.cic.y(CIC_SCREEN_HEIGHT);
-    } completion:^(BOOL finished) {
-        if (finished) {
-            [weakSelf.keyboardView removeFromSuperview];
-            weakSelf.keyboardView = nil;
-        }
-    }];
+    if (_keyboardView) {
+        __weak typeof(self) weakSelf = self;
+        [UIView animateWithDuration:kTimeDuration animations:^{
+            weakSelf.keyboardView.cic.y(CIC_SCREEN_HEIGHT);
+        } completion:^(BOOL finished) {
+            if (finished) {
+                [weakSelf.keyboardView removeFromSuperview];
+                weakSelf.keyboardView = nil;
+            }
+        }];
+    }
 }
 
 #pragma mark - Private Methods
 - (void)handleKeyboardInputValue:(NSString *)value {
     
     NSUInteger length = self.password.length;
-    if (length == [kPasswordNumber integerValue] && ![NSString cic_isEmpty:value]) {
+    if (length == kPasswordNumber && ![NSString cic_isEmpty:value]) {
         return;
     }
     
@@ -141,7 +144,7 @@ static NSString *const kTimeDuration = @"0.3";
         self.password = [self.password stringByAppendingString:value];
         self.inputIndex++;
         [self handleLabelContentIsShow:YES];
-        if (length + 1 == [kPasswordNumber integerValue]) {
+        if (length + 1 == kPasswordNumber) {
             if (self.verifyPayPasswordBlock) {
                 self.verifyPayPasswordBlock(self.password);
             }
@@ -151,7 +154,7 @@ static NSString *const kTimeDuration = @"0.3";
 
 - (void)handleLabelContentIsShow:(BOOL)isShow {
     
-    UIView *dotView = [self.passwordInputView viewWithTag:self.inputIndex + [kDotViewTagMargin integerValue]];
+    UIView *dotView = [self.passwordInputView viewWithTag:self.inputIndex + kDotViewTagMargin];
     dotView.hidden = !isShow;
 }
 
@@ -166,13 +169,12 @@ static NSString *const kTimeDuration = @"0.3";
         _passwordInputView.layer.borderWidth = CIC_SEPARATOR_LINE_SIZE;
         _passwordInputView.layer.borderColor = CIC_COLOR_SEPARATOR_LINE.CGColor;
         
-        NSUInteger number = [kPasswordNumber integerValue];
-        CGFloat perLabelWidth = width / number;
-        for (NSUInteger i = 0; i < number; i++) {
+        CGFloat perLabelWidth = width / kPasswordNumber;
+        for (NSUInteger i = 0; i < kPasswordNumber; i++) {
             CGFloat perDotWidth = 10;
             UIImageView *dotImageView = [[UIImageView alloc] init];
             dotImageView.cic.frame(CGRectMake(i * perLabelWidth + (perLabelWidth - perDotWidth)/2.0, (CGRectGetHeight(_passwordInputView.frame) - perDotWidth)/2.0, perDotWidth, perDotWidth))
-            .tag(i + [kDotViewTagMargin integerValue])
+            .tag(i + kDotViewTagMargin)
             .hidden(YES)
             .userInteractionEnabled(YES)
             .addTo(_passwordInputView);
@@ -188,18 +190,19 @@ static NSString *const kTimeDuration = @"0.3";
 - (CICNumberKeyboardView *)keyboardView {
     
     if (!_keyboardView) {
+        _keyboardView = [[CICNumberKeyboardView alloc] init];
+        _keyboardView.cic.addTo(self.superview);
         if (self.keyboardHeight > 0) {
-            _keyboardView = [CICNumberKeyboardView keyboardViewWithType:self.keyboardType keyboardHeight:self.keyboardHeight];
-        }else {
-            _keyboardView = [CICNumberKeyboardView keyboardViewWithType:self.keyboardType];
+            _keyboardView.cic.height(self.keyboardHeight);
         }
+        [self.superview bringSubviewToFront:_keyboardView];
         
         __weak  typeof(self) weakSelf = self;
         _keyboardView.clickKeyboardButtonBlock = ^(NSString * _Nonnull value) {
             [weakSelf handleKeyboardInputValue:value];
         };
-        [self.superview addSubview:_keyboardView];
-        [self.superview bringSubviewToFront:_keyboardView];
+        _keyboardView.cic.lineColor([UIColor yellowColor]);
+        
     }
     return _keyboardView;
 }

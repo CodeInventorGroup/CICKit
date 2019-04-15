@@ -12,13 +12,13 @@
 		1C50F258225C349F00D5748B /* CICSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F257225C349F00D5748B /* CICSecondViewController.m */; };
 		1C50F25B225C34AC00D5748B /* CICThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C50F25A225C34AC00D5748B /* CICThirdViewController.m */; };
 		1C7B1DF7225F435200D9DAF9 /* CIComponentKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B1DF6225F435200D9DAF9 /* CIComponentKitDemoTests.m */; };
+		657429BA1520DCAC1A885082 /* libPods-CIComponentKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE95A704574501D825E119C /* libPods-CIComponentKitDemo.a */; };
 		B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
 		C64C85C01F68321F00F9ED60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64C85BD1F68321F00F9ED60 /* Assets.xcassets */; };
 		C64C85C21F68321F00F9ED60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BF1F68321F00F9ED60 /* main.m */; };
 		C64C85C51F6832A300F9ED60 /* CICRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85C41F6832A300F9ED60 /* CICRootViewController.m */; };
 		C64C85C71F6832E700F9ED60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64C85C61F6832E700F9ED60 /* Default-568h@2x.png */; };
-		D0E9D9647BDCAD8810860B3C /* Pods_CIComponentKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A879D584158D69EBDA0B4DBC /* Pods_CIComponentKitDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +57,9 @@
 		1C7B1DF6225F435200D9DAF9 /* CIComponentKitDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIComponentKitDemoTests.m; sourceTree = "<group>"; };
 		1C7B1DF8225F435200D9DAF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIComponentKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BE95A704574501D825E119C /* libPods-CIComponentKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CIComponentKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC06026A0D4155186ACCCA3 /* Pods-CIComponentKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKitDemo.release.xcconfig"; path = "Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7934B378314D14B35A1815F5 /* Pods-CIComponentKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		A879D584158D69EBDA0B4DBC /* Pods_CIComponentKitDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CIComponentKitDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICDemoViewController.h; sourceTree = "<group>"; };
 		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0E9D9647BDCAD8810860B3C /* Pods_CIComponentKitDemo.framework in Frameworks */,
+				657429BA1520DCAC1A885082 /* libPods-CIComponentKitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				26F0DE3DE9306E194FC57AE9 /* libPods-CIComponentKit.a */,
-				A879D584158D69EBDA0B4DBC /* Pods_CIComponentKitDemo.framework */,
+				2BE95A704574501D825E119C /* libPods-CIComponentKitDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 				C64C859F1F68303B00F9ED60 /* Frameworks */,
 				C64C85A01F68303B00F9ED60 /* Resources */,
 				B06474671F68435F0009A826 /* Copy Files */,
-				7A33911FE4085E1D84C77FD6 /* [CP] Embed Pods Frameworks */,
+				D4221DF43832BC1C331886F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,26 +293,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7A33911FE4085E1D84C77FD6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CICKit/CICKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CICKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D1664A2EFD1FBFFEE4A3005E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,6 +313,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4221DF43832BC1C331886F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CICKit/CIComponentKit.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CIComponentKit.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

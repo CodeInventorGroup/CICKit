@@ -11,6 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum : NSUInteger {
+    CICSeparatorLinePositionTop = 0,
+    CICSeparatorLinePositionLeft,
+    CICSeparatorLinePositionBottom,
+    CICSeparatorLinePositionRight
+}CICSeparatorLinePosition;
+
 @interface UIView (CICSeparatorLine)
 
 + (instancetype)cic_separatorLineWithFrame:(CGRect)frame;
@@ -18,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)cic_addLeftSeparatorLineView;
 - (instancetype)cic_addBottomSeparatorLineView;
 - (instancetype)cic_addRightSeparatorLineView;
+
+- (instancetype)cic_addSeparatorLineViewWithPosition:(CICSeparatorLinePosition)position;
+- (instancetype)cic_addSeparatorLineViewWithPosition:(CICSeparatorLinePosition)position lineColor:(UIColor *)lineColor;
 
 @end
 
