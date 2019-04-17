@@ -14,6 +14,7 @@
 #import "NSString+CICBaseProperty.h"
 #import "NSString+CICNetwork.h"
 #import <SDWebImage/SDWebImage.h>
+#import "UIImage+CICSize.h"
 
 static NSUInteger const kEmptyNumber = 10;
 static NSUInteger const kDeleteNumber = 12;
@@ -44,6 +45,7 @@ static NSUInteger const kLineNumber = 4;
 @property (nonatomic, assign) UIFont *titleFont;
 @property (nonatomic, assign) UIColor *numberButtonBackgroundColor;
 @property (nonatomic, assign) UIColor *otherButtonBackgroundColor;
+@property (nonatomic, assign) CGSize deleteIconSize;
 /// 键盘删除图标 本地图片名称或者图片链接
 @property (nonatomic, copy) NSString *deleteIconNormalImageSource;
 @property (nonatomic, copy) NSString *deleteIconHighlightImageSource;
@@ -79,6 +81,7 @@ static NSUInteger const kLineNumber = 4;
         self.frame = CGRectMake(0, CIC_SCREEN_HEIGHT, CIC_SCREEN_WIDTH, 200);
         self.keyboardType = CICKeyboardTypeRandomNumber;
         self.titleHighlightColor = self.titleColor = [UIColor blackColor];
+        self.deleteIconSize = CGSizeZero;
         _fontSize = 20;
         _lineColor = CIC_COLOR_SEPARATOR_LINE;
         _numberButtonBackgroundColor = [UIColor whiteColor];
@@ -211,13 +214,7 @@ static NSUInteger const kLineNumber = 4;
     
     _deleteIconHighlightImageSource = deleteIconHighlightImageSource;
     UIButton *deleteButton = [self viewWithTag:kKeyboardButtonTagMargin + kDeleteNumber - 1];
-    if (deleteButton) {
-        if ([deleteIconHighlightImageSource cic_isUrl]) {
-            [deleteButton sd_setImageWithURL:[NSURL URLWithString:deleteIconHighlightImageSource] forState:UIControlStateHighlighted];
-        }else {
-            [deleteButton setImage:[UIImage imageNamed:deleteIconHighlightImageSource] forState:UIControlStateHighlighted];
-        }
-    }
+    [self updateButton:deleteButton imageWithUrl:deleteIconHighlightImageSource forState:UIControlStateHighlighted];
 }
 
 - (void)setChangeRandomNumber:(BOOL)changeRandomNumber {
@@ -281,7 +278,10 @@ static NSUInteger const kLineNumber = 4;
         button.titleLabel.font = self.titleFont ? self.titleFont : [UIFont systemFontOfSize:self.fontSize];
     }else if ([title integerValue] == kDeleteNumber) {
         if ([NSString cic_isEmpty:self.deleteIconNormalImageSource]) {
-            UIImage * image = [UIImage cic_localBundleImageNamed:@"keyboard_delete_icon"];
+            UIImage * image = [UIImage cic_localBundleImageNamed:@"keyboard_delete_icon"];;
+            if (!CGSizeEqualToSize(self.deleteIconSize, CGSizeZero)) {
+                image = [image cic_imageScaleToSize:self.deleteIconSize];
+            }
             [button setImage:image forState:UIControlStateNormal];
             [button setImage:image forState:UIControlStateHighlighted];
         }else {
@@ -303,29 +303,31 @@ static NSUInteger const kLineNumber = 4;
 
 - (void)updateImageForDeleteButton:(UIButton *)button {
     
-    if ([_deleteIconNormalImageSource cic_isUrl]) {
-        [button sd_setImageWithURL:[NSURL URLWithString:_deleteIconNormalImageSource] forState:UIControlStateNormal];
-        if ([NSString cic_isEmpty:self.deleteIconHighlightImageSource]) {
-            [button sd_setImageWithURL:[NSURL URLWithString:_deleteIconNormalImageSource] forState:UIControlStateHighlighted];
-        }else {
-            [self updateHighlightImageForDeleteButton:button];
-        }
-    }else {
-        [button setImage:[UIImage imageNamed:_deleteIconNormalImageSource] forState:UIControlStateNormal];
-        if ([NSString cic_isEmpty:self.deleteIconHighlightImageSource]) {
-            [button setImage:[UIImage imageNamed:_deleteIconNormalImageSource] forState:UIControlStateHighlighted];
-        }else {
-            [self updateHighlightImageForDeleteButton:button];
-        }
+    if (![NSString cic_isEmpty:self.deleteIconNormalImageSource]) {
+        [self updateButton:button imageWithUrl:self.deleteIconNormalImageSource forState:UIControlStateNormal];
+        NSString *url = ![NSString cic_isEmpty:self.deleteIconHighlightImageSource] ? self.deleteIconHighlightImageSource : self.deleteIconNormalImageSource;
+        [self updateButton:button imageWithUrl:url forState:UIControlStateHighlighted];
     }
 }
 
-- (void)updateHighlightImageForDeleteButton:(UIButton *)button {
+- (void)updateButton:(UIButton *)button imageWithUrl:(NSString *)url forState:(UIControlState)state {
     
-    if ([self.deleteIconHighlightImageSource cic_isUrl]) {
-        [button sd_setImageWithURL:[NSURL URLWithString:_deleteIconHighlightImageSource] forState:UIControlStateHighlighted];
+    if ([url cic_isUrl]) {
+        __weak typeof(self) weakSelf = self;
+        [button sd_setImageWithURL:[NSURL URLWithString:url] forState:state completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            if (!error) {
+                if (!CGSizeEqualToSize(weakSelf.deleteIconSize, CGSizeZero)) {
+                    image = [image cic_imageScaleToSize:weakSelf.deleteIconSize];
+                }
+                [button setImage:image forState:state];
+            }
+        }];
     }else {
-        [button setImage:[UIImage imageNamed:self.deleteIconHighlightImageSource] forState:UIControlStateHighlighted];
+        UIImage *image = [UIImage imageNamed:self.deleteIconHighlightImageSource];
+        if (!CGSizeEqualToSize(self.deleteIconSize, CGSizeZero)) {
+            image = [image cic_imageScaleToSize:self.deleteIconSize];
+        }
+        [button setImage:image forState:state];
     }
 }
 
@@ -378,6 +380,11 @@ CICConstructorBasicDynamics()
     
     self.otherButtonBackgroundColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull otherButtonBackgroundColor) {
         weakSelf.component.otherButtonBackgroundColor = otherButtonBackgroundColor;
+        return weakSelf;
+    };
+    
+    self.deleteIconSize = ^CICNumberKeyboardViewConstructor * _Nonnull(CGSize size) {
+        weakSelf.component.deleteIconSize = size;
         return weakSelf;
     };
     

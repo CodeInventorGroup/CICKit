@@ -197,6 +197,14 @@ static NSTimeInterval const kTimeDuration = 0.3;
         .numberButtonBackgroundColor([UIColor whiteColor])
         .otherButtonBackgroundColor(CIC_COLOR_E2E2E2)
         .addTo(self.superview);
+       
+        NSString *normalImageUrl = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555389671960&di=9d618c1ab4f5d81edef5c6b57dad0332&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F32%2F19%2F5810e2c4ca538_610.jpg";
+        NSString *highlightImageUrl = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555389671962&di=4aa05efa1e12f0d59562c4ff06c94f0f&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F49%2F80%2F58163106e726b_610.jpg";
+        
+        _keyboardView.cic
+        .deleteIconSize(CGSizeMake(25, 25))
+        .deleteIconNormalImageSource(normalImageUrl)
+        .deleteIconHighlightImageSource(highlightImageUrl);
         
         if (self.keyboardHeight > 0) {
             _keyboardView.cic.height(self.keyboardHeight);

@@ -31,14 +31,18 @@ typedef enum : NSUInteger {
 
 CICConstructorBasicProperties(CICNumberKeyboardViewConstructor)
 
+/// 必须在View创建之前设置属性
 CICConstructorProperty(CICNumberKeyboardViewConstructor, keyboardType, CICKeyboardType keyboardType)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, lineColor, UIColor *lineColor)
+
+/// 可设置属性动态刷新页面
 CICConstructorProperty(CICNumberKeyboardViewConstructor, titleColor, UIColor *titleColor)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, titleHighlightColor, UIColor *titleHighlightColor)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, fontSize, CGFloat fontSize)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, titleFont, UIFont *titleFont)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, numberButtonBackgroundColor, UIColor *numberButtonBackgroundColor)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, otherButtonBackgroundColor, UIColor *otherButtonBackgroundColor)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconSize, CGSize size)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconNormalImageSource, NSString *deleteIconNormalImageSource)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconHighlightImageSource, NSString *deleteIconHighlightImageSource)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, changeRandomNumber, BOOL changeRandomNumber)
