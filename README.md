@@ -68,7 +68,7 @@ Pod installation complete! There is 1 dependency from the Podfile and 2 total po
 
 #### 快速创建TabbarController
 
-```objective-c
+```objc
 CICTabbarController *tabbarController = [[CICTabbarController alloc] init];
 //  首先设置类名数据
 tabbarController.cic
