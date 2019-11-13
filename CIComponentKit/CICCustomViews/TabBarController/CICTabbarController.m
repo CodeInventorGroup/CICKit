@@ -17,34 +17,6 @@
 
 static CGSize const kTabBarImageSize = {23,23};
 
-@implementation CICTabBarItem
-
-@end
-
-@interface CICTabBarItemConstructor ()
-
-@property (nonatomic, weak) CICTabBarItem *component;
-
-@end
-
-@implementation CICTabBarItemConstructor
-
-- (void)buildConstructor {
-    
-    [super buildConstructor];
-}
-
-@end
-
-@implementation CICTabBarItem (CICConstructor)
-
-- (CICTabBarItemConstructor *)cic {
-    
-    return [[CICTabBarItemConstructor alloc] initWithComponent:self];
-}
-
-@end
-
 @interface CICTabbarController ()<UITabBarControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *tempImageViewData;
