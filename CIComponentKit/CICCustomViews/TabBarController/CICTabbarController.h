@@ -14,11 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CICTabbarController : UITabBarController
 
+@property (nonatomic, copy) NSArray<CICTabBarItem *> *tabBarItemData;
+
 @property (nonatomic, copy) NSArray *classNameData;
 @property (nonatomic, copy) NSArray *itemDataNormalImage;
 @property (nonatomic, copy) NSArray *itemDataTitleNormalImage;
 @property (nonatomic, copy) NSArray *itemDataTitleNormalSelectedImage;
 @property (nonatomic, copy) NSArray *itemDataNormalSelectedImage;
+
 @property (nonatomic, copy) NSString *barBackgroundImage;
 @property (nonatomic, strong) UIColor *selectedTitleColr;
 @property (nonatomic, strong) UIColor *normalTitleColr;
@@ -28,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface CICTabbarControllerConstructor<CICTabbarController> : CICUIViewConstructor
+
+CICConstructorProperty(CICTabbarControllerConstructor, tabBarItemData, NSArray<CICTabBarItem *> *tabBarItemData)
 
 /// Controller 类名
 CICConstructorProperty(CICTabbarControllerConstructor, classNameData, NSArray *classNameData)

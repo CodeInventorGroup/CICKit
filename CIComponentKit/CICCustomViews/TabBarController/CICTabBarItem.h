@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CICTabBarItem : NSObject
 
+/// 每个Item对应根视图控制器的类名
+@property (nonatomic, copy) NSString *controllerClassName;
+
 @property (nonatomic, copy) NSString *title;
 /// 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
 @property (nonatomic, strong) id normalImage;
@@ -23,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CICTabBarItemConstructor<CICTabBarItem> : CICConstructor
 
+CICConstructorProperty(CICTabBarItemConstructor, controllerClassName, NSString *controllerClassName)
 CICConstructorProperty(CICTabBarItemConstructor, title, NSString *title)
 CICConstructorProperty(CICTabBarItemConstructor, normalImage, id normalImage)
 CICConstructorProperty(CICTabBarItemConstructor, selectedImage, id selectedImage)

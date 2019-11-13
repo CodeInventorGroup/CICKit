@@ -62,6 +62,18 @@ static CGSize const kTabBarImageSize = {23,23};
 }
 
 #pragma mark - Setter Methods
+- (void)setTabBarItemData:(NSArray<CICTabBarItem *> *)tabBarItemData {
+    
+    _tabBarItemData = tabBarItemData;
+    for (CICTabBarItem *tabBarItem in tabBarItemData) {
+        if ([NSString cic_isEmpty:tabBarItem.controllerClassName]) {
+            tabBarItem.controllerClassName = NSStringFromClass([UIViewController class]);
+        }
+        [self addChildViewControllerWithClassName:tabBarItem.controllerClassName];
+        [self updateChildViewControllerItemAtIndex:[tabBarItemData indexOfObject:tabBarItem] normalImageName:tabBarItem.normalImage title:tabBarItem.title selectedImageName:tabBarItem.selectedImage];
+    }
+}
+
 - (void)setClassNameData:(NSArray *)classNameData {
     
     _classNameData = classNameData;
@@ -164,58 +176,30 @@ static CGSize const kTabBarImageSize = {23,23};
 - (void)updateChildViewControllerItemAtIndex:(NSUInteger)index normalImageName:(NSString *)normalImageName title:(NSString *)title selectedImageName:(NSString *)selectedImageName {
     
     __block UIViewController *childViewController = self.childViewControllers[index];
-    __weak typeof(self) weakSelf = self;
-    if (title) {
+    if (![NSString cic_isEmpty:title]) {
         childViewController.tabBarItem.title = title;
     }
-    if (normalImageName && [normalImageName cic_isUrl]) {
-        UIImageView *imageView = [[UIImageView alloc] init];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:normalImageName] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-            if (!error) {
-                UIImage *scaleSizeImage = [image cic_imageScaleToSize:self.imageSize];
-                childViewController.tabBarItem.image = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-                if (!selectedImageName) {
-                    childViewController.tabBarItem.selectedImage = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-                }
+    
+    __weak typeof(self) weakSelf = self;
+    if (normalImageName) {
+        [self showImageWithImageParam:normalImageName completionBlock:^(UIImage *resultImage) {
+            if (!CGSizeEqualToSize(resultImage.size, self.imageSize)) {
+                resultImage = [resultImage cic_imageScaleToSize:self.imageSize];
             }
-            [weakSelf.tempImageViewData removeObject:imageView];
-            if (weakSelf.tempImageViewData.count == 0) {
-                weakSelf.tempImageViewData = nil;
+            childViewController.tabBarItem.image = resultImage;
+            if (!selectedImageName) {
+                childViewController.tabBarItem.selectedImage = [resultImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             }
         }];
-        [self.tempImageViewData addObject:imageView];
-    }else {
-        UIImage *normalImage = [UIImage imageNamed:normalImageName];
-        if (!CGSizeEqualToSize(normalImage.size, self.imageSize)) {
-            normalImage = [normalImage cic_imageScaleToSize:self.imageSize];
-        }
-        childViewController.tabBarItem.image = normalImage;
-        if ([NSString cic_isEmpty:selectedImageName]) {
-            childViewController.tabBarItem.selectedImage = [normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        }
     }
     if (selectedImageName) {
-        if ([selectedImageName cic_isUrl]) {
-            UIImageView *imageView = [[UIImageView alloc] init];
-            [imageView sd_setImageWithURL:[NSURL URLWithString:selectedImageName] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                if (!error) {
-                    UIImage *scaleSizeImage = [image cic_imageScaleToSize:self.imageSize];
-                    childViewController.tabBarItem.selectedImage = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-                    
-                }
-                [weakSelf.tempImageViewData removeObject:imageView];
-                if (weakSelf.tempImageViewData.count == 0) {
-                    weakSelf.tempImageViewData = nil;
-                }
-            }];
-            [self.tempImageViewData addObject:imageView];
-        }else {
-            UIImage *selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            if (!CGSizeEqualToSize(selectedImage.size, self.imageSize)) {
-                selectedImage = [selectedImage cic_imageScaleToSize:self.imageSize];
+        [self showImageWithImageParam:selectedImageName completionBlock:^(UIImage *resultImage) {
+            UIImage *selectedImage = [resultImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            if (!CGSizeEqualToSize(selectedImage.size, weakSelf.imageSize)) {
+                selectedImage = [selectedImage cic_imageScaleToSize:weakSelf.imageSize];
             }
             childViewController.tabBarItem.selectedImage = selectedImage;
-        }
+        }];
     }
     if (@available(iOS 13.0, *)) {
   
@@ -224,6 +208,43 @@ static CGSize const kTabBarImageSize = {23,23};
             CGFloat margin = (CIC_TAB_BAR_HEIGHT - 1 - self.imageSize.height)/2.0 - 1;
             childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(margin, 0, -margin, 0);
         }
+    }
+}
+
+- (void)showImageWithImageParam:(id)imageParam completionBlock:(void(^)(UIImage *))completionBlock {
+    
+    if (!imageParam || !completionBlock) {
+        return;
+    }
+    
+    __block UIImage *resultImage = nil;
+    if ([imageParam isKindOfClass:[NSString class]]) {
+        NSString *imageString = (NSString *)imageParam;
+        if ([imageString cic_isUrl]) {
+            UIImageView *imageView = [[UIImageView alloc] init];
+            
+            __weak typeof(self) weakSelf = self;
+            [imageView sd_setImageWithURL:[NSURL URLWithString:imageString] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                if (!error) {
+                    completionBlock(image);
+                }
+                [weakSelf.tempImageViewData removeObject:imageView];
+                if (weakSelf.tempImageViewData.count == 0) {
+                    weakSelf.tempImageViewData = nil;
+                }
+            }];
+            [self.tempImageViewData addObject:imageView];
+        }else {
+            resultImage = [UIImage imageNamed:imageString];
+        }
+    }else if ([imageParam isKindOfClass:[NSData class]]) {
+        resultImage = [UIImage sd_imageWithData:(NSData *)imageParam scale:[UIScreen mainScreen].scale];
+    }else if ([imageParam isKindOfClass:[UIImage class]]) {
+        resultImage = (UIImage *)imageParam;
+    }
+    
+    if (resultImage) {
+        completionBlock(resultImage);
     }
 }
 
@@ -251,6 +272,11 @@ static CGSize const kTabBarImageSize = {23,23};
     [super buildConstructor];
     
     __weak typeof(&*self) weakSelf = self;
+    self.tabBarItemData = ^CICTabbarControllerConstructor * _Nonnull(NSArray<CICTabBarItem *> * _Nonnull tabBarItemData) {
+        weakSelf.component.tabBarItemData = tabBarItemData;
+        return weakSelf;
+    };
+    
     self.classNameData = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull classNameData) {
         weakSelf.component.classNameData = classNameData;
         return weakSelf;

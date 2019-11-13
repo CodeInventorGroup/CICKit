@@ -10,23 +10,14 @@
 
 @implementation UIImage (CICSize)
 
-/// 对图片尺寸进行压缩--
-+ (UIImage *)cic_imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
-    UIGraphicsBeginImageContextWithOptions(newSize, NO, [UIScreen mainScreen].scale);
-    [image drawInRect:CGRectMake(0 , 0, newSize.width, newSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return newImage;
-}
-
 /// 对图片尺寸进行压缩
 - (UIImage *)cic_imageScaleToSize:(CGSize)size {
     
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
     [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    return newImage;
+    return resultImage;
 }
 
 @end

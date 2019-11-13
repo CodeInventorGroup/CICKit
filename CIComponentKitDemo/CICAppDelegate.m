@@ -58,16 +58,45 @@
 - (void)showTabbarController {
     
     CICTabbarController *tabbarController = [[CICTabbarController alloc] init];
+    
+    NSMutableArray *tabBarItemData = [NSMutableArray array];
+    CICTabBarItem *homeTabBarItem = [[CICTabBarItem alloc] init];
+    homeTabBarItem.cic
+    .title(@"首页")
+    .normalImage(@"home_tabbar_icon")
+    .controllerClassName(@"CICRootViewController");
+    [tabBarItemData addObject:homeTabBarItem];
+    
+    CICTabBarItem *classifyTabBarItem = [[CICTabBarItem alloc] init];
+    classifyTabBarItem.cic
+    .title(@"聚中")
+    .normalImage(@"center_tabbar_icon")
+    .controllerClassName(@"CICSecondViewController");
+    [tabBarItemData addObject:classifyTabBarItem];
+    
+    CICTabBarItem *thirdTabBarItem = [[CICTabBarItem alloc] init];
+    thirdTabBarItem.cic
+    .title(@"工具")
+    .normalImage(@"tool_tabbar_icon")
+    .controllerClassName(@"CICThirdViewController");
+    [tabBarItemData addObject:thirdTabBarItem];
+    
+    tabbarController.cic
+    .tabBarItemData(tabBarItemData)
+    .selectedTextColor([UIColor cic_hexColor:0x1296db])
+    .normalTextColor([UIColor cic_hexColor:0x646464]);
+    self.window.rootViewController = tabbarController;
+//    tabbarController.cic.badgeValue(2, @"100");
 
     //  首先设置类名数据
-    tabbarController.cic.classNameData(@[@"CICRootViewController", @"CICSecondViewController", @"CICThirdViewController"])
-                        .itemDataTitleNormalImage(@[@[@"首页", @"home_tabbar_icon"],
-                                                   @[@"聚中", @"center_tabbar_icon"],
-                                                   @[@"工具", @"tool_tabbar_icon"]])
-                        .selectedTextColor([UIColor cic_hexColor:0x1296db])
-                        .normalTextColor([UIColor cic_hexColor:0x646464]);
-    self.window.rootViewController = tabbarController;
-    tabbarController.cic.badgeValue(2, @"100");
+//    tabbarController.cic.classNameData(@[@"CICRootViewController", @"CICSecondViewController", @"CICThirdViewController"])
+//                        .itemDataTitleNormalImage(@[@[@"首页", @"home_tabbar_icon"],
+//                                                   @[@"聚中", @"center_tabbar_icon"],
+//                                                   @[@"工具", @"tool_tabbar_icon"]])
+//                        .selectedTextColor([UIColor cic_hexColor:0x1296db])
+//                        .normalTextColor([UIColor cic_hexColor:0x646464]);
+//    self.window.rootViewController = tabbarController;
+//    tabbarController.cic.badgeValue(2, @"100");
     
     //  动态加载tabbar图片的数据
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
