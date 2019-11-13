@@ -1,15 +1,15 @@
 PODS:
   - CICKit (0.0.3.4):
     - SDWebImage
-  - SDWebImage (5.0.1):
-    - SDWebImage/Core (= 5.0.1)
-  - SDWebImage/Core (5.0.1)
+  - SDWebImage (5.2.5):
+    - SDWebImage/Core (= 5.2.5)
+  - SDWebImage/Core (5.2.5)
 
 DEPENDENCIES:
   - CICKit (from `../CICKit`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -18,8 +18,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CICKit: f4321c3a0fcea8fcae16751d42357f85492cb324
-  SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
+  SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
 
 PODFILE CHECKSUM: 9bab9100610c4e1f4887863230a396696fa04d70
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.8.0

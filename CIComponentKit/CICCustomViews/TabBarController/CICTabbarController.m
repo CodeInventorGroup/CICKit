@@ -15,6 +15,36 @@
 #import "UIImage+CICColor.h"
 #import "NSString+CICBaseProperty.h"
 
+static CGSize const kTabBarImageSize = {23,23};
+
+@implementation CICTabBarItem
+
+@end
+
+@interface CICTabBarItemConstructor ()
+
+@property (nonatomic, weak) CICTabBarItem *component;
+
+@end
+
+@implementation CICTabBarItemConstructor
+
+- (void)buildConstructor {
+    
+    [super buildConstructor];
+}
+
+@end
+
+@implementation CICTabBarItem (CICConstructor)
+
+- (CICTabBarItemConstructor *)cic {
+    
+    return [[CICTabBarItemConstructor alloc] initWithComponent:self];
+}
+
+@end
+
 @interface CICTabbarController ()<UITabBarControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *tempImageViewData;
@@ -26,7 +56,7 @@
 #pragma mark - Life Cycle
 - (instancetype)init {
     if (self = [super init]) {
-        self.imageSize = CGSizeMake(23, 23);
+        self.imageSize = kTabBarImageSize;
     }
     return self;
 }
@@ -34,7 +64,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     
     if (self = [super initWithCoder:aDecoder]) {
-        self.imageSize = CGSizeMake(23, 23);
+        self.imageSize = kTabBarImageSize;
     }
     return self;
 }
@@ -42,7 +72,7 @@
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.imageSize = CGSizeMake(23, 23);
+        self.imageSize = kTabBarImageSize;
     }
     return self;
 }
@@ -170,7 +200,7 @@
         UIImageView *imageView = [[UIImageView alloc] init];
         [imageView sd_setImageWithURL:[NSURL URLWithString:normalImageName] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             if (!error) {
-                UIImage *scaleSizeImage = [UIImage cic_imageWithImage:image scaledToSize:self.imageSize];
+                UIImage *scaleSizeImage = [image cic_imageScaleToSize:self.imageSize];
                 childViewController.tabBarItem.image = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
                 if (!selectedImageName) {
                     childViewController.tabBarItem.selectedImage = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -197,7 +227,7 @@
             UIImageView *imageView = [[UIImageView alloc] init];
             [imageView sd_setImageWithURL:[NSURL URLWithString:selectedImageName] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
                 if (!error) {
-                    UIImage *scaleSizeImage = [UIImage cic_imageWithImage:image scaledToSize:self.imageSize];
+                    UIImage *scaleSizeImage = [image cic_imageScaleToSize:self.imageSize];
                     childViewController.tabBarItem.selectedImage = [scaleSizeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
                     
                 }
@@ -215,9 +245,13 @@
             childViewController.tabBarItem.selectedImage = selectedImage;
         }
     }
-    if ([NSString cic_isEmpty:title]) {
-        CGFloat margin = (CIC_TAB_BAR_HEIGHT - self.imageSize.height)/2.0;
-        childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(margin, 0, -margin, 0);
+    if (@available(iOS 13.0, *)) {
+  
+    }else {
+        if ([NSString cic_isEmpty:title]) {
+            CGFloat margin = (CIC_TAB_BAR_HEIGHT - 1 - self.imageSize.height)/2.0 - 1;
+            childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(margin, 0, -margin, 0);
+        }
     }
 }
 

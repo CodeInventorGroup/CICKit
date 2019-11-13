@@ -13,7 +13,7 @@
 
 - (BOOL)cic_isUrl {
     
-    return [self containsString:@"https://"] || [self containsString:@"http://"];
+    return [self hasPrefix:@"https://"] || [self hasPrefix:@"http://"];
 }
 
 @end

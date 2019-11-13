@@ -7,9 +7,30 @@
 //  封装TabbarController
 
 #import <UIKit/UIKit.h>
+#import "NSObject+CICConstructor.h"
 #import "UIView+CICConstructor.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+@interface CICTabBarItem : NSObject
+
+@property (nonatomic, copy) NSString *title;
+/// 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
+@property (nonatomic, strong) id normalImage;
+/// 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
+@property (nonatomic, strong) id selectedImage;
+
+@end
+
+@interface CICTabBarItemConstructor<CICTabBarItem> : CICConstructor
+
+@end
+
+@interface CICTabBarItem (CICConstructor)
+
+- (CICTabBarItemConstructor *)cic;
+
+@end
 
 @interface CICTabbarController : UITabBarController
 
