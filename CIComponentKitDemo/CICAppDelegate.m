@@ -86,7 +86,7 @@
     .selectedTextColor([UIColor cic_hexColor:0x1296db])
     .normalTextColor([UIColor cic_hexColor:0x646464]);
     self.window.rootViewController = tabbarController;
-//    tabbarController.cic.badgeValue(2, @"100");
+    tabbarController.cic.badgeValue(2, @"100");
 
     //  首先设置类名数据
 //    tabbarController.cic.classNameData(@[@"CICRootViewController", @"CICSecondViewController", @"CICThirdViewController"])

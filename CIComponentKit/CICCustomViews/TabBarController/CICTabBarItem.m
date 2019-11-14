@@ -10,6 +10,51 @@
 
 @implementation CICTabBarItem
 
+- (instancetype)init {
+    
+    if (self = [super init]) {
+        self.isShowTitle = YES;
+    }
+    return self;
+}
+
++ (CICTabBarItem *)cic_tabBarItemNoTitleWithNormalImage:(id)normalImage controllerClassName:(NSString *)controllerClassName {
+    
+    return [self cic_tabBarItemNoTitleWithNormalImage:normalImage selectedImage:@"" controllerClassName:controllerClassName];
+}
+
++ (CICTabBarItem *)cic_tabBarItemNoTitleWithNormalImage:(id)normalImage selectedImage:(id)selectedImage controllerClassName:(NSString *)controllerClassName {
+    
+    return [self cic_tabBarItemWithTitle:@"" normalImage:normalImage selectedImage:selectedImage controllerClassName:controllerClassName isShowTitle:NO];
+}
+
+
++ (CICTabBarItem *)cic_tabBarItemWithTitle:(NSString *)title normalImage:(id)normalImage controllerClassName:(NSString *)controllerClassName {
+    
+    return [self cic_tabBarItemWithTitle:title normalImage:normalImage selectedImage:@"" controllerClassName:controllerClassName];
+}
+
++ (CICTabBarItem *)cic_tabBarItemWithTitle:(NSString *)title normalImage:(id)normalImage selectedImage:(id)selectedImage controllerClassName:(NSString *)controllerClassName {
+    
+    return [self cic_tabBarItemWithTitle:title normalImage:normalImage selectedImage:selectedImage controllerClassName:controllerClassName isShowTitle:YES];
+}
+
++ (CICTabBarItem *)cic_tabBarItemWithTitle:(NSString *)title
+                               normalImage:(id)normalImage
+                             selectedImage:(id)selectedImage
+                       controllerClassName:(NSString *)controllerClassName
+                               isShowTitle:(BOOL)isShowTitle {
+    
+    CICTabBarItem *tabBarItem = [[CICTabBarItem alloc] init];
+    tabBarItem.cic
+    .title(title)
+    .normalImage(normalImage)
+    .selectedImage(selectedImage)
+    .controllerClassName(controllerClassName)
+    .isShowTitle(isShowTitle);
+    return tabBarItem;
+}
+
 @end
 
 @interface CICTabBarItemConstructor ()
@@ -42,6 +87,11 @@
     
     self.selectedImage = ^CICTabBarItemConstructor * _Nonnull(id  _Nonnull selectedImage) {
         weakSelf.component.selectedImage = selectedImage;
+        return weakSelf;
+    };
+    
+    self.isShowTitle = ^CICTabBarItemConstructor * _Nonnull(BOOL isShowTitle) {
+        weakSelf.component.isShowTitle = isShowTitle;
         return weakSelf;
     };
 }

@@ -28,11 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGSize imageSize;
 @property (nonatomic, copy) void(^didSelectedTabbarBlock)(NSInteger selectedIndex);
 
+- (void)updateTabBarItemData:(CICTabBarItem *)tabBarItem atIndex:(NSInteger)index;
+
 @end
 
 @interface CICTabbarControllerConstructor<CICTabbarController> : CICUIViewConstructor
 
 CICConstructorProperty(CICTabbarControllerConstructor, tabBarItemData, NSArray<CICTabBarItem *> *tabBarItemData)
+CICConstructorProperty(CICTabBarItemConstructor, updateTabBarItemData, CICTabBarItem *item, NSInteger itemIndex)
 
 /// Controller 类名
 CICConstructorProperty(CICTabbarControllerConstructor, classNameData, NSArray *classNameData)
