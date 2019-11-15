@@ -8,6 +8,23 @@
 
 #import "CICTabBarItem.h"
 
+@interface CICTabBarItem ()
+
+/// 每个Item对应根视图控制器的类名
+@property (nonatomic, copy) NSString *controllerClassName;
+/// 是否显示文字(默认显示)
+@property (nonatomic, assign) BOOL isShowTitle;
+@property (nonatomic, copy) NSString *title;
+/// 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
+@property (nonatomic, strong) id normalImage;
+/// 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
+@property (nonatomic, strong) id selectedImage;
+
+@property (nonatomic, assign) CGSize normalImageSize;
+@property (nonatomic, assign) CGSize selectedImageSize;
+
+@end
+
 @implementation CICTabBarItem
 
 - (instancetype)init {

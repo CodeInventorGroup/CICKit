@@ -14,14 +14,17 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CICTabBarItem : NSObject
 
 /// 每个Item对应根视图控制器的类名
-@property (nonatomic, copy) NSString *controllerClassName;
+@property (nonatomic, readonly,copy) NSString *controllerClassName;
 /// 是否显示文字(默认显示)
-@property (nonatomic, assign) BOOL isShowTitle;
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly, assign) BOOL isShowTitle;
+@property (nonatomic, readonly, copy) NSString *title;
 /// 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
-@property (nonatomic, strong) id normalImage;
+@property (nonatomic, readonly, strong) id normalImage;
 /// 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
-@property (nonatomic, strong) id selectedImage;
+@property (nonatomic, readonly, strong) id selectedImage;
+
+@property (nonatomic, readonly, assign) CGSize normalImageSize;
+@property (nonatomic, readonly, assign) CGSize selectedImageSize;
 
 /// 显示文字
 + (CICTabBarItem *)cic_tabBarItemWithTitle:(NSString *)title normalImage:(id)normalImage controllerClassName:(NSString *)controllerClassName;

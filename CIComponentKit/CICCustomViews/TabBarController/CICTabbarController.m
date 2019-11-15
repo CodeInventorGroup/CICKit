@@ -15,9 +15,31 @@
 #import "UIImage+CICColor.h"
 #import "NSString+CICBaseProperty.h"
 
-static CGSize const kTabBarImageSize = {23,23};
+/// 标题Label的高度
+static CGFloat const kTitleLabelHeight = 12;
 
 @interface CICTabbarController ()<UITabBarControllerDelegate>
+
+@property (nonatomic, copy) NSArray<CICTabBarItem *> *tabBarItemData;
+
+@property (nonatomic, copy) NSArray *classNameData;
+@property (nonatomic, copy) NSArray *itemDataNormalImage;
+@property (nonatomic, copy) NSArray *itemDataTitleNormalImage;
+@property (nonatomic, copy) NSArray *itemDataTitleNormalSelectedImage;
+@property (nonatomic, copy) NSArray *itemDataNormalSelectedImage;
+
+@property (nonatomic, copy) NSString *barBackgroundImage;
+@property (nonatomic, strong) UIColor *selectedTitleColr;
+@property (nonatomic, strong) UIColor *normalTitleColr;
+
+/// 所有Item的图片大小均一样
+@property (nonatomic, assign) CGSize normalImageSize;
+@property (nonatomic, assign) CGSize selectedImageSize;
+
+/// 标题和图片之间的间距
+@property (nonatomic, assign) CGFloat titleImageMiddleMargin;
+
+- (void)updateTabBarItemData:(CICTabBarItem *)tabBarItem atIndex:(NSInteger)index;
 
 @property (nonatomic, strong) NSMutableArray *tempImageViewData;
 
@@ -26,29 +48,6 @@ static CGSize const kTabBarImageSize = {23,23};
 @implementation CICTabbarController
 
 #pragma mark - Life Cycle
-- (instancetype)init {
-    if (self = [super init]) {
-        self.imageSize = kTabBarImageSize;
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    
-    if (self = [super initWithCoder:aDecoder]) {
-        self.imageSize = kTabBarImageSize;
-    }
-    return self;
-}
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.imageSize = kTabBarImageSize;
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
@@ -67,10 +66,10 @@ static CGSize const kTabBarImageSize = {23,23};
     _tabBarItemData = tabBarItemData;
     for (CICTabBarItem *tabBarItem in tabBarItemData) {
         if ([NSString cic_isEmpty:tabBarItem.controllerClassName]) {
-            tabBarItem.controllerClassName = NSStringFromClass([UIViewController class]);
+            tabBarItem.cic.controllerClassName(NSStringFromClass([UIViewController class]));
         }
         [self addChildViewControllerWithClassName:tabBarItem.controllerClassName];
-        [self updateChildViewControllerItemAtIndex:[tabBarItemData indexOfObject:tabBarItem] normalImageName:tabBarItem.normalImage title:tabBarItem.title selectedImageName:tabBarItem.selectedImage];
+        [self updateTabBarItemData:tabBarItem atIndex:[tabBarItemData indexOfObject:tabBarItem]];
     }
 }
 
@@ -154,13 +153,35 @@ static CGSize const kTabBarImageSize = {23,23};
     }
 }
 
+- (void)setImageSize:(CGSize)imageSize {
+        
+    for (UIViewController *childrenViewController in self.childViewControllers) {
+        NSUInteger itemIndex = [self.childViewControllers indexOfObject:childrenViewController];
+        [self updateTabBarItemImageSize:imageSize forItemAtIndex:itemIndex];
+    }
+}
+
+- (void)setTitleImageMiddleMargin:(CGFloat)titleImageMiddleMargin {
+    
+    _titleImageMiddleMargin = titleImageMiddleMargin;
+    
+    for (UIViewController *childrenViewController in self.childViewControllers) {
+        [self updateTabBarItemTitleImagePositionAtIndex:[self.childViewControllers indexOfObject:childrenViewController]];
+    }
+}
+
 #pragma mark - Private Methods
 - (void)addChildViewControllerWithClassName:(NSString *)className {
+    
+    [self addChildViewController:[self buildChildViewControllerWithClassName:className]];
+}
+
+- (UIViewController *)buildChildViewControllerWithClassName:(NSString *)className {
     
     Class class = NSClassFromString(className);
     UIViewController *viewController = [[class alloc] init];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
-    [self addChildViewController:navigation];
+    return navigation;
 }
 
 - (void)updateChildViewControllerItemAtIndex:(NSUInteger)index normalImageName:(NSString *)normalImageName {
@@ -173,7 +194,52 @@ static CGSize const kTabBarImageSize = {23,23};
     [self updateChildViewControllerItemAtIndex:index normalImageName:normalImageName title:title selectedImageName:nil];
 }
 
+- (void)updateTabBarItemData:(CICTabBarItem *)tabBarItem atIndex:(NSInteger)index {
+    
+    if (!self.childViewControllers || self.childViewControllers.count <= index) {
+        return;
+    }
+    
+    __block UIViewController *childViewController = self.childViewControllers[index];
+    if (![NSString cic_isEmpty:tabBarItem.title]) {
+      childViewController.tabBarItem.title = tabBarItem.title;
+    }
+
+    if (!tabBarItem.isShowTitle) {
+        childViewController.tabBarItem.title = nil;
+    }
+
+    __weak typeof(self) weakSelf = self;
+    if (tabBarItem.normalImage) {
+      [self showImageWithImageParam:tabBarItem.normalImage completionBlock:^(UIImage *resultImage) {
+          if (!CGSizeEqualToSize(weakSelf.normalImageSize, CGSizeZero) && !CGSizeEqualToSize(resultImage.size, weakSelf.normalImageSize)) {
+              resultImage = [resultImage cic_imageScaleToSize:weakSelf.normalImageSize];
+          }
+          childViewController.tabBarItem.image = resultImage;
+          if (!tabBarItem.selectedImage) {
+              childViewController.tabBarItem.selectedImage = [resultImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+          }
+      }];
+    }
+    if (tabBarItem.selectedImage) {
+      [self showImageWithImageParam:tabBarItem.selectedImage completionBlock:^(UIImage *resultImage) {
+          UIImage *selectedImage = [resultImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+          if (!CGSizeEqualToSize(weakSelf.selectedImageSize, CGSizeZero) && !CGSizeEqualToSize(selectedImage.size, weakSelf.selectedImageSize)) {
+              selectedImage = [selectedImage cic_imageScaleToSize:weakSelf.selectedImageSize];
+          }
+          childViewController.tabBarItem.selectedImage = selectedImage;
+      }];
+    }
+
+    [self updateTabBarItemImageInsetsAtIndex:index];
+    [self updateTabBarItemTitleImagePositionAtIndex:index];
+}
+
 - (void)updateChildViewControllerItemAtIndex:(NSUInteger)index normalImageName:(NSString *)normalImageName title:(NSString *)title selectedImageName:(NSString *)selectedImageName {
+    
+    if (!self.childViewControllers || self.childViewControllers.count <= index) {
+        return;
+    }
     
     __block UIViewController *childViewController = self.childViewControllers[index];
     if (![NSString cic_isEmpty:title]) {
@@ -183,8 +249,8 @@ static CGSize const kTabBarImageSize = {23,23};
     __weak typeof(self) weakSelf = self;
     if (normalImageName) {
         [self showImageWithImageParam:normalImageName completionBlock:^(UIImage *resultImage) {
-            if (!CGSizeEqualToSize(resultImage.size, self.imageSize)) {
-                resultImage = [resultImage cic_imageScaleToSize:self.imageSize];
+            if (!CGSizeEqualToSize(resultImage.size, weakSelf.normalImageSize)) {
+                resultImage = [resultImage cic_imageScaleToSize:weakSelf.normalImageSize];
             }
             childViewController.tabBarItem.image = resultImage;
             if (!selectedImageName) {
@@ -195,20 +261,73 @@ static CGSize const kTabBarImageSize = {23,23};
     if (selectedImageName) {
         [self showImageWithImageParam:selectedImageName completionBlock:^(UIImage *resultImage) {
             UIImage *selectedImage = [resultImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            if (!CGSizeEqualToSize(selectedImage.size, weakSelf.imageSize)) {
-                selectedImage = [selectedImage cic_imageScaleToSize:weakSelf.imageSize];
+            if (!CGSizeEqualToSize(selectedImage.size, weakSelf.selectedImageSize)) {
+                selectedImage = [selectedImage cic_imageScaleToSize:weakSelf.selectedImageSize];
             }
             childViewController.tabBarItem.selectedImage = selectedImage;
         }];
     }
-    if (@available(iOS 13.0, *)) {
-  
-    }else {
-        if ([NSString cic_isEmpty:title]) {
-            CGFloat margin = (CIC_TAB_BAR_HEIGHT - 1 - self.imageSize.height)/2.0 - 1;
-            childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(margin, 0, -margin, 0);
-        }
+
+    [self updateTabBarItemImageInsetsAtIndex:index];
+}
+
+- (void)updateTabBarItemImageInsets {
+    
+    for (UIViewController *childrenViewController in self.childViewControllers) {
+        [self updateTabBarItemImageInsetsAtIndex:[self.childViewControllers indexOfObject:childrenViewController]];
     }
+}
+
+- (void)updateTabBarItemImageInsetsAtIndex:(NSInteger)index {
+    
+    UIViewController *childViewController = self.childViewControllers[index];
+    if (![NSString cic_isEmpty:childViewController.tabBarItem.title]) {
+        return;
+    }
+    
+    CGSize imageSize = childViewController.tabBarItem.image.size;
+    
+    CGFloat estimateTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - imageSize.height) / 2.0;
+    CGFloat finishedTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - imageSize.height) / 2.0;
+    CGFloat margin = finishedTopMargin - estimateTopMargin;
+    childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(margin, 0, -margin, 0);
+}
+
+- (void)updateTabBarItemTitleImagePositionAtIndex:(NSInteger)index {
+    
+    UIViewController *childViewController = self.childViewControllers[index];
+    if ([NSString cic_isEmpty:childViewController.tabBarItem.title]) {
+        return;
+    }
+    
+    CGSize imageSize = childViewController.tabBarItem.image.size;
+    
+    CGFloat margin = self.titleImageMiddleMargin;
+    if (imageSize.height + margin + kTitleLabelHeight > CIC_TAB_BAR_HEIGHT - 1) {
+        margin = CIC_TAB_BAR_HEIGHT - 1 - imageSize.height - kTitleLabelHeight;
+    }
+    
+    CGFloat estimateTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - imageSize.height) / 2.0;
+    CGFloat finishedTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - imageSize.height - margin)/2.0;
+    CGFloat imageTopMargin = finishedTopMargin - estimateTopMargin;
+    childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(imageTopMargin, 0, -imageTopMargin, 0);
+    CGFloat titleVerticalOffset = finishedTopMargin + imageSize.height + margin - (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight);
+    childViewController.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, titleVerticalOffset);
+}
+
+- (void)updateTabBarItemImageSize:(CGSize)imageSize forItemAtIndex:(NSUInteger)index {
+    
+    UIViewController *childViewController = self.childViewControllers[index];
+    UIImage *normalImage = childViewController.tabBarItem.image;
+    normalImage = [normalImage cic_imageScaleToSize:imageSize];
+    childViewController.tabBarItem.image = normalImage;
+    
+    UIImage *selectedImage = childViewController.tabBarItem.selectedImage;
+    selectedImage = [selectedImage cic_imageScaleToSize:imageSize];
+    childViewController.tabBarItem.selectedImage = selectedImage;
+    
+    [self updateTabBarItemImageInsetsAtIndex:index];
+    [self updateTabBarItemTitleImagePositionAtIndex:index];
 }
 
 - (void)showImageWithImageParam:(id)imageParam completionBlock:(void(^)(UIImage *))completionBlock {
@@ -322,11 +441,6 @@ static CGSize const kTabBarImageSize = {23,23};
         return weakSelf;
     };
     
-    self.imageSize = ^CICTabbarControllerConstructor * _Nonnull(CGSize imageSize) {
-        weakSelf.component.imageSize = imageSize;
-        return weakSelf;
-    };
-    
     self.badgeValue = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger index, NSString *value) {
         weakSelf.component.childViewControllers[index].tabBarItem.badgeValue = value;
         return weakSelf;
@@ -334,6 +448,26 @@ static CGSize const kTabBarImageSize = {23,23};
     
     self.selectedIndex = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger selectedIndex) {
         weakSelf.component.selectedIndex = selectedIndex;
+        return weakSelf;
+    };
+    
+    self.titleImageMiddleMargin = ^CICTabbarControllerConstructor * _Nonnull(CGFloat titleImageMiddleMargin) {
+        weakSelf.component.titleImageMiddleMargin = titleImageMiddleMargin;
+        return weakSelf;
+    };
+    
+    self.updateTabBarItemData = ^CICTabbarControllerConstructor * _Nonnull(CICTabBarItem * _Nonnull item, NSInteger itemIndex) {
+        [weakSelf.component updateTabBarItemData:item atIndex:itemIndex];
+        return weakSelf;
+    };
+    
+    self.normalImageSize = ^CICTabbarControllerConstructor * _Nonnull(CGSize imageSize) {
+        weakSelf.component.normalImageSize = imageSize;
+        return weakSelf;
+    };
+    
+    self.selectedImageSize = ^CICTabbarControllerConstructor * _Nonnull(CGSize imageSize) {
+        weakSelf.component.selectedImageSize = imageSize;
         return weakSelf;
     };
 }

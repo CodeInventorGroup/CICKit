@@ -14,28 +14,32 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CICTabbarController : UITabBarController
 
-@property (nonatomic, copy) NSArray<CICTabBarItem *> *tabBarItemData;
+@property (nonatomic, readonly, copy) NSArray<CICTabBarItem *> *tabBarItemData;
 
-@property (nonatomic, copy) NSArray *classNameData;
-@property (nonatomic, copy) NSArray *itemDataNormalImage;
-@property (nonatomic, copy) NSArray *itemDataTitleNormalImage;
-@property (nonatomic, copy) NSArray *itemDataTitleNormalSelectedImage;
-@property (nonatomic, copy) NSArray *itemDataNormalSelectedImage;
+@property (nonatomic, readonly, copy) NSArray *classNameData;
+@property (nonatomic, readonly, copy) NSArray *itemDataNormalImage;
+@property (nonatomic, readonly, copy) NSArray *itemDataTitleNormalImage;
+@property (nonatomic, readonly, copy) NSArray *itemDataTitleNormalSelectedImage;
+@property (nonatomic, readonly, copy) NSArray *itemDataNormalSelectedImage;
 
-@property (nonatomic, copy) NSString *barBackgroundImage;
-@property (nonatomic, strong) UIColor *selectedTitleColr;
-@property (nonatomic, strong) UIColor *normalTitleColr;
-@property (nonatomic, assign) CGSize imageSize;
+@property (nonatomic, readonly, copy) NSString *barBackgroundImage;
+@property (nonatomic, readonly, strong) UIColor *selectedTitleColr;
+@property (nonatomic, readonly, strong) UIColor *normalTitleColr;
+
+/// 所有Item的图片大小均一样
+@property (nonatomic, readonly, assign) CGSize normalImageSize;
+@property (nonatomic, readonly, assign) CGSize selectedImageSize;
+
+/// 标题和图片之间的间距
+@property (nonatomic, readonly, assign) CGFloat titleImageMiddleMargin;
 @property (nonatomic, copy) void(^didSelectedTabbarBlock)(NSInteger selectedIndex);
-
-- (void)updateTabBarItemData:(CICTabBarItem *)tabBarItem atIndex:(NSInteger)index;
 
 @end
 
 @interface CICTabbarControllerConstructor<CICTabbarController> : CICUIViewConstructor
 
 CICConstructorProperty(CICTabbarControllerConstructor, tabBarItemData, NSArray<CICTabBarItem *> *tabBarItemData)
-CICConstructorProperty(CICTabBarItemConstructor, updateTabBarItemData, CICTabBarItem *item, NSInteger itemIndex)
+CICConstructorProperty(CICTabbarControllerConstructor, updateTabBarItemData, CICTabBarItem *item, NSInteger itemIndex)
 
 /// Controller 类名
 CICConstructorProperty(CICTabbarControllerConstructor, classNameData, NSArray *classNameData)
@@ -52,10 +56,13 @@ CICConstructorProperty(CICTabbarControllerConstructor, selectedTextColor, UIColo
 CICConstructorProperty(CICTabbarControllerConstructor, normalTextColor, UIColor *normalColor)
 CICConstructorProperty(CICTabbarControllerConstructor, barBackgroundColor, UIColor *color)
 CICConstructorProperty(CICTabbarControllerConstructor, barBackgroundImage, NSString *backgroundImage)
-/// 如果设置大小，在设置图片之前设置大小
-CICConstructorProperty(CICTabbarControllerConstructor, imageSize, CGSize imageSize)
 CICConstructorProperty(CICTabbarControllerConstructor, badgeValue, NSUInteger index, NSString *value)
 CICConstructorProperty(CICTabbarControllerConstructor, selectedIndex, NSUInteger selectedIndex)
+CICConstructorProperty(CICTabbarControllerConstructor, titleImageMiddleMargin, CGFloat titleImageMiddleMargin)
+
+/// 如果设置大小，在设置图片之前设置大小
+CICConstructorProperty(CICTabbarControllerConstructor, normalImageSize, CGSize imageSize)
+CICConstructorProperty(CICTabbarControllerConstructor, selectedImageSize, CGSize imageSize)
 
 @end
 
