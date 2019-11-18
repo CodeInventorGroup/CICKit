@@ -75,7 +75,7 @@
         
         tabbarController.didSelectedTabbarBlock = ^(NSInteger index){
             NSLog(@"selectedIndex = %ld", index);
-        };;
+        };
     });
 }
 

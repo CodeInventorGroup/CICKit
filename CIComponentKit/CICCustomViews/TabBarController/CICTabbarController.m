@@ -22,12 +22,6 @@ static CGFloat const kTitleLabelHeight = 12;
 
 @property (nonatomic, copy) NSArray<CICTabBarItem *> *tabBarItemData;
 
-@property (nonatomic, copy) NSArray *classNameData;
-@property (nonatomic, copy) NSArray *itemDataNormalImage;
-@property (nonatomic, copy) NSArray *itemDataTitleNormalImage;
-@property (nonatomic, copy) NSArray *itemDataTitleNormalSelectedImage;
-@property (nonatomic, copy) NSArray *itemDataNormalSelectedImage;
-
 @property (nonatomic, copy) NSString *barBackgroundImage;
 @property (nonatomic, strong) UIColor *selectedTitleColr;
 @property (nonatomic, strong) UIColor *normalTitleColr;
@@ -39,7 +33,7 @@ static CGFloat const kTitleLabelHeight = 12;
 /// 标题和图片之间的间距
 @property (nonatomic, assign) CGFloat titleImageMiddleMargin;
 
-- (void)updateTabBarItemData:(CICTabBarItem *)tabBarItem atIndex:(NSInteger)index;
+- (void)updateTabBarItemData:(CICBarItem *)tabBarItem atIndex:(NSInteger)index;
 
 @property (nonatomic, strong) NSMutableArray *tempImageViewData;
 
@@ -70,46 +64,6 @@ static CGFloat const kTitleLabelHeight = 12;
         }
         [self addChildViewControllerWithClassName:tabBarItem.controllerClassName];
         [self updateTabBarItemData:tabBarItem atIndex:[tabBarItemData indexOfObject:tabBarItem]];
-    }
-}
-
-- (void)setClassNameData:(NSArray *)classNameData {
-    
-    _classNameData = classNameData;
-    for (NSString *className in classNameData) {
-        [self addChildViewControllerWithClassName:className];
-    }
-}
-
-- (void)setItemDataNormalImage:(NSArray *)itemDataNormalImage {
-    
-    _itemDataNormalImage = itemDataNormalImage;
-    for (NSString *data in itemDataNormalImage) {
-        [self updateChildViewControllerItemAtIndex:[itemDataNormalImage indexOfObject:data] normalImageName:data];
-    }
-}
-
-- (void)setItemDataTitleNormalImage:(NSArray *)itemDataTitleNormalImage {
-    
-    _itemDataTitleNormalImage = itemDataTitleNormalImage;
-    for (NSArray *data in itemDataTitleNormalImage) {
-        [self updateChildViewControllerItemAtIndex:[itemDataTitleNormalImage indexOfObject:data] normalImageName:data.lastObject title:data.firstObject];
-    }
-}
-
-- (void)setItemDataNormalSelectedImage:(NSArray *)itemDataNormalSelectedImage {
-    
-    _itemDataNormalSelectedImage = itemDataNormalSelectedImage;
-    for (NSArray *data in itemDataNormalSelectedImage) {
-        [self updateChildViewControllerItemAtIndex:[itemDataNormalSelectedImage indexOfObject:data] normalImageName:data.firstObject title:nil selectedImageName:data.lastObject];
-    }
-}
-
-- (void)setItemDataTitleNormalSelectedImage:(NSArray *)itemDataTitleNormalSelectedImage {
-    
-    _itemDataTitleNormalSelectedImage = itemDataTitleNormalSelectedImage;
-    for (NSArray *data in itemDataTitleNormalSelectedImage) {
-        [self updateChildViewControllerItemAtIndex:[itemDataTitleNormalSelectedImage indexOfObject:data] normalImageName:data[1] title:data.firstObject selectedImageName:data.lastObject];
     }
 }
 
@@ -194,7 +148,7 @@ static CGFloat const kTitleLabelHeight = 12;
     [self updateChildViewControllerItemAtIndex:index normalImageName:normalImageName title:title selectedImageName:nil];
 }
 
-- (void)updateTabBarItemData:(CICTabBarItem *)tabBarItem atIndex:(NSInteger)index {
+- (void)updateTabBarItemData:(CICBarItem *)tabBarItem atIndex:(NSInteger)index {
     
     if (!self.childViewControllers || self.childViewControllers.count <= index) {
         return;
@@ -396,26 +350,6 @@ static CGFloat const kTitleLabelHeight = 12;
         return weakSelf;
     };
     
-    self.classNameData = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull classNameData) {
-        weakSelf.component.classNameData = classNameData;
-        return weakSelf;
-    };
-    
-    self.itemDataNormalImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataNormalImage) {
-        weakSelf.component.itemDataNormalImage = itemDataNormalImage;
-        return weakSelf;
-    };
-    
-    self.itemDataTitleNormalImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataTitleNormalImage) {
-        weakSelf.component.itemDataTitleNormalImage = itemDataTitleNormalImage;
-        return weakSelf;
-    };
-    
-    self.itemDataTitleNormalSelectedImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataTitleNormalSelectedImage) {
-        weakSelf.component.itemDataTitleNormalSelectedImage = itemDataTitleNormalSelectedImage;
-        return weakSelf;
-    };
-    
     self.selectedTextColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull selectedColor) {
         weakSelf.component.selectedTitleColr = selectedColor;
         return weakSelf;
@@ -423,11 +357,6 @@ static CGFloat const kTitleLabelHeight = 12;
     
     self.normalTextColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull normalColor) {
         weakSelf.component.normalTitleColr = normalColor;
-        return weakSelf;
-    };
-    
-    self.itemDataNormalSelectedImage = ^CICTabbarControllerConstructor * _Nonnull(NSArray * _Nonnull itemDataNormalSelectedImage) {
-        weakSelf.component.itemDataNormalSelectedImage = itemDataNormalSelectedImage;
         return weakSelf;
     };
     
@@ -456,7 +385,7 @@ static CGFloat const kTitleLabelHeight = 12;
         return weakSelf;
     };
     
-    self.updateTabBarItemData = ^CICTabbarControllerConstructor * _Nonnull(CICTabBarItem * _Nonnull item, NSInteger itemIndex) {
+    self.updateTabBarItemData = ^CICTabbarControllerConstructor * _Nonnull(CICBarItem * _Nonnull item, NSInteger itemIndex) {
         [weakSelf.component updateTabBarItemData:item atIndex:itemIndex];
         return weakSelf;
     };
