@@ -24,57 +24,37 @@ CICConstructorBasicDynamics()
     
     __weak typeof(&*self) weakSelf = self;
     
-    self.title = ^CICUIButtonConstructor *(NSString *title) {
+    _title = ^CICUIButtonConstructor *(NSString *title) {
         [weakSelf.component setTitle:title forState:UIControlStateNormal];
         return weakSelf;
     };
     
-    self.titleColor = ^CICUIButtonConstructor *(UIColor *color) {
+    _titleColor = ^CICUIButtonConstructor *(UIColor *color) {
         [weakSelf.component setTitleColor:color forState:UIControlStateNormal];
         return weakSelf;
     };
     
-    self.titleColorWithState = ^CICUIButtonConstructor *(UIColor *color, UIControlState state) {
+    _titleColorWithState = ^CICUIButtonConstructor *(UIColor *color, UIControlState state) {
         [weakSelf.component setTitleColor:color forState:state];
         return weakSelf;
     };
     
-    self.font = ^CICUIButtonConstructor *(UIFont *font) {
+    _font = ^CICUIButtonConstructor *(UIFont *font) {
         weakSelf.component.titleLabel.font = font;
         return weakSelf;
     };
     
-    self.image = ^CICUIButtonConstructor *(NSString *imageName) {
+    _image = ^CICUIButtonConstructor *(NSString *imageName) {
         [weakSelf.component setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
         return weakSelf;
     };
     
-    self.imageWithState = ^CICUIButtonConstructor *(NSString *imageName, UIControlState state) {
+    _imageWithState = ^CICUIButtonConstructor *(NSString *imageName, UIControlState state) {
         [weakSelf.component setImage:[UIImage imageNamed:imageName] forState:state];
         return weakSelf;
     };
     
-    self.cornerRadius = ^CICUIButtonConstructor *(CGFloat cornerRadius) {
-        weakSelf.component.layer.cornerRadius = cornerRadius;
-        return weakSelf;
-    };
-    
-    self.borderWidth = ^CICUIButtonConstructor *(CGFloat borderWidth) {
-        weakSelf.component.layer.borderWidth = borderWidth;
-        return weakSelf;
-    };
-    
-    self.borderColor = ^CICUIButtonConstructor *(UIColor *color) {
-        weakSelf.component.layer.borderColor = color.CGColor;
-        return weakSelf;
-    };
-    
-    self.masksToBounds = ^CICUIButtonConstructor *(BOOL isMasksToBounds) {
-        weakSelf.component.layer.masksToBounds = isMasksToBounds;
-        return weakSelf;
-    };
-    
-    self.addTarget = ^CICUIButtonConstructor *(id target, SEL action) {
+    _addTarget = ^CICUIButtonConstructor *(id target, SEL action) {
         [weakSelf.component addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
         return weakSelf;
     };

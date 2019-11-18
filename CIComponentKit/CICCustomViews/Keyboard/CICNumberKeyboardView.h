@@ -46,6 +46,7 @@ CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconSize, CGSize 
 CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconNormalImageSource, NSString *deleteIconNormalImageSource)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, deleteIconHighlightImageSource, NSString *deleteIconHighlightImageSource)
 CICConstructorProperty(CICNumberKeyboardViewConstructor, changeRandomNumber, BOOL changeRandomNumber)
+CICConstructorProperty(CICNumberKeyboardViewConstructor, addNumberViewTo, UIView *toView)
 
 @end
 

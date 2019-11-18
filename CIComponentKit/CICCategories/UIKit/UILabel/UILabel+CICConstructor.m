@@ -32,7 +32,7 @@ CICConstructorBasicDynamics()
         return weakSelf;
     };
     
-    self.font = ^CICUILabelConstructor *(UIFont *font) {
+    _font = ^CICUILabelConstructor *(UIFont *font) {
         weakSelf.component.font = font;
         return weakSelf;
     };
@@ -46,10 +46,6 @@ CICConstructorBasicDynamics()
         weakSelf.component.textAlignment = alignment;
         return weakSelf;
     };
-}
-
-- (void)dealloc {
-    NSLog(@"CICUILabelConstructor dealloc");
 }
 
 @end

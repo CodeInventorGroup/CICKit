@@ -30,7 +30,7 @@
     
     NSLog(@"CICUIViewConstructor %@", [self description]);
 
-    self.x = ^CICUIViewConstructor *(CGFloat x) {
+    _x = ^CICUIViewConstructor *(CGFloat x) {
         weakSelf.component.frame = CGRectSetX(weakSelf.component.frame, x);
         return weakSelf;
     };
@@ -85,54 +85,54 @@
         return weakSelf;
     };
     
-    self.hidden = ^CICUIViewConstructor *(BOOL hidden) {
+    _hidden = ^CICUIViewConstructor *(BOOL hidden) {
         weakSelf.component.hidden = hidden;
         return weakSelf;
     };
     
-    self.cornerRadius = ^CICUIViewConstructor *(CGFloat cornerRadius) {
+    _cornerRadius = ^CICUIViewConstructor *(CGFloat cornerRadius) {
         weakSelf.component.layer.cornerRadius = cornerRadius;
         return weakSelf;
     };
     
-    self.masksToBounds = ^CICUIViewConstructor *(BOOL masksToBounds) {
+    _masksToBounds = ^CICUIViewConstructor *(BOOL masksToBounds) {
         weakSelf.component.layer.masksToBounds = masksToBounds;
         return weakSelf;
     };
     
-    self.borderWidth = ^CICUIViewConstructor *(CGFloat borderWidth) {
+    _borderWidth = ^CICUIViewConstructor *(CGFloat borderWidth) {
         weakSelf.component.layer.borderWidth = borderWidth;
         return weakSelf;
     };
     
-    self.borderColor = ^CICUIViewConstructor *(UIColor *borderColor) {
+    _borderColor = ^CICUIViewConstructor *(UIColor *borderColor) {
         weakSelf.component.layer.borderColor = borderColor.CGColor;
         return weakSelf;
     };
     
-    self.clipToBounds = ^CICUIViewConstructor *(BOOL clipToBounds) {
+    _clipToBounds = ^CICUIViewConstructor *(BOOL clipToBounds) {
         weakSelf.component.clipsToBounds = clipToBounds;
         return weakSelf;
     };
     
-    self.addTo = ^CICUIViewConstructor *(UIView *toView) {
+    _addTo = ^CICUIViewConstructor *(UIView *toView) {
         [toView addSubview:weakSelf.component];
         return weakSelf;
     };
     
-    self.addLineView = ^CICUIViewConstructor *(CICSeparatorLinePosition position) {
+    _addLineView = ^CICUIViewConstructor *(CICSeparatorLinePosition position) {
         [weakSelf.component cic_addSeparatorLineViewWithPosition:position];
         return weakSelf;
     };
     
-    self.addLineViewWithColor = ^CICUIViewConstructor *(CICSeparatorLinePosition position, UIColor *lineColor) {
+    _addLineViewWithColor = ^CICUIViewConstructor *(CICSeparatorLinePosition position, UIColor *lineColor) {
         [weakSelf.component cic_addSeparatorLineViewWithPosition:position lineColor:lineColor];
         return weakSelf;
     };
 }
     
 - (void)dealloc {
-    NSLog(@"CICUIViewConstructor dealloc");
+    NSLog(@"%s", __func__);
 }
 
 @end

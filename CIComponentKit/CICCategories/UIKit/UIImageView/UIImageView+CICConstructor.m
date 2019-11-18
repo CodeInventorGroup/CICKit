@@ -23,17 +23,17 @@ CICConstructorBasicDynamics()
     [super buildConstructor];
     
     __weak typeof(&*self) weakSelf = self;
-    self.imageName = ^CICUIImageViewConstructor *(NSString *imageName) {
+    _imageName = ^CICUIImageViewConstructor *(NSString *imageName) {
         weakSelf.component.image = [UIImage imageNamed:imageName];
         return weakSelf;
     };
     
-    self.contentMode = ^CICUIImageViewConstructor *(UIViewContentMode contentMode) {
+    _contentMode = ^CICUIImageViewConstructor *(UIViewContentMode contentMode) {
         weakSelf.component.contentMode = contentMode;
         return weakSelf;
     };
     
-    self.userInteractionEnabled = ^CICUIImageViewConstructor *(BOOL userInteractionEnabled) {
+    _userInteractionEnabled = ^CICUIImageViewConstructor *(BOOL userInteractionEnabled) {
         weakSelf.component.userInteractionEnabled = userInteractionEnabled;
         return weakSelf;
     };

@@ -13,13 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CICBarItem : NSObject
 
-/// 是否显示文字(默认显示)
-@property (nonatomic, readonly, assign) BOOL isShowTitle;
 @property (nonatomic, readonly, copy) NSString *title;
 /// 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
 @property (nonatomic, readonly, strong) id normalImage;
 /// 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
 @property (nonatomic, readonly, strong) id selectedImage;
+
+/// 是否显示标题(默认显示)
+@property (nonatomic, readonly, assign) BOOL isShowTitle;
+/// 选中状态 是否显示标题(默认显示)
+@property (nonatomic, readonly, assign) BOOL isShowTitleWhenSelected;
 
 @property (nonatomic, readonly, assign) CGSize normalImageSize;
 @property (nonatomic, readonly, assign) CGSize selectedImageSize;
@@ -31,7 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 CICConstructorProperty(CICBarItemConstructor, title, NSString *title)
 CICConstructorProperty(CICBarItemConstructor, normalImage, id normalImage)
 CICConstructorProperty(CICBarItemConstructor, selectedImage, id selectedImage)
+
 CICConstructorProperty(CICBarItemConstructor, isShowTitle, BOOL isShowTitle)
+CICConstructorProperty(CICBarItemConstructor, isShowTitleWhenSelected, BOOL isShow)
 CICConstructorProperty(CICBarItemConstructor, normalImageSize, CGSize size)
 CICConstructorProperty(CICBarItemConstructor, selectedImageSize, CGSize size)
 

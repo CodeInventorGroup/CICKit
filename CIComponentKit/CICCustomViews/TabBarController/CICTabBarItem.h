@@ -42,7 +42,9 @@ CICConstructorProperty(CICTabBarItemConstructor, controllerClassName, NSString *
 CICConstructorProperty(CICTabBarItemConstructor, title, NSString *title)
 CICConstructorProperty(CICTabBarItemConstructor, normalImage, id normalImage)
 CICConstructorProperty(CICTabBarItemConstructor, selectedImage, id selectedImage)
+
 CICConstructorProperty(CICTabBarItemConstructor, isShowTitle, BOOL isShowTitle)
+CICConstructorProperty(CICTabBarItemConstructor, isShowTitleWhenSelected, BOOL isShow)
 CICConstructorProperty(CICTabBarItemConstructor, normalImageSize, CGSize size)
 CICConstructorProperty(CICTabBarItemConstructor, selectedImageSize, CGSize size)
 

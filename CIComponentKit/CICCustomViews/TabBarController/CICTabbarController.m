@@ -14,27 +14,27 @@
 #import "UIImage+CICSize.h"
 #import "UIImage+CICColor.h"
 #import "NSString+CICBaseProperty.h"
+#import "NSArray+CICBaseProperty.h"
 
 /// 标题Label的高度
 static CGFloat const kTitleLabelHeight = 12;
 
 @interface CICTabbarController ()<UITabBarControllerDelegate>
 
-@property (nonatomic, copy) NSArray<CICTabBarItem *> *tabBarItemData;
-
+#pragma mark - Public Property
+@property (nonatomic, copy) NSMutableArray<CICTabBarItem *> *tabBarItemData;
 @property (nonatomic, copy) NSString *barBackgroundImage;
 @property (nonatomic, strong) UIColor *selectedTitleColr;
 @property (nonatomic, strong) UIColor *normalTitleColr;
-
+@property (nonatomic, assign) NSUInteger selectedItemIndex;
 /// 所有Item的图片大小均一样
 @property (nonatomic, assign) CGSize normalImageSize;
 @property (nonatomic, assign) CGSize selectedImageSize;
-
 /// 标题和图片之间的间距
 @property (nonatomic, assign) CGFloat titleImageMiddleMargin;
+@property (nonatomic, copy) CICDidSelectViewControllerBlock didSelectViewControllerBlock;
 
-- (void)updateTabBarItemData:(CICBarItem *)tabBarItem atIndex:(NSInteger)index;
-
+#pragma mark - Private Property
 @property (nonatomic, strong) NSMutableArray *tempImageViewData;
 
 @end
@@ -47,23 +47,49 @@ static CGFloat const kTitleLabelHeight = 12;
     self.delegate = self;
 }
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+        
+    NSUInteger selectedIndex = tabBarController.selectedIndex;
+    NSUInteger shouldSelectIndex = [tabBarController.childViewControllers indexOfObject:viewController];
+    if (selectedIndex != shouldSelectIndex) {
+        CICTabBarItem *selectedTabBarItem = self.tabBarItemData[selectedIndex];
+        if (selectedTabBarItem.isShowTitle != selectedTabBarItem.isShowTitleWhenSelected) {
+            [self updateTabBarItemDataAtIndex:selectedIndex isShowTitle: selectedTabBarItem.isShowTitle];
+        }
+        
+        CICTabBarItem *shouldSelectTabBarItem = self.tabBarItemData[shouldSelectIndex];
+        if (shouldSelectTabBarItem.isShowTitle != shouldSelectTabBarItem.isShowTitleWhenSelected) {
+            [self updateTabBarItemDataAtIndex:shouldSelectIndex isShowTitle: shouldSelectTabBarItem.isShowTitleWhenSelected];
+        }
+    }
     
-    if (self.didSelectedTabbarBlock) {
-        self.didSelectedTabbarBlock(tabBarController.selectedIndex);
+    return YES;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+
+    self.selectedItemIndex = tabBarController.selectedIndex;
+    if (self.didSelectViewControllerBlock) {
+        self.didSelectViewControllerBlock(tabBarController.selectedIndex);
     }
 }
 
 #pragma mark - Setter Methods
 - (void)setTabBarItemData:(NSArray<CICTabBarItem *> *)tabBarItemData {
     
-    _tabBarItemData = tabBarItemData;
+    if (![NSArray cic_isEmpty:_tabBarItemData]) {
+        return;
+    }
+    
+    self.selectedItemIndex = 0;
+    
+    _tabBarItemData = [NSMutableArray arrayWithArray:tabBarItemData];
     for (CICTabBarItem *tabBarItem in tabBarItemData) {
-        if ([NSString cic_isEmpty:tabBarItem.controllerClassName]) {
-            tabBarItem.cic.controllerClassName(NSStringFromClass([UIViewController class]));
-        }
-        [self addChildViewControllerWithClassName:tabBarItem.controllerClassName];
-        [self updateTabBarItemData:tabBarItem atIndex:[tabBarItemData indexOfObject:tabBarItem]];
+     if ([NSString cic_isEmpty:tabBarItem.controllerClassName]) {
+         tabBarItem.cic.controllerClassName(NSStringFromClass([UIViewController class]));
+     }
+     [self addChildViewControllerWithClassName:tabBarItem.controllerClassName];
+     [self updateTabBarItemData:tabBarItem atIndex:[tabBarItemData indexOfObject:tabBarItem]];
     }
 }
 
@@ -115,6 +141,12 @@ static CGFloat const kTitleLabelHeight = 12;
     }
 }
 
+- (void)setSelectedItemIndex:(NSUInteger)selectedItemIndex {
+    
+    _selectedItemIndex = selectedItemIndex;
+    [super setSelectedIndex:selectedItemIndex];
+}
+
 - (void)setTitleImageMiddleMargin:(CGFloat)titleImageMiddleMargin {
     
     _titleImageMiddleMargin = titleImageMiddleMargin;
@@ -148,20 +180,31 @@ static CGFloat const kTitleLabelHeight = 12;
     [self updateChildViewControllerItemAtIndex:index normalImageName:normalImageName title:title selectedImageName:nil];
 }
 
-- (void)updateTabBarItemData:(CICBarItem *)tabBarItem atIndex:(NSInteger)index {
+- (void)updateAllTabBarItemData:(NSArray<CICBarItem *> *)barItemData {
     
-    if (!self.childViewControllers || self.childViewControllers.count <= index) {
+    if ([NSArray cic_isEmpty:barItemData]) {
         return;
     }
     
-    __block UIViewController *childViewController = self.childViewControllers[index];
-    if (![NSString cic_isEmpty:tabBarItem.title]) {
-      childViewController.tabBarItem.title = tabBarItem.title;
+    for (CICBarItem *barItem in barItemData) {
+        [self updateTabBarItemData:barItem atIndex:[barItemData indexOfObject:barItem]];
     }
+}
 
-    if (!tabBarItem.isShowTitle) {
-        childViewController.tabBarItem.title = nil;
-    }
+- (void)updateTabBarItemDataAtIndex:(NSInteger)index isShowTitle:(BOOL)isShowTitle {
+    
+    CICTabBarItem *tabBarItem = self.tabBarItemData[index];
+    
+    __block UIViewController *childViewController = self.childViewControllers[index];
+//    if (![NSString cic_isEmpty:tabBarItem.title]) {
+//      childViewController.tabBarItem.title = tabBarItem.title;
+//    }
+//
+//    if (!tabBarItem.isShowTitle) {
+//        childViewController.tabBarItem.title = nil;
+//    }
+    
+    childViewController.tabBarItem.title = isShowTitle ? tabBarItem.title : nil;
 
     __weak typeof(self) weakSelf = self;
     if (tabBarItem.normalImage) {
@@ -189,9 +232,22 @@ static CGFloat const kTitleLabelHeight = 12;
     [self updateTabBarItemTitleImagePositionAtIndex:index];
 }
 
+- (void)updateTabBarItemData:(CICBarItem *)tabBarItem atIndex:(NSInteger)index {
+    
+    if ([NSArray cic_isEmpty:self.childViewControllers] || self.childViewControllers.count <= index) {
+        return;
+    }
+    
+    CICTabBarItem *tempTabBarItem = (CICTabBarItem *)tabBarItem;
+    tempTabBarItem.cic.controllerClassName(self.tabBarItemData[index].controllerClassName);
+    [_tabBarItemData replaceObjectAtIndex:index withObject:tempTabBarItem];
+    
+    [self updateTabBarItemDataAtIndex:index isShowTitle:index == self.selectedItemIndex ? tabBarItem.isShowTitleWhenSelected : tabBarItem.isShowTitle];
+}
+
 - (void)updateChildViewControllerItemAtIndex:(NSUInteger)index normalImageName:(NSString *)normalImageName title:(NSString *)title selectedImageName:(NSString *)selectedImageName {
     
-    if (!self.childViewControllers || self.childViewControllers.count <= index) {
+    if ([NSArray cic_isEmpty:self.childViewControllers] || self.childViewControllers.count <= index) {
         return;
     }
     
@@ -345,58 +401,68 @@ static CGFloat const kTitleLabelHeight = 12;
     [super buildConstructor];
     
     __weak typeof(&*self) weakSelf = self;
-    self.tabBarItemData = ^CICTabbarControllerConstructor * _Nonnull(NSArray<CICTabBarItem *> * _Nonnull tabBarItemData) {
-        weakSelf.component.tabBarItemData = tabBarItemData;
+    _tabBarItemData = ^CICTabbarControllerConstructor * _Nonnull(NSArray<CICTabBarItem *> * _Nonnull tabBarItemData) {
+        weakSelf.component.tabBarItemData = [NSMutableArray arrayWithArray:tabBarItemData];
         return weakSelf;
     };
     
-    self.selectedTextColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull selectedColor) {
-        weakSelf.component.selectedTitleColr = selectedColor;
-        return weakSelf;
-    };
-    
-    self.normalTextColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull normalColor) {
-        weakSelf.component.normalTitleColr = normalColor;
-        return weakSelf;
-    };
-    
-    self.barBackgroundColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull color) {
-        weakSelf.component.tabBar.backgroundImage = [UIImage cic_imageWithColor:color imageSize:CGSizeMake(CIC_SCREEN_WIDTH, 1)];
-        return weakSelf;
-    };
-    
-    self.barBackgroundImage = ^CICTabbarControllerConstructor * _Nonnull(NSString * _Nonnull backgroundImage) {
-        weakSelf.component.barBackgroundImage = backgroundImage;
-        return weakSelf;
-    };
-    
-    self.badgeValue = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger index, NSString *value) {
-        weakSelf.component.childViewControllers[index].tabBarItem.badgeValue = value;
-        return weakSelf;
-    };
-    
-    self.selectedIndex = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger selectedIndex) {
-        weakSelf.component.selectedIndex = selectedIndex;
-        return weakSelf;
-    };
-    
-    self.titleImageMiddleMargin = ^CICTabbarControllerConstructor * _Nonnull(CGFloat titleImageMiddleMargin) {
-        weakSelf.component.titleImageMiddleMargin = titleImageMiddleMargin;
-        return weakSelf;
-    };
-    
-    self.updateTabBarItemData = ^CICTabbarControllerConstructor * _Nonnull(CICBarItem * _Nonnull item, NSInteger itemIndex) {
+    _updateBarItemData = ^CICTabbarControllerConstructor * _Nonnull(CICBarItem * _Nonnull item, NSInteger itemIndex) {
         [weakSelf.component updateTabBarItemData:item atIndex:itemIndex];
         return weakSelf;
     };
     
-    self.normalImageSize = ^CICTabbarControllerConstructor * _Nonnull(CGSize imageSize) {
+    _updateAllBarItemData = ^CICTabbarControllerConstructor * _Nonnull(NSArray<CICBarItem *> * _Nonnull barItemData) {
+        [weakSelf.component updateAllTabBarItemData:barItemData];
+        return weakSelf;
+    };
+    
+    _selectedTextColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull selectedColor) {
+        weakSelf.component.selectedTitleColr = selectedColor;
+        return weakSelf;
+    };
+    
+    _normalTextColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull normalColor) {
+        weakSelf.component.normalTitleColr = normalColor;
+        return weakSelf;
+    };
+    
+    _barBackgroundColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull color) {
+        weakSelf.component.tabBar.backgroundImage = [UIImage cic_imageWithColor:color imageSize:CGSizeMake(CIC_SCREEN_WIDTH, 1)];
+        return weakSelf;
+    };
+    
+    _barBackgroundImage = ^CICTabbarControllerConstructor * _Nonnull(NSString * _Nonnull backgroundImage) {
+        weakSelf.component.barBackgroundImage = backgroundImage;
+        return weakSelf;
+    };
+    
+    _badgeValue = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger index, NSString *value) {
+        weakSelf.component.childViewControllers[index].tabBarItem.badgeValue = value;
+        return weakSelf;
+    };
+    
+    _selectedItemIndex = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger selectedIndex) {
+        weakSelf.component.selectedItemIndex = selectedIndex;
+        return weakSelf;
+    };
+    
+    _titleImageMiddleMargin = ^CICTabbarControllerConstructor * _Nonnull(CGFloat titleImageMiddleMargin) {
+        weakSelf.component.titleImageMiddleMargin = titleImageMiddleMargin;
+        return weakSelf;
+    };
+    
+    _normalImageSize = ^CICTabbarControllerConstructor * _Nonnull(CGSize imageSize) {
         weakSelf.component.normalImageSize = imageSize;
         return weakSelf;
     };
     
-    self.selectedImageSize = ^CICTabbarControllerConstructor * _Nonnull(CGSize imageSize) {
+    _selectedImageSize = ^CICTabbarControllerConstructor * _Nonnull(CGSize imageSize) {
         weakSelf.component.selectedImageSize = imageSize;
+        return weakSelf;
+    };
+    
+    _didSelectViewControllerBlock = ^CICTabbarControllerConstructor * _Nonnull(CICDidSelectViewControllerBlock  _Nonnull selectBlock) {
+        weakSelf.component.didSelectViewControllerBlock = selectBlock;
         return weakSelf;
     };
 }

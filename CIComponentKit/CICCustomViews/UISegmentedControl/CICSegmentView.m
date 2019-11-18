@@ -26,37 +26,37 @@ CICConstructorBasicDynamics()
     [super buildConstructor];
     
     __weak typeof(&*self) weakSelf = self;
-    self.items = ^CICSegmentViewConstructor *(NSArray *items) {
+    _items = ^CICSegmentViewConstructor *(NSArray *items) {
         weakSelf.component.items = items;
         return weakSelf;
     };
     
-    self.font = ^CICSegmentViewConstructor *(UIFont *font) {
+    _font = ^CICSegmentViewConstructor *(UIFont *font) {
         weakSelf.component.font = font;
         return weakSelf;
     };
     
-    self.normalTextColor = ^CICSegmentViewConstructor *(UIColor *color) {
+    _normalTextColor = ^CICSegmentViewConstructor *(UIColor *color) {
         weakSelf.component.normalTextColor = color;
         return weakSelf;
     };
     
-    self.selectedTextColor = ^CICSegmentViewConstructor *(UIColor *color) {
+    _selectedTextColor = ^CICSegmentViewConstructor *(UIColor *color) {
         weakSelf.component.selectedTextColor = color;
         return weakSelf;
     };
     
-    self.normalColor = ^CICSegmentViewConstructor *(UIColor *color) {
+    _normalColor = ^CICSegmentViewConstructor *(UIColor *color) {
         weakSelf.component.normalColor = color;
         return weakSelf;
     };
     
-    self.selectedColor = ^CICSegmentViewConstructor *(UIColor *color) {
+    _selectedColor = ^CICSegmentViewConstructor *(UIColor *color) {
         weakSelf.component.selectedColor = color;
         return weakSelf;
     };
     
-    self.selectedIndex = ^CICSegmentViewConstructor *(NSInteger selectedIndex) {
+    _selectedIndex = ^CICSegmentViewConstructor *(NSInteger selectedIndex) {
         weakSelf.component.selectedIndex = selectedIndex;
         return weakSelf;
     };

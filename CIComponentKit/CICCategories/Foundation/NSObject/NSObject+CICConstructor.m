@@ -32,7 +32,7 @@
 
 - (void)dealloc {
     
-    NSLog(@"CICConstructor dealloc");
+    NSLog(@"%s", __func__);
 }
 
 @end

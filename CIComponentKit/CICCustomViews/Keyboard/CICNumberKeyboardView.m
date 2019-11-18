@@ -348,67 +348,67 @@ CICConstructorBasicDynamics()
     [super buildConstructor];
     
     __weak typeof(self) weakSelf = self;
-    self.titleColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull titleColor) {
+    _titleColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull titleColor) {
         weakSelf.component.titleColor = titleColor;
         return weakSelf;
     };
     
-    self.keyboardType = ^CICNumberKeyboardViewConstructor * _Nonnull(CICKeyboardType keyboardType) {
+    _keyboardType = ^CICNumberKeyboardViewConstructor * _Nonnull(CICKeyboardType keyboardType) {
         weakSelf.component.keyboardType = keyboardType;
         return weakSelf;
     };
     
-    self.titleHighlightColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull titleHighlightColor) {
+    _titleHighlightColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull titleHighlightColor) {
         weakSelf.component.titleHighlightColor = titleHighlightColor;
         return weakSelf;
     };
     
-    self.fontSize = ^CICNumberKeyboardViewConstructor * _Nonnull(CGFloat fontSize) {
+    _fontSize = ^CICNumberKeyboardViewConstructor * _Nonnull(CGFloat fontSize) {
         weakSelf.component.fontSize = fontSize;
         return weakSelf;
     };
     
-    self.titleFont = ^CICNumberKeyboardViewConstructor * _Nonnull(UIFont * _Nonnull titleFont) {
+    _titleFont = ^CICNumberKeyboardViewConstructor * _Nonnull(UIFont * _Nonnull titleFont) {
         weakSelf.component.titleFont = titleFont;
         return weakSelf;
     };
     
-    self.numberButtonBackgroundColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull numberButtonBackgroundColor) {
+    _numberButtonBackgroundColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull numberButtonBackgroundColor) {
         weakSelf.component.numberButtonBackgroundColor = numberButtonBackgroundColor;
         return weakSelf;
     };
     
-    self.otherButtonBackgroundColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull otherButtonBackgroundColor) {
+    _otherButtonBackgroundColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull otherButtonBackgroundColor) {
         weakSelf.component.otherButtonBackgroundColor = otherButtonBackgroundColor;
         return weakSelf;
     };
     
-    self.deleteIconSize = ^CICNumberKeyboardViewConstructor * _Nonnull(CGSize size) {
+    _deleteIconSize = ^CICNumberKeyboardViewConstructor * _Nonnull(CGSize size) {
         weakSelf.component.deleteIconSize = size;
         return weakSelf;
     };
     
-    self.deleteIconNormalImageSource = ^CICNumberKeyboardViewConstructor * _Nonnull(NSString * _Nonnull deleteIconNormalImageSource) {
+    _deleteIconNormalImageSource = ^CICNumberKeyboardViewConstructor * _Nonnull(NSString * _Nonnull deleteIconNormalImageSource) {
         weakSelf.component.deleteIconNormalImageSource = deleteIconNormalImageSource;
         return weakSelf;
     };
     
-    self.deleteIconHighlightImageSource = ^CICNumberKeyboardViewConstructor * _Nonnull(NSString * _Nonnull deleteIconHighlightImageSource) {
+    _deleteIconHighlightImageSource = ^CICNumberKeyboardViewConstructor * _Nonnull(NSString * _Nonnull deleteIconHighlightImageSource) {
         weakSelf.component.deleteIconHighlightImageSource = deleteIconHighlightImageSource;
         return weakSelf;
     };
     
-    self.lineColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull lineColor) {
+    _lineColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull lineColor) {
         weakSelf.component.lineColor = lineColor;
         return weakSelf;
     };
     
-    self.changeRandomNumber = ^CICNumberKeyboardViewConstructor * _Nonnull(BOOL changeRandomNumber) {
+    _changeRandomNumber = ^CICNumberKeyboardViewConstructor * _Nonnull(BOOL changeRandomNumber) {
         weakSelf.component.changeRandomNumber = changeRandomNumber;
         return weakSelf;
     };
     
-    self.addTo = ^CICUIViewConstructor *(UIView *toView) {
+    _addNumberViewTo = ^CICNumberKeyboardViewConstructor *(UIView *toView) {
         [weakSelf.component buildNumberView];
         [toView addSubview:weakSelf.component];
         return weakSelf;

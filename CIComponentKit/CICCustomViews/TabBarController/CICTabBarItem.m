@@ -65,18 +65,20 @@
 @implementation CICTabBarItemConstructor
 
 @dynamic title;
-@dynamic isShowTitle;
 @dynamic normalImage;
 @dynamic selectedImage;
+
 @dynamic normalImageSize;
 @dynamic selectedImageSize;
+@dynamic isShowTitle;
+@dynamic isShowTitleWhenSelected;
 
 - (void)buildConstructor {
     
     [super buildConstructor];
     
     __weak typeof(self) weakSelf = self;
-    self.controllerClassName = ^CICTabBarItemConstructor * _Nonnull(NSString * _Nonnull controllerClassName) {
+    _controllerClassName = ^CICTabBarItemConstructor * _Nonnull(NSString * _Nonnull controllerClassName) {
         weakSelf.component.controllerClassName = controllerClassName;
         return weakSelf;
     };

@@ -37,7 +37,8 @@
     homeTabBarItem.cic
     .title(@"首页")
     .normalImage(@"home_tabbar_icon")
-    .controllerClassName(@"CICRootViewController");
+    .controllerClassName(@"CICRootViewController")
+    .isShowTitle(NO);
     [tabBarItemData addObject:homeTabBarItem];
     
     CICTabBarItem *classifyTabBarItem = [[CICTabBarItem alloc] init];
@@ -51,7 +52,8 @@
     thirdTabBarItem.cic
     .title(@"工具")
     .normalImage(@"tool_tabbar_icon")
-    .controllerClassName(@"CICThirdViewController");
+    .controllerClassName(@"CICThirdViewController")
+    .isShowTitleWhenSelected(NO);
     [tabBarItemData addObject:thirdTabBarItem];
     
     tabbarController.cic
@@ -62,20 +64,19 @@
     .normalTextColor([UIColor cic_hexColor:0x646464]);
     
     self.window.rootViewController = tabbarController;
-//    tabbarController.cic.badgeValue(2, @"100");
+    tabbarController.cic.badgeValue(2, @"100");
     
     //  动态加载tabbar图片的数据
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        NSArray *urls = [NSArray array];
 //        tabbarController.cic.itemDataNormalSelectedImage(urls).barBackgroundImage(@"");
-        classifyTabBarItem.cic.isShowTitle(NO);
+        classifyTabBarItem.cic
+        .isShowTitleWhenSelected(NO);
         tabbarController.cic
-        .normalImageSize(CGSizeMake(34, 34))
-        .updateTabBarItemData(classifyTabBarItem, 1);
-        
-        tabbarController.didSelectedTabbarBlock = ^(NSInteger index){
+        .updateBarItemData(classifyTabBarItem, 1)
+        .didSelectViewControllerBlock(^(NSInteger index) {
             NSLog(@"selectedIndex = %ld", index);
-        };
+        });
     });
 }
 

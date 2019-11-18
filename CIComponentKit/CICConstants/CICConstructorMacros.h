@@ -20,8 +20,7 @@
  @param parameters... 对应需要的参数,可以添加多个,
  @return
  */
-#define CICConstructorProperty(class, name, parameters...)  @property(nonatomic, copy) class *(^name)(parameters);
-
+#define CICConstructorProperty(class, name, parameters...)  @property(nonatomic, readonly, copy) class *(^name)(parameters);
 
 /// UIView基础扩展
 #define CICConstructorBasicProperties(class)                                \

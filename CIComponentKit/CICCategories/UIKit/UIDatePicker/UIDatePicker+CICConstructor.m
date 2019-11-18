@@ -24,7 +24,7 @@ CICConstructorBasicDynamics()
     
     __weak typeof(&*self) weakSelf = self;
     
-    self.date = ^CICUIDatePickerConstructor *(NSDate *date) {
+    _date = ^CICUIDatePickerConstructor *(NSDate *date) {
         
         weakSelf.component.date = date;
         return weakSelf;

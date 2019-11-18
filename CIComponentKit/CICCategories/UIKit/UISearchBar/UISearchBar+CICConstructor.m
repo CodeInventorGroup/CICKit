@@ -23,37 +23,37 @@ CICConstructorBasicDynamics()
     [super buildConstructor];
     
     __weak typeof(&*self) weakSelf = self;
-    self.text = ^CICUISearchBarConstructor *(NSString *text) {
+    _text = ^CICUISearchBarConstructor *(NSString *text) {
         weakSelf.component.text = text;
         return weakSelf;
     };
     
-    self.placeholder = ^CICUISearchBarConstructor *(NSString *placeholder) {
+    _placeholder = ^CICUISearchBarConstructor *(NSString *placeholder) {
         weakSelf.component.placeholder = placeholder;
         return weakSelf;
     };
     
-    self.tintColor = ^CICUISearchBarConstructor *(UIColor *color) {
+    _tintColor = ^CICUISearchBarConstructor *(UIColor *color) {
         weakSelf.component.tintColor = color;
         return weakSelf;
     };
     
-    self.barTintColor = ^CICUISearchBarConstructor *(UIColor *color) {
+    _barTintColor = ^CICUISearchBarConstructor *(UIColor *color) {
         weakSelf.component.barTintColor = color;
         return weakSelf;
     };
     
-    self.searchBarStyle = ^CICUISearchBarConstructor *(UISearchBarStyle style) {
+    _searchBarStyle = ^CICUISearchBarConstructor *(UISearchBarStyle style) {
         weakSelf.component.searchBarStyle = style;
         return weakSelf;
     };
     
-    self.delegate = ^CICUISearchBarConstructor *(id<UISearchBarDelegate> delegate) {
+    _delegate = ^CICUISearchBarConstructor *(id<UISearchBarDelegate> delegate) {
         weakSelf.component.delegate = delegate;
         return weakSelf;
     };
     
-    self.backgroundImage = ^CICUISearchBarConstructor *(UIImage *image) {
+    _backgroundImage = ^CICUISearchBarConstructor *(UIImage *image) {
         weakSelf.component.backgroundImage = image;
         return weakSelf;
     };
