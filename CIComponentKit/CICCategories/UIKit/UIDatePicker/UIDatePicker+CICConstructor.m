@@ -22,7 +22,7 @@ CICConstructorBasicDynamics()
     
     [super buildConstructor];
     
-    __weak typeof(&*self) weakSelf = self;
+    WEAK_SELF;
     
     _date = ^CICUIDatePickerConstructor *(NSDate *date) {
         

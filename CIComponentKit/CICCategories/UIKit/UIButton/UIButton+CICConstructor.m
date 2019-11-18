@@ -22,7 +22,7 @@ CICConstructorBasicDynamics()
 
     [super buildConstructor];
     
-    __weak typeof(&*self) weakSelf = self;
+    WEAK_SELF;
     
     _title = ^CICUIButtonConstructor *(NSString *title) {
         [weakSelf.component setTitle:title forState:UIControlStateNormal];

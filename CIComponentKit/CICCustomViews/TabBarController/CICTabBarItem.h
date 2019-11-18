@@ -38,14 +38,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CICTabBarItemConstructor<CICTabBarItem> : CICBarItemConstructor
 
+/// TabBarItem对应显示的controller的类名
 CICConstructorProperty(CICTabBarItemConstructor, controllerClassName, NSString *controllerClassName)
+// 标题
 CICConstructorProperty(CICTabBarItemConstructor, title, NSString *title)
+/// 未选中状态 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
 CICConstructorProperty(CICTabBarItemConstructor, normalImage, id normalImage)
+/// 选中状态 图片类型：可为UIImage或者NSData类型，或者image_url、image_name
 CICConstructorProperty(CICTabBarItemConstructor, selectedImage, id selectedImage)
 
+/// 未选中状态 是否显示标题(默认显示)
 CICConstructorProperty(CICTabBarItemConstructor, isShowTitle, BOOL isShowTitle)
+/// 选中状态 是否显示标题(默认显示)
 CICConstructorProperty(CICTabBarItemConstructor, isShowTitleWhenSelected, BOOL isShow)
+/// 未选中状态 图片大小(优先级高于CICTabBarController设置的normalImageSize)
 CICConstructorProperty(CICTabBarItemConstructor, normalImageSize, CGSize size)
+/// 选中状态 图片大小(优先级高于CICTabBarController设置的selectedImageSize)
 CICConstructorProperty(CICTabBarItemConstructor, selectedImageSize, CGSize size)
 
 @end

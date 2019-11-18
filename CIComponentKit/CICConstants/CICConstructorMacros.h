@@ -11,6 +11,9 @@
 
 #import <UIKit/UIkit.h>
 
+#define WEAK_SELF                   __weak typeof(&*self) weakSelf = self;
+#define STRONG_SELF                 __strong typeof(&*weakSelf) strongSelf = weakSelf;
+
 /**
  宏定义尚声明一个属性,比如
  CICUIConstructor(CICUIViewConstructor, backgroundColor, UIColor *color)

@@ -111,7 +111,7 @@ static NSTimeInterval const kTimeDuration = 0.3;
 - (void)tapOtherEmptyView {
     
     if (_keyboardView) {
-        __weak typeof(self) weakSelf = self;
+        WEAK_SELF;
         [UIView animateWithDuration:kTimeDuration animations:^{
             weakSelf.keyboardView.cic.y(CIC_SCREEN_HEIGHT);
         } completion:^(BOOL finished) {
@@ -211,7 +211,7 @@ static NSTimeInterval const kTimeDuration = 0.3;
         }
         [self.superview bringSubviewToFront:_keyboardView];
         
-        __weak  typeof(self) weakSelf = self;
+        WEAK_SELF;
         _keyboardView.clickKeyboardButtonBlock = ^(NSString * _Nonnull value) {
             [weakSelf handleKeyboardInputValue:value];
         };

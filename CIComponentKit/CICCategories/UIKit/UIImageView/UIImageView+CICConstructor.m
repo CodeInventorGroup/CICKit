@@ -22,7 +22,7 @@ CICConstructorBasicDynamics()
 
     [super buildConstructor];
     
-    __weak typeof(&*self) weakSelf = self;
+    WEAK_SELF;
     _imageName = ^CICUIImageViewConstructor *(NSString *imageName) {
         weakSelf.component.image = [UIImage imageNamed:imageName];
         return weakSelf;

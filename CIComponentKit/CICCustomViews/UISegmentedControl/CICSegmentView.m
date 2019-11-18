@@ -25,7 +25,7 @@ CICConstructorBasicDynamics()
     
     [super buildConstructor];
     
-    __weak typeof(&*self) weakSelf = self;
+    WEAK_SELF;
     _items = ^CICSegmentViewConstructor *(NSArray *items) {
         weakSelf.component.items = items;
         return weakSelf;

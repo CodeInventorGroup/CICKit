@@ -313,7 +313,7 @@ static NSUInteger const kLineNumber = 4;
 - (void)updateButton:(UIButton *)button imageWithUrl:(NSString *)url forState:(UIControlState)state {
     
     if ([url cic_isUrl]) {
-        __weak typeof(self) weakSelf = self;
+        WEAK_SELF;
         [button sd_setImageWithURL:[NSURL URLWithString:url] forState:state completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             if (!error) {
                 if (!CGSizeEqualToSize(weakSelf.deleteIconSize, CGSizeZero)) {
@@ -347,7 +347,7 @@ CICConstructorBasicDynamics()
     
     [super buildConstructor];
     
-    __weak typeof(self) weakSelf = self;
+    WEAK_SELF;
     _titleColor = ^CICNumberKeyboardViewConstructor * _Nonnull(UIColor * _Nonnull titleColor) {
         weakSelf.component.titleColor = titleColor;
         return weakSelf;

@@ -27,7 +27,6 @@
 
 - (void)buildConstructor  {
     
-    
 }
 
 - (void)dealloc {

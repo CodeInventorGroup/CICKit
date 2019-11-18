@@ -26,10 +26,7 @@
 }
     
 - (void)buildConstructor {
-    __weak typeof(&*self) weakSelf = self;
-    
-    NSLog(@"CICUIViewConstructor %@", [self description]);
-
+    WEAK_SELF;
     _x = ^CICUIViewConstructor *(CGFloat x) {
         weakSelf.component.frame = CGRectSetX(weakSelf.component.frame, x);
         return weakSelf;

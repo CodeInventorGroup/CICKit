@@ -77,7 +77,7 @@
     
     [super buildConstructor];
     
-    __weak typeof(self) weakSelf = self;
+    WEAK_SELF;
     _controllerClassName = ^CICTabBarItemConstructor * _Nonnull(NSString * _Nonnull controllerClassName) {
         weakSelf.component.controllerClassName = controllerClassName;
         return weakSelf;

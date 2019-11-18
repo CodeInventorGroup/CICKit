@@ -23,7 +23,6 @@
     
     [self showTabbarController];
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
@@ -40,10 +39,10 @@
     .controllerClassName(@"CICRootViewController")
     .isShowTitle(NO);
     [tabBarItemData addObject:homeTabBarItem];
-    
+        
     CICTabBarItem *classifyTabBarItem = [[CICTabBarItem alloc] init];
     classifyTabBarItem.cic
-    .title(@"聚中")
+    .title(@"畅聊")
     .normalImage(@"message")
     .controllerClassName(@"CICSecondViewController");
     [tabBarItemData addObject:classifyTabBarItem];
@@ -51,34 +50,31 @@
     CICTabBarItem *thirdTabBarItem = [[CICTabBarItem alloc] init];
     thirdTabBarItem.cic
     .title(@"工具")
+    .normalImageSize(CGSizeMake(30, 30))
+    .selectedImageSize(CGSizeMake(20, 20))
     .normalImage(@"tool_tabbar_icon")
-    .controllerClassName(@"CICThirdViewController")
-    .isShowTitleWhenSelected(NO);
+    .controllerClassName(@"CICThirdViewController");
     [tabBarItemData addObject:thirdTabBarItem];
     
     tabbarController.cic
-//    .imageSize(CGSizeMake(24, 24))
     .titleImageMiddleMargin(5)
+    .normalImageSize(CGSizeMake(30, 30))
     .tabBarItemData(tabBarItemData)
-    .selectedTextColor([UIColor cic_hexColor:0x1296db])
-    .normalTextColor([UIColor cic_hexColor:0x646464]);
+    .selectedTitleColor([UIColor cic_hexColor:0x1296db])
+    .normalTitleColor([UIColor cic_hexColor:0x646464])
+    .didSelectViewControllerBlock(^(NSInteger index) {
+        NSLog(@"selectedIndex = %ld", index);
+    });
     
     self.window.rootViewController = tabbarController;
     tabbarController.cic.badgeValue(2, @"100");
     
     //  动态加载tabbar图片的数据
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        NSArray *urls = [NSArray array];
-//        tabbarController.cic.itemDataNormalSelectedImage(urls).barBackgroundImage(@"");
-        classifyTabBarItem.cic
-        .isShowTitleWhenSelected(NO);
-        tabbarController.cic
-        .updateBarItemData(classifyTabBarItem, 1)
-        .didSelectViewControllerBlock(^(NSInteger index) {
-            NSLog(@"selectedIndex = %ld", index);
-        });
+        classifyTabBarItem.cic.isShowTitleWhenSelected(NO);
+        tabbarController.cic.updateBarItemData(classifyTabBarItem, 1)
+        .normalImageSize(CGSizeMake(20, 20));
     });
 }
-
 
 @end

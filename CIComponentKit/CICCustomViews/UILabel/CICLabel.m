@@ -153,7 +153,7 @@ CICConstructorBasicDynamics()
 - (void)buildConstructor {
     [super buildConstructor];
     
-    __weak typeof(&*self) weakSelf = self;
+    WEAK_SELF;
     
     _contentEdgeInset = ^CICLabelConstructor *(UIEdgeInsets insets) {
         weakSelf.component.contentEdgeInset = insets;

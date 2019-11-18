@@ -108,7 +108,7 @@ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), di
 ```objective-c
 CICNumberKeyboardView *keyboardView = [CICNumberKeyboardView keyboardViewWithType:CICKeyboardTypeNumber];
 
-__weak  typeof(self) weakSelf = self;
+WEAK_SELF;
 keyboardView.clickKeyboardButtonBlock = ^(NSString * _Nonnull value) {
     [weakSelf handleKeyboardInputValue:value];
 };

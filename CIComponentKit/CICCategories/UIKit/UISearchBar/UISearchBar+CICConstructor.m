@@ -22,7 +22,7 @@ CICConstructorBasicDynamics()
     
     [super buildConstructor];
     
-    __weak typeof(&*self) weakSelf = self;
+    WEAK_SELF;
     _text = ^CICUISearchBarConstructor *(NSString *text) {
         weakSelf.component.text = text;
         return weakSelf;

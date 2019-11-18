@@ -49,7 +49,7 @@
     
     [super buildConstructor];
     
-    __weak typeof(self) weakSelf = self;
+    WEAK_SELF;
     _title = ^CICBarItemConstructor * _Nonnull(NSString * _Nonnull title) {
         weakSelf.component.title = title;
         return weakSelf;
