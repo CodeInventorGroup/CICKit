@@ -60,8 +60,9 @@
     .titleImageMiddleMargin(5)
     .normalImageSize(CGSizeMake(30, 30))
     .tabBarItemData(tabBarItemData)
-    .selectedTitleColor([UIColor cic_hexColor:0x1296db])
+//    .selectedTitleColor([UIColor cic_hexColor:0x1296db])
     .normalTitleColor([UIColor cic_hexColor:0x646464])
+    .selectedTitleColor([UIColor systemPurpleColor])
     .didSelectViewControllerBlock(^(NSInteger index) {
         NSLog(@"selectedIndex = %ld", index);
     });
