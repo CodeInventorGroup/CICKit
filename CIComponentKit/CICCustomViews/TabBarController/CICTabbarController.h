@@ -26,9 +26,9 @@ typedef void(^CICDidSelectViewControllerBlock)(NSInteger index);
 @property (nonatomic, readonly, strong) UIColor *barBackgroundColor;
 @property (nonatomic, readonly, strong) id barBackgroundImage;
 
-/// 未选中状态 图片统一大小(优先级最低)
+/// 未选中状态 图片统一大小(优先级最低)(不设置根据图片大小显示)
 @property (nonatomic, readonly, assign) CGSize normalImageSize;
-/// 选中状态 图片统一大小(优先级最低)
+/// 选中状态 图片统一大小(优先级最低)(不设置根据图片大小显示)
 @property (nonatomic, readonly, assign) CGSize selectedImageSize;
 
 @end

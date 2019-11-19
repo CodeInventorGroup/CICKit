@@ -25,9 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 选中状态 是否显示标题(默认显示)
 @property (nonatomic, readonly, assign) BOOL isShowTitleWhenSelected;
 
-/// 未选中状态 图片大小
+/// 未选中状态 图片大小(不设置根据图片大小显示)
 @property (nonatomic, readonly, assign) CGSize normalImageSize;
-/// 选中状态 图片大小
+/// 选中状态 图片大小(不设置根据图片大小显示)
 @property (nonatomic, readonly, assign) CGSize selectedImageSize;
 
 @end

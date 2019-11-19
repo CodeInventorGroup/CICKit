@@ -46,13 +46,14 @@ static CGFloat const kTitleLabelHeight = 12;
         CICTabBarItem *selectedTabBarItem = self.tabBarItemData[selectedIndex];
         UIViewController *selectedViewController = tabBarController.childViewControllers[selectedIndex];
         if (selectedTabBarItem.isShowTitle != selectedTabBarItem.isShowTitleWhenSelected || !CGSizeEqualToSize(selectedViewController.tabBarItem.image.size, selectedViewController.tabBarItem.selectedImage.size)) {
-            [self updateTabBarItemDataAtIndex:selectedIndex isShowTitle: selectedTabBarItem.isShowTitle];
+            [self updateTabBarItemTitleAtIndex:selectedIndex isShowTitle:selectedTabBarItem.isShowTitle];
+            [self updateTabBarItemPositionAtIndex:selectedIndex selectedItemIndex:shouldSelectIndex];
         }
         
-        self.selectedItemIndex = shouldSelectIndex;
         CICTabBarItem *shouldSelectTabBarItem = self.tabBarItemData[shouldSelectIndex];
         if (shouldSelectTabBarItem.isShowTitle != shouldSelectTabBarItem.isShowTitleWhenSelected || !CGSizeEqualToSize(viewController.tabBarItem.image.size, viewController.tabBarItem.selectedImage.size)) {
-            [self updateTabBarItemDataAtIndex:shouldSelectIndex isShowTitle: shouldSelectTabBarItem.isShowTitleWhenSelected];
+            [self updateTabBarItemTitleAtIndex:shouldSelectIndex isShowTitle:shouldSelectTabBarItem.isShowTitleWhenSelected];
+            [self updateTabBarItemPositionAtIndex:shouldSelectIndex selectedItemIndex:shouldSelectIndex];
         }
     }
     
@@ -137,7 +138,7 @@ static CGFloat const kTitleLabelHeight = 12;
     _titleImageMiddleMargin = titleImageMiddleMargin;
     
     for (UIViewController *childrenViewController in self.childViewControllers) {
-        [self updateTabBarItemTitleImagePositionAtIndex:[self.childViewControllers indexOfObject:childrenViewController]];
+        [self updateTabBarItemPositionAtIndex:[self.childViewControllers indexOfObject:childrenViewController] selectedItemIndex:self.selectedItemIndex];
     }
 }
 
@@ -187,33 +188,41 @@ static CGFloat const kTitleLabelHeight = 12;
     tempTabBarItem.cic.controllerClassName(self.tabBarItemData[index].controllerClassName);
     [_tabBarItemData replaceObjectAtIndex:index withObject:tempTabBarItem];
     
-    [self updateTabBarItemDataAtIndex:index isShowTitle:index == self.selectedItemIndex ? tabBarItem.isShowTitleWhenSelected : tabBarItem.isShowTitle];
+    [self updateTabBarItemDataAtIndex:index isShowTitle:index == self.selectedItemIndex ? tabBarItem.isShowTitleWhenSelected : tabBarItem.isShowTitle selectedItemIndex:self.selectedItemIndex];
 }
 
-- (void)updateTabBarItemDataAtIndex:(NSInteger)index isShowTitle:(BOOL)isShowTitle {
+- (void)updateTabBarItemDataAtIndex:(NSInteger)index isShowTitle:(BOOL)isShowTitle selectedItemIndex:(NSUInteger)selectedItemIndex {
 
-    __block UIViewController *childViewController = self.childViewControllers[index];
+    [self updateTabBarItemTitleAtIndex:index isShowTitle:isShowTitle];
+    [self updateTabBarItemImageAtIndex:index selectedItemIndex:selectedItemIndex];
+}
+
+- (void)updateTabBarItemTitleAtIndex:(NSInteger)index isShowTitle:(BOOL)isShowTitle {
     
+    UIViewController *childViewController = self.childViewControllers[index];
     CICTabBarItem *tabBarItem = self.tabBarItemData[index];
     childViewController.tabBarItem.title = isShowTitle ? tabBarItem.title : nil;
+}
+
+- (void)updateTabBarItemImageAtIndex:(NSUInteger)index selectedItemIndex:(NSUInteger)selectedItemIndex {
     
+    __block UIViewController *childViewController = self.childViewControllers[index];
+    CICTabBarItem *tabBarItem = self.tabBarItemData[index];
     WEAK_SELF;
     if (tabBarItem.normalImage) {
-        [self showImageWithImageParam:tabBarItem.normalImage completionBlock:^(UIImage *resultImage) {
-            childViewController.tabBarItem.image = [weakSelf scaleImageSizeWithImage:resultImage forItem:tabBarItem isSelected:NO];
-            if (!tabBarItem.selectedImage) {
-                childViewController.tabBarItem.selectedImage = [weakSelf scaleImageSizeWithImage:resultImage forItem:tabBarItem isSelected:YES];
-            }
-            [weakSelf updateTabBarItemImageInsetsAtIndex:index];
-            [weakSelf updateTabBarItemTitleImagePositionAtIndex:index];
-        }];
+     [self showImageWithImageParam:tabBarItem.normalImage completionBlock:^(UIImage *resultImage) {
+         childViewController.tabBarItem.image = [weakSelf scaleImageSizeWithImage:resultImage forItem:tabBarItem isSelected:NO];
+         if (!tabBarItem.selectedImage) {
+             childViewController.tabBarItem.selectedImage = [weakSelf scaleImageSizeWithImage:resultImage forItem:tabBarItem isSelected:YES];
+         }
+         [weakSelf updateTabBarItemPositionAtIndex:index selectedItemIndex:selectedItemIndex];
+     }];
     }
     if (tabBarItem.selectedImage) {
-        [self showImageWithImageParam:tabBarItem.selectedImage completionBlock:^(UIImage *resultImage) {
-            childViewController.tabBarItem.selectedImage = [weakSelf scaleImageSizeWithImage:resultImage forItem:tabBarItem isSelected:YES];
-            [weakSelf updateTabBarItemImageInsetsAtIndex:index];
-            [weakSelf updateTabBarItemTitleImagePositionAtIndex:index];
-        }];
+     [self showImageWithImageParam:tabBarItem.selectedImage completionBlock:^(UIImage *resultImage) {
+         childViewController.tabBarItem.selectedImage = [weakSelf scaleImageSizeWithImage:resultImage forItem:tabBarItem isSelected:YES];
+         [weakSelf updateTabBarItemPositionAtIndex:index selectedItemIndex:selectedItemIndex];
+     }];
     }
 }
 
@@ -226,6 +235,10 @@ static CGFloat const kTitleLabelHeight = 12;
     }else {
         imageSize = CGSizeEqualToSize(tabBarItem.normalImageSize, CGSizeZero) ? self.normalImageSize : tabBarItem.normalImageSize;
     }
+    if (CGSizeEqualToSize(imageSize, CGSizeZero)) {
+        imageSize = resultImage.size;
+    }
+    imageSize = [self getAvailableSize:imageSize];
     
     if (!CGSizeEqualToSize(imageSize, CGSizeZero) && !CGSizeEqualToSize(resultImage.size, imageSize)) {
       resultImage = [resultImage cic_imageScaleToSize:imageSize];
@@ -236,41 +249,39 @@ static CGFloat const kTitleLabelHeight = 12;
     return resultImage;
 }
 
-- (void)updateTabBarItemImageInsetsAtIndex:(NSInteger)index {
+- (void)updateTabBarItemPositionAtIndex:(NSUInteger)index selectedItemIndex:(NSUInteger)selectedItemIndex {
     
-    UIViewController *childViewController = self.childViewControllers[index];
-    if (![NSString cic_isEmpty:childViewController.tabBarItem.title]) {
+    if ([NSArray cic_isEmpty:self.childViewControllers] || self.childViewControllers.count < index) {
         return;
     }
     
-    CGSize imageSize = self.selectedItemIndex == index ? childViewController.tabBarItem.selectedImage.size : childViewController.tabBarItem.image.size;
-    
-    CGFloat estimateTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - imageSize.height) / 2.0;
-    CGFloat finishedTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - imageSize.height) / 2.0;
-    CGFloat margin = finishedTopMargin - estimateTopMargin;
-    childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(margin, 0, -margin, 0);
-}
+    UIViewController *childViewController = self.childViewControllers[index];
+    CGSize imageSize = selectedItemIndex == index ? childViewController.tabBarItem.selectedImage.size : childViewController.tabBarItem.image.size;
+    imageSize = [self getAvailableSize:imageSize];
 
-- (void)updateTabBarItemTitleImagePositionAtIndex:(NSInteger)index {
-    
-    UIViewController *childViewController = self.childViewControllers[index];
     if ([NSString cic_isEmpty:childViewController.tabBarItem.title]) {
-        return;
+        CGFloat estimateTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - imageSize.height) / 2.0;
+        CGFloat finishedTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - imageSize.height) / 2.0;
+        CGFloat margin = finishedTopMargin - estimateTopMargin;
+        childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(margin, 0, -margin, 0);
+    }else {
+        CGFloat margin = self.titleImageMiddleMargin;
+        if (imageSize.height + margin + kTitleLabelHeight > CIC_TAB_BAR_HEIGHT - 1) {
+            margin = CIC_TAB_BAR_HEIGHT - 1 - imageSize.height - kTitleLabelHeight;
+        }
+        CGFloat estimateTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - imageSize.height) / 2.0;
+        CGFloat finishedTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - imageSize.height - margin)/2.0;
+        CGFloat imageTopMargin = finishedTopMargin - estimateTopMargin;
+        childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(imageTopMargin, 0, -imageTopMargin, 0);
+
+        CGFloat titleVerticalOffset = finishedTopMargin + imageSize.height + margin - (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - 1);
+        if (@available(iOS 13.0, *)) {
+            //  iOS 13以上，UITabBarButtonLabel默认顶部间距由35变为34+1/3(iphone8P及以上设备)、34.5(iphone8以下设备)两种
+            //  间距微调加1后，系统会自动调整使得间距与需要设置的间距相差约1/2-1/3的距离，基本满足条件
+            titleVerticalOffset += 1;
+        }
+        childViewController.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, titleVerticalOffset);
     }
-    
-    CGSize imageSize = self.selectedItemIndex == index ? childViewController.tabBarItem.selectedImage.size : childViewController.tabBarItem.image.size;
-    
-    CGFloat margin = self.titleImageMiddleMargin;
-    if (imageSize.height + margin + kTitleLabelHeight > CIC_TAB_BAR_HEIGHT - 1) {
-        margin = CIC_TAB_BAR_HEIGHT - 1 - imageSize.height - kTitleLabelHeight;
-    }
-    
-    CGFloat estimateTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - imageSize.height) / 2.0;
-    CGFloat finishedTopMargin = (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight - imageSize.height - margin)/2.0;
-    CGFloat imageTopMargin = finishedTopMargin - estimateTopMargin;
-    childViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(imageTopMargin, 0, -imageTopMargin, 0);
-    CGFloat titleVerticalOffset = finishedTopMargin + imageSize.height + margin - (CIC_TAB_BAR_HEIGHT - 1 - kTitleLabelHeight);
-    childViewController.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, titleVerticalOffset);
 }
 
 - (void)showImageWithImageParam:(id)imageParam completionBlock:(void(^)(UIImage *))completionBlock {
@@ -308,6 +319,15 @@ static CGFloat const kTitleLabelHeight = 12;
     if (resultImage) {
         completionBlock(resultImage);
     }
+}
+
+- (CGSize)getAvailableSize:(CGSize)size {
+    
+    CGSize tempSize = size;
+    if ((NSInteger)tempSize.height % 2 == 1) {
+        tempSize = CGSizeMake((NSInteger)tempSize.width + 1, (NSInteger)tempSize.height + 1);
+    }
+    return tempSize;
 }
 
 #pragma mark - Lazy Load

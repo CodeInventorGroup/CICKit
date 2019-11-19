@@ -74,7 +74,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         classifyTabBarItem.cic.isShowTitleWhenSelected(NO);
         tabbarController.cic.updateBarItemData(classifyTabBarItem, 1)
-        .normalImageSize(CGSizeMake(20, 20));
+        .normalImageSize(CGSizeMake(28, 28));
     });
 }
 
