@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CICTabBarItem : CICBarItem
 
 /// 每个Item对应根视图控制器的类名
-@property (nonatomic, readonly,copy) NSString *controllerClassName;
+@property (nonatomic, readonly, copy) NSString *controllerClassName;
 
 /// 显示文字
 + (CICTabBarItem *)cic_tabBarItemWithTitle:(NSString *)title

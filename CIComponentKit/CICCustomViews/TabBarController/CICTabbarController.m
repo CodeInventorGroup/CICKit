@@ -15,6 +15,7 @@
 #import "UIImage+CICColor.h"
 #import "NSString+CICBaseProperty.h"
 #import "NSArray+CICBaseProperty.h"
+#import "NSObject+CICCheck.h"
 
 /// 标题Label的高度
 static CGFloat const kTitleLabelHeight = 12;
@@ -90,23 +91,10 @@ static CGFloat const kTitleLabelHeight = 12;
 - (void)setBarBackgroundImage:(id)barBackgroundImage {
     
     _barBackgroundImage = barBackgroundImage;
-    if ([barBackgroundImage cic_isUrl]) {
-        UIImageView *imageView = [[UIImageView alloc] init];
-        
-        WEAK_SELF;
-        [imageView sd_setImageWithURL:[NSURL URLWithString:barBackgroundImage] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-            if (!error) {
-                weakSelf.tabBar.backgroundImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-                [weakSelf.tempImageViewData removeObject:imageView];
-                if (weakSelf.tempImageViewData.count == 0) {
-                    weakSelf.tempImageViewData = nil;
-                }
-            }
-        }];
-        [self.tempImageViewData addObject:imageView];
-    }else {
-        self.tabBar.backgroundImage = [UIImage imageNamed:barBackgroundImage];
-    }
+    WEAK_SELF;
+    [self showImageWithImageParam:barBackgroundImage completionBlock:^(UIImage *resultImage) {
+        weakSelf.tabBar.backgroundImage = resultImage;
+    }];
 }
 
 - (void)setNormalTitleColr:(UIColor *)normalTitleColr {
@@ -209,16 +197,16 @@ static CGFloat const kTitleLabelHeight = 12;
     __block UIViewController *childViewController = self.childViewControllers[index];
     CICTabBarItem *tabBarItem = self.tabBarItemData[index];
     WEAK_SELF;
-    if (tabBarItem.normalImage) {
+    if ([NSObject cic_isValid:tabBarItem.normalImage]) {
      [self showImageWithImageParam:tabBarItem.normalImage completionBlock:^(UIImage *resultImage) {
          childViewController.tabBarItem.image = [weakSelf scaleImageSizeWithImage:resultImage forItem:tabBarItem isSelected:NO];
-         if (!tabBarItem.selectedImage) {
+         if (![NSObject cic_isValid:tabBarItem.selectedImage]) {
              childViewController.tabBarItem.selectedImage = [weakSelf scaleImageSizeWithImage:resultImage forItem:tabBarItem isSelected:YES];
          }
          [weakSelf updateTabBarItemPositionAtIndex:index selectedItemIndex:selectedItemIndex];
      }];
     }
-    if (tabBarItem.selectedImage) {
+    if ([NSObject cic_isValid:tabBarItem.selectedImage]) {
      [self showImageWithImageParam:tabBarItem.selectedImage completionBlock:^(UIImage *resultImage) {
          childViewController.tabBarItem.selectedImage = [weakSelf scaleImageSizeWithImage:resultImage forItem:tabBarItem isSelected:YES];
          [weakSelf updateTabBarItemPositionAtIndex:index selectedItemIndex:selectedItemIndex];
@@ -293,6 +281,10 @@ static CGFloat const kTitleLabelHeight = 12;
     __block UIImage *resultImage = nil;
     if ([imageParam isKindOfClass:[NSString class]]) {
         NSString *imageString = (NSString *)imageParam;
+        if ([NSString cic_isEmpty:imageString]) {
+            return;
+        }
+        
         if ([imageString cic_isUrl]) {
             UIImageView *imageView = [[UIImageView alloc] init];
             

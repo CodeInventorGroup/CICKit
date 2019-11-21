@@ -50,7 +50,8 @@
     .normalImage(normalImage)
     .selectedImage(selectedImage)
     .controllerClassName(controllerClassName)
-    .isShowTitle(isShowTitle);
+    .isShowTitle(isShowTitle)
+    .isShowTitleWhenSelected(isShowTitle);
     return tabBarItem;
 }
 

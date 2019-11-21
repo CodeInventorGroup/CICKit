@@ -31,6 +31,9 @@
     if (self = [super init]) {
         self.isShowTitle = YES;
         self.isShowTitleWhenSelected = YES;
+        
+        self.normalImage = NULL;
+        self.selectedImage = NULL;
     }
     return self;
 }

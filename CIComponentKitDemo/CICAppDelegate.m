@@ -21,7 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    [self showTabbarController];
+//    [self showTabbarController];
+    [self showNoTitleTabBarController];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -44,7 +45,9 @@
     classifyTabBarItem.cic
     .title(@"畅聊")
     .normalImage(@"message")
-    .controllerClassName(@"CICSecondViewController");
+    .controllerClassName(@"CICSecondViewController")
+    .isShowTitle(NO)
+    .isShowTitleWhenSelected(NO);
     [tabBarItemData addObject:classifyTabBarItem];
     
     CICTabBarItem *thirdTabBarItem = [[CICTabBarItem alloc] init];
@@ -60,22 +63,33 @@
     .titleImageMiddleMargin(5)
     .normalImageSize(CGSizeMake(30, 30))
     .tabBarItemData(tabBarItemData)
-//    .selectedTitleColor([UIColor cic_hexColor:0x1296db])
+    .selectedTitleColor([UIColor cic_hexColor:0x1296db])
     .normalTitleColor([UIColor cic_hexColor:0x646464])
-    .selectedTitleColor([UIColor systemPurpleColor])
     .didSelectViewControllerBlock(^(NSInteger index) {
-        NSLog(@"selectedIndex = %ld", index);
+
     });
     
     self.window.rootViewController = tabbarController;
     tabbarController.cic.badgeValue(2, @"100");
+}
+
+- (void)showNoTitleTabBarController {
     
-    //  动态加载tabbar图片的数据
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        classifyTabBarItem.cic.isShowTitleWhenSelected(NO);
-        tabbarController.cic.updateBarItemData(classifyTabBarItem, 1)
-        .normalImageSize(CGSizeMake(28, 28));
+    NSArray *items = [NSArray arrayWithObjects:
+                      [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"home_tabbar_icon" controllerClassName:@"CICRootViewController"],
+                      [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"message" controllerClassName:@"CICSecondViewController"],
+                      [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"tool_tabbar_icon" controllerClassName:@"CICThirdViewController"], nil];
+
+    CICTabbarController *tabbarController = [[CICTabbarController alloc] init];
+    tabbarController.cic
+    .tabBarItemData(items)
+    .normalImageSize(CGSizeMake(26, 26))    //  默认根据图片大小展示
+    .selectedImageSize(CGSizeMake(26, 26))
+    .didSelectViewControllerBlock(^(NSInteger index) {
+
     });
+
+    self.window.rootViewController = tabbarController;
 }
 
 @end
