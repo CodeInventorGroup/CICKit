@@ -6,10 +6,10 @@
 //  Copyright © 2017年 codeinventor. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CICBaseViewController.h"
 
-@interface CICDemoViewController : UIViewController
+@interface CICDemoViewController : CICBaseViewController
 
-@property(nonatomic, strong) NSString *name;
+@property (nonatomic, copy) NSString *name;
 
 @end

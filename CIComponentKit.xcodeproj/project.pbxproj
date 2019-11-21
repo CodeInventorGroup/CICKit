@@ -191,8 +191,6 @@
 		C64C85A31F68303B00F9ED60 /* CIComponentKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C64C85B91F68307300F9ED60 /* CICAppDelegate.h */,
-				C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */,
 				C64C85C31F6832A300F9ED60 /* CICRootViewController.h */,
 				C64C85C41F6832A300F9ED60 /* CICRootViewController.m */,
 				B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */,
@@ -209,6 +207,8 @@
 		C64C85BC1F68321F00F9ED60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C64C85B91F68307300F9ED60 /* CICAppDelegate.h */,
+				C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */,
 				C64C85BD1F68321F00F9ED60 /* Assets.xcassets */,
 				C64C85BE1F68321F00F9ED60 /* Info.plist */,
 				C64C85BF1F68321F00F9ED60 /* main.m */,
