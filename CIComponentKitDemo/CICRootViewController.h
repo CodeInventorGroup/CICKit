@@ -6,8 +6,8 @@
 //  Copyright © 2017年 codeinventor. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CICBaseViewController.h"
 
-@interface CICRootViewController : UIViewController
+@interface CICRootViewController : CICBaseViewController
 
 @end

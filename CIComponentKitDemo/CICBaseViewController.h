@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CICBaseViewController : UIViewController
 
+@property (nonatomic, assign) BOOL isHiddenNavigationBar;
+
 @end
 
 NS_ASSUME_NONNULL_END

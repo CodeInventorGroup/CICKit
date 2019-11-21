@@ -24,6 +24,7 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
 - (instancetype)init {
     
     if (self = [super init]) {
+        self.isHiddenNavigationBar = YES;
         self.demoLists = @[
             @"TabBarController"
         ];
@@ -37,11 +38,6 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     [self.view addSubview:self.tableView];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    
-    [super viewWillAppear: animated];
-}
-
 #pragma mark - Actions
 - (void)showTabBarController {
     
@@ -53,9 +49,20 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     .normalImage(@"home_tabbar_icon")
     .controllerClassName(@"CICFirstViewController");
     
+    CICTabBarItem *secondItem = [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"center_tabbar_icon" controllerClassName:@"CICSecondViewController"];
+    secondItem.cic
+    .normalImageSize(CGSizeMake(30, 30))
+    .selectedImageSize(CGSizeMake(20, 20));
+    
+    CICTabBarItem *thirdItem = [CICTabBarItem cic_tabBarItemWithTitle:@"工具" normalImage:@"tool_tabbar_icon" selectedImage:@"message" controllerClassName:@"CICThirdViewController"];
+    thirdItem.cic.isShowTitleWhenSelected(NO);
+    
     tabBarController.cic
-    .tabBarItemData(@[firstItem])
+    .tabBarItemData(@[firstItem, secondItem, thirdItem])
     .titleImageMiddleMargin(4);
+    
+    tabBarController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:tabBarController animated:YES];
 }
 
 #pragma mark - TableViewDataSource
