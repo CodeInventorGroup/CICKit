@@ -7,6 +7,7 @@
 
 #import "CICDemoViewController.h"
 #import <CIComponentKit.h>
+#import "CICFirstViewController.h"
 
 static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
 
@@ -24,9 +25,11 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
 - (instancetype)init {
     
     if (self = [super init]) {
-        self.isHiddenNavigationBar = YES;
+        self.title = @"Demo";
         self.demoLists = @[
-            @"TabBarController"
+            @"TabBarController",
+            @"Button",
+            @"Label",
         ];
     }
     return self;
@@ -51,8 +54,8 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     
     CICTabBarItem *secondItem = [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"center_tabbar_icon" controllerClassName:@"CICSecondViewController"];
     secondItem.cic
-    .normalImageSize(CGSizeMake(30, 30))
-    .selectedImageSize(CGSizeMake(20, 20));
+    .normalImageSize(CGSizeMake(20, 20))
+    .selectedImageSize(CGSizeMake(30, 30));
     
     CICTabBarItem *thirdItem = [CICTabBarItem cic_tabBarItemWithTitle:@"工具" normalImage:@"tool_tabbar_icon" selectedImage:@"message" controllerClassName:@"CICThirdViewController"];
     thirdItem.cic.isShowTitleWhenSelected(NO);
@@ -62,8 +65,7 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     .titleImageMiddleMargin(4);
     
     tabBarController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:tabBarController animated:YES];
-}
+    [self.navigationController pushViewController:tabBarController animated:YES];}
 
 #pragma mark - TableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -83,6 +85,11 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     NSString *title = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     if ([title containsString:@"TabBarController"]) {
         [self showTabBarController];
+    }else {
+        Class class = NSClassFromString([NSString stringWithFormat:@"CIC%@DemoViewController",title]);
+        UIViewController *viewController = [[class alloc] init];
+        viewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewController animated:YES];
     }
 }
 

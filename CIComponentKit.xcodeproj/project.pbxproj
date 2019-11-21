@@ -14,8 +14,8 @@
 		1C7B1DF7225F435200D9DAF9 /* CIComponentKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B1DF6225F435200D9DAF9 /* CIComponentKitDemoTests.m */; };
 		657429BA1520DCAC1A885082 /* libPods-CIComponentKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE95A704574501D825E119C /* libPods-CIComponentKitDemo.a */; };
 		B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */; };
-		C629E22023673A6D0095849F /* CICButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C629E21F23673A6D0095849F /* CICButtonViewController.m */; };
-		C629E22323673A850095849F /* CICLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C629E22223673A850095849F /* CICLabelViewController.m */; };
+		C629E22023673A6D0095849F /* CICButtonDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C629E21F23673A6D0095849F /* CICButtonDemoViewController.m */; };
+		C629E22323673A850095849F /* CICLabelDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C629E22223673A850095849F /* CICLabelDemoViewController.m */; };
 		C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */; };
 		C64C85C01F68321F00F9ED60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64C85BD1F68321F00F9ED60 /* Assets.xcassets */; };
 		C64C85C21F68321F00F9ED60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C64C85BF1F68321F00F9ED60 /* main.m */; };
@@ -64,10 +64,10 @@
 		7934B378314D14B35A1815F5 /* Pods-CIComponentKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIComponentKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-CIComponentKitDemo/Pods-CIComponentKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B02F30A41F6FDDC100EE3947 /* CICDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICDemoViewController.h; sourceTree = "<group>"; };
 		B02F30A51F6FDDC100EE3947 /* CICDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICDemoViewController.m; sourceTree = "<group>"; };
-		C629E21E23673A6D0095849F /* CICButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICButtonViewController.h; sourceTree = "<group>"; };
-		C629E21F23673A6D0095849F /* CICButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICButtonViewController.m; sourceTree = "<group>"; };
-		C629E22123673A850095849F /* CICLabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICLabelViewController.h; sourceTree = "<group>"; };
-		C629E22223673A850095849F /* CICLabelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICLabelViewController.m; sourceTree = "<group>"; };
+		C629E21E23673A6D0095849F /* CICButtonDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICButtonDemoViewController.h; sourceTree = "<group>"; };
+		C629E21F23673A6D0095849F /* CICButtonDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICButtonDemoViewController.m; sourceTree = "<group>"; };
+		C629E22123673A850095849F /* CICLabelDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CICLabelDemoViewController.h; sourceTree = "<group>"; };
+		C629E22223673A850095849F /* CICLabelDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CICLabelDemoViewController.m; sourceTree = "<group>"; };
 		C64C85A21F68303B00F9ED60 /* CIComponentKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIComponentKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C85B91F68307300F9ED60 /* CICAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CICAppDelegate.h; sourceTree = "<group>"; };
 		C64C85BA1F68307300F9ED60 /* CICAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CICAppDelegate.m; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 		C629E21C23673A3E0095849F /* CICButton */ = {
 			isa = PBXGroup;
 			children = (
-				C629E21E23673A6D0095849F /* CICButtonViewController.h */,
-				C629E21F23673A6D0095849F /* CICButtonViewController.m */,
+				C629E21E23673A6D0095849F /* CICButtonDemoViewController.h */,
+				C629E21F23673A6D0095849F /* CICButtonDemoViewController.m */,
 			);
 			path = CICButton;
 			sourceTree = "<group>";
@@ -160,8 +160,8 @@
 		C629E21D23673A3E0095849F /* CICLabel */ = {
 			isa = PBXGroup;
 			children = (
-				C629E22123673A850095849F /* CICLabelViewController.h */,
-				C629E22223673A850095849F /* CICLabelViewController.m */,
+				C629E22123673A850095849F /* CICLabelDemoViewController.h */,
+				C629E22223673A850095849F /* CICLabelDemoViewController.m */,
 			);
 			path = CICLabel;
 			sourceTree = "<group>";
@@ -387,11 +387,11 @@
 				B02F30A61F6FDDC100EE3947 /* CICDemoViewController.m in Sources */,
 				C64C85C21F68321F00F9ED60 /* main.m in Sources */,
 				1C50F25B225C34AC00D5748B /* CICThirdViewController.m in Sources */,
-				C629E22323673A850095849F /* CICLabelViewController.m in Sources */,
+				C629E22323673A850095849F /* CICLabelDemoViewController.m in Sources */,
 				1C50F252225C342D00D5748B /* CICBaseViewController.m in Sources */,
 				C64C85BB1F68307300F9ED60 /* CICAppDelegate.m in Sources */,
 				1C50F255225C346400D5748B /* CICFirstViewController.m in Sources */,
-				C629E22023673A6D0095849F /* CICButtonViewController.m in Sources */,
+				C629E22023673A6D0095849F /* CICButtonDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

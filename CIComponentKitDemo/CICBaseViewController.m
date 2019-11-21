@@ -7,6 +7,7 @@
 //
 
 #import "CICBaseViewController.h"
+#import <CIComponentKit.h>
 
 @interface CICBaseViewController ()
 
@@ -41,6 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor cic_p3RandomColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

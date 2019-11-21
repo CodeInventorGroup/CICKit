@@ -1,16 +1,16 @@
 //
-//  CICLabelViewController.h
+//  CICButtonDemoViewController.h
 //  CIComponentKitDemo
 //
 //  Created by NEWWORLD on 2019/10/28.
 //  Copyright © 2019 codeinventor. All rights reserved.
-//
+//  
 
 #import "CICBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CICLabelViewController : CICBaseViewController
+@interface CICButtonDemoViewController : CICBaseViewController
 
 @end
 

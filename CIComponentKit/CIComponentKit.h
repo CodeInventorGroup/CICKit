@@ -17,18 +17,15 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <CIComponentKit/PublicHeader.h>
 
 //MARK: - ThirdParty Cocoapods
-#import <SDWebImage.h>
 
 //MARK: - Foundation Extensions
-#import <CIComponentKit/NSNumber+DWWordFigure.h>
-//#import "NSNumber+DWWordFigure.h"
+#import "NSNumber+DWWordFigure.h"
 #import "NSDate+CICString.h"
 #import "NSString+CICDate.h"
 #import "NSString+CICNetwork.h"
 #import "NSString+CICBaseProperty.h"
 #import "NSObject+CICConstructor.h"
-//#import "NSArray+CICBaseProperty.h"
-#import <CIComponentKit/NSArray+CICBaseProperty.h>
+#import "NSArray+CICBaseProperty.h"
 
 //MARK: - UIKit Extensions
 #import "UIView+CICConstructor.h"

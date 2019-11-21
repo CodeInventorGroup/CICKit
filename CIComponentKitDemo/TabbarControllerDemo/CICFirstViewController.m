@@ -13,7 +13,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor systemPurpleColor];
+    self.isHiddenNavigationBar = YES;
 }
 
 @end
