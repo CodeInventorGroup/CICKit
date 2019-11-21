@@ -26,6 +26,7 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 #import "NSString+CICNetwork.h"
 #import "NSString+CICBaseProperty.h"
 #import "NSObject+CICConstructor.h"
+#import "NSArray+CICBaseProperty.h"
 
 //MARK: - UIKit Extensions
 #import "UIView+CICConstructor.h"

@@ -38,9 +38,7 @@
     .tabBarItemData(items)
     .normalImageSize(CGSizeMake(26, 26))    //  默认根据图片大小展示
     .selectedImageSize(CGSizeMake(26, 26))
-    .didSelectViewControllerBlock(^(NSInteger index) {
-
-    });
+    .selectedItemIndex(1);
 
     self.window.rootViewController = tabbarController;
 }
