@@ -1,9 +1,9 @@
 PODS:
   - CICKit (0.0.3.4):
     - SDWebImage
-  - SDWebImage (5.3.1):
-    - SDWebImage/Core (= 5.3.1)
-  - SDWebImage/Core (5.3.1)
+  - SDWebImage (5.3.2):
+    - SDWebImage/Core (= 5.3.2)
+  - SDWebImage/Core (5.3.2)
 
 DEPENDENCIES:
   - CICKit (from `../CICKit`)
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CICKit: f4321c3a0fcea8fcae16751d42357f85492cb324
-  SDWebImage: 7137d57385fb632129838c1e6ab9528a22c666cc
+  SDWebImage: 6ac2eb96571bff96ecde31a987172c5934a0eb7d
 
 PODFILE CHECKSUM: 9bab9100610c4e1f4887863230a396696fa04d70
 

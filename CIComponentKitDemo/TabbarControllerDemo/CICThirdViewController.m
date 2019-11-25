@@ -14,7 +14,7 @@
 
 @implementation CICThirdViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad { 
     [super viewDidLoad];
     self.isHiddenNavigationBar = YES;
 }
