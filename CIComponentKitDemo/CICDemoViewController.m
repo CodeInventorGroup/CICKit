@@ -75,6 +75,7 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = self.demoLists[indexPath.row];
     return cell;
 }
@@ -89,6 +90,7 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
         Class class = NSClassFromString([NSString stringWithFormat:@"CIC%@DemoViewController",title]);
         UIViewController *viewController = [[class alloc] init];
         viewController.hidesBottomBarWhenPushed = YES;
+        viewController.title = title;
         [self.navigationController pushViewController:viewController animated:YES];
     }
 }
