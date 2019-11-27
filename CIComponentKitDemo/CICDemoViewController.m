@@ -50,7 +50,8 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     firstItem.cic
     .title(@"首页")
     .normalImage(@"home_tabbar_icon")
-    .controllerClassName(@"CICFirstViewController");
+    .controllerClassName(@"CICFirstViewController")
+    .selectedTitleColor([UIColor cic_hexColor:0x1296db]);
     
     CICTabBarItem *secondItem = [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"center_tabbar_icon" controllerClassName:@"CICSecondViewController"];
     secondItem.cic
@@ -62,7 +63,8 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     
     tabBarController.cic
     .tabBarItemData(@[firstItem, secondItem, thirdItem])
-    .titleImageMiddleMargin(4);
+    .titleImageMiddleMargin(4)
+    .selectedTitleColor([UIColor systemPurpleColor]);
     
     tabBarController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:tabBarController animated:YES];}

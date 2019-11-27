@@ -30,6 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 选中状态 图片大小(不设置根据图片大小显示)
 @property (nonatomic, readonly, assign) CGSize selectedImageSize;
 
+@property (nonatomic, readonly, strong) UIColor *selectedTitleColor;
+@property (nonatomic, readonly, strong) UIColor *normalTitleColor;
+
 @end
 
 @interface CICBarItemConstructor<CICBarItem> : CICConstructor
@@ -51,6 +54,10 @@ CICConstructorProperty(CICBarItemConstructor, isShowTitleWhenSelected, BOOL isSh
 CICConstructorProperty(CICBarItemConstructor, normalImageSize, CGSize size)
 /// 选中状态 图片大小
 CICConstructorProperty(CICBarItemConstructor, selectedImageSize, CGSize size)
+
+CICConstructorProperty(CICBarItemConstructor, normalTitleColor, UIColor *color)
+CICConstructorProperty(CICBarItemConstructor, selectedTitleColor, UIColor *color)
+
 
 @end
 

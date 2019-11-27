@@ -73,6 +73,8 @@
 @dynamic selectedImageSize;
 @dynamic isShowTitle;
 @dynamic isShowTitleWhenSelected;
+@dynamic normalTitleColor;
+@dynamic selectedTitleColor;
 
 - (void)buildConstructor {
     

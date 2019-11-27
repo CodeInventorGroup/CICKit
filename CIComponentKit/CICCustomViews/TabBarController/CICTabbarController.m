@@ -102,6 +102,13 @@ static CGFloat const kTitleLabelHeight = 12;
     _normalTitleColr = normalTitleColr;
     
     for (UIViewController *childViewController in self.childViewControllers) {
+        NSUInteger index = [self.childViewControllers indexOfObject:childViewController];
+        if (![NSArray cic_isEmpty:self.tabBarItemData] && self.tabBarItemData.count > index) {
+            CICTabBarItem *tabBarItem = self.tabBarItemData[index];
+            if (tabBarItem.normalTitleColor) {
+                continue;
+            }
+        }
         [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: normalTitleColr} forState:UIControlStateNormal];
     }
 }
@@ -111,6 +118,13 @@ static CGFloat const kTitleLabelHeight = 12;
     _selectedTitleColr = selectedTitleColr;
     
     for (UIViewController *childViewController in self.childViewControllers) {
+        NSUInteger index = [self.childViewControllers indexOfObject:childViewController];
+         if (![NSArray cic_isEmpty:self.tabBarItemData] && self.tabBarItemData.count > index) {
+             CICTabBarItem *tabBarItem = self.tabBarItemData[index];
+             if (tabBarItem.selectedTitleColor) {
+                 continue;
+             }
+         }
         [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTitleColr} forState:UIControlStateSelected];
     }
 }
@@ -190,6 +204,13 @@ static CGFloat const kTitleLabelHeight = 12;
     UIViewController *childViewController = self.childViewControllers[index];
     CICTabBarItem *tabBarItem = self.tabBarItemData[index];
     childViewController.tabBarItem.title = isShowTitle ? tabBarItem.title : nil;
+    
+    if (tabBarItem.normalTitleColor) {
+        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: tabBarItem.normalTitleColor} forState:UIControlStateNormal];
+    }
+    if (tabBarItem.selectedTitleColor) {
+        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: tabBarItem.selectedTitleColor} forState:UIControlStateSelected];
+    }
 }
 
 - (void)updateTabBarItemImageAtIndex:(NSUInteger)index selectedItemIndex:(NSUInteger)selectedItemIndex {
@@ -320,6 +341,17 @@ static CGFloat const kTitleLabelHeight = 12;
         tempSize = CGSizeMake((NSInteger)tempSize.width + 1, (NSInteger)tempSize.height + 1);
     }
     return tempSize;
+}
+
+- (BOOL)isShowTabBarItemTitleColorAtIndex:(NSUInteger)index forState:(UIControlState)state {
+    
+    if (![NSArray cic_isEmpty:self.tabBarItemData] && self.tabBarItemData.count > index) {
+        CICTabBarItem *tabBarItem = self.tabBarItemData[index];
+        if ((state == UIControlStateSelected && tabBarItem.selectedTitleColor) || (state == UIControlStateNormal && tabBarItem.normalTitleColor)) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 #pragma mark - Lazy Load

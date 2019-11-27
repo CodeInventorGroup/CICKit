@@ -22,6 +22,9 @@
 @property (nonatomic, assign) CGSize normalImageSize;
 @property (nonatomic, assign) CGSize selectedImageSize;
 
+@property (nonatomic, strong) UIColor *selectedTitleColor;
+@property (nonatomic, strong) UIColor *normalTitleColor;
+
 @end
 
 @implementation CICBarItem
@@ -85,6 +88,16 @@
     
     _selectedImageSize = ^CICBarItemConstructor * _Nonnull(CGSize size) {
         weakSelf.component.selectedImageSize = size;
+        return weakSelf;
+    };
+    
+    _normalTitleColor = ^CICBarItemConstructor *(UIColor *color) {
+        weakSelf.component.normalTitleColor = color;
+        return weakSelf;
+    };
+    
+    _selectedTitleColor = ^CICBarItemConstructor *(UIColor *color) {
+        weakSelf.component.selectedTitleColor = color;
         return weakSelf;
     };
 }
