@@ -18,8 +18,8 @@ typedef void(^CICDidSelectViewControllerBlock)(NSInteger index);
 
 @property (nonatomic, readonly, copy) NSArray<CICTabBarItem *> *tabBarItemData;
 
-@property (nonatomic, readonly, strong) UIColor *selectedTitleColr;
-@property (nonatomic, readonly, strong) UIColor *normalTitleColr;
+@property (nonatomic, readonly, strong) UIColor *selectedTitleColor;
+@property (nonatomic, readonly, strong) UIColor *normalTitleColor;
 @property (nonatomic, readonly, assign) NSUInteger selectedItemIndex;
 /// 标题和图片之间的间距
 @property (nonatomic, readonly, assign) CGFloat titleImageMiddleMargin;

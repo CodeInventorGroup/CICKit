@@ -39,6 +39,23 @@ static CGFloat const kTitleLabelHeight = 12;
     self.delegate = self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    if (@available(iOS 13.0, *)) {
+        for (UIViewController *childViewController in self.childViewControllers) {
+            NSUInteger index = [self.childViewControllers indexOfObject:childViewController];
+            // 修改设置
+            UITabBarAppearance *appearance = [UITabBarAppearance new];
+            // 设置未被选中的颜色
+            appearance.stackedLayoutAppearance.normal.titleTextAttributes = @{NSForegroundColorAttributeName:(index == 0 ? [UIColor magentaColor] : [UIColor greenColor])};
+            // 设置被选中时的颜色
+            appearance.stackedLayoutAppearance.selected.titleTextAttributes = @{NSForegroundColorAttributeName: (index == 0 ? [UIColor purpleColor] : [UIColor redColor])};
+            childViewController.tabBarItem.standardAppearance = appearance;
+        }
+    }
+}
+
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
         
     NSUInteger selectedIndex = tabBarController.selectedIndex;
@@ -97,35 +114,29 @@ static CGFloat const kTitleLabelHeight = 12;
     }];
 }
 
-- (void)setNormalTitleColr:(UIColor *)normalTitleColr {
+- (void)setNormalTitleColor:(UIColor * _Nonnull)normalTitleColor {
     
-    _normalTitleColr = normalTitleColr;
-    
+    _normalTitleColor = normalTitleColor;
     for (UIViewController *childViewController in self.childViewControllers) {
         NSUInteger index = [self.childViewControllers indexOfObject:childViewController];
-        if (![NSArray cic_isEmpty:self.tabBarItemData] && self.tabBarItemData.count > index) {
-            CICTabBarItem *tabBarItem = self.tabBarItemData[index];
-            if (tabBarItem.normalTitleColor) {
-                continue;
-            }
+        if ([self isShowTabBarItemTitleColorAtIndex:index forState:UIControlStateNormal]) {
+            continue;
         }
-        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: normalTitleColr} forState:UIControlStateNormal];
+//        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: normalTitleColor} forState:UIControlStateNormal];
+        [self updateChildViewController:childViewController tabBarItemWithTextColor:normalTitleColor forState:UIControlStateNormal];
     }
 }
 
-- (void)setSelectedTitleColr:(UIColor *)selectedTitleColr {
+- (void)setSelectedTitleColor:(UIColor * _Nonnull)selectedTitleColor {
     
-    _selectedTitleColr = selectedTitleColr;
-    
+    _selectedTitleColor = selectedTitleColor;
     for (UIViewController *childViewController in self.childViewControllers) {
         NSUInteger index = [self.childViewControllers indexOfObject:childViewController];
-         if (![NSArray cic_isEmpty:self.tabBarItemData] && self.tabBarItemData.count > index) {
-             CICTabBarItem *tabBarItem = self.tabBarItemData[index];
-             if (tabBarItem.selectedTitleColor) {
-                 continue;
-             }
-         }
-        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTitleColr} forState:UIControlStateSelected];
+        if ([self isShowTabBarItemTitleColorAtIndex:index forState:UIControlStateSelected]) {
+            continue;
+        }
+//        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTitleColor} forState:UIControlStateSelected];
+        [self updateChildViewController:childViewController tabBarItemWithTextColor:selectedTitleColor forState:UIControlStateSelected];
     }
 }
 
@@ -169,6 +180,21 @@ static CGFloat const kTitleLabelHeight = 12;
     [self addChildViewController:navigation];
 }
 
+- (void)updateChildViewController:(UIViewController *)childViewController tabBarItemWithTextColor:(UIColor *)textColor forState:(UIControlState)state {
+    
+    if (@available(iOS 13.0, *)) {
+        UITabBarAppearance *appearance = [childViewController.tabBarItem.standardAppearance copy];
+        if (state == UIControlStateNormal) {
+            appearance.stackedLayoutAppearance.normal.titleTextAttributes = @{NSForegroundColorAttributeName: textColor};
+        }else if (state == UIControlStateSelected) {
+            appearance.stackedLayoutAppearance.selected.titleTextAttributes = @{NSForegroundColorAttributeName: textColor};
+        }
+        childViewController.tabBarItem.standardAppearance = appearance;
+    }else {
+        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: textColor} forState:state];
+    }
+}
+
 - (void)updateAllTabBarItemData:(NSArray<CICBarItem *> *)barItemData {
     
     if ([NSArray cic_isEmpty:barItemData]) {
@@ -206,10 +232,12 @@ static CGFloat const kTitleLabelHeight = 12;
     childViewController.tabBarItem.title = isShowTitle ? tabBarItem.title : nil;
     
     if (tabBarItem.normalTitleColor) {
-        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: tabBarItem.normalTitleColor} forState:UIControlStateNormal];
+//        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: tabBarItem.normalTitleColor} forState:UIControlStateNormal];
+        [self updateChildViewController:childViewController tabBarItemWithTextColor:tabBarItem.normalTitleColor forState:UIControlStateNormal];
     }
     if (tabBarItem.selectedTitleColor) {
-        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: tabBarItem.selectedTitleColor} forState:UIControlStateSelected];
+//        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: tabBarItem.selectedTitleColor} forState:UIControlStateSelected];
+        [self updateChildViewController:childViewController tabBarItemWithTextColor:tabBarItem.selectedTitleColor forState:UIControlStateSelected];
     }
 }
 
@@ -394,12 +422,12 @@ static CGFloat const kTitleLabelHeight = 12;
     };
     
     _selectedTitleColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull selectedColor) {
-        weakSelf.component.selectedTitleColr = selectedColor;
+        weakSelf.component.selectedTitleColor = selectedColor;
         return weakSelf;
     };
     
     _normalTitleColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull normalColor) {
-        weakSelf.component.normalTitleColr = normalColor;
+        weakSelf.component.normalTitleColor = normalColor;
         return weakSelf;
     };
     

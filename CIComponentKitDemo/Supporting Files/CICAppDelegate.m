@@ -28,10 +28,15 @@
 #pragma mark - Private Methods
 - (void)showNoTitleTabBarController {
     
+//    NSArray *items = [NSArray arrayWithObjects:
+//                      [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"center_tabbar_icon" controllerClassName:@"CICRootViewController"],
+//                      [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"message" controllerClassName:@"CICDemoViewController"],
+//                      [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"tool_tabbar_icon" controllerClassName:@"CICBaseViewController"], nil];
+    
     NSArray *items = [NSArray arrayWithObjects:
-                      [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"center_tabbar_icon" controllerClassName:@"CICRootViewController"],
-                      [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"message" controllerClassName:@"CICDemoViewController"],
-                      [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"tool_tabbar_icon" controllerClassName:@"CICBaseViewController"], nil];
+                      [CICTabBarItem cic_tabBarItemWithTitle:@"首页" normalImage:@"center_tabbar_icon" controllerClassName:@"CICRootViewController"],
+                      [CICTabBarItem cic_tabBarItemWithTitle:@"畅聊" normalImage:@"message" controllerClassName:@"CICDemoViewController"],
+                      [CICTabBarItem cic_tabBarItemWithTitle:@"工具" normalImage:@"tool_tabbar_icon" controllerClassName:@"CICBaseViewController"], nil];
 
     CICTabbarController *tabbarController = [[CICTabbarController alloc] init];
     tabbarController.cic
@@ -41,6 +46,18 @@
     .selectedItemIndex(1);
 
     self.window.rootViewController = tabbarController;
+    
+    if (@available(iOS 13.0, *)) {
+        for (UIViewController *childViewController in tabbarController.childViewControllers) {
+            // 修改设置
+            UITabBarAppearance *appearance = [UITabBarAppearance new];
+            // 设置未被选中的颜色
+            appearance.stackedLayoutAppearance.normal.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor greenColor], NSBackgroundColorAttributeName: [UIColor redColor]};
+            // 设置被选中时的颜色
+            appearance.stackedLayoutAppearance.selected.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor redColor], NSBackgroundColorAttributeName: [UIColor greenColor]};
+            childViewController.tabBarItem.standardAppearance = appearance;
+        }
+    }
 }
 
 @end

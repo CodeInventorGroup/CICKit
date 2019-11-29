@@ -51,10 +51,14 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     .title(@"首页")
     .normalImage(@"home_tabbar_icon")
     .controllerClassName(@"CICFirstViewController")
-    .selectedTitleColor([UIColor cic_hexColor:0x1296db]);
+    .selectedTitleColor([UIColor cic_hexColor:0x1296db])
+    .normalTitleColor([UIColor redColor])
+    .selectedTitleColor([UIColor systemPurpleColor]);
     
     CICTabBarItem *secondItem = [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"center_tabbar_icon" controllerClassName:@"CICSecondViewController"];
     secondItem.cic
+    .isShowTitle(YES)
+    .title(@"哈哈")
     .normalImageSize(CGSizeMake(20, 20))
     .selectedImageSize(CGSizeMake(30, 30));
     
@@ -64,10 +68,12 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     tabBarController.cic
     .tabBarItemData(@[firstItem, secondItem, thirdItem])
     .titleImageMiddleMargin(4)
-    .selectedTitleColor([UIColor systemPurpleColor]);
+    .normalTitleColor([UIColor yellowColor])
+    .selectedTitleColor([UIColor systemGreenColor]);
     
     tabBarController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:tabBarController animated:YES];}
+    [self.navigationController pushViewController:tabBarController animated:YES];
+}
 
 #pragma mark - TableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
