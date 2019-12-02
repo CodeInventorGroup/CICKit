@@ -1,5 +1,5 @@
 //
-//  CICTabbarController.h
+//  CICTabBarController.h
 //  CIComponentKit
 //
 //  Created by NEWWORLD on 2019/4/9.
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^CICDidSelectViewControllerBlock)(NSInteger index);
 
-@interface CICTabbarController : UITabBarController
+@interface CICTabBarController : UITabBarController
 
 @property (nonatomic, readonly, copy) NSArray<CICTabBarItem *> *tabBarItemData;
 
@@ -56,7 +56,7 @@ CICConstructorProperty(CICTabbarControllerConstructor, didSelectViewControllerBl
 
 @end
 
-@interface CICTabbarController (CICConstructor)
+@interface CICTabBarController (CICConstructor)
 
 - (CICTabbarControllerConstructor *)cic;
 

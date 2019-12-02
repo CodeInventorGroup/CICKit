@@ -1,5 +1,5 @@
 //
-//  CICTabbarController.m
+//  CICTabBarController.m
 //  CIComponentKit
 //
 //  Created by NEWWORLD on 2019/4/9.
@@ -7,7 +7,7 @@
 //  封装 TabbarController
 //
 
-#import "CICTabbarController.h"
+#import "CICTabBarController.h"
 #import <SDWebImage/SDWebImage.h>
 #import "NSString+CICNetwork.h"
 #import "NSDate+CICString.h"
@@ -20,7 +20,7 @@
 /// 标题Label的高度
 static CGFloat const kTitleLabelHeight = 12;
 
-@interface CICTabbarController ()<UITabBarControllerDelegate>
+@interface CICTabBarController ()<UITabBarControllerDelegate>
 
 #pragma mark - Public Property
 @property (nonatomic, copy) NSMutableArray<CICTabBarItem *> *tabBarItemData;
@@ -31,7 +31,7 @@ static CGFloat const kTitleLabelHeight = 12;
 
 @end
 
-@implementation CICTabbarController
+@implementation CICTabBarController
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
@@ -42,18 +42,7 @@ static CGFloat const kTitleLabelHeight = 12;
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    if (@available(iOS 13.0, *)) {
-        for (UIViewController *childViewController in self.childViewControllers) {
-            NSUInteger index = [self.childViewControllers indexOfObject:childViewController];
-            // 修改设置
-            UITabBarAppearance *appearance = [UITabBarAppearance new];
-            // 设置未被选中的颜色
-            appearance.stackedLayoutAppearance.normal.titleTextAttributes = @{NSForegroundColorAttributeName:(index == 0 ? [UIColor magentaColor] : [UIColor greenColor])};
-            // 设置被选中时的颜色
-            appearance.stackedLayoutAppearance.selected.titleTextAttributes = @{NSForegroundColorAttributeName: (index == 0 ? [UIColor purpleColor] : [UIColor redColor])};
-            childViewController.tabBarItem.standardAppearance = appearance;
-        }
-    }
+    [self updateTitleTextAttributes];
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
@@ -122,7 +111,6 @@ static CGFloat const kTitleLabelHeight = 12;
         if ([self isShowTabBarItemTitleColorAtIndex:index forState:UIControlStateNormal]) {
             continue;
         }
-//        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: normalTitleColor} forState:UIControlStateNormal];
         [self updateChildViewController:childViewController tabBarItemWithTextColor:normalTitleColor forState:UIControlStateNormal];
     }
 }
@@ -135,7 +123,6 @@ static CGFloat const kTitleLabelHeight = 12;
         if ([self isShowTabBarItemTitleColorAtIndex:index forState:UIControlStateSelected]) {
             continue;
         }
-//        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTitleColor} forState:UIControlStateSelected];
         [self updateChildViewController:childViewController tabBarItemWithTextColor:selectedTitleColor forState:UIControlStateSelected];
     }
 }
@@ -232,11 +219,9 @@ static CGFloat const kTitleLabelHeight = 12;
     childViewController.tabBarItem.title = isShowTitle ? tabBarItem.title : nil;
     
     if (tabBarItem.normalTitleColor) {
-//        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: tabBarItem.normalTitleColor} forState:UIControlStateNormal];
         [self updateChildViewController:childViewController tabBarItemWithTextColor:tabBarItem.normalTitleColor forState:UIControlStateNormal];
     }
     if (tabBarItem.selectedTitleColor) {
-//        [childViewController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: tabBarItem.selectedTitleColor} forState:UIControlStateSelected];
         [self updateChildViewController:childViewController tabBarItemWithTextColor:tabBarItem.selectedTitleColor forState:UIControlStateSelected];
     }
 }
@@ -382,6 +367,37 @@ static CGFloat const kTitleLabelHeight = 12;
     return NO;
 }
 
+- (void)updateTitleTextAttributes {
+    
+    if (@available(iOS 13.0, *)) {
+        for (UIViewController *childViewController in self.childViewControllers) {
+            NSUInteger index = [self.childViewControllers indexOfObject:childViewController];
+            CICTabBarItem *tabBarItem = self.tabBarItemData[index];
+            // 修改设置
+            UITabBarAppearance *appearance = [UITabBarAppearance new];
+            
+            UIColor *normalTitleColor = self.normalTitleColor;
+            if (tabBarItem.normalTitleColor) {
+                normalTitleColor = tabBarItem.normalTitleColor;
+            }
+            if (normalTitleColor) {
+                // 设置未被选中的颜色
+                appearance.stackedLayoutAppearance.normal.titleTextAttributes = @{NSForegroundColorAttributeName:normalTitleColor};
+            }
+            
+            UIColor *selectedTitleColor = self.selectedTitleColor;
+            if (tabBarItem.selectedTitleColor) {
+                selectedTitleColor = tabBarItem.selectedTitleColor;
+            }
+            if (selectedTitleColor) {
+                // 设置被选中时的颜色
+                appearance.stackedLayoutAppearance.selected.titleTextAttributes = @{NSForegroundColorAttributeName: selectedTitleColor};
+            }
+            childViewController.tabBarItem.standardAppearance = appearance;
+        }
+    }
+}
+
 #pragma mark - Lazy Load
 - (NSArray *)tempImageViewData {
     
@@ -395,7 +411,7 @@ static CGFloat const kTitleLabelHeight = 12;
 
 @interface CICTabbarControllerConstructor()
 
-@property (nonatomic, weak) CICTabbarController *component;
+@property (nonatomic, weak) CICTabBarController *component;
 
 @end
 
@@ -476,7 +492,7 @@ static CGFloat const kTitleLabelHeight = 12;
 
 @end
 
-@implementation CICTabbarController (CICConstructor)
+@implementation CICTabBarController (CICConstructor)
 
 - (CICTabbarControllerConstructor *)cic {
     

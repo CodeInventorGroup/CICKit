@@ -44,21 +44,18 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
 #pragma mark - Actions
 - (void)showTabBarController {
     
-    CICTabbarController *tabBarController = [[CICTabbarController alloc] init];
+    CICTabBarController *tabBarController = [[CICTabBarController alloc] init];
     
     CICTabBarItem *firstItem = [[CICTabBarItem alloc] init];
     firstItem.cic
     .title(@"首页")
     .normalImage(@"home_tabbar_icon")
-    .controllerClassName(@"CICFirstViewController")
-    .selectedTitleColor([UIColor cic_hexColor:0x1296db])
-    .normalTitleColor([UIColor redColor])
-    .selectedTitleColor([UIColor systemPurpleColor]);
+    .controllerClassName(@"CICFirstViewController");
     
     CICTabBarItem *secondItem = [CICTabBarItem cic_tabBarItemNoTitleWithNormalImage:@"center_tabbar_icon" controllerClassName:@"CICSecondViewController"];
     secondItem.cic
     .isShowTitle(YES)
-    .title(@"哈哈")
+    .title(@"畅聊")
     .normalImageSize(CGSizeMake(20, 20))
     .selectedImageSize(CGSizeMake(30, 30));
     
@@ -68,8 +65,7 @@ static NSString *const kCellIdentifier = @"CICDemoViewControllerCellIdentifier";
     tabBarController.cic
     .tabBarItemData(@[firstItem, secondItem, thirdItem])
     .titleImageMiddleMargin(4)
-    .normalTitleColor([UIColor yellowColor])
-    .selectedTitleColor([UIColor systemGreenColor]);
+    .selectedTitleColor([UIColor cic_hexColor:0x1296db]);
     
     tabBarController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:tabBarController animated:YES];

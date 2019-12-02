@@ -46,5 +46,5 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 #import "CICHUD.h"
 #import "CICNumberKeyboardView.h"
 #import "CICVerifyPayPasswordView.h"
-#import "CICTabbarController.h"
+#import "CICTabBarController.h"
 

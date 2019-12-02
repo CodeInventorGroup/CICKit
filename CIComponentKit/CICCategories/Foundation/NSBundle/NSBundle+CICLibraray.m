@@ -8,7 +8,7 @@
 #import "NSBundle+CICLibraray.h"
 
 static NSString *const kLocalBundleName = @"CIComponentKit";
-static NSString *const kTabbarControllerClassName = @"CICTabbarController";
+static NSString *const kTabbarControllerClassName = @"CICTabBarController";
 
 @implementation NSBundle (CICLibraray)
 

@@ -12,7 +12,7 @@
 #import "UIColor+CIComponentKit.h"
 #import "CICLabel.h"
 #import "CICHUD.h"
-#import <CICTabbarController.h>
+#import <CICTabBarController.h>
 
 @interface CICRootViewController ()
 
