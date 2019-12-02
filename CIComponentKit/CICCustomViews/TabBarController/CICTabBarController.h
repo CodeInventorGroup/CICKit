@@ -33,32 +33,32 @@ typedef void(^CICDidSelectViewControllerBlock)(NSInteger index);
 
 @end
 
-@interface CICTabbarControllerConstructor<CICTabbarController> : CICUIViewConstructor
+@interface CICTabBarControllerConstructor<CICTabBarController> : CICUIViewConstructor
 
 /// 初始化TabBarController调用
-CICConstructorProperty(CICTabbarControllerConstructor, tabBarItemData, NSArray<CICTabBarItem *> *tabBarItemData)
+CICConstructorProperty(CICTabBarControllerConstructor, tabBarItemData, NSArray<CICTabBarItem *> *tabBarItemData)
 
-CICConstructorProperty(CICTabbarControllerConstructor, normalTitleColor, UIColor *color)
-CICConstructorProperty(CICTabbarControllerConstructor, selectedTitleColor, UIColor *color)
-CICConstructorProperty(CICTabbarControllerConstructor, barBackgroundColor, UIColor *color)
-CICConstructorProperty(CICTabbarControllerConstructor, barBackgroundImage, id backgroundImage)
+CICConstructorProperty(CICTabBarControllerConstructor, normalTitleColor, UIColor *color)
+CICConstructorProperty(CICTabBarControllerConstructor, selectedTitleColor, UIColor *color)
+CICConstructorProperty(CICTabBarControllerConstructor, barBackgroundColor, UIColor *color)
+CICConstructorProperty(CICTabBarControllerConstructor, barBackgroundImage, id backgroundImage)
 
-CICConstructorProperty(CICTabbarControllerConstructor, selectedItemIndex, NSUInteger index)
-CICConstructorProperty(CICTabbarControllerConstructor, titleImageMiddleMargin, CGFloat titleImageMiddleMargin)
-CICConstructorProperty(CICTabbarControllerConstructor, normalImageSize, CGSize size)
-CICConstructorProperty(CICTabbarControllerConstructor, selectedImageSize, CGSize size)
+CICConstructorProperty(CICTabBarControllerConstructor, selectedItemIndex, NSUInteger index)
+CICConstructorProperty(CICTabBarControllerConstructor, titleImageMiddleMargin, CGFloat titleImageMiddleMargin)
+CICConstructorProperty(CICTabBarControllerConstructor, normalImageSize, CGSize size)
+CICConstructorProperty(CICTabBarControllerConstructor, selectedImageSize, CGSize size)
 
-CICConstructorProperty(CICTabbarControllerConstructor, badgeValue, NSUInteger index, NSString *value)
+CICConstructorProperty(CICTabBarControllerConstructor, badgeValue, NSUInteger index, NSString *value)
 /// 更新TabBarItem文字或图片数据
-CICConstructorProperty(CICTabbarControllerConstructor, updateBarItemData, CICBarItem *item, NSInteger itemIndex)
-CICConstructorProperty(CICTabbarControllerConstructor, updateAllBarItemData, NSArray<CICBarItem *> *barItemData)
-CICConstructorProperty(CICTabbarControllerConstructor, didSelectViewControllerBlock, CICDidSelectViewControllerBlock selectBlock)
+CICConstructorProperty(CICTabBarControllerConstructor, updateBarItemData, CICBarItem *item, NSInteger itemIndex)
+CICConstructorProperty(CICTabBarControllerConstructor, updateAllBarItemData, NSArray<CICBarItem *> *barItemData)
+CICConstructorProperty(CICTabBarControllerConstructor, didSelectViewControllerBlock, CICDidSelectViewControllerBlock selectBlock)
 
 @end
 
 @interface CICTabBarController (CICConstructor)
 
-- (CICTabbarControllerConstructor *)cic;
+- (CICTabBarControllerConstructor *)cic;
 
 @end
 

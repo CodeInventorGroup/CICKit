@@ -409,82 +409,82 @@ static CGFloat const kTitleLabelHeight = 12;
 
 @end
 
-@interface CICTabbarControllerConstructor()
+@interface CICTabBarControllerConstructor()
 
 @property (nonatomic, weak) CICTabBarController *component;
 
 @end
 
-@implementation CICTabbarControllerConstructor
+@implementation CICTabBarControllerConstructor
 
 - (void)buildConstructor {
     
     [super buildConstructor];
     
     WEAK_SELF;
-    _tabBarItemData = ^CICTabbarControllerConstructor * _Nonnull(NSArray<CICTabBarItem *> * _Nonnull tabBarItemData) {
+    _tabBarItemData = ^CICTabBarControllerConstructor * _Nonnull(NSArray<CICTabBarItem *> * _Nonnull tabBarItemData) {
         weakSelf.component.tabBarItemData = [NSMutableArray arrayWithArray:tabBarItemData];
         return weakSelf;
     };
     
-    _updateBarItemData = ^CICTabbarControllerConstructor * _Nonnull(CICBarItem * _Nonnull item, NSInteger itemIndex) {
+    _updateBarItemData = ^CICTabBarControllerConstructor * _Nonnull(CICBarItem * _Nonnull item, NSInteger itemIndex) {
         [weakSelf.component updateTabBarItemData:item atIndex:itemIndex];
         return weakSelf;
     };
     
-    _updateAllBarItemData = ^CICTabbarControllerConstructor * _Nonnull(NSArray<CICBarItem *> * _Nonnull barItemData) {
+    _updateAllBarItemData = ^CICTabBarControllerConstructor * _Nonnull(NSArray<CICBarItem *> * _Nonnull barItemData) {
         [weakSelf.component updateAllTabBarItemData:barItemData];
         return weakSelf;
     };
     
-    _selectedTitleColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull selectedColor) {
+    _selectedTitleColor = ^CICTabBarControllerConstructor * _Nonnull(UIColor * _Nonnull selectedColor) {
         weakSelf.component.selectedTitleColor = selectedColor;
         return weakSelf;
     };
     
-    _normalTitleColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull normalColor) {
+    _normalTitleColor = ^CICTabBarControllerConstructor * _Nonnull(UIColor * _Nonnull normalColor) {
         weakSelf.component.normalTitleColor = normalColor;
         return weakSelf;
     };
     
-    _barBackgroundColor = ^CICTabbarControllerConstructor * _Nonnull(UIColor * _Nonnull color) {
+    _barBackgroundColor = ^CICTabBarControllerConstructor * _Nonnull(UIColor * _Nonnull color) {
         weakSelf.component.tabBar.backgroundImage = [UIImage cic_imageWithColor:color imageSize:CGSizeMake(CIC_SCREEN_WIDTH, 1)];
         return weakSelf;
     };
     
-    _barBackgroundImage = ^CICTabbarControllerConstructor * _Nonnull(id _Nonnull backgroundImage) {
+    _barBackgroundImage = ^CICTabBarControllerConstructor * _Nonnull(id _Nonnull backgroundImage) {
         weakSelf.component.barBackgroundImage = backgroundImage;
         return weakSelf;
     };
     
-    _badgeValue = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger index, NSString *value) {
+    _badgeValue = ^CICTabBarControllerConstructor * _Nonnull(NSUInteger index, NSString *value) {
         if (![NSArray cic_isEmpty:weakSelf.component.childViewControllers] && weakSelf.component.childViewControllers.count > index) {
             weakSelf.component.childViewControllers[index].tabBarItem.badgeValue = value;
         }
         return weakSelf;
     };
     
-    _selectedItemIndex = ^CICTabbarControllerConstructor * _Nonnull(NSUInteger selectedIndex) {
+    _selectedItemIndex = ^CICTabBarControllerConstructor * _Nonnull(NSUInteger selectedIndex) {
         weakSelf.component.selectedItemIndex = selectedIndex;
         return weakSelf;
     };
     
-    _titleImageMiddleMargin = ^CICTabbarControllerConstructor * _Nonnull(CGFloat titleImageMiddleMargin) {
+    _titleImageMiddleMargin = ^CICTabBarControllerConstructor * _Nonnull(CGFloat titleImageMiddleMargin) {
         weakSelf.component.titleImageMiddleMargin = titleImageMiddleMargin;
         return weakSelf;
     };
     
-    _selectedImageSize = ^CICTabbarControllerConstructor *(CGSize size) {
+    _selectedImageSize = ^CICTabBarControllerConstructor *(CGSize size) {
         weakSelf.component.selectedImageSize = size;
         return weakSelf;
     };
     
-    _normalImageSize = ^CICTabbarControllerConstructor *(CGSize size) {
+    _normalImageSize = ^CICTabBarControllerConstructor *(CGSize size) {
         weakSelf.component.normalImageSize = size;
         return weakSelf;
     };
     
-    _didSelectViewControllerBlock = ^CICTabbarControllerConstructor * _Nonnull(CICDidSelectViewControllerBlock  _Nonnull selectBlock) {
+    _didSelectViewControllerBlock = ^CICTabBarControllerConstructor * _Nonnull(CICDidSelectViewControllerBlock  _Nonnull selectBlock) {
         weakSelf.component.didSelectViewControllerBlock = selectBlock;
         return weakSelf;
     };
@@ -494,9 +494,9 @@ static CGFloat const kTitleLabelHeight = 12;
 
 @implementation CICTabBarController (CICConstructor)
 
-- (CICTabbarControllerConstructor *)cic {
+- (CICTabBarControllerConstructor *)cic {
     
-    return [[CICTabbarControllerConstructor alloc] initWithComponent:self];
+    return [[CICTabBarControllerConstructor alloc] initWithComponent:self];
 }
 
 @end
