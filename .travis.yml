@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode11.2.1
 xcode_workspace: CIComponentKit.xcworkspace
 xcode_scheme: CIComponentKitDemo
-xcode_sdk: iphonesimulator13.2.2
+xcode_sdk: iphonesimulator13.2
 
 before_install:
   - pod repo update
