@@ -16,8 +16,8 @@
 #import <SDWebImage/SDWebImage.h>
 #import "UIImage+CICSize.h"
 
-static NSUInteger const kEmptyNumber = 10;
-static NSUInteger const kDeleteNumber = 12;
+static int const kEmptyNumber = 10;
+static int const kDeleteNumber = 12;
 
 /// 数字键盘 按钮个数
 static NSUInteger const kNumberKeyboardMaxNumber = 12;
@@ -254,9 +254,9 @@ static NSUInteger const kLineNumber = 4;
         [self.numberData addObjectsFromArray:[self.numberArray subarrayWithRange:NSMakeRange(0, kMaxNumber - 1)]];
     }
     
-    [self.numberData addObject:[NSString stringWithFormat:@"%ld", kEmptyNumber]];
+    [self.numberData addObject:[NSString stringWithFormat:@"%d", kEmptyNumber]];
     [self.numberData addObject:tempArray.lastObject];
-    [self.numberData addObject:[NSString stringWithFormat:@"%ld", kDeleteNumber]];
+    [self.numberData addObject:[NSString stringWithFormat:@"%d", kDeleteNumber]];
 }
 
 - (UIButton *)buildKeyboardButtonAtIndex:(NSUInteger)index {
