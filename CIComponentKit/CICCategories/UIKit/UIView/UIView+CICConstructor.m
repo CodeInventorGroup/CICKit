@@ -117,6 +117,11 @@
         return weakSelf;
     };
     
+    _userInteractionEnabled = ^CICUIViewConstructor *(BOOL userInteractionEnabled) {
+        weakSelf.component.userInteractionEnabled = userInteractionEnabled;
+        return weakSelf;
+    };
+    
     _addLineView = ^CICUIViewConstructor *(CICSeparatorLinePosition position) {
         [weakSelf.component cic_addSeparatorLineViewWithPosition:position];
         return weakSelf;

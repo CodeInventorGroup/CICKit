@@ -62,6 +62,8 @@ CICConstructorProperty(CICUIViewConstructor, clipToBounds, BOOL clipToBounds)
 
 CICConstructorProperty(CICUIViewConstructor, addTo, UIView *toView)
 
+CICConstructorProperty(CICUIViewConstructor, userInteractionEnabled, BOOL userInteractionEnabled)
+
 CICConstructorProperty(CICUIViewConstructor, addLineView, CICSeparatorLinePosition position)
 CICConstructorProperty(CICUIViewConstructor, addLineViewWithColor, CICSeparatorLinePosition position, UIColor *lineColor)
 
