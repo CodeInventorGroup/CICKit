@@ -11,21 +11,35 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CICTextFieldContructor<UITextField> : CICUIViewConstructor
+@interface CICUITextFieldContructor<UITextField> : CICUIViewConstructor
 
-CICConstructorBasicProperties(CICTextFieldContructor)
+CICConstructorBasicProperties(CICUITextFieldContructor)
 
-CICConstructorProperty(CICTextFieldContructor, placeholder, NSString *placeholder)
+CICConstructorProperty(CICUITextFieldContructor, placeholder, NSString *placeholder)
 
-CICConstructorProperty(CICTextFieldContructor, text, NSString *text)
+CICConstructorProperty(CICUITextFieldContructor, attributedPlaceholder, NSAttributedString *attributedPlaceholder)
 
-CICConstructorProperty(CICTextFieldContructor, font, UIFont *font)
+CICConstructorProperty(CICUITextFieldContructor, text, NSString *text)
 
+CICConstructorProperty(CICUITextFieldContructor, textColor, UIColor *textColor)
 
+CICConstructorProperty(CICUITextFieldContructor, font, UIFont *font)
+
+CICConstructorProperty(CICUITextFieldContructor, delegate, id<UITextFieldDelegate> delegate)
+
+CICConstructorProperty(CICUITextFieldContructor, leftView, UIView *leftView)
+
+CICConstructorProperty(CICUITextFieldContructor, leftViewMode, UITextFieldViewMode leftViewMode)
+
+CICConstructorProperty(CICUITextFieldContructor, rightView, UIView *rightView)
+
+CICConstructorProperty(CICUITextFieldContructor, rightViewMode, UITextFieldViewMode rightViewMode)
 
 @end
 
 @interface UITextField (CICConstructor)
+
+- (CICUITextFieldContructor *)cic;
 
 @end
 
