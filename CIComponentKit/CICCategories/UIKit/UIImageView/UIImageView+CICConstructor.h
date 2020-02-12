@@ -16,8 +16,6 @@ CICConstructorProperty(CICUIImageViewConstructor, imageName, NSString *imageName
 
 CICConstructorProperty(CICUIImageViewConstructor, contentMode, UIViewContentMode contentMode)
 
-CICConstructorProperty(CICUIImageViewConstructor, userInteractionEnabled, BOOL userInteractionEnabled)
-
 @end
 
 @interface UIImageView (CICConstructor)
