@@ -74,7 +74,7 @@
         case CICustomButtonTypeLeftImageRightTitle:
         case CICustomButtonTypeLeftTitleRIghtImage: {
             
-            CGFloat originX = (width - imageSize.width - margin)/2.0;
+            CGFloat originX = (width - imageSize.width - margin - CGRectGetWidth(titleLabel.frame))/2.0;
             CGFloat maxOriginX = originX + (buttonType == CICustomButtonTypeLeftImageRightTitle ? imageSize.width : CGRectGetWidth(titleLabel.frame)) + margin;
             
             imageView.cic.x(buttonType == CICustomButtonTypeLeftImageRightTitle ? originX : maxOriginX)
