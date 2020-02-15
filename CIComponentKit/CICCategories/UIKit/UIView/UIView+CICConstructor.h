@@ -64,6 +64,8 @@ CICConstructorProperty(CICUIViewConstructor, addTo, UIView *toView)
 
 CICConstructorProperty(CICUIViewConstructor, userInteractionEnabled, BOOL userInteractionEnabled)
 
+CICConstructorProperty(CICUIViewConstructor, alpha, CGFloat alpha)
+
 CICConstructorProperty(CICUIViewConstructor, addLineView, CICSeparatorLinePosition position)
 CICConstructorProperty(CICUIViewConstructor, addLineViewWithColor, CICSeparatorLinePosition position, UIColor *lineColor)
 

@@ -122,6 +122,11 @@
         return weakSelf;
     };
     
+    _alpha = ^CICUIViewConstructor *(CGFloat alpha) {
+        weakSelf.component.alpha = alpha;
+        return weakSelf;
+    };
+    
     _addLineView = ^CICUIViewConstructor *(CICSeparatorLinePosition position) {
         [weakSelf.component cic_addSeparatorLineViewWithPosition:position];
         return weakSelf;
