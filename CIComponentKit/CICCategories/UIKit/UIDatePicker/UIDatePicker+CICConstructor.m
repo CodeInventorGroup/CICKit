@@ -23,10 +23,13 @@ CICConstructorBasicDynamics()
     [super buildConstructor];
     
     WEAK_SELF;
-    
     _date = ^CICUIDatePickerConstructor *(NSDate *date) {
-        
         weakSelf.component.date = date;
+        return weakSelf;
+    };
+    
+    _datePickerMode = ^CICUIDatePickerConstructor *(UIDatePickerMode datePickerMode) {
+        weakSelf.component.datePickerMode = datePickerMode;
         return weakSelf;
     };
 }

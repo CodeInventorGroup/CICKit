@@ -11,7 +11,11 @@
 
 @interface CICUIDatePickerConstructor<UIDatePicker> : CICUIViewConstructor
 
+CICConstructorBasicProperties(CICUIDatePickerConstructor)
+
 CICConstructorProperty(CICUIDatePickerConstructor, date, NSDate *date)
+
+CICConstructorProperty(CICUIDatePickerConstructor, datePickerMode, UIDatePickerMode datePickerMode)
 
 @end
 

@@ -44,6 +44,11 @@ CICConstructorProperty(class, masksToBounds, BOOL masksToBounds)    \
 CICConstructorProperty(class, borderWidth, CGFloat borderWidth)     \
 CICConstructorProperty(class, borderColor, UIColor *borderColor)    \
 CICConstructorProperty(class, clipToBounds, BOOL clipToBounds)      \
+CICConstructorProperty(class, addTo, UIView *toView) \
+CICConstructorProperty(class, userInteractionEnabled, BOOL userInteractionEnabled)   \
+CICConstructorProperty(class, alpha, CGFloat alpha)                                  \
+CICConstructorProperty(class, addLineView, CICSeparatorLinePosition position)        \
+CICConstructorProperty(class, addLineViewWithColor, CICSeparatorLinePosition position, UIColor *lineColor)   \
 
 #define CICConstructorBasicDynamics()                            \
 @dynamic x;                                                     \
@@ -63,6 +68,11 @@ CICConstructorProperty(class, clipToBounds, BOOL clipToBounds)      \
 @dynamic borderWidth;                                           \
 @dynamic borderColor;                                           \
 @dynamic clipToBounds;                                          \
+@dynamic addTo;                                                 \
+@dynamic userInteractionEnabled;                                \
+@dynamic alpha;                                                 \
+@dynamic addLineView;                                           \
+@dynamic addLineViewWithColor;                                  \
 
 /// UILabel基础扩展
 #define CICConstructorUILabelBasicProperties(class)                                     \
