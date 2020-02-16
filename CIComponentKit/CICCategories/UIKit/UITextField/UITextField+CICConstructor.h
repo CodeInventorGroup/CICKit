@@ -35,6 +35,8 @@ CICConstructorProperty(CICUITextFieldContructor, rightView, UIView *rightView)
 
 CICConstructorProperty(CICUITextFieldContructor, rightViewMode, UITextFieldViewMode rightViewMode)
 
+CICConstructorProperty(CICUITextFieldContructor, addTarget, id target, SEL action, UIControlEvents events)
+
 @end
 
 @interface UITextField (CICConstructor)

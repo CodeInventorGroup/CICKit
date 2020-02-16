@@ -72,6 +72,11 @@ CICConstructorBasicDynamics()
         weakSelf.component.rightViewMode = rightViewMode;
         return weakSelf;
     };
+    
+    _addTarget = ^CICUITextFieldContructor *(id target, SEL action, UIControlEvents events) {
+        [weakSelf.component addTarget:target action:action forControlEvents:events];
+        return weakSelf;
+    };
 }
 
 @end
