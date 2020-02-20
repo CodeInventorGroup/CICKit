@@ -25,6 +25,8 @@ CICConstructorProperty(CICUILabelConstructor, text, NSString *string)
 
 CICConstructorProperty(CICUILabelConstructor, textAlignment, NSTextAlignment alignment)
 
+CICConstructorProperty(CICUILabelConstructor, lineBreakMode, NSLineBreakMode lineBreakMode)
+
 @end
 
 @interface UILabel (CICConstructor)

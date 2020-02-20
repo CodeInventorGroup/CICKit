@@ -47,6 +47,11 @@ CICConstructorBasicDynamics()
         weakSelf.component.textAlignment = alignment;
         return weakSelf;
     };
+    
+    _lineBreakMode = ^CICUILabelConstructor *(NSLineBreakMode lineBreakMode) {
+        weakSelf.component.lineBreakMode = lineBreakMode;
+        return weakSelf;
+    };
 }
 
 @end
