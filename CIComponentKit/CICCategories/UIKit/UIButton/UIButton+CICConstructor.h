@@ -25,6 +25,8 @@ CICConstructorProperty(CICUIButtonConstructor, image, NSString *imageName)
 
 CICConstructorProperty(CICUIButtonConstructor, imageWithState, NSString *imageName, UIControlState state)
 
+CICConstructorProperty(CICUIButtonConstructor, backgroundImageWithState, UIImage *image, UIControlState state)
+
 CICConstructorProperty(CICUIButtonConstructor, addTarget, id target, SEL action)
 
 @end

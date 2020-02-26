@@ -54,6 +54,11 @@ CICConstructorBasicDynamics()
         return weakSelf;
     };
     
+    _backgroundImageWithState = ^CICUIButtonConstructor *(UIImage *image, UIControlState state) {
+        [weakSelf.component setBackgroundImage:image forState:state];
+        return weakSelf;
+    };
+    
     _addTarget = ^CICUIButtonConstructor *(id target, SEL action) {
         [weakSelf.component addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
         return weakSelf;
