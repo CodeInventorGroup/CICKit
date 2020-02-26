@@ -63,6 +63,11 @@ CICConstructorBasicDynamics()
         [weakSelf.component addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
         return weakSelf;
     };
+    
+    _selected = ^CICUIButtonConstructor *(BOOL isSelected) {
+        weakSelf.component.selected = isSelected;
+        return weakSelf;
+    };
 }
 
 @end

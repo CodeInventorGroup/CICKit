@@ -29,6 +29,8 @@ CICConstructorProperty(CICUIButtonConstructor, backgroundImageWithState, UIImage
 
 CICConstructorProperty(CICUIButtonConstructor, addTarget, id target, SEL action)
 
+CICConstructorProperty(CICUIButtonConstructor, selected, BOOL isSelected)
+
 @end
 
 @interface UIButton (CICConstructor)
