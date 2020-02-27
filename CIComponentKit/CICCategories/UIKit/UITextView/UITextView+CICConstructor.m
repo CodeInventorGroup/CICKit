@@ -52,7 +52,7 @@ CICConstructorBasicDynamics()
 
 @implementation UITextView (CICConstructor)
 
-- (CICUIViewConstructor *)cic {
+- (CICUITextViewConstructor *)cic {
     return [[CICUITextViewConstructor alloc] initWithComponent:self];
 }
 

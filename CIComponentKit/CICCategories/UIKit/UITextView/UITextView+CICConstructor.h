@@ -25,7 +25,7 @@ CICConstructorProperty(CICUITextViewConstructor, text, NSString *text)
 
 @interface UITextView (CICConstructor)
 
-- (CICUIViewConstructor *)cic;
+- (CICUITextViewConstructor *)cic;
 
 @end
 
