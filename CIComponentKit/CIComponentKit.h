@@ -40,6 +40,7 @@ FOUNDATION_EXPORT const unsigned char CIComponentKitVersionString[];
 #import "UITextField+CICConstructor.h"
 #import "UITextView+CICConstructor.h"
 #import "UIView+CICShadow.h"
+#import "UIView+CICDrawImage.h"
 
 #import "CICSegmentView.h"
 #import "CICImageTitleButton.h"
