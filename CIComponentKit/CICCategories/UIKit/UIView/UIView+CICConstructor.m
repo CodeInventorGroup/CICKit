@@ -136,6 +136,11 @@
         [weakSelf.component cic_addSeparatorLineViewWithPosition:position lineColor:lineColor];
         return weakSelf;
     };
+    
+    _opaque = ^CICUIViewConstructor *(BOOL isOpaque) {
+        weakSelf.component.opaque = isOpaque;
+        return weakSelf;
+    };
 }
     
 - (void)dealloc {

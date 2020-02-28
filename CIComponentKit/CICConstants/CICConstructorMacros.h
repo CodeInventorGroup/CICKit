@@ -49,8 +49,9 @@ CICConstructorProperty(class, userInteractionEnabled, BOOL userInteractionEnable
 CICConstructorProperty(class, alpha, CGFloat alpha)                                  \
 CICConstructorProperty(class, addLineView, CICSeparatorLinePosition position)        \
 CICConstructorProperty(class, addLineViewWithColor, CICSeparatorLinePosition position, UIColor *lineColor)   \
+CICConstructorProperty(class, opaque, BOOL opaque)              \
 
-#define CICConstructorBasicDynamics()                            \
+#define CICConstructorBasicDynamics()                           \
 @dynamic x;                                                     \
 @dynamic y;                                                     \
 @dynamic width;                                                 \
